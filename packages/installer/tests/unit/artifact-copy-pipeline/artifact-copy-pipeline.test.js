@@ -105,7 +105,7 @@ describe('artifact-copy-pipeline (Story INS-4.3)', () => {
   });
 
   describe('copyExtraCommandFiles', () => {
-    test('copies .md files recursively excluding AIOX/agents/ via real function', async () => {
+    test('copies .md files recursively excluding LMAS/agents/ via real function', async () => {
       const sourceRoot = createTempDir();
       const targetRoot = createTempDir();
 
@@ -126,13 +126,13 @@ describe('artifact-copy-pipeline (Story INS-4.3)', () => {
         fs.mkdirSync(tasksDir, { recursive: true });
         fs.writeFileSync(path.join(tasksDir, 'add-rule.md'), '# Add Rule', 'utf8');
 
-        // Create AIOX/agents/dev.md (should be EXCLUDED)
-        const agentsDir = path.join(cmdDir, 'AIOX', 'agents');
+        // Create LMAS/agents/dev.md (should be EXCLUDED)
+        const agentsDir = path.join(cmdDir, 'LMAS', 'agents');
         fs.mkdirSync(agentsDir, { recursive: true });
         fs.writeFileSync(path.join(agentsDir, 'dev.md'), '# Dev Agent', 'utf8');
 
-        // Create AIOX/stories/story.md (should be EXCLUDED — project-specific)
-        const storiesDir = path.join(cmdDir, 'AIOX', 'stories');
+        // Create LMAS/stories/story.md (should be EXCLUDED — project-specific)
+        const storiesDir = path.join(cmdDir, 'LMAS', 'stories');
         fs.mkdirSync(storiesDir, { recursive: true });
         fs.writeFileSync(path.join(storiesDir, 'story.md'), '# Story', 'utf8');
 
@@ -153,11 +153,11 @@ describe('artifact-copy-pipeline (Story INS-4.3)', () => {
         expect(fs.existsSync(path.join(targetCmd, 'synapse', 'manager.md'))).toBe(true);
         expect(fs.existsSync(path.join(targetCmd, 'synapse', 'tasks', 'add-rule.md'))).toBe(true);
 
-        // Verify AIOX/agents/ was excluded (handled by copyAgentFiles)
-        expect(fs.existsSync(path.join(targetCmd, 'AIOX', 'agents', 'dev.md'))).toBe(false);
+        // Verify LMAS/agents/ was excluded (handled by copyAgentFiles)
+        expect(fs.existsSync(path.join(targetCmd, 'LMAS', 'agents', 'dev.md'))).toBe(false);
 
-        // Verify AIOX/stories/ was excluded (project-specific)
-        expect(fs.existsSync(path.join(targetCmd, 'AIOX', 'stories', 'story.md'))).toBe(false);
+        // Verify LMAS/stories/ was excluded (project-specific)
+        expect(fs.existsSync(path.join(targetCmd, 'LMAS', 'stories', 'story.md'))).toBe(false);
 
         // Verify squad directories not copied (private)
         expect(fs.existsSync(path.join(targetCmd, 'cohort-squad'))).toBe(false);
@@ -365,7 +365,7 @@ describe('artifact-copy-pipeline (Story INS-4.3)', () => {
 
   describe('generator failure graceful degradation', () => {
     test('generate-settings-json throws on missing config — install should catch', () => {
-      const { generate } = require('../../../../../.aiox-core/infrastructure/scripts/generate-settings-json');
+      const { generate } = require('../../../../../.lmas-core/infrastructure/scripts/generate-settings-json');
 
       // Calling generate on a non-existent path should throw
       expect(() => generate('/nonexistent/path')).toThrow();

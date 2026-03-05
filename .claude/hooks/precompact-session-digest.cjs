@@ -4,7 +4,7 @@
  *
  * Registered as PreCompact event — fires before context compaction.
  * Reads JSON from stdin (Claude Code hook protocol), delegates to
- * the unified hook runner in aiox-core.
+ * the unified hook runner in lmas-core.
  *
  * Stdin format (PreCompact):
  * {
@@ -15,7 +15,7 @@
  *   "trigger": "auto" | "manual"
  * }
  *
- * @see .aiox-core/hooks/unified/runners/precompact-runner.js
+ * @see .lmas-core/hooks/unified/runners/precompact-runner.js
  * @see Story MIS-3 - Session Digest (PreCompact Hook)
  * @see Story MIS-3.1 - Fix Session-Digest Hook Registration
  */
@@ -57,7 +57,7 @@ async function main() {
   // Same pattern as synapse-engine.cjs — robust against incorrect cwd
   const runnerPath = path.join(
     PROJECT_ROOT,
-    '.aiox-core',
+    '.lmas-core',
     'hooks',
     'unified',
     'runners',

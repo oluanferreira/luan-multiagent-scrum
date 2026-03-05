@@ -15,8 +15,8 @@
 const path = require('path');
 const fs = require('fs').promises;
 const yaml = require('js-yaml');
-const { SquadAnalyzer } = require('../../../.aiox-core/development/scripts/squad/squad-analyzer');
-const { SquadExtender } = require('../../../.aiox-core/development/scripts/squad/squad-extender');
+const { SquadAnalyzer } = require('../../../.lmas-core/development/scripts/squad/squad-analyzer');
+const { SquadExtender } = require('../../../.lmas-core/development/scripts/squad/squad-extender');
 
 // Test directory for integration tests - use unique directory to avoid parallel test collisions
 const INTEGRATION_PATH = path.join(__dirname, 'temp-analyze-extend');
@@ -60,7 +60,7 @@ describe('Squad Analyze & Extend Integration', () => {
       version: '1.0.0',
       description: 'Integration test squad',
       author: 'test',
-      aiox: { minVersion: '2.1.0' },
+      lmas: { minVersion: '2.1.0' },
       components: {
         agents: ['initial-agent.md'],
         tasks: [],

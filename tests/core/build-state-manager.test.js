@@ -20,7 +20,7 @@ const {
   NotificationType,
   validateBuildState,
   DEFAULT_CONFIG,
-} = require('../../.aiox-core/core/execution/build-state-manager');
+} = require('../../.lmas-core/core/execution/build-state-manager');
 
 // ═══════════════════════════════════════════════════════════════════════════════════
 //                              TEST SETUP

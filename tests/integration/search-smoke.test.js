@@ -6,10 +6,10 @@
  * @story 2.7 - Discovery CLI Search
  */
 
-const { searchKeyword } = require('../../.aiox-core/cli/commands/workers/search-keyword');
-const { applyFilters } = require('../../.aiox-core/cli/commands/workers/search-filters');
-const { formatOutput, formatJSON } = require('../../.aiox-core/cli/utils/output-formatter-cli');
-const { getRegistry } = require('../../.aiox-core/core/registry/registry-loader');
+const { searchKeyword } = require('../../.lmas-core/cli/commands/workers/search-keyword');
+const { applyFilters } = require('../../.lmas-core/cli/commands/workers/search-filters');
+const { formatOutput, formatJSON } = require('../../.lmas-core/cli/utils/output-formatter-cli');
+const { getRegistry } = require('../../.lmas-core/core/registry/registry-loader');
 
 describe('Smoke Tests - Search CLI', () => {
   let registry;
@@ -21,7 +21,7 @@ describe('Smoke Tests - Search CLI', () => {
 
   /**
    * SEARCH-01: Basic Search
-   * `aiox workers search "validator"` returns results
+   * `lmas workers search "validator"` returns results
    * Pass Criteria: Results array not empty
    */
   test('SEARCH-01: Basic search returns results', async () => {

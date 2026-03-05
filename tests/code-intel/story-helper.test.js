@@ -5,10 +5,10 @@ const {
   suggestRelevantFiles,
   validateNoDuplicates,
   _formatDuplicateWarning,
-} = require('../../.aiox-core/core/code-intel/helpers/story-helper');
+} = require('../../.lmas-core/core/code-intel/helpers/story-helper');
 
 // Mock the code-intel module
-jest.mock('../../.aiox-core/core/code-intel/index', () => ({
+jest.mock('../../.lmas-core/core/code-intel/index', () => ({
   isCodeIntelAvailable: jest.fn(),
   getEnricher: jest.fn(),
   getClient: jest.fn(),
@@ -18,7 +18,7 @@ const {
   isCodeIntelAvailable,
   getEnricher,
   getClient,
-} = require('../../.aiox-core/core/code-intel/index');
+} = require('../../.lmas-core/core/code-intel/index');
 
 // --- Helper to setup mocks ---
 

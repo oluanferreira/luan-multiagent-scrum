@@ -5,10 +5,10 @@ const {
   generateImpactSummary,
   classifyRiskLevel,
   _formatImpactReport,
-} = require('../../.aiox-core/core/code-intel/helpers/devops-helper');
+} = require('../../.lmas-core/core/code-intel/helpers/devops-helper');
 
 // Mock the code-intel module
-jest.mock('../../.aiox-core/core/code-intel/index', () => ({
+jest.mock('../../.lmas-core/core/code-intel/index', () => ({
   isCodeIntelAvailable: jest.fn(),
   getEnricher: jest.fn(),
 }));
@@ -16,7 +16,7 @@ jest.mock('../../.aiox-core/core/code-intel/index', () => ({
 const {
   isCodeIntelAvailable,
   getEnricher,
-} = require('../../.aiox-core/core/code-intel/index');
+} = require('../../.lmas-core/core/code-intel/index');
 
 // --- Helper to setup mocks ---
 

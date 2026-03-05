@@ -16,17 +16,17 @@ const {
   generateGitignore,
   mergeGitignore,
   generateGitignoreFile,
-  hasAioxIntegration,
+  hasLmasIntegration,
   parseGitignore,
   GitignoreTemplates,
   TechStack,
-} = require('../../../.aiox-core/infrastructure/scripts/documentation-integrity/gitignore-generator');
+} = require('../../../.lmas-core/infrastructure/scripts/documentation-integrity/gitignore-generator');
 
 describe('Gitignore Generator', () => {
   let tempDir;
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiox-gitignore-test-'));
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lmas-gitignore-test-'));
   });
 
   afterEach(() => {
@@ -36,10 +36,10 @@ describe('Gitignore Generator', () => {
   });
 
   describe('loadGitignoreTemplate', () => {
-    it('should load AIOX base template', () => {
-      const template = loadGitignoreTemplate(GitignoreTemplates.AIOX_BASE);
+    it('should load LMAS base template', () => {
+      const template = loadGitignoreTemplate(GitignoreTemplates.LMAS_BASE);
 
-      expect(template).toContain('.aiox-core/local/');
+      expect(template).toContain('.lmas-core/local/');
       expect(template).toContain('.env');
     });
 
@@ -60,7 +60,7 @@ describe('Gitignore Generator', () => {
     it('should load brownfield merge template', () => {
       const template = loadGitignoreTemplate(GitignoreTemplates.BROWNFIELD_MERGE);
 
-      expect(template).toContain('AIOX Integration Section');
+      expect(template).toContain('LMAS Integration Section');
     });
 
     it('should throw for non-existent template', () => {
@@ -116,30 +116,30 @@ describe('Gitignore Generator', () => {
   });
 
   describe('getTemplatesForStacks', () => {
-    it('should always include AIOX base', () => {
+    it('should always include LMAS base', () => {
       const templates = getTemplatesForStacks([]);
 
-      expect(templates).toContain(GitignoreTemplates.AIOX_BASE);
+      expect(templates).toContain(GitignoreTemplates.LMAS_BASE);
     });
 
     it('should include Node.js template', () => {
       const templates = getTemplatesForStacks([TechStack.NODE]);
 
-      expect(templates).toContain(GitignoreTemplates.AIOX_BASE);
+      expect(templates).toContain(GitignoreTemplates.LMAS_BASE);
       expect(templates).toContain(GitignoreTemplates.NODE);
     });
 
     it('should include Python template', () => {
       const templates = getTemplatesForStacks([TechStack.PYTHON]);
 
-      expect(templates).toContain(GitignoreTemplates.AIOX_BASE);
+      expect(templates).toContain(GitignoreTemplates.LMAS_BASE);
       expect(templates).toContain(GitignoreTemplates.PYTHON);
     });
 
     it('should include multiple templates for multi-stack', () => {
       const templates = getTemplatesForStacks([TechStack.NODE, TechStack.PYTHON]);
 
-      expect(templates).toContain(GitignoreTemplates.AIOX_BASE);
+      expect(templates).toContain(GitignoreTemplates.LMAS_BASE);
       expect(templates).toContain(GitignoreTemplates.NODE);
       expect(templates).toContain(GitignoreTemplates.PYTHON);
     });
@@ -152,7 +152,7 @@ describe('Gitignore Generator', () => {
 
       expect(content).toContain('test-app');
       expect(content).toContain('node_modules/');
-      expect(content).toContain('.aiox-core/local/');
+      expect(content).toContain('.lmas-core/local/');
     });
 
     it('should generate gitignore for Python project', () => {
@@ -160,7 +160,7 @@ describe('Gitignore Generator', () => {
       const content = generateGitignore(markers);
 
       expect(content).toContain('__pycache__/');
-      expect(content).toContain('.aiox-core/local/');
+      expect(content).toContain('.lmas-core/local/');
     });
 
     it('should include generation date', () => {
@@ -180,17 +180,17 @@ describe('Gitignore Generator', () => {
   });
 
   describe('mergeGitignore', () => {
-    it('should append AIOX section to existing content', () => {
+    it('should append LMAS section to existing content', () => {
       const existing = '# My project\nnode_modules/\n';
       const merged = mergeGitignore(existing);
 
       expect(merged).toContain('# My project');
       expect(merged).toContain('node_modules/');
-      expect(merged).toContain('AIOX Integration Section');
+      expect(merged).toContain('LMAS Integration Section');
     });
 
-    it('should skip if AIOX section already exists', () => {
-      const existing = '# AIOX Integration Section\n.aiox-core/\n';
+    it('should skip if LMAS section already exists', () => {
+      const existing = '# LMAS Integration Section\n.lmas-core/\n';
       const merged = mergeGitignore(existing);
 
       expect(merged).toBe(existing);
@@ -224,7 +224,7 @@ describe('Gitignore Generator', () => {
       expect(result.success).toBe(true);
       expect(result.mode).toBe('merged');
       expect(result.content).toContain('# Existing');
-      expect(result.content).toContain('AIOX Integration Section');
+      expect(result.content).toContain('LMAS Integration Section');
     });
 
     it('should support dry run mode', () => {
@@ -245,30 +245,30 @@ describe('Gitignore Generator', () => {
     });
   });
 
-  describe('hasAioxIntegration', () => {
+  describe('hasLmasIntegration', () => {
     it('should return false for empty directory', () => {
-      expect(hasAioxIntegration(tempDir)).toBe(false);
+      expect(hasLmasIntegration(tempDir)).toBe(false);
     });
 
-    it('should return true if AIOX section exists', () => {
+    it('should return true if LMAS section exists', () => {
       fs.writeFileSync(
         path.join(tempDir, '.gitignore'),
-        '# AIOX Integration Section\n.aiox-core/\n',
+        '# LMAS Integration Section\n.lmas-core/\n',
       );
 
-      expect(hasAioxIntegration(tempDir)).toBe(true);
+      expect(hasLmasIntegration(tempDir)).toBe(true);
     });
 
-    it('should return true if .aiox-core/ pattern exists', () => {
-      fs.writeFileSync(path.join(tempDir, '.gitignore'), '.aiox-core/local/\n');
+    it('should return true if .lmas-core/ pattern exists', () => {
+      fs.writeFileSync(path.join(tempDir, '.gitignore'), '.lmas-core/local/\n');
 
-      expect(hasAioxIntegration(tempDir)).toBe(true);
+      expect(hasLmasIntegration(tempDir)).toBe(true);
     });
 
     it('should return false for unrelated gitignore', () => {
       fs.writeFileSync(path.join(tempDir, '.gitignore'), 'node_modules/\n');
 
-      expect(hasAioxIntegration(tempDir)).toBe(false);
+      expect(hasLmasIntegration(tempDir)).toBe(false);
     });
   });
 
@@ -288,30 +288,30 @@ describe('Gitignore Generator', () => {
       expect(parsed.comments).toHaveLength(2);
     });
 
-    it('should identify AIOX section', () => {
+    it('should identify LMAS section', () => {
       const content = `# Header
 node_modules/
-# AIOX Integration Section
-.aiox-core/
-# End of AIOX Integration Section
+# LMAS Integration Section
+.lmas-core/
+# End of LMAS Integration Section
 `;
       const parsed = parseGitignore(content);
 
-      expect(parsed.aioxSection).toBeDefined();
-      expect(parsed.aioxSection.start).toBeGreaterThan(0);
+      expect(parsed.lmasSection).toBeDefined();
+      expect(parsed.lmasSection.start).toBeGreaterThan(0);
     });
 
-    it('should return null aioxSection when not present', () => {
+    it('should return null lmasSection when not present', () => {
       const content = 'node_modules/\n';
       const parsed = parseGitignore(content);
 
-      expect(parsed.aioxSection).toBeNull();
+      expect(parsed.lmasSection).toBeNull();
     });
   });
 
   describe('GitignoreTemplates enum', () => {
     it('should have all required templates', () => {
-      expect(GitignoreTemplates.AIOX_BASE).toBe('gitignore-aiox-base.tmpl');
+      expect(GitignoreTemplates.LMAS_BASE).toBe('gitignore-lmas-base.tmpl');
       expect(GitignoreTemplates.NODE).toBe('gitignore-node.tmpl');
       expect(GitignoreTemplates.PYTHON).toBe('gitignore-python.tmpl');
       expect(GitignoreTemplates.BROWNFIELD_MERGE).toBe('gitignore-brownfield-merge.tmpl');

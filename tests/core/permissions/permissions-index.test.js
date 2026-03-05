@@ -5,7 +5,7 @@
  * PermissionMode and OperationGuard, and that the
  * convenience functions produce the expected results.
  *
- * @see .aiox-core/core/permissions/index.js
+ * @see .lmas-core/core/permissions/index.js
  */
 
 // ---------------------------------------------------------------------------
@@ -18,7 +18,7 @@ const mockSetMode = jest.fn().mockResolvedValue({ name: 'auto' });
 const mockCycleMode = jest.fn().mockResolvedValue({ name: 'auto' });
 const mockGuardFn = jest.fn().mockResolvedValue({ proceed: true, operation: 'read' });
 
-jest.mock('../../../.aiox-core/core/permissions/permission-mode', () => ({
+jest.mock('../../../.lmas-core/core/permissions/permission-mode', () => ({
   PermissionMode: jest.fn().mockImplementation(() => ({
     load: mockLoad,
     getBadge: mockGetBadge,
@@ -27,7 +27,7 @@ jest.mock('../../../.aiox-core/core/permissions/permission-mode', () => ({
   })),
 }));
 
-jest.mock('../../../.aiox-core/core/permissions/operation-guard', () => ({
+jest.mock('../../../.lmas-core/core/permissions/operation-guard', () => ({
   OperationGuard: jest.fn().mockImplementation(() => ({
     guard: mockGuardFn,
   })),
@@ -46,7 +46,7 @@ const {
   setMode,
   cycleMode,
   enforcePermission,
-} = require('../../../.aiox-core/core/permissions/index');
+} = require('../../../.lmas-core/core/permissions/index');
 
 // ---------------------------------------------------------------------------
 // Tests

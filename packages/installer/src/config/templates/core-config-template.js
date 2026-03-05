@@ -2,7 +2,7 @@
  * core-config.yaml Template Generator
  * Story 1.6: Environment Configuration
  *
- * Generates YAML configuration file for AIOX framework
+ * Generates YAML configuration file for LMAS framework
  *
  * @module core-config-template
  */
@@ -13,10 +13,10 @@ const yaml = require('js-yaml');
  * Generate core-config.yaml content
  *
  * @param {Object} options - Configuration options
- * @param {string} options.projectType - Project type from Story 1.3 (GREENFIELD|BROWNFIELD|EXISTING_AIOX)
+ * @param {string} options.projectType - Project type from Story 1.3 (GREENFIELD|BROWNFIELD|EXISTING_LMAS)
  * @param {Array<string>} [options.selectedIDEs] - Selected IDEs from Story 1.4
  * @param {Array<Object>} [options.mcpServers] - MCP server configurations from Story 1.5
- * @param {string} [options.aioxVersion] - AIOX version (default: 2.1.0)
+ * @param {string} [options.lmasVersion] - LMAS version (default: 2.1.0)
  * @param {string} [options.userProfile] - User profile from Story 10.2 (bob|advanced)
  * @returns {string} core-config.yaml content
  */
@@ -25,7 +25,7 @@ function generateCoreConfig(options = {}) {
     projectType = 'GREENFIELD',
     selectedIDEs = [],
     mcpServers = [],
-    aioxVersion = '2.1.0',
+    lmasVersion = '2.1.0',
     userProfile = 'advanced', // Default for backward compatibility (Story 10.2)
   } = options;
 
@@ -37,11 +37,11 @@ function generateCoreConfig(options = {}) {
     project: {
       type: projectType,
       installedAt: new Date().toISOString(),
-      version: aioxVersion,
+      version: lmasVersion,
     },
 
     // User Profile Configuration (Story 10.2 - Epic 10: User Profile System)
-    // PRD: AIOX v2.0 "Projeto Bob" - Seção 2
+    // PRD: LMAS v2.0 "Projeto Bob" - Seção 2
     // Controls which interface mode is active for the user
     // Options: bob (simplified) | advanced (full access)
     user_profile: userProfile,
@@ -110,7 +110,7 @@ function generateCoreConfig(options = {}) {
     devStoryLocation: 'docs/stories',
 
     // Slash Command Prefix
-    slashPrefix: 'AIOX',
+    slashPrefix: 'LMAS',
 
     // Framework Documentation Paths
     frameworkDocsLocation: 'docs/framework',
@@ -145,10 +145,10 @@ function generateCoreConfig(options = {}) {
     },
 
     // Resource Locations
-    toolsLocation: '.aiox-core/tools',
-    scriptsLocation: '.aiox-core/scripts',
-    dataLocation: '.aiox-core/data',
-    elicitationLocation: '.aiox-core/elicitation',
+    toolsLocation: '.lmas-core/tools',
+    scriptsLocation: '.lmas-core/scripts',
+    dataLocation: '.lmas-core/data',
+    elicitationLocation: '.lmas-core/elicitation',
     squadsLocation: 'squads',
     mindsLocation: 'outputs/minds',
 
@@ -165,7 +165,7 @@ function generateCoreConfig(options = {}) {
         currentEpic: true,
         currentStory: true,
       },
-      statusFile: '.aiox/project-status.yaml',
+      statusFile: '.lmas/project-status.yaml',
       maxModifiedFiles: 5,
       maxRecentCommits: 2,
     },
@@ -176,22 +176,22 @@ function generateCoreConfig(options = {}) {
       frameworkProtection: true,
       // L1/L2 paths — blocked from editing in project mode
       protected: [
-        '.aiox-core/core/**',
-        '.aiox-core/development/tasks/**',
-        '.aiox-core/development/templates/**',
-        '.aiox-core/development/checklists/**',
-        '.aiox-core/development/workflows/**',
-        '.aiox-core/infrastructure/**',
-        '.aiox-core/constitution.md',
-        'bin/aiox.js',
-        'bin/aiox-init.js',
+        '.lmas-core/core/**',
+        '.lmas-core/development/tasks/**',
+        '.lmas-core/development/templates/**',
+        '.lmas-core/development/checklists/**',
+        '.lmas-core/development/workflows/**',
+        '.lmas-core/infrastructure/**',
+        '.lmas-core/constitution.md',
+        'bin/lmas.js',
+        'bin/lmas-init.js',
       ],
-      // L3 paths — mutable exceptions (allowed even within .aiox-core/)
+      // L3 paths — mutable exceptions (allowed even within .lmas-core/)
       exceptions: [
-        '.aiox-core/data/**',
-        '.aiox-core/development/agents/*/MEMORY.md',
-        '.aiox-core/core/config/schemas/**',
-        '.aiox-core/core/config/template-overrides.js',
+        '.lmas-core/data/**',
+        '.lmas-core/development/agents/*/MEMORY.md',
+        '.lmas-core/core/config/schemas/**',
+        '.lmas-core/core/config/template-overrides.js',
       ],
     },
 

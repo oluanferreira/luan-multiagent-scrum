@@ -7,7 +7,7 @@
  * @story 3.5 - Human Review Orchestration
  */
 
-const { FocusAreaRecommender } = require('../../../.aiox-core/core/quality-gates/focus-area-recommender');
+const { FocusAreaRecommender } = require('../../../.lmas-core/core/quality-gates/focus-area-recommender');
 
 describe('FocusAreaRecommender', () => {
   let recommender;
@@ -94,11 +94,11 @@ describe('FocusAreaRecommender', () => {
       expect(analysis.riskLevel).toBe('critical');
     });
 
-    it('should detect AIOX framework changes', () => {
+    it('should detect LMAS framework changes', () => {
       const files = ['src/agents/developer.js', 'src/workflows/review.yaml'];
       const analysis = recommender.analyzeChangedFiles(files);
 
-      expect(analysis.categories['aiox-core']).toBeDefined();
+      expect(analysis.categories['lmas-core']).toBeDefined();
     });
 
     it('should detect configuration changes', () => {
@@ -181,7 +181,7 @@ describe('FocusAreaRecommender', () => {
           ux: ['a.js'],
           configuration: ['b.yaml'],
           performance: ['c.js'],
-          'aiox-core': ['d.js'],
+          'lmas-core': ['d.js'],
         },
       };
       const secondary = recommender.determineSecondaryAreas(fileAnalysis, {});

@@ -7,7 +7,7 @@ const {
   _renderLatencyChart,
   _generateSparkline,
   _timeAgo,
-} = require('../../.aiox-core/core/graph-dashboard/renderers/stats-renderer');
+} = require('../../.lmas-core/core/graph-dashboard/renderers/stats-renderer');
 
 const SAMPLE_REGISTRY = {
   totalEntities: 142,

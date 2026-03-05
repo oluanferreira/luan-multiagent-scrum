@@ -3,9 +3,9 @@
  * @story 6.19 - IDE Command Auto-Sync System
  */
 
-const claudeCode = require('../../.aiox-core/infrastructure/scripts/ide-sync/transformers/claude-code');
-const cursor = require('../../.aiox-core/infrastructure/scripts/ide-sync/transformers/cursor');
-const antigravity = require('../../.aiox-core/infrastructure/scripts/ide-sync/transformers/antigravity');
+const claudeCode = require('../../.lmas-core/infrastructure/scripts/ide-sync/transformers/claude-code');
+const cursor = require('../../.lmas-core/infrastructure/scripts/ide-sync/transformers/cursor');
+const antigravity = require('../../.lmas-core/infrastructure/scripts/ide-sync/transformers/antigravity');
 
 describe('IDE Transformers', () => {
   // Sample agent data for testing
@@ -73,7 +73,7 @@ describe('IDE Transformers', () => {
 
     it('should add sync footer if not present', () => {
       const result = claudeCode.transform(sampleAgent);
-      expect(result).toContain('Synced from .aiox-core/development/agents/dev.md');
+      expect(result).toContain('Synced from .lmas-core/development/agents/dev.md');
     });
 
     it('should not duplicate sync footer', () => {
@@ -81,7 +81,7 @@ describe('IDE Transformers', () => {
         ...sampleAgent,
         raw:
           sampleAgent.raw +
-          '\n---\n*AIOX Agent - Synced from .aiox-core/development/agents/dev.md*',
+          '\n---\n*LMAS Agent - Synced from .lmas-core/development/agents/dev.md*',
       };
       const result = claudeCode.transform(agentWithFooter);
       const footerCount = (result.match(/Synced from/g) || []).length;

@@ -1,13 +1,13 @@
 /**
- * @fileoverview Smart Merge Module for AIOX Installer
+ * @fileoverview Smart Merge Module for LMAS Installer
  *
  * This module provides intelligent merging capabilities for configuration files
- * during AIOX installation in brownfield projects. Instead of overwriting
+ * during LMAS installation in brownfield projects. Instead of overwriting
  * existing files, it can merge new content while preserving user customizations.
  *
  * Supported file types:
  * - .env files: Key-based merge (adds new variables, preserves existing)
- * - .md files: Section-based merge using AIOX-MANAGED markers
+ * - .md files: Section-based merge using LMAS-MANAGED markers
  * - .yaml/.yml files: Deep merge with target-wins (Phase 1 — Story INS-4.7)
  *
  * @module merger
@@ -44,7 +44,7 @@ const { parseEnvFile } = require('./parsers/env-parser.js');
 const {
   parseMarkdownSections,
   slugify,
-  hasAioxMarkers,
+  hasLmasMarkers,
 } = require('./parsers/markdown-section-parser.js');
 
 module.exports = {
@@ -70,5 +70,5 @@ module.exports = {
   parseEnvFile,
   parseMarkdownSections,
   slugify,
-  hasAioxMarkers,
+  hasLmasMarkers,
 };

@@ -20,8 +20,8 @@ describeIntegration('Google Workspace Tool Helpers', () => {
   let googleWorkspaceTool;
 
   beforeAll(async () => {
-    // Set search path to aiox-core/tools
-    const toolsPath = path.join(__dirname, '../../aiox-core/tools');
+    // Set search path to lmas-core/tools
+    const toolsPath = path.join(__dirname, '../../lmas-core/tools');
     toolResolver.setSearchPaths([toolsPath]);
 
     // Resolve Google Workspace tool

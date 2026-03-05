@@ -5,13 +5,13 @@ const path = require('path');
  * Detects the type of project in the current directory
  * 
  * Detection Priority Order:
- * 1. EXISTING_AIOX - .aiox-core/ directory exists
+ * 1. EXISTING_LMAS - .lmas-core/ directory exists
  * 2. GREENFIELD - directory is empty
  * 3. BROWNFIELD - package.json OR .git exists
  * 4. UNKNOWN - directory has files but no recognized markers
  * 
  * @param {string} targetDir - Directory to analyze (defaults to process.cwd())
- * @returns {string} 'GREENFIELD' | 'BROWNFIELD' | 'EXISTING_AIOX' | 'UNKNOWN'
+ * @returns {string} 'GREENFIELD' | 'BROWNFIELD' | 'EXISTING_LMAS' | 'UNKNOWN'
  * @throws {Error} If directory cannot be accessed
  * 
  * @example
@@ -39,12 +39,12 @@ function detectProjectType(targetDir = process.cwd()) {
       throw new Error(`Directory does not exist: ${normalizedDir}`);
     }
 
-    // Check for AIOX installation markers (use path.join for security)
-    const hasAioxCore = fs.existsSync(path.join(normalizedDir, '.aiox-core'));
+    // Check for LMAS installation markers (use path.join for security)
+    const hasLmasCore = fs.existsSync(path.join(normalizedDir, '.lmas-core'));
     
-    // If AIOX already installed, return immediately (highest priority)
-    if (hasAioxCore) {
-      return 'EXISTING_AIOX';
+    // If LMAS already installed, return immediately (highest priority)
+    if (hasLmasCore) {
+      return 'EXISTING_LMAS';
     }
 
     // Check directory contents

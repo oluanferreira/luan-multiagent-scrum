@@ -1,6 +1,6 @@
 /**
  * STORY-1.1: CLI Entry Point Unit Tests
- * Tests for bin/aiox.js command routing and version checking
+ * Tests for bin/lmas.js command routing and version checking
  */
 
 const fs = require('fs');
@@ -8,7 +8,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 
 describe('CLI Entry Point', () => {
-  const cliPath = path.join(__dirname, '../../bin/aiox.js');
+  const cliPath = path.join(__dirname, '../../bin/lmas.js');
 
   describe('Node.js Version Check', () => {
     it('should have engines field in package.json requiring Node 18+', () => {
@@ -21,7 +21,7 @@ describe('CLI Entry Point', () => {
     });
 
     it('should have proper module structure', () => {
-      const cliPath = path.join(__dirname, '../../bin/aiox.js');
+      const cliPath = path.join(__dirname, '../../bin/lmas.js');
       const cliContent = fs.readFileSync(cliPath, 'utf8');
 
       // Verify CLI has proper structure
@@ -58,7 +58,7 @@ describe('CLI Entry Point', () => {
       child.on('close', (code) => {
         expect(code).toBe(0);
         expect(output).toContain('USAGE');
-        expect(output).toContain('npx aiox-core@latest');
+        expect(output).toContain('npx lmas-core@latest');
         done();
       });
     });
@@ -94,7 +94,7 @@ describe('CLI Entry Point', () => {
       child.on('close', (code) => {
         // Doctor may exit with 0 or 1 depending on system state
         const combined = output + errors;
-        expect(combined).toContain('AIOX Doctor');
+        expect(combined).toContain('LMAS Doctor');
         done();
       });
     });
@@ -118,7 +118,7 @@ describe('CLI Entry Point', () => {
 
   describe('Shebang', () => {
     it('should have proper shebang for cross-platform compatibility', () => {
-      const cliPath = path.join(__dirname, '../../bin/aiox.js');
+      const cliPath = path.join(__dirname, '../../bin/lmas.js');
       const cliContent = fs.readFileSync(cliPath, 'utf8');
       
       expect(cliContent.startsWith('#!/usr/bin/env node')).toBe(true);

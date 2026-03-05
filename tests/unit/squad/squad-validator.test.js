@@ -24,7 +24,7 @@ const {
   SquadValidator,
   ValidationErrorCodes,
   TASK_REQUIRED_FIELDS,
-} = require('../../../.aiox-core/development/scripts/squad');
+} = require('../../../.lmas-core/development/scripts/squad');
 
 // Test fixtures path
 const FIXTURES_PATH = path.join(__dirname, 'fixtures');

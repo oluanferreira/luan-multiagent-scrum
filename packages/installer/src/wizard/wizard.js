@@ -4,15 +4,15 @@ const {
   getModeOptions,
   validateModeSelection,
   InstallationMode,
-} = require('../../../../.aiox-core/infrastructure/scripts/documentation-integrity/mode-detector');
+} = require('../../../../.lmas-core/infrastructure/scripts/documentation-integrity/mode-detector');
 
 /**
- * Interactive Wizard for AIOX Installation
+ * Interactive Wizard for LMAS Installation
  *
  * Supports three installation modes:
  * - GREENFIELD: New project - generates all docs and config
  * - BROWNFIELD: Existing project - analyzes and adapts
- * - FRAMEWORK_DEV: Contributing to aiox-core itself
+ * - FRAMEWORK_DEV: Contributing to lmas-core itself
  *
  * @module wizard
  * @version 2.0.0
@@ -32,7 +32,7 @@ async function runWizard(options = {}) {
 
   try {
     // Step 1: Welcome screen
-    console.log('🚀 Welcome to AIOX Installer\n');
+    console.log('🚀 Welcome to LMAS Installer\n');
 
     // Step 2: Detect installation mode (Story 6.9)
     console.log('📊 Analyzing project directory...');
@@ -209,9 +209,9 @@ async function elicitDeploymentConfig() {
 async function confirmProjectType(detectedType) {
   // Kept for backward compatibility
   const typeDescriptions = {
-    GREENFIELD: 'New project - AIOX will create complete structure',
-    BROWNFIELD: 'Existing project - AIOX will integrate with current setup',
-    EXISTING_AIOX: 'AIOX already installed - Would you like to update or reinstall?',
+    GREENFIELD: 'New project - LMAS will create complete structure',
+    BROWNFIELD: 'Existing project - LMAS will integrate with current setup',
+    EXISTING_LMAS: 'LMAS already installed - Would you like to update or reinstall?',
     UNKNOWN: 'Unknown project type - Manual selection required',
   };
 

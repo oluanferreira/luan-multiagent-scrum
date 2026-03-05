@@ -67,7 +67,7 @@ function createMockProject(opts = {}) {
     fs.mkdirSync(path.join(tmpDir, '.synapse', 'sessions'), { recursive: true });
   }
 
-  const engineDir = path.join(tmpDir, '.aiox-core', 'core', 'synapse');
+  const engineDir = path.join(tmpDir, '.lmas-core', 'core', 'synapse');
   fs.mkdirSync(engineDir, { recursive: true });
 
   const engineCode = opts.engineCode || `

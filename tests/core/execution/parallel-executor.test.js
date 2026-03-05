@@ -6,7 +6,7 @@
 const {
   ParallelExecutor,
   ParallelMode,
-} = require('../../../.aiox-core/core/execution/parallel-executor');
+} = require('../../../.lmas-core/core/execution/parallel-executor');
 
 describe('ParallelExecutor', () => {
   let executor;

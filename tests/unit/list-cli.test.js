@@ -9,9 +9,9 @@
 const path = require('path');
 
 // Test modules
-const { formatTree, formatTreeCollapsed, groupWorkers } = require('../../.aiox-core/cli/commands/workers/formatters/list-tree');
-const { formatTable, formatJSON, formatYAML, formatList, formatCount, truncate } = require('../../.aiox-core/cli/commands/workers/formatters/list-table');
-const { paginate, formatPaginationInfo, formatPaginationHint } = require('../../.aiox-core/cli/commands/workers/utils/pagination');
+const { formatTree, formatTreeCollapsed, groupWorkers } = require('../../.lmas-core/cli/commands/workers/formatters/list-tree');
+const { formatTable, formatJSON, formatYAML, formatList, formatCount, truncate } = require('../../.lmas-core/cli/commands/workers/formatters/list-table');
+const { paginate, formatPaginationInfo, formatPaginationHint } = require('../../.lmas-core/cli/commands/workers/utils/pagination');
 
 // Mock workers for testing
 const mockWorkers = [
@@ -21,7 +21,7 @@ const mockWorkers = [
     category: 'data',
     subcategory: 'transformation',
     tags: ['etl', 'json', 'csv'],
-    path: '.aiox-core/tasks/json-csv-transformer.md',
+    path: '.lmas-core/tasks/json-csv-transformer.md',
   },
   {
     id: 'csv-json-transformer',
@@ -29,7 +29,7 @@ const mockWorkers = [
     category: 'data',
     subcategory: 'transformation',
     tags: ['etl', 'json', 'csv'],
-    path: '.aiox-core/tasks/csv-json-transformer.md',
+    path: '.lmas-core/tasks/csv-json-transformer.md',
   },
   {
     id: 'json-validator',
@@ -37,7 +37,7 @@ const mockWorkers = [
     category: 'data',
     subcategory: 'validation',
     tags: ['validation', 'schema', 'json'],
-    path: '.aiox-core/tasks/json-validator.md',
+    path: '.lmas-core/tasks/json-validator.md',
   },
   {
     id: 'unit-test-runner',
@@ -45,7 +45,7 @@ const mockWorkers = [
     category: 'testing',
     subcategory: 'unit',
     tags: ['testing', 'unit', 'jest'],
-    path: '.aiox-core/tasks/unit-test-runner.md',
+    path: '.lmas-core/tasks/unit-test-runner.md',
   },
   {
     id: 'api-generator',
@@ -53,7 +53,7 @@ const mockWorkers = [
     category: 'code',
     subcategory: 'generation',
     tags: ['api', 'rest', 'openapi'],
-    path: '.aiox-core/tasks/api-generator.md',
+    path: '.lmas-core/tasks/api-generator.md',
   },
 ];
 
@@ -114,8 +114,8 @@ describe('Tree Formatter', () => {
 
   test('formatTree includes usage hints', () => {
     const output = formatTree(mockWorkers, {});
-    expect(output).toContain('aiox workers info <id>');
-    expect(output).toContain('aiox workers search <query>');
+    expect(output).toContain('lmas workers info <id>');
+    expect(output).toContain('lmas workers search <query>');
   });
 
   test('formatTree shows verbose debug when enabled', () => {
@@ -389,7 +389,7 @@ describe('Performance Requirements', () => {
     category: ['data', 'testing', 'code', 'template'][i % 4],
     subcategory: ['transformation', 'validation', 'unit', 'generation'][i % 4],
     tags: ['tag1', 'tag2', 'tag3'],
-    path: `.aiox-core/tasks/worker-${i}.md`,
+    path: `.lmas-core/tasks/worker-${i}.md`,
   }));
 
   test('formatTree handles 200+ workers under 100ms', () => {

@@ -1,18 +1,18 @@
 /**
  * Visual Feedback Helpers
  *
- * Spinners, progress bars, and status indicators using AIOX Color System v4.0.4
+ * Spinners, progress bars, and status indicators using LMAS Color System v4.0.4
  *
  * @module wizard/feedback
  */
 
 const ora = require('ora');
 const cliProgress = require('cli-progress');
-const { colors, status, headings } = require('../utils/aiox-colors');
+const { colors, status, headings } = require('../utils/lmas-colors');
 const { t } = require('./i18n');
 
 /**
- * Create and start a spinner with AIOX styling
+ * Create and start a spinner with LMAS styling
  *
  * @param {string} text - Spinner text
  * @param {Object} options - Spinner options
@@ -73,7 +73,7 @@ function showTip(message) {
 }
 
 /**
- * Create progress bar with AIOX styling
+ * Create progress bar with LMAS styling
  *
  * @param {number} total - Total steps
  * @param {Object} options - Progress bar options

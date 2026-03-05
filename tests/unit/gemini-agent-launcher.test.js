@@ -9,7 +9,7 @@ const {
   hasAgent,
   buildActivationPrompt,
   commandNameForAgent,
-} = require('../../packages/gemini-aiox-extension/commands/lib/agent-launcher');
+} = require('../../packages/gemini-lmas-extension/commands/lib/agent-launcher');
 
 describe('gemini agent launcher', () => {
   let tmpRoot;
@@ -28,29 +28,29 @@ describe('gemini agent launcher', () => {
   });
 
   it('lists canonical agents from source-of-truth directory', () => {
-    write(path.join(tmpRoot, '.aiox-core', 'development', 'agents', 'dev.md'), '# dev');
-    write(path.join(tmpRoot, '.aiox-core', 'development', 'agents', 'architect.md'), '# architect');
-    write(path.join(tmpRoot, '.aiox-core', 'development', 'agents', '_README.md'), '# ignore');
+    write(path.join(tmpRoot, '.lmas-core', 'development', 'agents', 'dev.md'), '# dev');
+    write(path.join(tmpRoot, '.lmas-core', 'development', 'agents', 'architect.md'), '# architect');
+    write(path.join(tmpRoot, '.lmas-core', 'development', 'agents', '_README.md'), '# ignore');
 
     const result = listAvailableAgents(tmpRoot);
     expect(result).toEqual(['architect', 'dev']);
   });
 
   it('detects agent presence in canonical or gemini mirrored folders', () => {
-    write(path.join(tmpRoot, '.gemini', 'rules', 'AIOX', 'agents', 'qa.md'), '# qa');
+    write(path.join(tmpRoot, '.gemini', 'rules', 'LMAS', 'agents', 'qa.md'), '# qa');
     expect(hasAgent(tmpRoot, 'qa')).toBe(true);
     expect(hasAgent(tmpRoot, 'missing')).toBe(false);
   });
 
   it('builds deterministic activation prompt', () => {
     const prompt = buildActivationPrompt('devops');
-    expect(prompt).toContain('.aiox-core/development/agents/devops.md');
+    expect(prompt).toContain('.lmas-core/development/agents/devops.md');
     expect(prompt).toContain('generate-greeting.js devops');
     expect(prompt).toContain('*exit');
   });
 
   it('maps command name correctly for master agent', () => {
-    expect(commandNameForAgent('aiox-master')).toBe('/aiox-master');
-    expect(commandNameForAgent('dev')).toBe('/aiox-dev');
+    expect(commandNameForAgent('lmas-master')).toBe('/lmas-master');
+    expect(commandNameForAgent('dev')).toBe('/lmas-dev');
   });
 });

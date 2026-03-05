@@ -51,7 +51,7 @@ describe('Wizard IDE Flow Integration', () => {
       const agentFolder = path.join(testDir, '.cursor', 'rules');
       expect(await fs.pathExists(agentFolder)).toBe(true);
 
-      // Verify content has AIOX branding
+      // Verify content has LMAS branding
       const content = await fs.readFile(configPath, 'utf8');
       expect(content).toContain('LMAS');
       expect(content).toContain('Development Rules');
@@ -81,7 +81,7 @@ describe('Wizard IDE Flow Integration', () => {
 
       // Verify agent folders were created
       expect(await fs.pathExists(path.join(testDir, '.cursor', 'rules'))).toBe(true);
-      expect(await fs.pathExists(path.join(testDir, '.gemini', 'rules', 'AIOX', 'agents'))).toBe(true);
+      expect(await fs.pathExists(path.join(testDir, '.gemini', 'rules', 'LMAS', 'agents'))).toBe(true);
       expect(await fs.pathExists(path.join(testDir, '.github', 'agents'))).toBe(true);
     });
 
@@ -286,7 +286,7 @@ describe('Wizard IDE Flow Integration', () => {
       const configPath = path.join(testDir, '.cursor', 'rules.md');
       const content = await fs.readFile(configPath, 'utf8');
 
-      // Template should be generated with AIOX content
+      // Template should be generated with LMAS content
       expect(content).toContain('LMAS');
       expect(content).toContain('Development Rules');
       expect(content).toContain('Story-Driven Development');

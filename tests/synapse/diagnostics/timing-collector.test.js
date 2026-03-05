@@ -15,7 +15,7 @@ const os = require('os');
 const path = require('path');
 
 const { collectTimingMetrics, LOADER_TIER_MAP, MAX_STALENESS_MS } = require(
-  '../../../.aiox-core/core/synapse/diagnostics/collectors/timing-collector',
+  '../../../.lmas-core/core/synapse/diagnostics/collectors/timing-collector',
 );
 
 // ---------------------------------------------------------------------------

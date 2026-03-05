@@ -2,7 +2,7 @@
  * Integration Test Suite: Utility Scripts Integration - Part 2
  * 
  * Story: 3.5 - Utility Script Integration Part 2
- * Purpose: Validate integration of 22 utility scripts into AIOX framework
+ * Purpose: Validate integration of 22 utility scripts into LMAS framework
  * 
  * Tests:
  * 1. Load all 22 utilities successfully (no errors)
@@ -18,8 +18,8 @@ const { execSync } = require('child_process');
 
 // Test configuration
 const ROOT_PATH = path.resolve(__dirname, '..', '..');
-const UTILS_PATH = path.join(ROOT_PATH, 'aiox-core', 'utils');
-const AGENTS_PATH = path.join(ROOT_PATH, 'aiox-core', 'agents');
+const UTILS_PATH = path.join(ROOT_PATH, 'lmas-core', 'utils');
+const AGENTS_PATH = path.join(ROOT_PATH, 'lmas-core', 'agents');
 
 // 22 utilities to test (from Story 3.5)
 const UTILITIES_TO_TEST = [
@@ -58,7 +58,7 @@ const UTILITIES_TO_TEST = [
 
 // Agents to test
 const AGENTS_TO_TEST = [
-  'aiox-master',
+  'lmas-master',
   'architect',
   'dev',
   'qa',

@@ -25,7 +25,7 @@ const {
   BrownfieldPhase,
   PostDiscoveryChoice,
   PhaseFailureAction,
-} = require('../../../.aiox-core/core/orchestration/brownfield-handler');
+} = require('../../../.lmas-core/core/orchestration/brownfield-handler');
 
 // ═══════════════════════════════════════════════════════════════════════════════════
 //                              TEST SETUP
@@ -103,7 +103,7 @@ describe('BrownfieldHandler', () => {
 
     test('should set correct workflow path', () => {
       expect(handler.workflowPath).toBe(
-        path.join(TEST_PROJECT_ROOT, '.aiox-core/development/workflows/brownfield-discovery.yaml'),
+        path.join(TEST_PROJECT_ROOT, '.lmas-core/development/workflows/brownfield-discovery.yaml'),
       );
     });
   });

@@ -20,13 +20,13 @@ const {
   ConfigTemplates,
   DeploymentWorkflow,
   DeploymentPlatform,
-} = require('../../../.aiox-core/infrastructure/scripts/documentation-integrity/config-generator');
+} = require('../../../.lmas-core/infrastructure/scripts/documentation-integrity/config-generator');
 
 describe('Config Generator', () => {
   let tempDir;
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiox-configgen-test-'));
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lmas-configgen-test-'));
   });
 
   afterEach(() => {
@@ -215,13 +215,13 @@ describe('Config Generator', () => {
       expect(parsed.project.analysis).toBeDefined();
     });
 
-    it('should create .aiox-core directory', () => {
+    it('should create .lmas-core directory', () => {
       const context = buildConfigContext('test', 'greenfield', {});
 
       generateConfig(tempDir, 'greenfield', context);
 
-      expect(fs.existsSync(path.join(tempDir, '.aiox-core'))).toBe(true);
-      expect(fs.existsSync(path.join(tempDir, '.aiox-core', 'core-config.yaml'))).toBe(true);
+      expect(fs.existsSync(path.join(tempDir, '.lmas-core'))).toBe(true);
+      expect(fs.existsSync(path.join(tempDir, '.lmas-core', 'core-config.yaml'))).toBe(true);
     });
 
     it('should support dry run mode', () => {
@@ -231,7 +231,7 @@ describe('Config Generator', () => {
 
       expect(result.success).toBe(true);
       expect(result.content).toBeTruthy();
-      expect(fs.existsSync(path.join(tempDir, '.aiox-core'))).toBe(false);
+      expect(fs.existsSync(path.join(tempDir, '.lmas-core'))).toBe(false);
     });
 
     it('should include devLoadAlwaysFiles', () => {

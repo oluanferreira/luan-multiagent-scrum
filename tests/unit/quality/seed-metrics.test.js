@@ -12,7 +12,7 @@ const {
   generateLayer1Run,
   generateLayer2Run,
   generateLayer3Run,
-} = require('../../../.aiox-core/quality/seed-metrics');
+} = require('../../../.lmas-core/quality/seed-metrics');
 
 describe('Seed Metrics Generator', () => {
   describe('generateLayer1Run', () => {

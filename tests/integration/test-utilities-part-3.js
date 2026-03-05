@@ -47,7 +47,7 @@ let failedCount = 0;
 
 utilities.forEach(util => {
   try {
-    const utilPath = path.join(__dirname, '../../aiox-core/utils', `${util}.js`);
+    const utilPath = path.join(__dirname, '../../lmas-core/utils', `${util}.js`);
     require(utilPath);
     loadResults[util] = 'PASS';
     loadedCount++;
@@ -117,10 +117,10 @@ console.log('\n\n👥 TEST 4: Agent Load Test (4 agents)\n');
 console.log('-'.repeat(60));
 
 const agents = [
-  { name: 'qa', path: '.aiox-core/development/agents/qa.md' },
-  { name: 'po', path: '.aiox-core/development/agents/po.md' },
-  { name: 'devops', path: '.aiox-core/development/agents/devops.md' },
-  { name: 'dev', path: '.aiox-core/development/agents/dev.md' },
+  { name: 'qa', path: '.lmas-core/development/agents/qa.md' },
+  { name: 'po', path: '.lmas-core/development/agents/po.md' },
+  { name: 'devops', path: '.lmas-core/development/agents/devops.md' },
+  { name: 'dev', path: '.lmas-core/development/agents/dev.md' },
 ];
 
 let agentCheckCount = 0;

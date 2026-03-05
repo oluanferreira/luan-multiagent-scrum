@@ -13,9 +13,9 @@
 const path = require('path');
 const fs = require('fs').promises;
 const os = require('os');
-const HealerManager = require('../../.aiox-core/core/health-check/healers');
-const { HealingTier, BackupManager } = require('../../.aiox-core/core/health-check/healers');
-const { CheckStatus } = require('../../.aiox-core/core/health-check/base-check');
+const HealerManager = require('../../.lmas-core/core/health-check/healers');
+const { HealingTier, BackupManager } = require('../../.lmas-core/core/health-check/healers');
+const { CheckStatus } = require('../../.lmas-core/core/health-check/base-check');
 
 // Set timeout for all tests in this file
 jest.setTimeout(30000);

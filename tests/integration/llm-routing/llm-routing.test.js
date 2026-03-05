@@ -17,13 +17,13 @@ const {
   getInstallDir,
   getInstallationSummary,
   LLM_ROUTING_VERSION,
-} = require('../../../.aiox-core/infrastructure/scripts/llm-routing/install-llm-routing');
+} = require('../../../.lmas-core/infrastructure/scripts/llm-routing/install-llm-routing');
 
 describe('LLM Routing Module', () => {
   const isWindows = os.platform() === 'win32';
   const testTemplatesDir = path.join(
     __dirname,
-    '../../../.aiox-core/infrastructure/scripts/llm-routing/templates',
+    '../../../.lmas-core/infrastructure/scripts/llm-routing/templates',
   );
 
   describe('Module Exports', () => {
@@ -205,7 +205,7 @@ describe('LLM Routing Module', () => {
       const installScript = fs.readFileSync(
         path.join(
           __dirname,
-          '../../../.aiox-core/infrastructure/scripts/llm-routing/install-llm-routing.js',
+          '../../../.lmas-core/infrastructure/scripts/llm-routing/install-llm-routing.js',
         ),
         'utf8',
       );
@@ -223,7 +223,7 @@ describe('Environment Variable Handling', () => {
   const isWindows = os.platform() === 'win32';
   const testTemplatesDir = path.join(
     __dirname,
-    '../../../.aiox-core/infrastructure/scripts/llm-routing/templates',
+    '../../../.lmas-core/infrastructure/scripts/llm-routing/templates',
   );
 
   test('claude-free should look for .env file', () => {

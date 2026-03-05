@@ -13,8 +13,8 @@ describe('.env Template Generator', () => {
       const content = generateEnvContent();
 
       expect(content).toContain('NODE_ENV=development');
-      // Version-agnostic: check AIOX_VERSION exists with valid semver format
-      expect(content).toMatch(/AIOX_VERSION=\d+\.\d+\.\d+/);
+      // Version-agnostic: check LMAS_VERSION exists with valid semver format
+      expect(content).toMatch(/LMAS_VERSION=\d+\.\d+\.\d+/);
       expect(content).toContain('OPENAI_API_KEY=');
       expect(content).toContain('ANTHROPIC_API_KEY=');
       expect(content).toContain('# LMAS Environment Configuration');
@@ -84,8 +84,8 @@ describe('.env Template Generator', () => {
       const content = generateEnvExample();
 
       expect(content).toContain('NODE_ENV=development');
-      // Version-agnostic: check AIOX_VERSION exists with valid semver format
-      expect(content).toMatch(/AIOX_VERSION=\d+\.\d+\.\d+/);
+      // Version-agnostic: check LMAS_VERSION exists with valid semver format
+      expect(content).toMatch(/LMAS_VERSION=\d+\.\d+\.\d+/);
       expect(content).toContain('OPENAI_API_KEY=');
       expect(content).toContain('ANTHROPIC_API_KEY=');
       expect(content).toContain('CLICKUP_API_KEY=');
@@ -171,7 +171,7 @@ describe('.env Template Generator', () => {
       const content = generateEnvContent();
 
       // Should have clear section headers
-      expect(content).toContain('# AIOX Core Configuration');
+      expect(content).toContain('# LMAS Core Configuration');
       expect(content).toContain('# LLM Providers');
       expect(content).toContain('# Search & Research Tools');
     });

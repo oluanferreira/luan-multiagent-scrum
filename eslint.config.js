@@ -4,7 +4,7 @@ const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 
 /**
- * AIOX Framework ESLint Configuration
+ * LMAS Framework ESLint Configuration
  * ESLint v9 flat config format
  * @type {import('eslint').Linter.Config[]}
  */
@@ -22,41 +22,41 @@ module.exports = [
       '**/.next/**',
       // Dashboard has its own ESLint config
       'apps/dashboard/**',
-      '**/.aiox-core/_legacy-v4.31.0/**',
+      '**/.lmas-core/_legacy-v4.31.0/**',
       '**/web-bundles/**',
       '**/*.min.js',
-      '**/aiox-core/*.js',
+      '**/lmas-core/*.js',
       '**/templates/squad/**',
       // Squad template - ES modules with placeholder imports
-      '.aiox-core/development/templates/squad-template/**',
+      '.lmas-core/development/templates/squad-template/**',
       // ESM bundle files - auto-generated
       '**/*.esm.js',
       '**/index.esm.js',
       // Legacy and backup files
       '**/*.backup*.js',
-      '**/aiox-init-old.js',
-      '**/aiox-init-v4.js',
+      '**/lmas-init-old.js',
+      '**/lmas-init-v4.js',
       // Scripts that need cleanup (TODO: fix in Story 6.2)
-      '.aiox-core/quality/**',
-      '.aiox-core/scripts/**',
+      '.lmas-core/quality/**',
+      '.lmas-core/scripts/**',
       // Development scripts with known ESLint errors (TODO: fix in future story)
-      '.aiox-core/development/scripts/**',
+      '.lmas-core/development/scripts/**',
       '.claude/commands/LMAS/scripts/**',
       // CLI files with legacy issues (TODO: fix)
-      '.aiox-core/cli/**',
-      '.aiox-core/infrastructure/scripts/**',
+      '.lmas-core/cli/**',
+      '.lmas-core/infrastructure/scripts/**',
       // Bin files with legacy issues
-      'bin/aiox-init*.js',
+      'bin/lmas-init*.js',
       'bin/migrate-*.js',
       // Template files with placeholder syntax
-      '.aiox-core/product/templates/**',
+      '.lmas-core/product/templates/**',
       // Health Dashboard - uses Vite/React with ES modules
       'tools/health-dashboard/**',
       // Core orchestration/execution - legacy code with no-undef errors (TODO: fix)
-      '.aiox-core/core/orchestration/**',
-      '.aiox-core/core/execution/**',
+      '.lmas-core/core/orchestration/**',
+      '.lmas-core/core/execution/**',
       // Hook integrations - legacy code (TODO: fix)
-      '.aiox-core/hooks/**',
+      '.lmas-core/hooks/**',
       // Pro module - legacy code
       'pro/**',
       // Glue scripts

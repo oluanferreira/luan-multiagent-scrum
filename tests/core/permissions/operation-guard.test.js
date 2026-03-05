@@ -5,7 +5,7 @@
  * permission guard enforcement, logging, and statistics.
  */
 
-jest.mock('../../../.aiox-core/core/permissions/permission-mode', () => {
+jest.mock('../../../.lmas-core/core/permissions/permission-mode', () => {
   class PermissionMode {
     constructor() { this.mode = 'ask'; }
     async load() {}
@@ -15,7 +15,7 @@ jest.mock('../../../.aiox-core/core/permissions/permission-mode', () => {
   return { PermissionMode };
 });
 
-const { OperationGuard } = require('../../../.aiox-core/core/permissions/operation-guard');
+const { OperationGuard } = require('../../../.lmas-core/core/permissions/operation-guard');
 
 describe('operation-guard', () => {
   let guard;

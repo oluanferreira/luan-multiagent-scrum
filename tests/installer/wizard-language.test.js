@@ -19,9 +19,9 @@ describe('ACT-12: Language delegated to Claude Code settings.json', () => {
   let tempDir;
 
   beforeEach(async () => {
-    tempDir = path.join(os.tmpdir(), `aiox-test-lang-${Date.now()}`);
+    tempDir = path.join(os.tmpdir(), `lmas-test-lang-${Date.now()}`);
     await fse.ensureDir(tempDir);
-    await fse.ensureDir(path.join(tempDir, '.aiox-core'));
+    await fse.ensureDir(path.join(tempDir, '.lmas-core'));
   });
 
   afterEach(async () => {
@@ -36,7 +36,7 @@ describe('ACT-12: Language delegated to Claude Code settings.json', () => {
 
     expect(result.coreConfigCreated).toBe(true);
 
-    const configPath = path.join(tempDir, '.aiox-core', 'core-config.yaml');
+    const configPath = path.join(tempDir, '.lmas-core', 'core-config.yaml');
     const content = await fse.readFile(configPath, 'utf8');
     const config = yaml.load(content);
 
@@ -52,7 +52,7 @@ describe('ACT-12: Language delegated to Claude Code settings.json', () => {
 
     expect(result.coreConfigCreated).toBe(true);
 
-    const configPath = path.join(tempDir, '.aiox-core', 'core-config.yaml');
+    const configPath = path.join(tempDir, '.lmas-core', 'core-config.yaml');
     const content = await fse.readFile(configPath, 'utf8');
     const config = yaml.load(content);
 

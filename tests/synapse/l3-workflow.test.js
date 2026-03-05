@@ -10,8 +10,8 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const LayerProcessor = require('../../.aiox-core/core/synapse/layers/layer-processor');
-const L3WorkflowProcessor = require('../../.aiox-core/core/synapse/layers/l3-workflow');
+const LayerProcessor = require('../../.lmas-core/core/synapse/layers/layer-processor');
+const L3WorkflowProcessor = require('../../.lmas-core/core/synapse/layers/l3-workflow');
 
 jest.setTimeout(30000);
 

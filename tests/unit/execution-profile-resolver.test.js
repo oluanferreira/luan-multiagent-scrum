@@ -2,7 +2,7 @@
 
 const {
   resolveExecutionProfile,
-} = require('../../.aiox-core/core/orchestration/execution-profile-resolver');
+} = require('../../.lmas-core/core/orchestration/execution-profile-resolver');
 
 describe('execution-profile-resolver', () => {
   it('enforces safe profile for production context', () => {

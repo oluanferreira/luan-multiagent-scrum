@@ -7,7 +7,7 @@
 
 INPUT=$(cat)
 
-# Extract command from JSON using node (available on all AIOX systems)
+# Extract command from JSON using node (available on all LMAS systems)
 COMMAND=$(echo "$INPUT" | node -e "
   let d='';
   process.stdin.on('data',c=>d+=c);

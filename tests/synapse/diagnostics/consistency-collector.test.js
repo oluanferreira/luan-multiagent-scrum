@@ -12,7 +12,7 @@ const os = require('os');
 const path = require('path');
 
 const { collectConsistencyMetrics, MAX_TIMESTAMP_GAP_MS } = require(
-  '../../../.aiox-core/core/synapse/diagnostics/collectors/consistency-collector',
+  '../../../.lmas-core/core/synapse/diagnostics/collectors/consistency-collector',
 );
 
 let tmpDir;

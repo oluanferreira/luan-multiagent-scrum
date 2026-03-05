@@ -114,7 +114,7 @@ describe('pro-setup CI auth (AC-7, Task 4.6)', () => {
     const result = await proSetup._testing.stepLicenseGateCI({});
 
     expect(result.success).toBe(false);
-    expect(result.error).toContain('AIOX_PRO_EMAIL');
+    expect(result.error).toContain('LMAS_PRO_EMAIL');
   });
 });
 

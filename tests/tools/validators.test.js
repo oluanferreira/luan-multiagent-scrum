@@ -19,7 +19,7 @@ describeIntegration('Complex Tool Validators - Integration Tests', () => {
   let clickupValidator, googleValidator, n8nValidator, supabaseValidator;
 
   beforeAll(async () => {
-    const toolsPath = path.join(__dirname, '../../aiox-core/tools');
+    const toolsPath = path.join(__dirname, '../../lmas-core/tools');
     toolResolver.setSearchPaths([toolsPath]);
 
     const clickupTool = await toolResolver.resolveTool('clickup');

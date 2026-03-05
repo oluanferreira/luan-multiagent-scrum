@@ -9,16 +9,16 @@
  * - No regression vs baseline
  */
 
-const GreetingBuilder = require('../../.aiox-core/development/scripts/greeting-builder');
-const ContextDetector = require('../../.aiox-core/core/session/context-detector');
-const GitConfigDetector = require('../../.aiox-core/infrastructure/scripts/git-config-detector');
+const GreetingBuilder = require('../../.lmas-core/development/scripts/greeting-builder');
+const ContextDetector = require('../../.lmas-core/core/session/context-detector');
+const GitConfigDetector = require('../../.lmas-core/infrastructure/scripts/git-config-detector');
 
 // Mock dependencies for consistent testing
-jest.mock('../../.aiox-core/core/session/context-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/git-config-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/project-status-loader');
+jest.mock('../../.lmas-core/core/session/context-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/git-config-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/project-status-loader');
 
-const { loadProjectStatus } = require('../../.aiox-core/infrastructure/scripts/project-status-loader');
+const { loadProjectStatus } = require('../../.lmas-core/infrastructure/scripts/project-status-loader');
 
 describeIntegration('Greeting Performance Tests', () => {
   let builder;

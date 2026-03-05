@@ -6,7 +6,7 @@ const path = require('path');
 
 const {
   validateGeminiIntegration,
-} = require('../../.aiox-core/infrastructure/scripts/validate-gemini-integration');
+} = require('../../.lmas-core/infrastructure/scripts/validate-gemini-integration');
 
 describe('validate-gemini-integration', () => {
   let tmpRoot;
@@ -25,16 +25,16 @@ describe('validate-gemini-integration', () => {
   });
 
   it('passes when required Gemini files exist', () => {
-    write(path.join(tmpRoot, '.gemini', 'rules', 'AIOX', 'agents', 'dev.md'), '# dev');
-    write(path.join(tmpRoot, '.gemini', 'commands', 'aiox-menu.toml'), 'description = "menu"');
-    write(path.join(tmpRoot, '.gemini', 'commands', 'aiox-dev.toml'), 'description = "dev"');
-    write(path.join(tmpRoot, '.aiox-core', 'development', 'agents', 'dev.md'), '# dev');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'extension.json'), '{}');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'README.md'), '# readme');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'commands', 'aiox-status.js'), '');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'commands', 'aiox-agents.js'), '');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'commands', 'aiox-validate.js'), '');
-    write(path.join(tmpRoot, 'packages', 'gemini-aiox-extension', 'hooks', 'hooks.json'), '{}');
+    write(path.join(tmpRoot, '.gemini', 'rules', 'LMAS', 'agents', 'dev.md'), '# dev');
+    write(path.join(tmpRoot, '.gemini', 'commands', 'lmas-menu.toml'), 'description = "menu"');
+    write(path.join(tmpRoot, '.gemini', 'commands', 'lmas-dev.toml'), 'description = "dev"');
+    write(path.join(tmpRoot, '.lmas-core', 'development', 'agents', 'dev.md'), '# dev');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'extension.json'), '{}');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'README.md'), '# readme');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'commands', 'lmas-status.js'), '');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'commands', 'lmas-agents.js'), '');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'commands', 'lmas-validate.js'), '');
+    write(path.join(tmpRoot, 'packages', 'gemini-lmas-extension', 'hooks', 'hooks.json'), '{}');
 
     const result = validateGeminiIntegration({ projectRoot: tmpRoot });
     expect(result.ok).toBe(true);

@@ -44,7 +44,7 @@ describe('Environment Configuration Integration', () => {
   beforeEach(async () => {
     // Create unique temporary test directory with random suffix to avoid collisions
     testId = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}`;
-    testDir = path.join(os.tmpdir(), `aiox-env-test-${testId}`);
+    testDir = path.join(os.tmpdir(), `lmas-env-test-${testId}`);
     await fs.ensureDir(testDir);
   });
 
@@ -72,8 +72,8 @@ describe('Environment Configuration Integration', () => {
 
       const content = await fs.readFile(envPath, 'utf8');
       expect(content).toContain('NODE_ENV=development');
-      // Version-agnostic: check AIOX_VERSION exists with valid semver format
-      expect(content).toMatch(/AIOX_VERSION=\d+\.\d+\.\d+/);
+      // Version-agnostic: check LMAS_VERSION exists with valid semver format
+      expect(content).toMatch(/LMAS_VERSION=\d+\.\d+\.\d+/);
     });
 
     it('should create .env.example file', async () => {
@@ -103,7 +103,7 @@ describe('Environment Configuration Integration', () => {
 
       expect(result.coreConfigCreated).toBe(true);
 
-      const configPath = path.join(testDir, '.aiox-core', 'core-config.yaml');
+      const configPath = path.join(testDir, '.lmas-core', 'core-config.yaml');
       expect(await fs.pathExists(configPath)).toBe(true);
 
       const content = await fs.readFile(configPath, 'utf8');
@@ -253,7 +253,7 @@ describe('Environment Configuration Integration', () => {
       expect(result.gitignoreUpdated).toBe(true);
 
       // Verify core-config includes wizard state
-      const configPath = path.join(testDir, '.aiox-core', 'core-config.yaml');
+      const configPath = path.join(testDir, '.lmas-core', 'core-config.yaml');
       const configContent = await fs.readFile(configPath, 'utf8');
 
       expect(configContent).toContain('GREENFIELD');
@@ -283,7 +283,7 @@ describe('Environment Configuration Integration', () => {
       });
 
       const yaml = require('js-yaml');
-      const configPath = path.join(testDir, '.aiox-core', 'core-config.yaml');
+      const configPath = path.join(testDir, '.lmas-core', 'core-config.yaml');
       const content = await fs.readFile(configPath, 'utf8');
 
       // Should parse without errors
@@ -305,7 +305,7 @@ describe('Environment Configuration Integration', () => {
         '.env',
         '.env.example',
         '.gitignore',
-        '.aiox-core/core-config.yaml',
+        '.lmas-core/core-config.yaml',
       ];
 
       for (const file of expectedFiles) {
@@ -314,16 +314,16 @@ describe('Environment Configuration Integration', () => {
       }
     });
 
-    it('should create .aiox-core directory if missing', async () => {
-      const aioxcoreDir = path.join(testDir, '.aiox-core');
-      expect(await fs.pathExists(aioxcoreDir)).toBe(false);
+    it('should create .lmas-core directory if missing', async () => {
+      const lmascoreDir = path.join(testDir, '.lmas-core');
+      expect(await fs.pathExists(lmascoreDir)).toBe(false);
 
       await configureEnvironment({
         targetDir: testDir,
         skipPrompts: true,
       });
 
-      expect(await fs.pathExists(aioxcoreDir)).toBe(true);
+      expect(await fs.pathExists(lmascoreDir)).toBe(true);
     });
   });
 });

@@ -28,7 +28,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true; // Directory exists
         // No markers exist
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return false;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -47,7 +47,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test/empty');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return false;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -69,7 +69,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test-brownfield');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false; // No AIOX
+        if (checkPath.includes('.lmas-core')) return false; // No LMAS
         if (checkPath.includes('package.json')) return true; // Has package.json
         if (checkPath.includes('.git')) return false;
         return false;
@@ -88,7 +88,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test-git');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false; // No AIOX
+        if (checkPath.includes('.lmas-core')) return false; // No LMAS
         if (checkPath.includes('package.json')) return false;
         if (checkPath.includes('.git')) return true; // Has .git
         return false;
@@ -105,7 +105,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test/brownfield');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return true;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -119,46 +119,46 @@ describe('Wizard Integration with Project Type Detection', () => {
   });
 
   // ============================================================================
-  // Task 1.3.5.4: Test full wizard flow with EXISTING_AIOX detection
+  // Task 1.3.5.4: Test full wizard flow with EXISTING_LMAS detection
   // ============================================================================
-  describe('EXISTING_AIOX Detection Flow', () => {
-    test('wizard correctly detects and processes EXISTING_AIOX installation', async () => {
-      // Setup: Directory with .aiox-core
+  describe('EXISTING_LMAS Detection Flow', () => {
+    test('wizard correctly detects and processes EXISTING_LMAS installation', async () => {
+      // Setup: Directory with .lmas-core
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath.includes('test-existing')) return true;
-        if (checkPath.endsWith('.aiox-core')) return true;
+        if (checkPath.endsWith('.lmas-core')) return true;
         return true; // Other files exist
       });
-      fs.readdirSync.mockReturnValue(['.aiox-core', 'package.json', '.git']);
+      fs.readdirSync.mockReturnValue(['.lmas-core', 'package.json', '.git']);
 
       const result = await runWizard({ targetDir: '/test-existing' });
 
-      expect(result.projectType).toBe('EXISTING_AIOX');
+      expect(result.projectType).toBe('EXISTING_LMAS');
       expect(result.targetDir).toBe('/test-existing');
-      // Output shows "brownfield" since EXISTING_AIOX is treated as brownfield update
+      // Output shows "brownfield" since EXISTING_LMAS is treated as brownfield update
       expect(console.log).toHaveBeenCalledWith(expect.stringContaining('brownfield'));
     });
 
-    test('confirmProjectType shows update/reinstall message for EXISTING_AIOX', async () => {
-      const confirmed = await confirmProjectType('EXISTING_AIOX');
+    test('confirmProjectType shows update/reinstall message for EXISTING_LMAS', async () => {
+      const confirmed = await confirmProjectType('EXISTING_LMAS');
 
-      expect(confirmed).toBe('EXISTING_AIOX');
+      expect(confirmed).toBe('EXISTING_LMAS');
       expect(console.log).toHaveBeenCalledWith(
         expect.stringContaining('update or reinstall'),
       );
     });
 
-    test('getProjectType helper returns EXISTING_AIOX when .aiox-core exists', () => {
+    test('getProjectType helper returns EXISTING_LMAS when .lmas-core exists', () => {
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath.includes('existing')) return true;
-        if (checkPath.endsWith('.aiox-core')) return true;
+        if (checkPath.endsWith('.lmas-core')) return true;
         return false;
       });
-      fs.readdirSync.mockReturnValue(['.aiox-core']);
+      fs.readdirSync.mockReturnValue(['.lmas-core']);
 
       const type = getProjectType('/test/existing');
 
-      expect(type).toBe('EXISTING_AIOX');
+      expect(type).toBe('EXISTING_LMAS');
     });
   });
 
@@ -174,7 +174,7 @@ describe('Wizard Integration with Project Type Detection', () => {
     });
 
     test('confirmProjectType shows appropriate message for each type', async () => {
-      const types = ['GREENFIELD', 'BROWNFIELD', 'EXISTING_AIOX', 'UNKNOWN'];
+      const types = ['GREENFIELD', 'BROWNFIELD', 'EXISTING_LMAS', 'UNKNOWN'];
 
       for (const type of types) {
         jest.clearAllMocks();
@@ -251,7 +251,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test/downstream');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return false;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -271,7 +271,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test/standalone');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return false;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -289,7 +289,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       const targetPath = path.resolve('/test/consistent');
       fs.existsSync.mockImplementation((checkPath) => {
         if (checkPath === targetPath) return true;
-        if (checkPath.includes('.aiox-core')) return false;
+        if (checkPath.includes('.lmas-core')) return false;
         if (checkPath.includes('package.json')) return true;
         if (checkPath.includes('.git')) return false;
         return false;
@@ -332,7 +332,7 @@ describe('Wizard Integration with Project Type Detection', () => {
       await runWizard({ targetDir: '/test' });
 
       expect(console.log).toHaveBeenCalledWith(
-        expect.stringContaining('Welcome to AIOX Installer'),
+        expect.stringContaining('Welcome to LMAS Installer'),
       );
     });
 

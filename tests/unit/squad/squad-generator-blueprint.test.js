@@ -21,7 +21,7 @@ const {
   SquadGenerator,
   SquadGeneratorError,
   GeneratorErrorCodes,
-} = require('../../../.aiox-core/development/scripts/squad');
+} = require('../../../.lmas-core/development/scripts/squad');
 
 describe('SquadGenerator Blueprint Methods', () => {
   let generator;

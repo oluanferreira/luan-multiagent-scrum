@@ -9,13 +9,13 @@
  */
 
 const readline = require('readline');
-const { maskEmail, openBrowser, promptEmail, recoverLicense, RECOVERY_URL, RECOVERY_MESSAGE } = require('../packages/aiox-pro-cli/src/recover');
+const { maskEmail, openBrowser, promptEmail, recoverLicense, RECOVERY_URL, RECOVERY_MESSAGE } = require('../packages/lmas-pro-cli/src/recover');
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 describe('Recovery Constants', () => {
   test('RECOVERY_URL is the correct portal URL', () => {
-    expect(RECOVERY_URL).toBe('https://aiox-license-server.vercel.app/reset-password');
+    expect(RECOVERY_URL).toBe('https://lmas-license-server.vercel.app/reset-password');
   });
 
   test('RECOVERY_MESSAGE is the anti-enumeration message', () => {
@@ -200,10 +200,10 @@ describe('recoverLicense', () => {
 // ─── CLI alias reset-password ───────────────────────────────────────────────
 
 describe('CLI alias reset-password', () => {
-  test('aiox-pro.js switch handles reset-password same as recover', () => {
+  test('lmas-pro.js switch handles reset-password same as recover', () => {
     // Verify the CLI entry point has reset-password as a case that calls recoverLicense
     const cliSource = require('fs').readFileSync(
-      require('path').join(__dirname, '../packages/aiox-pro-cli/bin/aiox-pro.js'),
+      require('path').join(__dirname, '../packages/lmas-pro-cli/bin/lmas-pro.js'),
       'utf-8'
     );
     // Both cases should exist in the same switch block
@@ -215,7 +215,7 @@ describe('CLI alias reset-password', () => {
 
   test('showHelp includes reset-password as alias for recover', () => {
     const cliSource = require('fs').readFileSync(
-      require('path').join(__dirname, '../packages/aiox-pro-cli/bin/aiox-pro.js'),
+      require('path').join(__dirname, '../packages/lmas-pro-cli/bin/lmas-pro.js'),
       'utf-8'
     );
     expect(cliSource).toMatch(/reset-password\s+.*alias/i);

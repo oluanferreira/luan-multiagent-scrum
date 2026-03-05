@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# AIOX Monitor Hooks Installation Script
+# LMAS Monitor Hooks Installation Script
 #
-# This script installs the AIOX monitor hooks into ~/.claude/hooks/
+# This script installs the LMAS monitor hooks into ~/.claude/hooks/
 # The hooks capture Claude Code events and send them to the monitor server.
 #
 # Usage: ./scripts/install-monitor-hooks.sh
@@ -11,12 +11,12 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-AIOX_ROOT="$(dirname "$SCRIPT_DIR")"
-HOOKS_SOURCE="$AIOX_ROOT/.aiox-core/monitor/hooks"
+LMAS_ROOT="$(dirname "$SCRIPT_DIR")"
+HOOKS_SOURCE="$LMAS_ROOT/.lmas-core/monitor/hooks"
 HOOKS_TARGET="$HOME/.claude/hooks"
 
 echo "╔════════════════════════════════════════════════════════════════╗"
-echo "║              AIOX Monitor Hooks Installer                      ║"
+echo "║              LMAS Monitor Hooks Installer                      ║"
 echo "╚════════════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -75,7 +75,7 @@ echo "║  1. Start the monitor server:                                  ║"
 echo "║     cd apps/monitor-server && bun run dev                      ║"
 echo "║                                                                ║"
 echo "║  2. (Optional) Set custom server URL:                          ║"
-echo "║     export AIOX_MONITOR_URL=http://localhost:4001              ║"
+echo "║     export LMAS_MONITOR_URL=http://localhost:4001              ║"
 echo "║                                                                ║"
 echo "║  3. Start using Claude Code - events will be captured!         ║"
 echo "╚════════════════════════════════════════════════════════════════╝"

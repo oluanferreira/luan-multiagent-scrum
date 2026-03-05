@@ -12,12 +12,12 @@
 const fs = require('fs').promises;
 const path = require('path');
 const yaml = require('yaml');
-const { onPreCompact } = require('../../../.aiox-core/hooks/unified/runners/precompact-runner');
+const { onPreCompact } = require('../../../.lmas-core/hooks/unified/runners/precompact-runner');
 const proDetector = require('../../../bin/utils/pro-detector');
 
 describe('PreCompact Hook Integration', () => {
-  const TEST_PROJECT_DIR = path.join(__dirname, '..', '..', '..', '.aiox-test');
-  const TEST_DIGESTS_DIR = path.join(TEST_PROJECT_DIR, '.aiox', 'session-digests');
+  const TEST_PROJECT_DIR = path.join(__dirname, '..', '..', '..', '.lmas-test');
+  const TEST_DIGESTS_DIR = path.join(TEST_PROJECT_DIR, '.lmas', 'session-digests');
 
   beforeAll(async () => {
     // Create test project directory
@@ -44,13 +44,13 @@ describe('PreCompact Hook Integration', () => {
     console.error.mockRestore();
   });
 
-  describe('End-to-End Flow (with aiox-pro)', () => {
+  describe('End-to-End Flow (with lmas-pro)', () => {
     it('should create digest file when pro is available', async () => {
-      // This test requires actual aiox-pro to be present
+      // This test requires actual lmas-pro to be present
       const proAvailable = proDetector.isProAvailable();
 
       if (!proAvailable) {
-        console.log('[Integration Test] Skipping: aiox-pro not available');
+        console.log('[Integration Test] Skipping: lmas-pro not available');
         return; // Skip test if pro not available
       }
 
@@ -117,7 +117,7 @@ describe('PreCompact Hook Integration', () => {
       if (proAvailable) {
         // If pro is available, we can't properly test the no-pro path in integration
         // This scenario is already covered in unit tests
-        console.log('[Test] Skipping graceful degradation test - aiox-pro is available');
+        console.log('[Test] Skipping graceful degradation test - lmas-pro is available');
         return;
       }
 
@@ -132,7 +132,7 @@ describe('PreCompact Hook Integration', () => {
 
       // Should log graceful message
       expect(console.log).toHaveBeenCalledWith(
-        expect.stringContaining('aiox-pro not available'),
+        expect.stringContaining('lmas-pro not available'),
       );
 
       // No digest file should be created
@@ -148,7 +148,7 @@ describe('PreCompact Hook Integration', () => {
       const proAvailable = proDetector.isProAvailable();
 
       if (!proAvailable) {
-        console.log('[Performance Test] Skipping: aiox-pro not available');
+        console.log('[Performance Test] Skipping: lmas-pro not available');
         return;
       }
 
@@ -195,7 +195,7 @@ describe('PreCompact Hook Integration', () => {
       const proAvailable = proDetector.isProAvailable();
 
       if (!proAvailable) {
-        console.log('[Async Test] Skipping: aiox-pro not available');
+        console.log('[Async Test] Skipping: lmas-pro not available');
         return;
       }
 
@@ -239,7 +239,7 @@ describe('PreCompact Hook Integration', () => {
       const proAvailable = proDetector.isProAvailable();
 
       if (!proAvailable) {
-        console.log('[Schema Test] Skipping: aiox-pro not available');
+        console.log('[Schema Test] Skipping: lmas-pro not available');
         return;
       }
 

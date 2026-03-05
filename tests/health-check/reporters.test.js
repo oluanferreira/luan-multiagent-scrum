@@ -10,13 +10,13 @@
  * @story TD-6 - CI Stability & Test Coverage Improvements
  */
 
-const ReporterManager = require('../../.aiox-core/core/health-check/reporters');
+const ReporterManager = require('../../.lmas-core/core/health-check/reporters');
 const {
   MarkdownReporter,
   JSONReporter,
   ConsoleReporter,
-} = require('../../.aiox-core/core/health-check/reporters');
-const { CheckStatus, CheckSeverity } = require('../../.aiox-core/core/health-check/base-check');
+} = require('../../.lmas-core/core/health-check/reporters');
+const { CheckStatus, CheckSeverity } = require('../../.lmas-core/core/health-check/base-check');
 
 // Set timeout for all tests in this file
 jest.setTimeout(30000);

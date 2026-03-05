@@ -7,11 +7,11 @@
 
 const fs = require('fs').promises;
 const path = require('path');
-const DevContextLoader = require('../../.aiox-core/development/scripts/dev-context-loader');
+const DevContextLoader = require('../../.lmas-core/development/scripts/dev-context-loader');
 
 describe('DevContextLoader', () => {
   let loader;
-  const testCacheDir = path.join(process.cwd(), '.aiox', 'cache-test');
+  const testCacheDir = path.join(process.cwd(), '.lmas', 'cache-test');
 
   beforeEach(async () => {
     loader = new DevContextLoader();

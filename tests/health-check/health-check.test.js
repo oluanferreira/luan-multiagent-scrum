@@ -16,7 +16,7 @@ const {
   CheckStatus,
   CheckRegistry,
   DEFAULT_CONFIG,
-} = require('../../.aiox-core/core/health-check');
+} = require('../../.lmas-core/core/health-check');
 
 // Set timeout for all tests in this file (Jest compatible)
 jest.setTimeout(30000);

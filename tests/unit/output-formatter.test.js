@@ -6,8 +6,8 @@
  * Target: ≥80% coverage
  */
 
-const PersonalizedOutputFormatter = require('../../.aiox-core/infrastructure/scripts/output-formatter');
-const OutputPatternValidator = require('../../.aiox-core/infrastructure/scripts/validate-output-pattern');
+const PersonalizedOutputFormatter = require('../../.lmas-core/infrastructure/scripts/output-formatter');
+const OutputPatternValidator = require('../../.lmas-core/infrastructure/scripts/validate-output-pattern');
 const fs = require('fs');
 const path = require('path');
 
@@ -259,7 +259,7 @@ persona_profile:
       { id: 'ux-design-expert', name: 'Uma', archetype: 'Empathizer', tone: 'empathetic' },
       { id: 'data-engineer', name: 'Dozer', archetype: 'Engineer', tone: 'pragmatic' },
       { id: 'devops', name: 'Operator', archetype: 'Operator', tone: 'pragmatic' },
-      { id: 'aiox-master', name: 'Morpheus', archetype: 'Orchestrator', tone: 'collaborative' },
+      { id: 'lmas-master', name: 'Morpheus', archetype: 'Orchestrator', tone: 'collaborative' },
     ];
 
     agents.forEach(agent => {

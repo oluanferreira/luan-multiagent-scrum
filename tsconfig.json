@@ -20,13 +20,13 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "aiox-core": ["./.aiox-core/core"],
-      "aiox-core/*": ["./.aiox-core/core/*"]
+      "lmas-core": ["./.lmas-core/core"],
+      "lmas-core/*": ["./.lmas-core/core/*"]
     }
   },
   "include": [
     "types/**/*.d.ts",
-    ".aiox-core/**/*",
+    ".lmas-core/**/*",
     "tools/**/*",
     "scripts/**/*",
     "src/**/*",
@@ -43,11 +43,11 @@
     "**/*-tmpl.*",
     "**/*.tmpl.*",
     "**/*-template.*",
-    ".aiox-core/development/templates/**",
-    ".aiox-core.backup*/**",
-    "aiox-core.backup*/**",
-    "aiox-core-deprecated/**",
-    "aiox-core-depracated/**",
+    ".lmas-core/development/templates/**",
+    ".lmas-core.backup*/**",
+    "lmas-core.backup*/**",
+    "lmas-core-deprecated/**",
+    "lmas-core-depracated/**",
     "eslint.config.js"
   ]
 }

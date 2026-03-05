@@ -9,20 +9,20 @@ describe('ensure-manifest', () => {
     });
 
     it('returns false when only manifest file is staged', () => {
-      expect(shouldCheckManifest(['.aiox-core/install-manifest.yaml'])).toBe(false);
+      expect(shouldCheckManifest(['.lmas-core/install-manifest.yaml'])).toBe(false);
     });
 
-    it('returns true when any other .aiox-core file is staged', () => {
-      expect(shouldCheckManifest(['.aiox-core/core-config.yaml'])).toBe(true);
+    it('returns true when any other .lmas-core file is staged', () => {
+      expect(shouldCheckManifest(['.lmas-core/core-config.yaml'])).toBe(true);
       expect(
         shouldCheckManifest([
           'README.md',
-          '.aiox-core/infrastructure/scripts/ide-sync/index.js',
+          '.lmas-core/infrastructure/scripts/ide-sync/index.js',
         ]),
       ).toBe(true);
     });
 
-    it('returns false when only non-.aiox-core files are staged', () => {
+    it('returns false when only non-.lmas-core files are staged', () => {
       expect(shouldCheckManifest(['README.md', 'package.json'])).toBe(false);
     });
   });

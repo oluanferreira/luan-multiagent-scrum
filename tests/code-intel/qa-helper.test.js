@@ -9,10 +9,10 @@ const {
   _calculateCoverageStatus,
   RISK_THRESHOLDS,
   COVERAGE_THRESHOLDS,
-} = require('../../.aiox-core/core/code-intel/helpers/qa-helper');
+} = require('../../.lmas-core/core/code-intel/helpers/qa-helper');
 
 // Mock the code-intel module
-jest.mock('../../.aiox-core/core/code-intel/index', () => ({
+jest.mock('../../.lmas-core/core/code-intel/index', () => ({
   isCodeIntelAvailable: jest.fn(),
   getEnricher: jest.fn(),
   getClient: jest.fn(),
@@ -22,7 +22,7 @@ const {
   isCodeIntelAvailable,
   getEnricher,
   getClient,
-} = require('../../.aiox-core/core/code-intel/index');
+} = require('../../.lmas-core/core/code-intel/index');
 
 // --- Helper to setup mocks ---
 

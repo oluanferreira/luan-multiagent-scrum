@@ -11,8 +11,8 @@ const yaml = require('js-yaml');
 const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 
-const SCHEMAS_DIR = path.join(__dirname, '../../.aiox-core/core/config/schemas');
-const CONFIG_DIR = path.join(__dirname, '../../.aiox-core');
+const SCHEMAS_DIR = path.join(__dirname, '../../.lmas-core/core/config/schemas');
+const CONFIG_DIR = path.join(__dirname, '../../.lmas-core');
 
 function loadSchema(name) {
   const filePath = path.join(SCHEMAS_DIR, name);
@@ -172,8 +172,8 @@ describe('schema-validation — enriched schemas', () => {
       const data = {
         boundary: {
           frameworkProtection: true,
-          protected: ['.aiox-core/core/**'],
-          exceptions: ['.aiox-core/core/config/schemas/**'],
+          protected: ['.lmas-core/core/**'],
+          exceptions: ['.lmas-core/core/config/schemas/**'],
         },
       };
       const validate = ajv.compile(schema);
@@ -200,7 +200,7 @@ describe('schema-validation — enriched schemas', () => {
     test('missing required frameworkProtection produces error', () => {
       const data = {
         boundary: {
-          protected: ['.aiox-core/core/**'],
+          protected: ['.lmas-core/core/**'],
         },
       };
       const validate = ajv.compile(schema);

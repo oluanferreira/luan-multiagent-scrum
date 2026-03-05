@@ -16,26 +16,26 @@
  * - Story ACT-12: Language delegated to Claude Code settings.json
  */
 
-const GreetingBuilder = require('../../.aiox-core/development/scripts/greeting-builder');
-const ContextDetector = require('../../.aiox-core/core/session/context-detector');
-const GitConfigDetector = require('../../.aiox-core/infrastructure/scripts/git-config-detector');
+const GreetingBuilder = require('../../.lmas-core/development/scripts/greeting-builder');
+const ContextDetector = require('../../.lmas-core/core/session/context-detector');
+const GitConfigDetector = require('../../.lmas-core/infrastructure/scripts/git-config-detector');
 
 // Mock dependencies
-jest.mock('../../.aiox-core/core/session/context-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/git-config-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/project-status-loader', () => ({
+jest.mock('../../.lmas-core/core/session/context-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/git-config-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/project-status-loader', () => ({
   loadProjectStatus: jest.fn(),
   formatStatusDisplay: jest.fn(),
 }));
-jest.mock('../../.aiox-core/core/config/config-resolver', () => ({
+jest.mock('../../.lmas-core/core/config/config-resolver', () => ({
   resolveConfig: jest.fn(() => ({
     config: { user_profile: 'advanced' },
     warnings: [],
     legacy: false,
   })),
 }));
-const { resolveConfig: mockResolveConfig } = require('../../.aiox-core/core/config/config-resolver');
-jest.mock('../../.aiox-core/development/scripts/greeting-preference-manager', () => {
+const { resolveConfig: mockResolveConfig } = require('../../.lmas-core/core/config/config-resolver');
+jest.mock('../../.lmas-core/development/scripts/greeting-preference-manager', () => {
   return jest.fn().mockImplementation(() => ({
     getPreference: jest.fn().mockReturnValue('auto'),
     setPreference: jest.fn(),
@@ -43,7 +43,7 @@ jest.mock('../../.aiox-core/development/scripts/greeting-preference-manager', ()
   }));
 });
 
-const { loadProjectStatus, formatStatusDisplay } = require('../../.aiox-core/infrastructure/scripts/project-status-loader');
+const { loadProjectStatus, formatStatusDisplay } = require('../../.lmas-core/infrastructure/scripts/project-status-loader');
 
 describe('GreetingBuilder', () => {
   let builder;

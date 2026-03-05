@@ -5,7 +5,7 @@
  * - Create squad → Validate → List
  * - All templates work correctly
  * - Config inheritance modes work
- * - Generated squads integrate with aiox-core
+ * - Generated squads integrate with lmas-core
  *
  * @see Story SQS-4: Squad Creator Agent + Tasks
  */
@@ -17,7 +17,7 @@ const {
   SquadGenerator,
   SquadValidator,
   SquadLoader,
-} = require('../../../.aiox-core/development/scripts/squad');
+} = require('../../../.lmas-core/development/scripts/squad');
 
 describe('SquadGenerator Integration Tests', () => {
   let tempDir;
@@ -155,7 +155,7 @@ describe('SquadGenerator Integration Tests', () => {
         name: 'extend-config-test',
         configMode: 'extend',
         // Use tempDir as projectRoot to ensure local config files are created
-        // (prevents detection of aiox-core's docs/framework/ configs)
+        // (prevents detection of lmas-core's docs/framework/ configs)
         projectRoot: tempDir,
       });
 
@@ -219,7 +219,7 @@ describe('SquadGenerator Integration Tests', () => {
       expect(manifest.version).toBe('1.0.0');
       expect(manifest.description).toBe('Manifest loading test');
       expect(manifest.author).toBe('Integration Test');
-      expect(manifest.aiox.type).toBe('squad');
+      expect(manifest.lmas.type).toBe('squad');
     });
   });
 
@@ -240,7 +240,7 @@ describe('SquadGenerator Integration Tests', () => {
       const manifest = await loader.loadManifest(createResult.path);
 
       expect(manifest.name).toBe('e2e-test-squad');
-      expect(manifest.aiox.minVersion).toBeDefined();
+      expect(manifest.lmas.minVersion).toBeDefined();
 
       // 3. Validate
       const validation = await validator.validate(createResult.path);

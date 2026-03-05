@@ -1,6 +1,6 @@
 /**
  * Brownfield Upgrader
- * Handles incremental upgrades for existing AIOX-Core installations
+ * Handles incremental upgrades for existing LMAS-Core installations
  *
  * @module src/installer/brownfield-upgrader
  * @story 6.18 - Dynamic Manifest & Brownfield Upgrade System
@@ -54,14 +54,14 @@ function loadManifest(basePath, manifestName = 'install-manifest.yaml') {
  */
 function loadInstalledManifest(targetDir) {
   return loadManifest(
-    path.join(targetDir, '.aiox-core'),
+    path.join(targetDir, '.lmas-core'),
     '.installed-manifest.yaml',
   );
 }
 
 /**
  * Load source manifest from package
- * @param {string} sourceDir - Source package directory (.aiox-core from npm)
+ * @param {string} sourceDir - Source package directory (.lmas-core from npm)
  * @returns {Object|null} - Source manifest
  */
 function loadSourceManifest(sourceDir) {
@@ -142,12 +142,12 @@ function generateUpgradeReport(sourceManifest, installedManifest, targetDir) {
   const sourceMap = buildFileMap(sourceManifest);
   const installedMap = buildFileMap(installedManifest);
 
-  const aioxCoreDir = path.join(targetDir, '.aiox-core');
+  const lmasCoreDir = path.join(targetDir, '.lmas-core');
 
   // Check source files against installed
   for (const [filePath, sourceEntry] of sourceMap) {
     const installedEntry = installedMap.get(filePath);
-    const absolutePath = path.join(aioxCoreDir, filePath);
+    const absolutePath = path.join(lmasCoreDir, filePath);
 
     if (!installedEntry) {
       // New file in source
@@ -199,7 +199,7 @@ function generateUpgradeReport(sourceManifest, installedManifest, targetDir) {
  * Apply upgrade to target directory
  *
  * @param {UpgradeReport} report - Upgrade report
- * @param {string} sourceDir - Source directory (npm package .aiox-core)
+ * @param {string} sourceDir - Source directory (npm package .lmas-core)
  * @param {string} targetDir - Target project directory
  * @param {Object} options - Upgrade options
  * @param {boolean} options.dryRun - If true, don't actually copy files
@@ -215,17 +215,17 @@ async function applyUpgrade(report, sourceDir, targetDir, options = {}) {
     errors: [],
   };
 
-  const aioxCoreDir = path.join(targetDir, '.aiox-core');
+  const lmasCoreDir = path.join(targetDir, '.lmas-core');
 
-  // Ensure .aiox-core directory exists
+  // Ensure .lmas-core directory exists
   if (!dryRun) {
-    fs.ensureDirSync(aioxCoreDir);
+    fs.ensureDirSync(lmasCoreDir);
   }
 
   // Install new files
   for (const file of report.newFiles) {
     const sourcePath = path.join(sourceDir, file.path);
-    const targetPath = path.join(aioxCoreDir, file.path);
+    const targetPath = path.join(lmasCoreDir, file.path);
 
     try {
       if (!dryRun) {
@@ -243,7 +243,7 @@ async function applyUpgrade(report, sourceDir, targetDir, options = {}) {
   if (includeModified) {
     for (const file of report.modifiedFiles) {
       const sourcePath = path.join(sourceDir, file.path);
-      const targetPath = path.join(aioxCoreDir, file.path);
+      const targetPath = path.join(lmasCoreDir, file.path);
 
       try {
         if (!dryRun) {
@@ -265,7 +265,7 @@ async function applyUpgrade(report, sourceDir, targetDir, options = {}) {
       let backupPath;
       try {
         const sourcePath = path.join(sourceDir, file.path);
-        const targetPath = path.join(aioxCoreDir, file.path);
+        const targetPath = path.join(lmasCoreDir, file.path);
 
         if (!dryRun && fs.existsSync(sourcePath) && fs.existsSync(targetPath)) {
           const sourceContent = fs.readFileSync(sourcePath, 'utf8');
@@ -310,7 +310,7 @@ async function applyUpgrade(report, sourceDir, targetDir, options = {}) {
         // Merge failed — restore backup if exists, skip file
         if (backupPath && fs.existsSync(backupPath)) {
           try {
-            const targetPath = path.join(aioxCoreDir, file.path);
+            const targetPath = path.join(lmasCoreDir, file.path);
             fs.copyFileSync(backupPath, targetPath);
           } catch { /* restore failed — backup file still available */ }
         }
@@ -348,7 +348,7 @@ async function applyUpgrade(report, sourceDir, targetDir, options = {}) {
  * @param {string} sourcePackage - Name and version of source package
  */
 function updateInstalledManifest(targetDir, sourceManifest, sourcePackage) {
-  const installedManifestPath = path.join(targetDir, '.aiox-core', '.installed-manifest.yaml');
+  const installedManifestPath = path.join(targetDir, '.lmas-core', '.installed-manifest.yaml');
 
   const installedManifest = {
     installed_at: new Date().toISOString(),
@@ -371,7 +371,7 @@ function updateInstalledManifest(targetDir, sourceManifest, sourcePackage) {
     noRefs: true,
   });
 
-  const header = `# AIOX-Core Installed Manifest
+  const header = `# LMAS-Core Installed Manifest
 # This file tracks what was installed from the npm package
 # Used for brownfield upgrades to detect changes
 # DO NOT EDIT MANUALLY
@@ -426,7 +426,7 @@ function formatUpgradeReport(report) {
   const lines = [];
 
   lines.push('═'.repeat(60));
-  lines.push('AIOX-Core Upgrade Report');
+  lines.push('LMAS-Core Upgrade Report');
   lines.push('═'.repeat(60));
   lines.push('');
   lines.push(`Current Version: ${report.installedVersion}`);

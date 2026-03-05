@@ -15,7 +15,7 @@ const {
   createManifestGenerator,
   escapeCSV,
   parseYAMLFromMarkdown,
-} = require('../../../.aiox-core/core/manifest/manifest-generator');
+} = require('../../../.lmas-core/core/manifest/manifest-generator');
 
 describe('ManifestGenerator', () => {
   const basePath = path.join(__dirname, '..', '..', '..');

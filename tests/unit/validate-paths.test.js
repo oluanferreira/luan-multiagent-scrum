@@ -4,7 +4,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const { validatePaths } = require('../../.aiox-core/infrastructure/scripts/validate-paths');
+const { validatePaths } = require('../../.lmas-core/infrastructure/scripts/validate-paths');
 
 describe('Path Validator', () => {
   let tmpRoot;
@@ -16,7 +16,7 @@ describe('Path Validator', () => {
   }
 
   beforeEach(() => {
-    tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'aiox-path-validate-'));
+    tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'lmas-path-validate-'));
     skillsDir = path.join(tmpRoot, '.codex', 'skills');
   });
 
@@ -26,13 +26,13 @@ describe('Path Validator', () => {
 
   it('passes with relative canonical paths', () => {
     write(path.join(tmpRoot, 'AGENTS.md'), '# Agents\n');
-    write(path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
+    write(path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
     write(
-      path.join(skillsDir, 'aiox-dev', 'SKILL.md'),
+      path.join(skillsDir, 'lmas-dev', 'SKILL.md'),
       [
         '# Skill',
-        'Load .aiox-core/development/agents/dev.md',
-        'Run node .aiox-core/development/scripts/generate-greeting.js dev',
+        'Load .lmas-core/development/agents/dev.md',
+        'Run node .lmas-core/development/scripts/generate-greeting.js dev',
       ].join('\n'),
     );
 
@@ -41,7 +41,7 @@ describe('Path Validator', () => {
       skillsDir,
       requiredFiles: [
         path.join(tmpRoot, 'AGENTS.md'),
-        path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
+        path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
       ],
     });
 
@@ -50,14 +50,14 @@ describe('Path Validator', () => {
   });
 
   it('fails when absolute user path is found', () => {
-    write(path.join(tmpRoot, 'AGENTS.md'), 'Path /Users/alan/Code/aiox-core');
-    write(path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
+    write(path.join(tmpRoot, 'AGENTS.md'), 'Path /Users/alan/Code/lmas-core');
+    write(path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
     write(
-      path.join(skillsDir, 'aiox-dev', 'SKILL.md'),
+      path.join(skillsDir, 'lmas-dev', 'SKILL.md'),
       [
         '# Skill',
-        'Load .aiox-core/development/agents/dev.md',
-        'Run node .aiox-core/development/scripts/generate-greeting.js dev',
+        'Load .lmas-core/development/agents/dev.md',
+        'Run node .lmas-core/development/scripts/generate-greeting.js dev',
       ].join('\n'),
     );
 
@@ -66,7 +66,7 @@ describe('Path Validator', () => {
       skillsDir,
       requiredFiles: [
         path.join(tmpRoot, 'AGENTS.md'),
-        path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
+        path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
       ],
     });
 
@@ -76,15 +76,15 @@ describe('Path Validator', () => {
 
   it('fails when skill lacks canonical activation paths', () => {
     write(path.join(tmpRoot, 'AGENTS.md'), '# Agents\n');
-    write(path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
-    write(path.join(skillsDir, 'aiox-dev', 'SKILL.md'), '# Skill\nUse dev\n');
+    write(path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'), '# codex\n');
+    write(path.join(skillsDir, 'lmas-dev', 'SKILL.md'), '# Skill\nUse dev\n');
 
     const result = validatePaths({
       projectRoot: tmpRoot,
       skillsDir,
       requiredFiles: [
         path.join(tmpRoot, 'AGENTS.md'),
-        path.join(tmpRoot, '.aiox-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
+        path.join(tmpRoot, '.lmas-core', 'product', 'templates', 'ide-rules', 'codex-rules.md'),
       ],
     });
 

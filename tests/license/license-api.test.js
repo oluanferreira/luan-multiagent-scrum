@@ -50,7 +50,7 @@ describe('license-api', () => {
 
   beforeEach(() => {
     // Create temp directory for pending deactivation tests
-    testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiox-api-test-'));
+    testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lmas-api-test-'));
     originalCwd = process.cwd;
     process.cwd = () => testDir;
   });
@@ -70,7 +70,7 @@ describe('license-api', () => {
     it('should use default config', () => {
       const client = new LicenseApiClient();
 
-      expect(client.baseUrl).toBe(process.env.AIOX_LICENSE_API_URL || 'https://api.lmas.ai');
+      expect(client.baseUrl).toBe(process.env.LMAS_LICENSE_API_URL || 'https://api.lmas.ai');
       expect(client.timeoutMs).toBe(10000);
     });
 
@@ -106,7 +106,7 @@ describe('license-api', () => {
           const data = JSON.parse(body);
           expect(data.key).toBe('PRO-TEST-1234-5678-ABCD');
           expect(data.machineId).toBe('test-machine-id');
-          expect(data.aioxCoreVersion).toBe('3.0.0');
+          expect(data.lmasCoreVersion).toBe('3.0.0');
 
           res.writeHead(200, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify(mockResponse));

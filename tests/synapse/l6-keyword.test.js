@@ -10,8 +10,8 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const LayerProcessor = require('../../.aiox-core/core/synapse/layers/layer-processor');
-const L6KeywordProcessor = require('../../.aiox-core/core/synapse/layers/l6-keyword');
+const LayerProcessor = require('../../.lmas-core/core/synapse/layers/layer-processor');
+const L6KeywordProcessor = require('../../.lmas-core/core/synapse/layers/l6-keyword');
 
 jest.setTimeout(30000);
 

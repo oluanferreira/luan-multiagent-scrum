@@ -12,14 +12,14 @@ const {
   expandExceptionPaths,
   generatePermissions,
   writeSettingsJson,
-} = require('../../../../../.aiox-core/infrastructure/scripts/generate-settings-json');
+} = require('../../../../../.lmas-core/infrastructure/scripts/generate-settings-json');
 
 function createTempProject(boundary, existingSettings) {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gen-settings-'));
 
   // Create core-config.yaml with boundary section
-  const aioxCoreDir = path.join(tmpDir, '.aiox-core');
-  fs.mkdirSync(aioxCoreDir, { recursive: true });
+  const lmasCoreDir = path.join(tmpDir, '.lmas-core');
+  fs.mkdirSync(lmasCoreDir, { recursive: true });
 
   const yamlContent = [
     'boundary:',
@@ -30,11 +30,11 @@ function createTempProject(boundary, existingSettings) {
     ...boundary.exceptions.map(p => `    - ${p}`),
   ].join('\n') + '\n';
 
-  fs.writeFileSync(path.join(tmpDir, '.aiox-core', 'core-config.yaml'), yamlContent, 'utf8');
+  fs.writeFileSync(path.join(tmpDir, '.lmas-core', 'core-config.yaml'), yamlContent, 'utf8');
 
   // Create directory structure for expansion tests
-  if (boundary.protected.includes('.aiox-core/core/**')) {
-    const coreDir = path.join(tmpDir, '.aiox-core', 'core');
+  if (boundary.protected.includes('.lmas-core/core/**')) {
+    const coreDir = path.join(tmpDir, '.lmas-core', 'core');
     fs.mkdirSync(coreDir, { recursive: true });
     fs.mkdirSync(path.join(coreDir, 'utils'), { recursive: true });
     fs.mkdirSync(path.join(coreDir, 'events'), { recursive: true });
@@ -65,17 +65,17 @@ describe('generate-settings-json', () => {
     test('reads boundary config from core-config.yaml', () => {
       const tmpDir = createTempProject({
         frameworkProtection: true,
-        protected: ['.aiox-core/core/**', 'bin/aiox.js'],
-        exceptions: ['.aiox-core/data/**'],
+        protected: ['.lmas-core/core/**', 'bin/lmas.js'],
+        exceptions: ['.lmas-core/data/**'],
       });
 
       try {
         const config = readBoundaryConfig(tmpDir);
 
         expect(config.frameworkProtection).toBe(true);
-        expect(config.protected).toContain('.aiox-core/core/**');
-        expect(config.protected).toContain('bin/aiox.js');
-        expect(config.exceptions).toContain('.aiox-core/data/**');
+        expect(config.protected).toContain('.lmas-core/core/**');
+        expect(config.protected).toContain('bin/lmas.js');
+        expect(config.exceptions).toContain('.lmas-core/data/**');
       } finally {
         cleanupTempProject(tmpDir);
       }
@@ -118,38 +118,38 @@ describe('generate-settings-json', () => {
     test('generates deny rules covering all protected paths', () => {
       const tmpDir = createTempProject({
         frameworkProtection: true,
-        protected: ['.aiox-core/core/**', '.aiox-core/infrastructure/**', 'bin/aiox.js'],
-        exceptions: ['.aiox-core/data/**'],
+        protected: ['.lmas-core/core/**', '.lmas-core/infrastructure/**', 'bin/lmas.js'],
+        exceptions: ['.lmas-core/data/**'],
       });
 
       // Create infrastructure dir (no expansion for non-core paths)
-      fs.mkdirSync(path.join(tmpDir, '.aiox-core', 'infrastructure'), { recursive: true });
+      fs.mkdirSync(path.join(tmpDir, '.lmas-core', 'infrastructure'), { recursive: true });
 
       try {
         const boundary = readBoundaryConfig(tmpDir);
         const permissions = generatePermissions(boundary, tmpDir);
 
-        // Should have deny rules for core subdirs (events/**, utils/**, index.js) + infrastructure/** + bin/aiox.js
+        // Should have deny rules for core subdirs (events/**, utils/**, index.js) + infrastructure/** + bin/lmas.js
         expect(permissions.deny.length).toBeGreaterThan(0);
 
         // Core expansion: events/**, utils/**, index.js → 6 deny rules (3 paths x 2 tools)
-        expect(permissions.deny).toContain('Edit(.aiox-core/core/events/**)');
-        expect(permissions.deny).toContain('Write(.aiox-core/core/events/**)');
-        expect(permissions.deny).toContain('Edit(.aiox-core/core/utils/**)');
-        expect(permissions.deny).toContain('Write(.aiox-core/core/utils/**)');
-        expect(permissions.deny).toContain('Edit(.aiox-core/core/index.js)');
-        expect(permissions.deny).toContain('Write(.aiox-core/core/index.js)');
+        expect(permissions.deny).toContain('Edit(.lmas-core/core/events/**)');
+        expect(permissions.deny).toContain('Write(.lmas-core/core/events/**)');
+        expect(permissions.deny).toContain('Edit(.lmas-core/core/utils/**)');
+        expect(permissions.deny).toContain('Write(.lmas-core/core/utils/**)');
+        expect(permissions.deny).toContain('Edit(.lmas-core/core/index.js)');
+        expect(permissions.deny).toContain('Write(.lmas-core/core/index.js)');
 
         // Non-core paths stay as globs
-        expect(permissions.deny).toContain('Edit(.aiox-core/infrastructure/**)');
-        expect(permissions.deny).toContain('Write(.aiox-core/infrastructure/**)');
-        expect(permissions.deny).toContain('Edit(bin/aiox.js)');
-        expect(permissions.deny).toContain('Write(bin/aiox.js)');
+        expect(permissions.deny).toContain('Edit(.lmas-core/infrastructure/**)');
+        expect(permissions.deny).toContain('Write(.lmas-core/infrastructure/**)');
+        expect(permissions.deny).toContain('Edit(bin/lmas.js)');
+        expect(permissions.deny).toContain('Write(bin/lmas.js)');
 
         // Allow rules from exceptions
-        expect(permissions.allow).toContain('Edit(.aiox-core/data/**)');
-        expect(permissions.allow).toContain('Write(.aiox-core/data/**)');
-        expect(permissions.allow).toContain('Read(.aiox-core/**)');
+        expect(permissions.allow).toContain('Edit(.lmas-core/data/**)');
+        expect(permissions.allow).toContain('Write(.lmas-core/data/**)');
+        expect(permissions.allow).toContain('Read(.lmas-core/**)');
       } finally {
         cleanupTempProject(tmpDir);
       }
@@ -164,15 +164,15 @@ describe('generate-settings-json', () => {
 
       // Verify all 9 config paths are covered
       const protectedRoots = [
-        '.aiox-core/core/',
-        '.aiox-core/development/tasks/',
-        '.aiox-core/development/templates/',
-        '.aiox-core/development/checklists/',
-        '.aiox-core/development/workflows/',
-        '.aiox-core/infrastructure/',
-        '.aiox-core/constitution.md',
-        'bin/aiox.js',
-        'bin/aiox-init.js',
+        '.lmas-core/core/',
+        '.lmas-core/development/tasks/',
+        '.lmas-core/development/templates/',
+        '.lmas-core/development/checklists/',
+        '.lmas-core/development/workflows/',
+        '.lmas-core/infrastructure/',
+        '.lmas-core/constitution.md',
+        'bin/lmas.js',
+        'bin/lmas-init.js',
       ];
 
       for (const root of protectedRoots) {
@@ -191,8 +191,8 @@ describe('generate-settings-json', () => {
     test('produces no boundary deny rules', () => {
       const boundary = {
         frameworkProtection: false,
-        protected: ['.aiox-core/core/**', '.aiox-core/infrastructure/**'],
-        exceptions: ['.aiox-core/data/**'],
+        protected: ['.lmas-core/core/**', '.lmas-core/infrastructure/**'],
+        exceptions: ['.lmas-core/data/**'],
       };
 
       const permissions = generatePermissions(boundary, '/tmp');
@@ -206,8 +206,8 @@ describe('generate-settings-json', () => {
     test('running generator twice produces identical output', () => {
       const tmpDir = createTempProject({
         frameworkProtection: true,
-        protected: ['.aiox-core/core/**', 'bin/aiox.js'],
-        exceptions: ['.aiox-core/data/**'],
+        protected: ['.lmas-core/core/**', 'bin/lmas.js'],
+        exceptions: ['.lmas-core/data/**'],
       });
 
       try {
@@ -228,8 +228,8 @@ describe('generate-settings-json', () => {
     test('JSON output is valid and parseable', () => {
       const tmpDir = createTempProject({
         frameworkProtection: true,
-        protected: ['.aiox-core/core/**'],
-        exceptions: ['.aiox-core/data/**'],
+        protected: ['.lmas-core/core/**'],
+        exceptions: ['.lmas-core/data/**'],
       });
 
       try {
@@ -253,7 +253,7 @@ describe('generate-settings-json', () => {
       const tmpDir = createTempProject(
         {
           frameworkProtection: true,
-          protected: ['bin/aiox.js'],
+          protected: ['bin/lmas.js'],
           exceptions: [],
         },
         { language: 'pt', customSetting: true }
@@ -277,7 +277,7 @@ describe('generate-settings-json', () => {
       const tmpDir = createTempProject(
         {
           frameworkProtection: false,
-          protected: ['bin/aiox.js'],
+          protected: ['bin/lmas.js'],
           exceptions: [],
         },
         { language: 'pt', permissions: { deny: ['old-rule'], allow: [] } }

@@ -7,15 +7,15 @@
  * @story 3.5 - Human Review Orchestration
  */
 
-const { HumanReviewOrchestrator } = require('../../../.aiox-core/core/quality-gates/human-review-orchestrator');
+const { HumanReviewOrchestrator } = require('../../../.lmas-core/core/quality-gates/human-review-orchestrator');
 
 describe('HumanReviewOrchestrator', () => {
   let orchestrator;
 
   beforeEach(() => {
     orchestrator = new HumanReviewOrchestrator({
-      statusPath: '.aiox/qa-status-test.json',
-      reviewRequestsPath: '.aiox/human-review-requests-test',
+      statusPath: '.lmas/qa-status-test.json',
+      reviewRequestsPath: '.lmas/human-review-requests-test',
     });
   });
 
@@ -28,8 +28,8 @@ describe('HumanReviewOrchestrator', () => {
     });
 
     it('should create orchestrator with custom config', () => {
-      expect(orchestrator.statusPath).toBe('.aiox/qa-status-test.json');
-      expect(orchestrator.reviewRequestsPath).toBe('.aiox/human-review-requests-test');
+      expect(orchestrator.statusPath).toBe('.lmas/qa-status-test.json');
+      expect(orchestrator.reviewRequestsPath).toBe('.lmas/human-review-requests-test');
     });
   });
 

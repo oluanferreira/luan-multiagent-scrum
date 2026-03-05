@@ -29,7 +29,7 @@ describeIntegration('Unified Greeting System Integration', () => {
         
         try {
           const { stdout, stderr } = await execPromise(
-            `node .aiox-core/development/scripts/generate-greeting.js ${agentId}`,
+            `node .lmas-core/development/scripts/generate-greeting.js ${agentId}`,
           );
           
           // Verify output contains expected elements
@@ -55,7 +55,7 @@ describeIntegration('Unified Greeting System Integration', () => {
       const startTime = Date.now();
       
       try {
-        await execPromise('node .aiox-core/development/scripts/generate-greeting.js qa');
+        await execPromise('node .lmas-core/development/scripts/generate-greeting.js qa');
         const duration = Date.now() - startTime;
         
         console.log(`  ⏱️ Generation time: ${duration}ms (target: <${PERFORMANCE_TARGET_MS}ms)`);
@@ -75,12 +75,12 @@ describeIntegration('Unified Greeting System Integration', () => {
   
   describeIntegration('Agent Configuration Loading', () => {
     it('should load complete agent definition', async () => {
-      const { AgentConfigLoader } = require('../../.aiox-core/development/scripts/agent-config-loader');
+      const { AgentConfigLoader } = require('../../.lmas-core/development/scripts/agent-config-loader');
       const yaml = require('js-yaml');
       const fs = require('fs');
       
       const coreConfig = yaml.load(
-        fs.readFileSync('.aiox-core/core-config.yaml', 'utf8'),
+        fs.readFileSync('.lmas-core/core-config.yaml', 'utf8'),
       );
       
       const loader = new AgentConfigLoader('qa');
@@ -109,7 +109,7 @@ describeIntegration('Unified Greeting System Integration', () => {
   
   describeIntegration('Greeting Builder Integration', () => {
     it('should build greeting with all sections', async () => {
-      const GreetingBuilder = require('../../.aiox-core/development/scripts/greeting-builder');
+      const GreetingBuilder = require('../../.lmas-core/development/scripts/greeting-builder');
       
       const mockAgent = {
         id: 'test',
@@ -152,12 +152,12 @@ describeIntegration('Unified Greeting System Integration', () => {
   
   describeIntegration('Compact Command Format Normalization', () => {
     it('should normalize compact commands during parsing', async () => {
-      const { AgentConfigLoader } = require('../../.aiox-core/development/scripts/agent-config-loader');
+      const { AgentConfigLoader } = require('../../.lmas-core/development/scripts/agent-config-loader');
       const yaml = require('js-yaml');
       const fs = require('fs');
       
       const coreConfig = yaml.load(
-        fs.readFileSync('.aiox-core/core-config.yaml', 'utf8'),
+        fs.readFileSync('.lmas-core/core-config.yaml', 'utf8'),
       );
       
       const loader = new AgentConfigLoader('qa');
@@ -184,7 +184,7 @@ describeIntegration('Unified Greeting System Integration', () => {
       
       try {
         const { stdout } = await execPromise(
-          'node .aiox-core/development/scripts/generate-greeting.js nonexistent-agent 2>&1',
+          'node .lmas-core/development/scripts/generate-greeting.js nonexistent-agent 2>&1',
         );
         
         // Should still produce output (fallback)
@@ -204,20 +204,20 @@ describeIntegration('Unified Greeting System Integration', () => {
 // Run tests if called directly
 if (require.main === module) {
   console.log('Running Greeting System Integration Tests...\n');
-  console.log('This requires the full AIOX environment.\n');
+  console.log('This requires the full LMAS environment.\n');
   
   const tests = [
     {
       name: 'Generate greeting for QA agent',
       fn: async () => {
-        const { stdout } = await execPromise('node .aiox-core/development/scripts/generate-greeting.js qa 2>&1');
+        const { stdout } = await execPromise('node .lmas-core/development/scripts/generate-greeting.js qa 2>&1');
         return stdout.includes('Oracle') || stdout.includes('ready');
       },
     },
     {
       name: 'Generate greeting for Dev agent',
       fn: async () => {
-        const { stdout } = await execPromise('node .aiox-core/development/scripts/generate-greeting.js dev 2>&1');
+        const { stdout } = await execPromise('node .lmas-core/development/scripts/generate-greeting.js dev 2>&1');
         return stdout.includes('Neo') || stdout.includes('ready');
       },
     },
@@ -225,7 +225,7 @@ if (require.main === module) {
       name: 'Performance within limits',
       fn: async () => {
         const start = Date.now();
-        await execPromise('node .aiox-core/development/scripts/generate-greeting.js qa 2>&1');
+        await execPromise('node .lmas-core/development/scripts/generate-greeting.js qa 2>&1');
         const duration = Date.now() - start;
         console.log(`    ⏱️ Duration: ${duration}ms`);
         return duration < 500;

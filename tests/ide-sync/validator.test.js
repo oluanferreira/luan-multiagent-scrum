@@ -13,7 +13,7 @@ const {
   validateIdeSync,
   validateAllIdes,
   formatValidationReport,
-} = require('../../.aiox-core/infrastructure/scripts/ide-sync/validator');
+} = require('../../.lmas-core/infrastructure/scripts/ide-sync/validator');
 
 describe('validator', () => {
   let tempDir;
@@ -132,10 +132,10 @@ describe('validator', () => {
 
     it('should not count redirect files as orphaned', () => {
       fs.writeFileSync(path.join(targetDir, 'agent.md'), 'content');
-      fs.writeFileSync(path.join(targetDir, 'aiox-developer.md'), 'redirect');
+      fs.writeFileSync(path.join(targetDir, 'lmas-developer.md'), 'redirect');
 
       const expected = [{ filename: 'agent.md', content: 'content' }];
-      const redirects = { 'aiox-developer': 'aiox-master' };
+      const redirects = { 'lmas-developer': 'lmas-master' };
       const result = validateIdeSync(expected, targetDir, redirects);
 
       expect(result.orphaned).toHaveLength(0);

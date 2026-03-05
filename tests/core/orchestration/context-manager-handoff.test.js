@@ -4,14 +4,14 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 
-const ContextManager = require('../../../.aiox-core/core/orchestration/context-manager');
+const ContextManager = require('../../../.lmas-core/core/orchestration/context-manager');
 
 describe('ContextManager structured handoff package', () => {
   let tempDir;
   let manager;
 
   beforeEach(async () => {
-    tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'aiox-handoff-'));
+    tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'lmas-handoff-'));
     manager = new ContextManager('test-workflow', tempDir);
     await manager.initialize();
   });
@@ -67,7 +67,7 @@ describe('ContextManager structured handoff package', () => {
 
     const handoffPath = path.join(
       tempDir,
-      '.aiox',
+      '.lmas',
       'workflow-state',
       'handoffs',
       'test-workflow-phase-2.handoff.json',
@@ -132,7 +132,7 @@ describe('ContextManager structured handoff package', () => {
 
     const confidencePath = path.join(
       tempDir,
-      '.aiox',
+      '.lmas',
       'workflow-state',
       'confidence',
       'test-workflow.delivery-confidence.json',

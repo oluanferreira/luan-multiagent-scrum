@@ -3,14 +3,14 @@
  *
  * Tests the DecisionContext class for tracking decisions, files, and tests.
  *
- * @see .aiox-core/scripts/decision-context.js
+ * @see .lmas-core/scripts/decision-context.js
  */
 
 const {
   DecisionContext,
   DECISION_TYPES,
   PRIORITY_LEVELS,
-} = require('../../.aiox-core/development/scripts/decision-context');
+} = require('../../.lmas-core/development/scripts/decision-context');
 
 describe('DecisionContext', () => {
   let context;

@@ -1,9 +1,9 @@
 'use strict';
 
 const path = require('path');
-const { RegistryLoader } = require('../../../.aiox-core/core/ids/registry-loader');
-const { IncrementalDecisionEngine } = require('../../../.aiox-core/core/ids/incremental-decision-engine');
-const { FrameworkGovernor, TIMEOUT_MS, RISK_THRESHOLDS } = require('../../../.aiox-core/core/ids/framework-governor');
+const { RegistryLoader } = require('../../../.lmas-core/core/ids/registry-loader');
+const { IncrementalDecisionEngine } = require('../../../.lmas-core/core/ids/incremental-decision-engine');
+const { FrameworkGovernor, TIMEOUT_MS, RISK_THRESHOLDS } = require('../../../.lmas-core/core/ids/framework-governor');
 
 const FIXTURES = path.resolve(__dirname, 'fixtures');
 const VALID_REGISTRY = path.join(FIXTURES, 'valid-registry.yaml');
@@ -273,20 +273,20 @@ describe('FrameworkGovernor', () => {
   describe('postRegister()', () => {
     it('should register file via RegistryUpdater.onAgentTaskComplete', async () => {
       const result = await governor.postRegister(
-        '.aiox-core/development/tasks/test-task.md',
-        { type: 'task', purpose: 'Test task', agent: 'aiox-master' },
+        '.lmas-core/development/tasks/test-task.md',
+        { type: 'task', purpose: 'Test task', agent: 'lmas-master' },
       );
       expect(result.registered).toBeDefined();
-      expect(result.filePath).toBe('.aiox-core/development/tasks/test-task.md');
+      expect(result.filePath).toBe('.lmas-core/development/tasks/test-task.md');
       expect(updater.onAgentTaskCompleteCalls.length).toBe(1);
 
       const call = updater.onAgentTaskCompleteCalls[0];
-      expect(call.task.agent).toBe('aiox-master');
-      expect(call.artifacts).toContain('.aiox-core/development/tasks/test-task.md');
+      expect(call.task.agent).toBe('lmas-master');
+      expect(call.artifacts).toContain('.lmas-core/development/tasks/test-task.md');
     });
 
     it('should use onAgentTaskComplete (not processChanges) per SF-1', async () => {
-      await governor.postRegister('.aiox-core/development/tasks/new-task.md', {});
+      await governor.postRegister('.lmas-core/development/tasks/new-task.md', {});
       // Verify onAgentTaskComplete was called (our mock tracks this)
       expect(updater.onAgentTaskCompleteCalls.length).toBe(1);
     });
@@ -311,10 +311,10 @@ describe('FrameworkGovernor', () => {
       expect(result.error).toBeDefined();
     });
 
-    it('should default agent to aiox-master', async () => {
+    it('should default agent to lmas-master', async () => {
       await governor.postRegister('file.md', {});
       const call = updater.onAgentTaskCompleteCalls[0];
-      expect(call.task.agent).toBe('aiox-master');
+      expect(call.task.agent).toBe('lmas-master');
     });
   });
 
@@ -516,7 +516,7 @@ describe('FrameworkGovernor', () => {
             entityId: 'create-doc',
             decision: 'ADAPT',
             relevanceScore: 0.75,
-            entityPath: '.aiox-core/development/tasks/create-doc.md',
+            entityPath: '.lmas-core/development/tasks/create-doc.md',
           }],
         };
         const output = FrameworkGovernor.formatPreCheckOutput(result);
@@ -531,7 +531,7 @@ describe('FrameworkGovernor', () => {
         const result = {
           entityId: 'create-doc',
           found: true,
-          entityPath: '.aiox-core/development/tasks/create-doc.md',
+          entityPath: '.lmas-core/development/tasks/create-doc.md',
           entityType: 'task',
           riskLevel: 'LOW',
           directConsumers: ['po', 'sm'],
@@ -561,7 +561,7 @@ describe('FrameworkGovernor', () => {
         const result = {
           entityId: 'po',
           found: true,
-          entityPath: '.aiox-core/development/agents/po.md',
+          entityPath: '.lmas-core/development/agents/po.md',
           entityType: 'agent',
           riskLevel: 'NONE',
           directConsumers: [],

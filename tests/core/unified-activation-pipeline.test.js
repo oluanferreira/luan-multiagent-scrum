@@ -27,7 +27,7 @@ const mockCoreConfig = {
       sessionDetection: 'hybrid',
     },
   },
-  dataLocation: '.aiox-core/data',
+  dataLocation: '.lmas-core/data',
   devStoryLocation: 'docs/stories',
   projectStatus: { enabled: true },
 };
@@ -125,10 +125,10 @@ jest.mock('fs', () => {
 });
 
 // Mock agent-config-loader
-jest.mock('../../.aiox-core/development/scripts/agent-config-loader', () => ({
+jest.mock('../../.lmas-core/development/scripts/agent-config-loader', () => ({
   AgentConfigLoader: jest.fn().mockImplementation(() => ({
     loadComplete: jest.fn().mockResolvedValue({
-      config: { dataLocation: '.aiox-core/data' },
+      config: { dataLocation: '.lmas-core/data' },
       definition: mockAgentDefinition,
       agent: mockAgentDefinition.agent,
       persona_profile: mockAgentDefinition.persona_profile,
@@ -138,26 +138,26 @@ jest.mock('../../.aiox-core/development/scripts/agent-config-loader', () => ({
 }));
 
 // Mock session context loader
-jest.mock('../../.aiox-core/core/session/context-loader', () => {
+jest.mock('../../.lmas-core/core/session/context-loader', () => {
   return jest.fn().mockImplementation(() => ({
     loadContext: jest.fn().mockReturnValue(mockSessionContext),
   }));
 });
 
 // Mock project status loader
-jest.mock('../../.aiox-core/infrastructure/scripts/project-status-loader', () => ({
+jest.mock('../../.lmas-core/infrastructure/scripts/project-status-loader', () => ({
   loadProjectStatus: jest.fn().mockResolvedValue(mockProjectStatus),
 }));
 
 // Mock git config detector
-jest.mock('../../.aiox-core/infrastructure/scripts/git-config-detector', () => {
+jest.mock('../../.lmas-core/infrastructure/scripts/git-config-detector', () => {
   return jest.fn().mockImplementation(() => ({
     get: jest.fn().mockReturnValue(mockGitConfig),
   }));
 });
 
 // Mock permission mode
-jest.mock('../../.aiox-core/core/permissions', () => ({
+jest.mock('../../.lmas-core/core/permissions', () => ({
   PermissionMode: jest.fn().mockImplementation(() => ({
     currentMode: 'ask',
     load: jest.fn().mockResolvedValue('ask'),
@@ -168,14 +168,14 @@ jest.mock('../../.aiox-core/core/permissions', () => ({
 }));
 
 // Mock config-resolver
-jest.mock('../../.aiox-core/core/config/config-resolver', () => ({
+jest.mock('../../.lmas-core/core/config/config-resolver', () => ({
   resolveConfig: jest.fn().mockReturnValue({
     config: mockCoreConfig,
   }),
 }));
 
 // Mock validate-user-profile
-jest.mock('../../.aiox-core/infrastructure/scripts/validate-user-profile', () => ({
+jest.mock('../../.lmas-core/infrastructure/scripts/validate-user-profile', () => ({
   validateUserProfile: jest.fn().mockReturnValue({
     valid: true,
     value: 'advanced',
@@ -184,21 +184,21 @@ jest.mock('../../.aiox-core/infrastructure/scripts/validate-user-profile', () =>
 }));
 
 // Mock greeting-preference-manager
-jest.mock('../../.aiox-core/development/scripts/greeting-preference-manager', () => {
+jest.mock('../../.lmas-core/development/scripts/greeting-preference-manager', () => {
   return jest.fn().mockImplementation(() => ({
     getPreference: jest.fn().mockReturnValue('auto'),
   }));
 });
 
 // Mock context-detector
-jest.mock('../../.aiox-core/core/session/context-detector', () => {
+jest.mock('../../.lmas-core/core/session/context-detector', () => {
   return jest.fn().mockImplementation(() => ({
     detectSessionType: jest.fn().mockReturnValue('new'),
   }));
 });
 
 // Mock workflow-navigator
-jest.mock('../../.aiox-core/development/scripts/workflow-navigator', () => {
+jest.mock('../../.lmas-core/development/scripts/workflow-navigator', () => {
   return jest.fn().mockImplementation(() => ({
     detectWorkflowState: jest.fn().mockReturnValue(null),
     getNextSteps: jest.fn().mockReturnValue([]),
@@ -211,7 +211,7 @@ jest.mock('../../.aiox-core/development/scripts/workflow-navigator', () => {
 });
 
 // Mock config cache
-jest.mock('../../.aiox-core/core/config/config-cache', () => ({
+jest.mock('../../.lmas-core/core/config/config-cache', () => ({
   globalConfigCache: {
     get: jest.fn().mockReturnValue(null),
     set: jest.fn(),
@@ -220,17 +220,17 @@ jest.mock('../../.aiox-core/core/config/config-cache', () => ({
 }));
 
 // Mock performance tracker
-jest.mock('../../.aiox-core/infrastructure/scripts/performance-tracker', () => ({
+jest.mock('../../.lmas-core/infrastructure/scripts/performance-tracker', () => ({
   trackConfigLoad: jest.fn(),
 }));
 
 // --- Require modules AFTER mocks ---
-const { UnifiedActivationPipeline, ALL_AGENT_IDS, LOADER_TIERS, DEFAULT_PIPELINE_TIMEOUT_MS, FALLBACK_PHRASE } = require('../../.aiox-core/development/scripts/unified-activation-pipeline');
-const { AgentConfigLoader } = require('../../.aiox-core/development/scripts/agent-config-loader');
-const SessionContextLoader = require('../../.aiox-core/core/session/context-loader');
-const { loadProjectStatus } = require('../../.aiox-core/infrastructure/scripts/project-status-loader');
-const GitConfigDetector = require('../../.aiox-core/infrastructure/scripts/git-config-detector');
-const { PermissionMode } = require('../../.aiox-core/core/permissions');
+const { UnifiedActivationPipeline, ALL_AGENT_IDS, LOADER_TIERS, DEFAULT_PIPELINE_TIMEOUT_MS, FALLBACK_PHRASE } = require('../../.lmas-core/development/scripts/unified-activation-pipeline');
+const { AgentConfigLoader } = require('../../.lmas-core/development/scripts/agent-config-loader');
+const SessionContextLoader = require('../../.lmas-core/core/session/context-loader');
+const { loadProjectStatus } = require('../../.lmas-core/infrastructure/scripts/project-status-loader');
+const GitConfigDetector = require('../../.lmas-core/infrastructure/scripts/git-config-detector');
+const { PermissionMode } = require('../../.lmas-core/core/permissions');
 
 // Track mock timers to prevent Jest worker exit warnings from orphaned setTimeout calls
 const _pendingMockTimers = [];
@@ -249,7 +249,7 @@ describe('UnifiedActivationPipeline', () => {
     // jest.clearAllMocks() only clears call history, NOT implementations set via mockImplementation().
     AgentConfigLoader.mockImplementation(() => ({
       loadComplete: jest.fn().mockResolvedValue({
-        config: { dataLocation: '.aiox-core/data' },
+        config: { dataLocation: '.lmas-core/data' },
         definition: mockAgentDefinition,
         agent: mockAgentDefinition.agent,
         persona_profile: mockAgentDefinition.persona_profile,
@@ -274,7 +274,7 @@ describe('UnifiedActivationPipeline', () => {
       _loaded: false,
     }));
 
-    const ContextDetector = require('../../.aiox-core/core/session/context-detector');
+    const ContextDetector = require('../../.lmas-core/core/session/context-detector');
     ContextDetector.mockImplementation(() => ({
       detectSessionType: jest.fn().mockReturnValue('new'),
     }));
@@ -330,7 +330,7 @@ describe('UnifiedActivationPipeline', () => {
         // Adjust mock to return the agent's ID
         AgentConfigLoader.mockImplementation(() => ({
           loadComplete: jest.fn().mockResolvedValue({
-            config: { dataLocation: '.aiox-core/data' },
+            config: { dataLocation: '.lmas-core/data' },
             definition: {
               ...mockAgentDefinition,
               agent: { ...mockAgentDefinition.agent, id: agentId },
@@ -603,7 +603,7 @@ describe('UnifiedActivationPipeline', () => {
     });
 
     it('should prefer conversation history over session context for detection', async () => {
-      const ContextDetector = require('../../.aiox-core/core/session/context-detector');
+      const ContextDetector = require('../../.lmas-core/core/session/context-detector');
       ContextDetector.mockImplementation(() => ({
         detectSessionType: jest.fn().mockReturnValue('workflow'),
       }));
@@ -659,14 +659,14 @@ describe('UnifiedActivationPipeline', () => {
       expect(ids).toContain('data-engineer');
       expect(ids).toContain('ux-design-expert');
       expect(ids).toContain('devops');
-      expect(ids).toContain('aiox-master');
+      expect(ids).toContain('lmas-master');
       expect(ids).toContain('squad-creator');
     });
 
     it('isValidAgentId() should return true for valid IDs', () => {
       expect(UnifiedActivationPipeline.isValidAgentId('dev')).toBe(true);
       expect(UnifiedActivationPipeline.isValidAgentId('qa')).toBe(true);
-      expect(UnifiedActivationPipeline.isValidAgentId('aiox-master')).toBe(true);
+      expect(UnifiedActivationPipeline.isValidAgentId('lmas-master')).toBe(true);
     });
 
     it('isValidAgentId() should return false for invalid IDs', () => {
@@ -682,7 +682,7 @@ describe('UnifiedActivationPipeline', () => {
   describe('default icon mapping', () => {
     it('should return correct icons for known agents', () => {
       expect(pipeline._getDefaultIcon('dev')).toBe('\uD83D\uDCBB');
-      expect(pipeline._getDefaultIcon('aiox-master')).toBe('\uD83D\uDC51');
+      expect(pipeline._getDefaultIcon('lmas-master')).toBe('\uD83D\uDC51');
     });
 
     it('should return default robot icon for unknown agents', () => {
@@ -803,7 +803,7 @@ describe('UnifiedActivationPipeline', () => {
   // -----------------------------------------------------------
   describe('generate-greeting.js backward compatibility', () => {
     it('should export generateGreeting function', () => {
-      const { generateGreeting } = require('../../.aiox-core/development/scripts/generate-greeting');
+      const { generateGreeting } = require('../../.lmas-core/development/scripts/generate-greeting');
       expect(typeof generateGreeting).toBe('function');
     });
   });
@@ -1051,31 +1051,31 @@ describe('UnifiedActivationPipeline', () => {
     });
 
     it('should use env var over config value', () => {
-      const originalEnv = process.env.AIOX_PIPELINE_TIMEOUT;
-      process.env.AIOX_PIPELINE_TIMEOUT = '800';
+      const originalEnv = process.env.LMAS_PIPELINE_TIMEOUT;
+      process.env.LMAS_PIPELINE_TIMEOUT = '800';
       try {
         const timeout = pipeline._resolvePipelineTimeout({ pipeline: { timeout_ms: 300 } });
         expect(timeout).toBe(800);
       } finally {
         if (originalEnv !== undefined) {
-          process.env.AIOX_PIPELINE_TIMEOUT = originalEnv;
+          process.env.LMAS_PIPELINE_TIMEOUT = originalEnv;
         } else {
-          delete process.env.AIOX_PIPELINE_TIMEOUT;
+          delete process.env.LMAS_PIPELINE_TIMEOUT;
         }
       }
     });
 
     it('should ignore invalid env var values', () => {
-      const originalEnv = process.env.AIOX_PIPELINE_TIMEOUT;
-      process.env.AIOX_PIPELINE_TIMEOUT = 'not-a-number';
+      const originalEnv = process.env.LMAS_PIPELINE_TIMEOUT;
+      process.env.LMAS_PIPELINE_TIMEOUT = 'not-a-number';
       try {
         const timeout = pipeline._resolvePipelineTimeout({});
         expect(timeout).toBe(DEFAULT_PIPELINE_TIMEOUT_MS);
       } finally {
         if (originalEnv !== undefined) {
-          process.env.AIOX_PIPELINE_TIMEOUT = originalEnv;
+          process.env.LMAS_PIPELINE_TIMEOUT = originalEnv;
         } else {
-          delete process.env.AIOX_PIPELINE_TIMEOUT;
+          delete process.env.LMAS_PIPELINE_TIMEOUT;
         }
       }
     });
@@ -1229,7 +1229,7 @@ describe('UnifiedActivationPipeline', () => {
       it(`@${agentId} should not produce fallback greeting`, async () => {
         AgentConfigLoader.mockImplementation(() => ({
           loadComplete: jest.fn().mockResolvedValue({
-            config: { dataLocation: '.aiox-core/data' },
+            config: { dataLocation: '.lmas-core/data' },
             definition: {
               ...mockAgentDefinition,
               agent: { ...mockAgentDefinition.agent, id: agentId },

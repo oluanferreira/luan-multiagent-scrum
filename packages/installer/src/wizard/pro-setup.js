@@ -2,7 +2,7 @@
  * Pro Installation Wizard with License Gate
  *
  * 3-step wizard: (1) License Gate, (2) Install/Scaffold, (3) Verify
- * Supports interactive mode, CI mode (AIOX_PRO_KEY/AIOX_PRO_EMAIL env vars), and lazy import.
+ * Supports interactive mode, CI mode (LMAS_PRO_KEY/LMAS_PRO_EMAIL env vars), and lazy import.
  *
  * License Gate supports two activation methods:
  * - Email + Password authentication (recommended, PRO-11)
@@ -16,7 +16,7 @@
 'use strict';
 
 const { createSpinner, showSuccess, showError, showWarning, showInfo } = require('./feedback');
-const { colors, status } = require('../utils/aiox-colors');
+const { colors, status } = require('../utils/lmas-colors');
 const { t, tf } = require('./i18n');
 
 /**
@@ -34,7 +34,7 @@ try {
 /**
  * License server base URL (same source of truth as license-api.js CONFIG.BASE_URL).
  */
-const LICENSE_SERVER_URL = process.env.AIOX_LICENSE_API_URL || 'https://aiox-license-server.vercel.app';
+const LICENSE_SERVER_URL = process.env.LMAS_LICENSE_API_URL || 'https://lmas-license-server.vercel.app';
 
 /**
  * License key format: PRO-XXXX-XXXX-XXXX-XXXX
@@ -150,14 +150,14 @@ function showStep(current, total, label) {
  *
  * Resolution order:
  * 1. Relative path (framework-dev mode: ../../../../pro/license/{name})
- * 2. @aiox-fullstack/pro package (brownfield: node_modules/@aiox-fullstack/pro/license/{name})
- * 3. Absolute path via aiox-core in node_modules (brownfield upgrade)
- * 4. Absolute path via @aiox-fullstack/pro in user project (npx context)
+ * 2. @lmas-fullstack/pro package (brownfield: node_modules/@lmas-fullstack/pro/license/{name})
+ * 3. Absolute path via lmas-core in node_modules (brownfield upgrade)
+ * 4. Absolute path via @lmas-fullstack/pro in user project (npx context)
  *
- * Path 4 is critical for npx execution: when running `npx aiox-core install`,
+ * Path 4 is critical for npx execution: when running `npx lmas-core install`,
  * require() resolves from the npx temp directory, not process.cwd(). After
- * bootstrap installs @aiox-fullstack/pro in the user's project, only an
- * absolute path to process.cwd()/node_modules/@aiox-fullstack/pro/... works.
+ * bootstrap installs @lmas-fullstack/pro in the user's project, only an
+ * absolute path to process.cwd()/node_modules/@lmas-fullstack/pro/... works.
  *
  * @param {string} moduleName - Module filename without extension (e.g., 'license-api')
  * @returns {Object|null} Loaded module or null
@@ -170,21 +170,21 @@ function loadProModule(moduleName) {
     return require(`../../../../pro/license/${moduleName}`);
   } catch { /* not available */ }
 
-  // 2. @aiox-fullstack/pro package (works when aiox-core is a local dependency)
+  // 2. @lmas-fullstack/pro package (works when lmas-core is a local dependency)
   try {
-    return require(`@aiox-fullstack/pro/license/${moduleName}`);
+    return require(`@lmas-fullstack/pro/license/${moduleName}`);
   } catch { /* not available */ }
 
-  // 3. aiox-core in node_modules (brownfield upgrade from >= v4.2.15)
+  // 3. lmas-core in node_modules (brownfield upgrade from >= v4.2.15)
   try {
-    const absPath = path.join(process.cwd(), 'node_modules', 'aiox-core', 'pro', 'license', moduleName);
+    const absPath = path.join(process.cwd(), 'node_modules', 'lmas-core', 'pro', 'license', moduleName);
     return require(absPath);
   } catch { /* not available */ }
 
-  // 4. @aiox-fullstack/pro in user project (npx context — require resolves from
+  // 4. @lmas-fullstack/pro in user project (npx context — require resolves from
   //    temp dir, so we need absolute path to where bootstrap installed the package)
   try {
-    const absPath = path.join(process.cwd(), 'node_modules', '@aiox-fullstack', 'pro', 'license', moduleName);
+    const absPath = path.join(process.cwd(), 'node_modules', '@lmas-fullstack', 'pro', 'license', moduleName);
     return require(absPath);
   } catch { /* not available */ }
 
@@ -231,7 +231,7 @@ function loadProScaffolder() {
  * 1. Email + Password authentication (recommended, PRO-11)
  * 2. License key (legacy, PRO-6)
  *
- * In CI mode, reads from AIOX_PRO_EMAIL + AIOX_PRO_PASSWORD or AIOX_PRO_KEY env vars.
+ * In CI mode, reads from LMAS_PRO_EMAIL + LMAS_PRO_PASSWORD or LMAS_PRO_KEY env vars.
  * In interactive mode, prompts user to choose method.
  *
  * @param {Object} [options={}] - Options
@@ -291,15 +291,15 @@ async function stepLicenseGate(options = {}) {
 /**
  * CI mode license gate — reads from env vars.
  *
- * Priority: AIOX_PRO_EMAIL + AIOX_PRO_PASSWORD > AIOX_PRO_KEY
+ * Priority: LMAS_PRO_EMAIL + LMAS_PRO_PASSWORD > LMAS_PRO_KEY
  *
  * @param {Object} options - Options with possible pre-provided credentials
  * @returns {Promise<Object>} Result with { success, key, activationResult }
  */
 async function stepLicenseGateCI(options) {
-  const email = options.email || process.env.AIOX_PRO_EMAIL;
-  const password = options.password || process.env.AIOX_PRO_PASSWORD;
-  const key = options.key || process.env.AIOX_PRO_KEY;
+  const email = options.email || process.env.LMAS_PRO_EMAIL;
+  const password = options.password || process.env.LMAS_PRO_PASSWORD;
+  const key = options.key || process.env.LMAS_PRO_KEY;
 
   // Prefer email auth over key
   if (email && password) {
@@ -389,7 +389,7 @@ async function stepLicenseGateWithEmail() {
     checkSpinner.fail(t('proNoAccess'));
     console.log('');
     showInfo(t('proContactSupport'));
-    showInfo('  Issues: https://github.com/oluanferreira/aiox-core/issues');
+    showInfo('  Issues: https://github.com/oluanferreira/lmas-core/issues');
     showInfo('  ' + t('proPurchase'));
     return { success: false, error: t('proEmailNotBuyer') };
   }
@@ -481,11 +481,11 @@ async function loginWithRetry(client, email) {
         const remaining = MAX_RETRIES - attempt;
         if (remaining > 0) {
           spinner.fail(`Incorrect password. ${remaining} attempt${remaining > 1 ? 's' : ''} remaining.`);
-          showInfo('Forgot your password? Visit https://aiox-license-server.vercel.app/reset-password');
+          showInfo('Forgot your password? Visit https://lmas-license-server.vercel.app/reset-password');
         } else {
           spinner.fail('Maximum login attempts reached.');
-          showInfo('Forgot your password? Visit https://aiox-license-server.vercel.app/reset-password');
-          showInfo('Or open an issue: https://github.com/oluanferreira/aiox-core/issues');
+          showInfo('Forgot your password? Visit https://lmas-license-server.vercel.app/reset-password');
+          showInfo('Or open an issue: https://github.com/oluanferreira/lmas-core/issues');
           return { success: false, error: 'Maximum login attempts reached.' };
         }
       } else if (loginError.code === 'AUTH_RATE_LIMITED') {
@@ -827,19 +827,19 @@ async function activateProByAuth(client, sessionToken) {
       .digest('hex')
       .substring(0, 32);
 
-    // Read aiox-core version
-    let aioxCoreVersion = 'unknown';
+    // Read lmas-core version
+    let lmasCoreVersion = 'unknown';
     try {
       const path = require('path');
       const fs = require('fs');
       const pkgPath = path.join(__dirname, '..', '..', '..', '..', 'package.json');
       const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-      aioxCoreVersion = pkg.version || 'unknown';
+      lmasCoreVersion = pkg.version || 'unknown';
     } catch {
       // Keep 'unknown'
     }
 
-    const activationResult = await client.activateByAuth(sessionToken, machineId, aioxCoreVersion);
+    const activationResult = await client.activateByAuth(sessionToken, machineId, lmasCoreVersion);
 
     spinner.succeed(tf('proSubscriptionConfirmed', { key: maskLicenseKey(activationResult.key) }));
     return { success: true, key: activationResult.key, activationResult };
@@ -981,19 +981,19 @@ async function validateKeyWithApi(key) {
       .digest('hex')
       .substring(0, 32);
 
-    // Read aiox-core version
-    let aioxCoreVersion = 'unknown';
+    // Read lmas-core version
+    let lmasCoreVersion = 'unknown';
     try {
       const path = require('path');
       const fs = require('fs');
       const pkgPath = path.join(__dirname, '..', '..', '..', '..', 'package.json');
       const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-      aioxCoreVersion = pkg.version || 'unknown';
+      lmasCoreVersion = pkg.version || 'unknown';
     } catch {
       // Keep 'unknown'
     }
 
-    const activationResult = await client.activate(key, machineId, aioxCoreVersion);
+    const activationResult = await client.activate(key, machineId, lmasCoreVersion);
 
     return { success: true, data: activationResult };
   } catch (error) {
@@ -1038,7 +1038,7 @@ async function stepInstallScaffold(targetDir, options = {}) {
   const fs = require('fs');
   const { execSync } = require('child_process');
 
-  const proSourceDir = path.join(targetDir, 'node_modules', '@aiox-fullstack', 'pro');
+  const proSourceDir = path.join(targetDir, 'node_modules', '@lmas-fullstack', 'pro');
 
   // Step 2a: Ensure package.json exists (greenfield projects)
   const packageJsonPath = path.join(targetDir, 'package.json');
@@ -1054,12 +1054,12 @@ async function stepInstallScaffold(targetDir, options = {}) {
     }
   }
 
-  // Step 2b: Install @aiox-fullstack/pro if not present
+  // Step 2b: Install @lmas-fullstack/pro if not present
   if (!fs.existsSync(proSourceDir)) {
     const installSpinner = createSpinner(t('proInstallingPackage'));
     installSpinner.start();
     try {
-      execSync('npm install @aiox-fullstack/pro', {
+      execSync('npm install @lmas-fullstack/pro', {
         cwd: targetDir,
         stdio: 'pipe',
         timeout: 120000,
@@ -1233,7 +1233,7 @@ async function runProWizard(options = {}) {
   }
 
   // Pre-check: If license module is not available (brownfield upgrade from older version),
-  // install @aiox-fullstack/pro first to get the license API, then proceed with gate.
+  // install @lmas-fullstack/pro first to get the license API, then proceed with gate.
   if (!loadLicenseApi()) {
     const fs = require('fs');
     const path = require('path');
@@ -1247,13 +1247,13 @@ async function runProWizard(options = {}) {
       execSync('npm init -y', { cwd: targetDir, stdio: 'pipe' });
     }
 
-    // Install @aiox-fullstack/pro to get license module
-    const proDir = path.join(targetDir, 'node_modules', '@aiox-fullstack', 'pro');
+    // Install @lmas-fullstack/pro to get license module
+    const proDir = path.join(targetDir, 'node_modules', '@lmas-fullstack', 'pro');
     if (!fs.existsSync(proDir)) {
       const installSpinner = createSpinner(t('proInstallingPackage'));
       installSpinner.start();
       try {
-        execSync('npm install @aiox-fullstack/pro', {
+        execSync('npm install @lmas-fullstack/pro', {
           cwd: targetDir,
           stdio: 'pipe',
           timeout: 120000,
@@ -1268,7 +1268,7 @@ async function runProWizard(options = {}) {
 
     // Clear require cache so loadLicenseApi() picks up newly installed module
     Object.keys(require.cache).forEach((key) => {
-      if (key.includes('license-api') || key.includes('@aiox-fullstack')) {
+      if (key.includes('license-api') || key.includes('@lmas-fullstack')) {
         delete require.cache[key];
       }
     });
@@ -1276,9 +1276,9 @@ async function runProWizard(options = {}) {
 
   // Step 1: License Gate
   const licenseResult = await stepLicenseGate({
-    key: options.key || process.env.AIOX_PRO_KEY,
-    email: options.email || process.env.AIOX_PRO_EMAIL,
-    password: options.password || process.env.AIOX_PRO_PASSWORD,
+    key: options.key || process.env.LMAS_PRO_KEY,
+    email: options.email || process.env.LMAS_PRO_EMAIL,
+    password: options.password || process.env.LMAS_PRO_PASSWORD,
   });
 
   if (!licenseResult.success) {

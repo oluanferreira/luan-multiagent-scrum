@@ -16,7 +16,7 @@ const {
   IMPORTANCE,
   DEFAULT_RELEVANCE,
   AGENT_OVERRIDES,
-} = require('../../../.aiox-core/core/synapse/diagnostics/collectors/relevance-matrix');
+} = require('../../../.lmas-core/core/synapse/diagnostics/collectors/relevance-matrix');
 
 let tmpDir;
 

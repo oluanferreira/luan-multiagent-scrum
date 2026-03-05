@@ -17,25 +17,25 @@
  * - AC10: A/B comparison: static vs context-aware
  */
 
-const GreetingBuilder = require('../../.aiox-core/development/scripts/greeting-builder');
-const ContextDetector = require('../../.aiox-core/core/session/context-detector');
-const GitConfigDetector = require('../../.aiox-core/infrastructure/scripts/git-config-detector');
+const GreetingBuilder = require('../../.lmas-core/development/scripts/greeting-builder');
+const ContextDetector = require('../../.lmas-core/core/session/context-detector');
+const GitConfigDetector = require('../../.lmas-core/infrastructure/scripts/git-config-detector');
 
 // Mock dependencies
-jest.mock('../../.aiox-core/core/session/context-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/git-config-detector');
-jest.mock('../../.aiox-core/infrastructure/scripts/project-status-loader', () => ({
+jest.mock('../../.lmas-core/core/session/context-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/git-config-detector');
+jest.mock('../../.lmas-core/infrastructure/scripts/project-status-loader', () => ({
   loadProjectStatus: jest.fn(),
   formatStatusDisplay: jest.fn(),
 }));
-jest.mock('../../.aiox-core/core/config/config-resolver', () => ({
+jest.mock('../../.lmas-core/core/config/config-resolver', () => ({
   resolveConfig: jest.fn(() => ({
     config: { user_profile: 'advanced' },
     warnings: [],
     legacy: false,
   })),
 }));
-jest.mock('../../.aiox-core/development/scripts/greeting-preference-manager', () => {
+jest.mock('../../.lmas-core/development/scripts/greeting-preference-manager', () => {
   return jest.fn().mockImplementation(() => ({
     getPreference: jest.fn().mockReturnValue('auto'),
     setPreference: jest.fn(),
@@ -43,20 +43,20 @@ jest.mock('../../.aiox-core/development/scripts/greeting-preference-manager', ()
   }));
 });
 // Story ACT-5: Mock SessionState and SurfaceChecker
-jest.mock('../../.aiox-core/core/orchestration/session-state', () => ({
+jest.mock('../../.lmas-core/core/orchestration/session-state', () => ({
   SessionState: jest.fn().mockImplementation(() => ({
     getStateFilePath: jest.fn().mockReturnValue('/tmp/nonexistent-state.yaml'),
   })),
   sessionStateExists: jest.fn().mockReturnValue(false),
 }));
-jest.mock('../../.aiox-core/core/orchestration/surface-checker', () => ({
+jest.mock('../../.lmas-core/core/orchestration/surface-checker', () => ({
   SurfaceChecker: jest.fn().mockImplementation(() => ({
     load: jest.fn().mockReturnValue(false),
     shouldSurface: jest.fn().mockReturnValue({ should_surface: false }),
   })),
 }));
 
-const { loadProjectStatus } = require('../../.aiox-core/infrastructure/scripts/project-status-loader');
+const { loadProjectStatus } = require('../../.lmas-core/infrastructure/scripts/project-status-loader');
 
 describe('Story ACT-7: Context-Aware Greeting Sections', () => {
   let builder;

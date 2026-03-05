@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 # Test metadata
 TEST_NAME="AC1: Intel Mac Installation"
 TEST_SCRIPT="test-intel-installation.sh"
-LOG_FILE="/tmp/aiox-test-intel-$(date +%Y%m%d-%H%M%S).log"
+LOG_FILE="/tmp/lmas-test-intel-$(date +%Y%m%d-%H%M%S).log"
 
 # Utility functions
 log_info() {
@@ -85,12 +85,12 @@ check_prerequisites() {
 
 # Test 1: Clean installation
 test_clean_installation() {
-    log_info "Test 1: Clean AIOX installation on Intel Mac..."
+    log_info "Test 1: Clean LMAS installation on Intel Mac..."
 
-    # Backup existing AIOX config if present
-    if [[ -d "$HOME/.aiox" ]]; then
-        log_warning "Existing .aiox directory found. Backing up..."
-        mv "$HOME/.aiox" "$HOME/.aiox.backup.$(date +%Y%m%d-%H%M%S)"
+    # Backup existing LMAS config if present
+    if [[ -d "$HOME/.lmas" ]]; then
+        log_warning "Existing .lmas directory found. Backing up..."
+        mv "$HOME/.lmas" "$HOME/.lmas.backup.$(date +%Y%m%d-%H%M%S)"
     fi
 
     # Run installer
@@ -109,14 +109,14 @@ test_clean_installation() {
 test_mcp_health() {
     log_info "Test 2: Verifying MCP health checks..."
 
-    # Check if aiox command is available
-    if ! command -v aiox &> /dev/null; then
-        fail_test "aiox command not found in PATH"
+    # Check if lmas command is available
+    if ! command -v lmas &> /dev/null; then
+        fail_test "lmas command not found in PATH"
     fi
 
     # Run health check
-    log_info "Running: aiox health"
-    HEALTH_OUTPUT=$(aiox health 2>&1)
+    log_info "Running: lmas health"
+    HEALTH_OUTPUT=$(lmas health 2>&1)
 
     echo "$HEALTH_OUTPUT" | tee -a "$LOG_FILE"
 
@@ -138,20 +138,20 @@ test_mcp_health() {
 test_cli_commands() {
     log_info "Test 3: Testing CLI commands..."
 
-    # Test aiox --version
-    if aiox --version &> /dev/null; then
-        VERSION=$(aiox --version)
-        log_info "AIOX version: $VERSION"
-        pass_test "aiox --version works"
+    # Test lmas --version
+    if lmas --version &> /dev/null; then
+        VERSION=$(lmas --version)
+        log_info "LMAS version: $VERSION"
+        pass_test "lmas --version works"
     else
-        fail_test "aiox --version failed"
+        fail_test "lmas --version failed"
     fi
 
-    # Test aiox --help
-    if aiox --help &> /dev/null; then
-        pass_test "aiox --help works"
+    # Test lmas --help
+    if lmas --help &> /dev/null; then
+        pass_test "lmas --help works"
     else
-        fail_test "aiox --help failed"
+        fail_test "lmas --help failed"
     fi
 }
 

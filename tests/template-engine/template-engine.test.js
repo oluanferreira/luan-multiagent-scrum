@@ -29,13 +29,13 @@ const {
   TemplateRenderer,
   TemplateValidator,
   SUPPORTED_TYPES,
-} = require('../../.aiox-core/product/templates/engine');
+} = require('../../.lmas-core/product/templates/engine');
 
 const inquirer = require('inquirer');
 
 describe('Template Engine v2.0', () => {
   const baseDir = path.join(__dirname, '..', '..');
-  const templatesDir = path.join(baseDir, '.aiox-core', 'product', 'templates');
+  const templatesDir = path.join(baseDir, '.lmas-core', 'product', 'templates');
   const schemasDir = path.join(templatesDir, 'engine', 'schemas');
 
   let engine;

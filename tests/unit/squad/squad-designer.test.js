@@ -21,7 +21,7 @@ const {
   SquadDesigner,
   SquadDesignerError,
   DesignerErrorCodes,
-} = require('../../../.aiox-core/development/scripts/squad');
+} = require('../../../.lmas-core/development/scripts/squad');
 
 describe('SquadDesigner', () => {
   let designer;

@@ -37,13 +37,13 @@ const REQUIRED_PATHS = [
   // Rules
   '.claude/rules/',
   // CLI binaries
-  'bin/aiox.js',
-  'bin/aiox-minimal.js',
+  'bin/lmas.js',
+  'bin/lmas-minimal.js',
   // Core framework
-  '.aiox-core/core-config.yaml',
-  '.aiox-core/constitution.md',
-  '.aiox-core/development/agents/',
-  '.aiox-core/development/tasks/',
+  '.lmas-core/core-config.yaml',
+  '.lmas-core/constitution.md',
+  '.lmas-core/development/agents/',
+  '.lmas-core/development/tasks/',
 ];
 
 /**
@@ -54,7 +54,7 @@ const EXCLUDED_PATHS = [
   '.env',
   '.git/',
   'node_modules/',
-  '.aiox/',
+  '.lmas/',
   'tests/',
 ];
 
@@ -64,14 +64,14 @@ const EXCLUDED_PATHS = [
 const REQUIRED_FILES_ENTRIES = [
   '.claude/hooks/',
   '.claude/rules/',
-  '.aiox-core/',
+  '.lmas-core/',
   'bin/',
 ];
 
 /**
  * Bin entries that must point to existing files.
  */
-const REQUIRED_BIN_ENTRIES = ['aiox', 'aiox-core'];
+const REQUIRED_BIN_ENTRIES = ['lmas', 'lmas-core'];
 
 /**
  * Runtime dependencies that must be present.
@@ -276,7 +276,7 @@ function validateBinScripts() {
 
 function main() {
   log('='.repeat(60));
-  log('AIOX-Core Package Completeness Validation');
+  log('LMAS-Core Package Completeness Validation');
   log('='.repeat(60));
 
   const pkg = loadPackageJson();

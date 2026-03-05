@@ -15,7 +15,7 @@ const {
   pruneOldEntries,
   generateSampleData,
   RETENTION_DAYS
-} = require('../../.aiox-core/infrastructure/scripts/collect-tool-usage');
+} = require('../../.lmas-core/infrastructure/scripts/collect-tool-usage');
 
 const {
   compareBaseline,
@@ -23,7 +23,7 @@ const {
   generateReport,
   aggregateUsage,
   DEFAULT_THRESHOLDS
-} = require('../../.aiox-core/infrastructure/scripts/generate-optimization-report');
+} = require('../../.lmas-core/infrastructure/scripts/generate-optimization-report');
 
 // --- Helpers ---
 function makeSession(id, events, daysAgo = 0) {
@@ -165,7 +165,7 @@ describe('generate-optimization-report.js', () => {
       }
     },
     comparison: {
-      aioxActual: {
+      lmasActual: {
         overheadPercentOfTypicalSession: {
           'Story Development Cycle (SDC)': 13.9
         }

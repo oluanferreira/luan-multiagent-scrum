@@ -1,6 +1,6 @@
 'use strict';
 
-const WorkflowOrchestrator = require('../../../.aiox-core/core/orchestration/workflow-orchestrator');
+const WorkflowOrchestrator = require('../../../.lmas-core/core/orchestration/workflow-orchestrator');
 
 describe('WorkflowOrchestrator delivery confidence gate', () => {
   function buildOrchestrator(options = {}, confidence = null) {

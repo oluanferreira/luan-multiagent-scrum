@@ -7,10 +7,10 @@
  * @story 3.5 - Human Review Orchestration
  */
 
-const { HumanReviewOrchestrator } = require('../../.aiox-core/core/quality-gates/human-review-orchestrator');
-const { FocusAreaRecommender } = require('../../.aiox-core/core/quality-gates/focus-area-recommender');
-const { NotificationManager } = require('../../.aiox-core/core/quality-gates/notification-manager');
-const { QualityGateManager } = require('../../.aiox-core/core/quality-gates/quality-gate-manager');
+const { HumanReviewOrchestrator } = require('../../.lmas-core/core/quality-gates/human-review-orchestrator');
+const { FocusAreaRecommender } = require('../../.lmas-core/core/quality-gates/focus-area-recommender');
+const { NotificationManager } = require('../../.lmas-core/core/quality-gates/notification-manager');
+const { QualityGateManager } = require('../../.lmas-core/core/quality-gates/quality-gate-manager');
 
 describe('Human Review Orchestration Integration Tests', () => {
   describe('HUMAN-01: Orchestration Flow', () => {
@@ -18,8 +18,8 @@ describe('Human Review Orchestration Integration Tests', () => {
 
     beforeEach(() => {
       orchestrator = new HumanReviewOrchestrator({
-        statusPath: '.aiox/qa-status-integration-test.json',
-        reviewRequestsPath: '.aiox/human-review-requests-integration-test',
+        statusPath: '.lmas/qa-status-integration-test.json',
+        reviewRequestsPath: '.lmas/human-review-requests-integration-test',
       });
       // Mock file operations to avoid actual file I/O
       orchestrator.saveReviewRequest = jest.fn().mockResolvedValue();

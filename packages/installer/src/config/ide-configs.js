@@ -42,7 +42,7 @@ const IDE_CONFIGS = {
     requiresDirectory: true,
     format: 'text',
     recommended: true,
-    agentFolder: path.join('.claude', 'commands', 'AIOX', 'agents'),
+    agentFolder: path.join('.claude', 'commands', 'LMAS', 'agents'),
   },
   codex: {
     name: 'Codex CLI',
@@ -61,7 +61,7 @@ const IDE_CONFIGS = {
     template: 'ide-rules/gemini-rules.md',
     requiresDirectory: true,
     format: 'text',
-    agentFolder: path.join('.gemini', 'rules', 'AIOX', 'agents'),
+    agentFolder: path.join('.gemini', 'rules', 'LMAS', 'agents'),
   },
   cursor: {
     name: 'Cursor',
@@ -129,7 +129,7 @@ function isValidIDE(ideKey) {
  * @returns {Array<{name: string, value: string, checked?: boolean}>} Inquirer-compatible choices
  */
 function getIDEChoices() {
-  const { colors } = require('../utils/aiox-colors');
+  const { colors } = require('../utils/lmas-colors');
   const { t } = require('../wizard/i18n');
 
   return getIDEKeys().map((key) => {

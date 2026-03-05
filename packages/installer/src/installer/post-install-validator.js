@@ -319,13 +319,13 @@ function validateManifestEntry(entry, index) {
 
 /**
  * Post-Installation Validator Class
- * Comprehensive validation of AIOX-Core installation with security hardening
+ * Comprehensive validation of LMAS-Core installation with security hardening
  */
 class PostInstallValidator {
   /**
    * Create a new PostInstallValidator instance
    *
-   * @param {string} targetDir - Directory where AIOX was installed (project root)
+   * @param {string} targetDir - Directory where LMAS was installed (project root)
    * @param {string} [sourceDir] - Source directory for repairs (optional)
    * @param {Object} [options] - Validation options
    * @param {boolean} [options.verifyHashes=true] - Whether to verify file hashes
@@ -337,8 +337,8 @@ class PostInstallValidator {
   constructor(targetDir, sourceDir = null, options = {}) {
     this.targetDir = path.resolve(targetDir);
     this.sourceDir = sourceDir ? path.resolve(sourceDir) : null;
-    this.aioxCoreTarget = path.join(this.targetDir, '.aiox-core');
-    this.aioxCoreSource = this.sourceDir ? path.join(this.sourceDir, '.aiox-core') : null;
+    this.lmasCoreTarget = path.join(this.targetDir, '.lmas-core');
+    this.lmasCoreSource = this.sourceDir ? path.join(this.sourceDir, '.lmas-core') : null;
 
     this.options = {
       verifyHashes: options.verifyHashes !== false,
@@ -373,7 +373,7 @@ class PostInstallValidator {
   _getRealTargetDir() {
     if (this._realTargetDirCache === null) {
       try {
-        this._realTargetDirCache = fs.realpathSync(this.aioxCoreTarget);
+        this._realTargetDirCache = fs.realpathSync(this.lmasCoreTarget);
       } catch {
         // Will be handled by caller
         return null;
@@ -390,10 +390,10 @@ class PostInstallValidator {
    */
   async loadManifest() {
     // Determine manifest path
-    const sourceManifestPath = this.aioxCoreSource
-      ? path.join(this.aioxCoreSource, 'install-manifest.yaml')
+    const sourceManifestPath = this.lmasCoreSource
+      ? path.join(this.lmasCoreSource, 'install-manifest.yaml')
       : null;
-    const targetManifestPath = path.join(this.aioxCoreTarget, 'install-manifest.yaml');
+    const targetManifestPath = path.join(this.lmasCoreTarget, 'install-manifest.yaml');
 
     let manifestPath = targetManifestPath;
 
@@ -601,7 +601,7 @@ class PostInstallValidator {
    */
   async validateFile(entry) {
     const relativePath = entry.path;
-    const absolutePath = path.resolve(this.aioxCoreTarget, relativePath);
+    const absolutePath = path.resolve(this.lmasCoreTarget, relativePath);
     const category = categorizeFile(relativePath);
 
     const result = {
@@ -614,7 +614,7 @@ class PostInstallValidator {
     };
 
     // SECURITY [H1]: Validate path containment
-    if (!isPathContained(absolutePath, this.aioxCoreTarget)) {
+    if (!isPathContained(absolutePath, this.lmasCoreTarget)) {
       this.log(`SECURITY: Path traversal blocked: ${relativePath}`);
       result.issue = {
         type: IssueType.INVALID_PATH,
@@ -642,7 +642,7 @@ class PostInstallValidator {
           details: `Expected at: ${absolutePath}`,
           category,
           remediation: this.sourceDir
-            ? "Run 'aiox validate --repair' to restore"
+            ? "Run 'lmas validate --repair' to restore"
             : 'Re-run installation',
           relativePath,
         };
@@ -695,7 +695,7 @@ class PostInstallValidator {
 
     // SECURITY [C3-REALPATH]: Detect symlinks in intermediate directory components
     // A file may not be a symlink itself, but a parent directory could be,
-    // allowing path traversal attacks (e.g., /install/.aiox-core/symlinked-dir/../../../etc/passwd)
+    // allowing path traversal attacks (e.g., /install/.lmas-core/symlinked-dir/../../../etc/passwd)
     //
     // NOTE: On macOS, /tmp is a symlink to /private/tmp. This is a system-level
     // symlink that shouldn't trigger security alerts. We handle this by resolving
@@ -745,7 +745,7 @@ class PostInstallValidator {
       // SECURITY: Detect symlinks in the RELATIVE portion of the path
       // Compare the relative path from target to file with the relative path
       // from realTarget to realPath. If they differ, there's a symlink attack.
-      const expectedRelative = path.relative(this.aioxCoreTarget, absolutePath);
+      const expectedRelative = path.relative(this.lmasCoreTarget, absolutePath);
       const actualRelative = path.relative(realTargetDir, realPath);
 
       // Platform-aware comparison (case-insensitive on Windows)
@@ -821,7 +821,7 @@ class PostInstallValidator {
             details: `Expected: ${entry.size} bytes, Got: ${actualSize} bytes`,
             category,
             remediation: this.sourceDir
-              ? "Run 'aiox validate --repair' to restore"
+              ? "Run 'lmas validate --repair' to restore"
               : 'Re-run installation',
             relativePath,
           };
@@ -861,7 +861,7 @@ class PostInstallValidator {
             details: `Expected: ${entry.hash.substring(0, 24)}..., Got: ${actualHash.substring(0, 24)}...`,
             category,
             remediation: this.sourceDir
-              ? "Run 'aiox validate --repair' to restore"
+              ? "Run 'lmas validate --repair' to restore"
               : 'Re-run installation',
             relativePath,
           };
@@ -961,7 +961,7 @@ class PostInstallValidator {
       }
     };
 
-    await scanDir(this.aioxCoreTarget, this.aioxCoreTarget);
+    await scanDir(this.lmasCoreTarget, this.lmasCoreTarget);
     return extraFiles;
   }
 
@@ -988,13 +988,13 @@ class PostInstallValidator {
     };
 
     // Check target directory
-    if (!fs.existsSync(this.aioxCoreTarget)) {
+    if (!fs.existsSync(this.lmasCoreTarget)) {
       this.issues.push({
         type: IssueType.MISSING_FILE,
         severity: Severity.CRITICAL,
-        message: 'AIOX-Core directory not found',
-        details: `Expected at: ${this.aioxCoreTarget}`,
-        remediation: 'Run `npx aiox-core install`',
+        message: 'LMAS-Core directory not found',
+        details: `Expected at: ${this.lmasCoreTarget}`,
+        remediation: 'Run `npx lmas-core install`',
         relativePath: null,
       });
       return this.generateReport(startTime);
@@ -1139,14 +1139,14 @@ class PostInstallValidator {
         recommendations.push('Consider re-running full installation.');
       } else {
         recommendations.push(
-          `${this.stats.missingFiles} file(s) missing. Run 'aiox validate --repair'.`,
+          `${this.stats.missingFiles} file(s) missing. Run 'lmas validate --repair'.`,
         );
       }
     }
 
     if (this.stats.corruptedFiles > 0) {
       recommendations.push(
-        `${this.stats.corruptedFiles} file(s) corrupted. Run 'aiox validate --repair'.`,
+        `${this.stats.corruptedFiles} file(s) corrupted. Run 'lmas validate --repair'.`,
       );
     }
 
@@ -1192,7 +1192,7 @@ class PostInstallValidator {
       };
     }
 
-    if (!this.sourceDir || !fs.existsSync(this.aioxCoreSource)) {
+    if (!this.sourceDir || !fs.existsSync(this.lmasCoreSource)) {
       return {
         success: false,
         error: 'Source directory not available',
@@ -1232,19 +1232,19 @@ class PostInstallValidator {
         continue;
       }
 
-      const sourcePath = path.resolve(this.aioxCoreSource, relativePath);
-      const targetPath = path.resolve(this.aioxCoreTarget, relativePath);
+      const sourcePath = path.resolve(this.lmasCoreSource, relativePath);
+      const targetPath = path.resolve(this.lmasCoreTarget, relativePath);
 
       onProgress(i + 1, repairableIssues.length, relativePath);
 
       // SECURITY: Path containment for source
-      if (!isPathContained(sourcePath, this.aioxCoreSource)) {
+      if (!isPathContained(sourcePath, this.lmasCoreSource)) {
         result.skipped.push({ path: relativePath, reason: 'Source path traversal blocked' });
         continue;
       }
 
       // SECURITY: Path containment for target
-      if (!isPathContained(targetPath, this.aioxCoreTarget)) {
+      if (!isPathContained(targetPath, this.lmasCoreTarget)) {
         result.skipped.push({ path: relativePath, reason: 'Target path traversal blocked' });
         continue;
       }
@@ -1309,10 +1309,10 @@ class PostInstallValidator {
       try {
         const targetDir = path.dirname(targetPath);
 
-        // Walk each path component from aioxCoreTarget to targetDir
+        // Walk each path component from lmasCoreTarget to targetDir
         // and verify none are symlinks
-        let currentPath = this.aioxCoreTarget;
-        const relativeParts = path.relative(this.aioxCoreTarget, targetDir).split(path.sep);
+        let currentPath = this.lmasCoreTarget;
+        const relativeParts = path.relative(this.lmasCoreTarget, targetDir).split(path.sep);
 
         for (const part of relativeParts) {
           if (!part || part === '.') continue;
@@ -1324,7 +1324,7 @@ class PostInstallValidator {
             if (componentStat.isSymbolicLink()) {
               result.skipped.push({
                 path: relativePath,
-                reason: `Symlink detected in path component: ${path.relative(this.aioxCoreTarget, currentPath)}`,
+                reason: `Symlink detected in path component: ${path.relative(this.lmasCoreTarget, currentPath)}`,
               });
               continue;
             }
@@ -1335,16 +1335,16 @@ class PostInstallValidator {
           }
         }
 
-        // Final realpath verification: ensure resolved target stays within resolved aioxCoreTarget
+        // Final realpath verification: ensure resolved target stays within resolved lmasCoreTarget
         // This catches any symlinks that might have been missed or created during the check
         if (fs.existsSync(targetDir)) {
           const realTargetDir = fs.realpathSync(targetDir);
-          const realAioxCoreTarget = fs.realpathSync(this.aioxCoreTarget);
+          const realLmasCoreTarget = fs.realpathSync(this.lmasCoreTarget);
 
-          if (!isPathContained(realTargetDir, realAioxCoreTarget)) {
+          if (!isPathContained(realTargetDir, realLmasCoreTarget)) {
             result.skipped.push({
               path: relativePath,
-              reason: `Realpath escapes target directory: ${realTargetDir} is outside ${realAioxCoreTarget}`,
+              reason: `Realpath escapes target directory: ${realTargetDir} is outside ${realLmasCoreTarget}`,
             });
             continue;
           }
@@ -1413,7 +1413,7 @@ function formatReport(report, options = {}) {
   const lines = [];
 
   lines.push('');
-  lines.push(`${c.bold}AIOX-Core Installation Validation Report${c.reset}`);
+  lines.push(`${c.bold}LMAS-Core Installation Validation Report${c.reset}`);
   lines.push(`${c.gray}${'─'.repeat(50)}${c.reset}`);
 
   // Signature status

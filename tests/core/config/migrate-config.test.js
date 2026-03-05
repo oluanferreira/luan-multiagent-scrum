@@ -30,7 +30,7 @@ const {
   writeProjectConfig,
   USER_FIELDS,
   PROJECT_FIELDS,
-} = require('../../../.aiox-core/core/config/migrate-config');
+} = require('../../../.lmas-core/core/config/migrate-config');
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -41,7 +41,7 @@ const FAKE_HOME = '/fake/home';
 
 const LEGACY_CONFIG_YAML = `
 project:
-  type: EXISTING_AIOX
+  type: EXISTING_LMAS
   installedAt: "2025-01-14"
   version: "2.1.0"
 user_profile: advanced
@@ -153,21 +153,21 @@ describe('extractProjectFields', () => {
   it('should extract project.type from nested project object', () => {
     // Given
     const legacyConfig = {
-      project: { type: 'EXISTING_AIOX', version: '2.1.0' },
+      project: { type: 'EXISTING_LMAS', version: '2.1.0' },
     };
 
     // When
     const projectFields = extractProjectFields(legacyConfig);
 
     // Then
-    expect(projectFields.project_type).toBe('EXISTING_AIOX');
+    expect(projectFields.project_type).toBe('EXISTING_LMAS');
   });
 
   it('should not override explicit project_type with nested project.type', () => {
     // Given
     const legacyConfig = {
       project_type: 'fullstack',
-      project: { type: 'EXISTING_AIOX' },
+      project: { type: 'EXISTING_LMAS' },
     };
 
     // When
@@ -279,7 +279,7 @@ describe('migrateConfig', () => {
 
   it('should be idempotent: re-running does not duplicate', () => {
     // Given — legacy exists, and user/project config already exist
-    const userConfigPath = path.join(FAKE_HOME, '.aiox', 'user-config.yaml');
+    const userConfigPath = path.join(FAKE_HOME, '.lmas', 'user-config.yaml');
     setupFileSystem({
       'core-config.yaml': LEGACY_CONFIG_YAML,
       'core-config.backup.yaml': LEGACY_CONFIG_YAML,
@@ -317,7 +317,7 @@ describe('migrateConfig', () => {
 // ---------------------------------------------------------------------------
 
 describe('ensureUserConfigDir', () => {
-  it('should create ~/.aiox/ directory if it does not exist', () => {
+  it('should create ~/.lmas/ directory if it does not exist', () => {
     // Given
     fs.existsSync.mockReturnValue(false);
 
@@ -326,7 +326,7 @@ describe('ensureUserConfigDir', () => {
 
     // Then
     expect(fs.mkdirSync).toHaveBeenCalledWith(
-      expect.stringContaining('.aiox'),
+      expect.stringContaining('.lmas'),
       expect.objectContaining({ recursive: true }),
     );
   });

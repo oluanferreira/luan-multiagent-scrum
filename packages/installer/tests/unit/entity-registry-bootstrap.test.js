@@ -4,7 +4,7 @@
  * Entity Registry Bootstrap Tests (Story INS-4.6)
  *
  * Validates that the installer calls populate-entity-registry.js during install,
- * handles failures gracefully, and that aiox doctor can verify the registry.
+ * handles failures gracefully, and that lmas doctor can verify the registry.
  */
 
 const fs = require('fs');
@@ -12,17 +12,17 @@ const path = require('path');
 
 const WIZARD_PATH = path.join(__dirname, '..', '..', 'src', 'wizard', 'index.js');
 const POPULATE_SCRIPT = path.join(
-  __dirname, '..', '..', '..', '..', '.aiox-core', 'development', 'scripts', 'populate-entity-registry.js'
+  __dirname, '..', '..', '..', '..', '.lmas-core', 'development', 'scripts', 'populate-entity-registry.js'
 );
 const DOCTOR_CHECK = path.join(
-  __dirname, '..', '..', '..', '..', '.aiox-core', 'core', 'doctor', 'checks', 'entity-registry.js'
+  __dirname, '..', '..', '..', '..', '.lmas-core', 'core', 'doctor', 'checks', 'entity-registry.js'
 );
 const REGISTRY_PATH = path.join(
-  __dirname, '..', '..', '..', '..', '.aiox-core', 'data', 'entity-registry.yaml'
+  __dirname, '..', '..', '..', '..', '.lmas-core', 'data', 'entity-registry.yaml'
 );
 const PRE_PUSH_HOOK = path.join(__dirname, '..', '..', '..', '..', '.husky', 'pre-push');
 const IDS_PRE_PUSH = path.join(
-  __dirname, '..', '..', '..', '..', '.aiox-core', 'hooks', 'ids-pre-push.js'
+  __dirname, '..', '..', '..', '..', '.lmas-core', 'hooks', 'ids-pre-push.js'
 );
 
 describe('Entity Registry Bootstrap (Story INS-4.6)', () => {
@@ -38,13 +38,13 @@ describe('Entity Registry Bootstrap (Story INS-4.6)', () => {
       expect(wizardSource).toContain('Bootstrapping entity registry');
     });
 
-    test('bootstrap runs after .aiox-core/ copy (injection order)', () => {
-      const aioxCoreIdx = wizardSource.indexOf('AIOX core installed');
+    test('bootstrap runs after .lmas-core/ copy (injection order)', () => {
+      const lmasCoreIdx = wizardSource.indexOf('LMAS core installed');
       const bootstrapIdx = wizardSource.indexOf('Bootstrapping entity registry');
       const envConfigIdx = wizardSource.indexOf('Configuring environment');
 
-      // Bootstrap must come after aiox-core install
-      expect(bootstrapIdx).toBeGreaterThan(aioxCoreIdx);
+      // Bootstrap must come after lmas-core install
+      expect(bootstrapIdx).toBeGreaterThan(lmasCoreIdx);
       // Bootstrap must come before environment configuration
       expect(bootstrapIdx).toBeLessThan(envConfigIdx);
     });
@@ -54,7 +54,7 @@ describe('Entity Registry Bootstrap (Story INS-4.6)', () => {
       expect(wizardSource).toContain("answers.entityRegistryStatus = 'failed'");
       expect(wizardSource).toContain('Entity registry bootstrap failed');
       // Should warn, not throw
-      expect(wizardSource).toContain("run 'aiox doctor' post-install");
+      expect(wizardSource).toContain("run 'lmas doctor' post-install");
     });
 
     test('bootstrap uses 30s timeout guard', () => {
@@ -74,7 +74,7 @@ describe('Entity Registry Bootstrap (Story INS-4.6)', () => {
   });
 
   describe('AC2: Sanity check (relative threshold)', () => {
-    test('aiox doctor entity-registry check exists', () => {
+    test('lmas doctor entity-registry check exists', () => {
       expect(fs.existsSync(DOCTOR_CHECK)).toBe(true);
     });
 
@@ -176,7 +176,7 @@ describe('Entity Registry Bootstrap (Story INS-4.6)', () => {
       expect(ageMs).toBeLessThan(FIVE_MINUTES);
     });
 
-    test('aiox doctor entity-registry check passes on current registry', async () => {
+    test('lmas doctor entity-registry check passes on current registry', async () => {
       const { run } = require(DOCTOR_CHECK);
       const projectRoot = path.join(__dirname, '..', '..', '..', '..');
       const result = await run({ projectRoot });

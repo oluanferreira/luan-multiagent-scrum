@@ -6,11 +6,11 @@
  * @story 2.10 - Quality Gate Manager
  */
 
-const { QualityGateManager } = require('../../.aiox-core/core/quality-gates/quality-gate-manager');
-const { Layer1PreCommit } = require('../../.aiox-core/core/quality-gates/layer1-precommit');
-const { Layer2PRAutomation } = require('../../.aiox-core/core/quality-gates/layer2-pr-automation');
-const { Layer3HumanReview } = require('../../.aiox-core/core/quality-gates/layer3-human-review');
-const { ChecklistGenerator } = require('../../.aiox-core/core/quality-gates/checklist-generator');
+const { QualityGateManager } = require('../../.lmas-core/core/quality-gates/quality-gate-manager');
+const { Layer1PreCommit } = require('../../.lmas-core/core/quality-gates/layer1-precommit');
+const { Layer2PRAutomation } = require('../../.lmas-core/core/quality-gates/layer2-pr-automation');
+const { Layer3HumanReview } = require('../../.lmas-core/core/quality-gates/layer3-human-review');
+const { ChecklistGenerator } = require('../../.lmas-core/core/quality-gates/checklist-generator');
 
 describe('Quality Gate Pipeline Integration', () => {
   describe('Full Pipeline Orchestration', () => {
@@ -125,7 +125,7 @@ describe('Quality Gate Pipeline Integration', () => {
         storyId: 'story-2.10',
         changedFiles: [
           'tests/unit/layer1.test.js',
-          '.aiox-core/core/quality-gates/manager.js',
+          '.lmas-core/core/quality-gates/manager.js',
           'docs/architecture/quality-gates.md',
         ],
         layers: [],

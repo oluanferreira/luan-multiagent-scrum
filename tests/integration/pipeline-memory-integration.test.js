@@ -16,7 +16,7 @@
 const path = require('path');
 const fs = require('fs').promises;
 const yaml = require('js-yaml');
-const { UnifiedActivationPipeline } = require('../../.aiox-core/development/scripts/unified-activation-pipeline');
+const { UnifiedActivationPipeline } = require('../../.lmas-core/development/scripts/unified-activation-pipeline');
 
 // Mock pro-detector for testing different scenarios
 jest.mock('../../bin/utils/pro-detector');
@@ -27,11 +27,11 @@ describe('UnifiedActivationPipeline Memory Integration (MIS-6)', () => {
   const testProjectRoot = path.join(__dirname, '..', 'fixtures', 'test-project-memory');
 
   // Store original env to restore after tests
-  const originalPipelineTimeout = process.env.AIOX_PIPELINE_TIMEOUT;
+  const originalPipelineTimeout = process.env.LMAS_PIPELINE_TIMEOUT;
 
   beforeEach(() => {
     // Increase pipeline timeout so tests don't fail under heavy load (full suite)
-    process.env.AIOX_PIPELINE_TIMEOUT = '5000';
+    process.env.LMAS_PIPELINE_TIMEOUT = '5000';
     pipeline = new UnifiedActivationPipeline(testProjectRoot);
     jest.clearAllMocks();
   });
@@ -39,14 +39,14 @@ describe('UnifiedActivationPipeline Memory Integration (MIS-6)', () => {
   afterEach(async () => {
     // Restore original pipeline timeout
     if (originalPipelineTimeout !== undefined) {
-      process.env.AIOX_PIPELINE_TIMEOUT = originalPipelineTimeout;
+      process.env.LMAS_PIPELINE_TIMEOUT = originalPipelineTimeout;
     } else {
-      delete process.env.AIOX_PIPELINE_TIMEOUT;
+      delete process.env.LMAS_PIPELINE_TIMEOUT;
     }
 
     // Cleanup test data
     try {
-      const digestsPath = path.join(testProjectRoot, '.aiox', 'session-digests');
+      const digestsPath = path.join(testProjectRoot, '.lmas', 'session-digests');
       await fs.rm(digestsPath, { recursive: true, force: true });
     } catch {
       // Ignore cleanup errors

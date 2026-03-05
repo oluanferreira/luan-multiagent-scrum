@@ -14,7 +14,7 @@ const {
   collectEvents,
 } = require('./execution-test-helpers');
 
-const { ResultAggregator } = require('../../.aiox-core/core/execution/result-aggregator');
+const { ResultAggregator } = require('../../.lmas-core/core/execution/result-aggregator');
 
 describe('ResultAggregator', () => {
   let tmpDir;

@@ -17,7 +17,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 
-const { WorkflowExecutor } = require('../../../.aiox-core/core/orchestration/workflow-executor');
+const { WorkflowExecutor } = require('../../../.lmas-core/core/orchestration/workflow-executor');
 
 describe('WorkflowExecutor Callbacks (Story 12.6)', () => {
   let tempDir;
@@ -27,8 +27,8 @@ describe('WorkflowExecutor Callbacks (Story 12.6)', () => {
     tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'executor-callbacks-'));
 
     // Create minimal directory structure
-    await fs.ensureDir(path.join(tempDir, '.aiox-core/development/workflows'));
-    await fs.ensureDir(path.join(tempDir, '.aiox'));
+    await fs.ensureDir(path.join(tempDir, '.lmas-core/development/workflows'));
+    await fs.ensureDir(path.join(tempDir, '.lmas'));
 
     // Create minimal workflow file
     const workflowContent = `
@@ -43,7 +43,7 @@ workflow:
       on_success: 3_self_healing
 `;
     await fs.writeFile(
-      path.join(tempDir, '.aiox-core/development/workflows/development-cycle.yaml'),
+      path.join(tempDir, '.lmas-core/development/workflows/development-cycle.yaml'),
       workflowContent,
     );
 

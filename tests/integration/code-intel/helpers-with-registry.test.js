@@ -14,26 +14,26 @@ const {
   getClient,
   getEnricher,
   isCodeIntelAvailable,
-} = require('../../../.aiox-core/core/code-intel');
+} = require('../../../.lmas-core/core/code-intel');
 
 const {
   checkBeforeWriting,
   suggestReuse,
-} = require('../../../.aiox-core/core/code-intel/helpers/dev-helper');
+} = require('../../../.lmas-core/core/code-intel/helpers/dev-helper');
 
 const {
   getBlastRadius,
   getReferenceImpact,
-} = require('../../../.aiox-core/core/code-intel/helpers/qa-helper');
+} = require('../../../.lmas-core/core/code-intel/helpers/qa-helper');
 
 const {
   getDependencyGraph,
   getCodebaseOverview,
-} = require('../../../.aiox-core/core/code-intel/helpers/planning-helper');
+} = require('../../../.lmas-core/core/code-intel/helpers/planning-helper');
 
 const {
   suggestRelevantFiles,
-} = require('../../../.aiox-core/core/code-intel/helpers/story-helper');
+} = require('../../../.lmas-core/core/code-intel/helpers/story-helper');
 
 jest.setTimeout(30000);
 
@@ -98,7 +98,7 @@ describe('AC8: Helper Functions Return Real Data with RegistryProvider', () => {
 
   describe('qa-helper.js', () => {
     test('getBlastRadius() returns real data for known files', async () => {
-      const files = ['.aiox-core/development/tasks/create-story.md'];
+      const files = ['.lmas-core/development/tasks/create-story.md'];
       const result = await getBlastRadius(files);
       // assessImpact uses findReferences + analyzeComplexity
       // With RegistryProvider, findReferences should work, analyzeComplexity returns null (AST-only)
@@ -187,7 +187,7 @@ describe('AC8: Helper Functions Return Real Data with RegistryProvider', () => {
       const results = await Promise.all([
         checkBeforeWriting('create-next-story', 'create user story task').then(r => ({ name: 'checkBeforeWriting', result: r })),
         suggestReuse('create-next-story').then(r => ({ name: 'suggestReuse', result: r })),
-        getBlastRadius(['.aiox-core/development/tasks/create-next-story.md']).then(r => ({ name: 'getBlastRadius', result: r })),
+        getBlastRadius(['.lmas-core/development/tasks/create-next-story.md']).then(r => ({ name: 'getBlastRadius', result: r })),
         getReferenceImpact(['create-next-story']).then(r => ({ name: 'getReferenceImpact', result: r })),
         getDependencyGraph('create-next-story').then(r => ({ name: 'getDependencyGraph', result: r })),
         getCodebaseOverview('.').then(r => ({ name: 'getCodebaseOverview', result: r })),

@@ -10,7 +10,7 @@
  * - TTL expiration handling
  */
 
-const ContextDetector = require('../../.aiox-core/core/session/context-detector');
+const ContextDetector = require('../../.lmas-core/core/session/context-detector');
 const fs = require('fs');
 const path = require('path');
 

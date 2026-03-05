@@ -7,14 +7,14 @@
  * @story 3.5 - Human Review Orchestration
  */
 
-const { NotificationManager } = require('../../../.aiox-core/core/quality-gates/notification-manager');
+const { NotificationManager } = require('../../../.lmas-core/core/quality-gates/notification-manager');
 
 describe('NotificationManager', () => {
   let notificationManager;
 
   beforeEach(() => {
     notificationManager = new NotificationManager({
-      notificationsPath: '.aiox/notifications-test',
+      notificationsPath: '.lmas/notifications-test',
       channels: ['console'], // Only console for tests
     });
   });
@@ -28,7 +28,7 @@ describe('NotificationManager', () => {
     });
 
     it('should create manager with custom config', () => {
-      expect(notificationManager.notificationsPath).toBe('.aiox/notifications-test');
+      expect(notificationManager.notificationsPath).toBe('.lmas/notifications-test');
       expect(notificationManager.channels).toEqual(['console']);
     });
   });

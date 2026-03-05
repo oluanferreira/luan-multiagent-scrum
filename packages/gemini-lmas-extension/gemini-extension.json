@@ -1,0 +1,147 @@
+{
+  "$schema": "https://geminicli.com/schemas/extension.json",
+  "name": "lmas",
+  "displayName": "LMAS",
+  "version": "1.0.0",
+  "description": "Multi-agent orchestration system for CLI-first development. Brings LMAS agents, hooks, and workflows to Gemini CLI.",
+  "author": "LMAS",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmas/lmas-core"
+  },
+  "engines": {
+    "gemini-cli": ">=0.26.0"
+  },
+  "capabilities": {
+    "hooks": true,
+    "skills": true,
+    "commands": true,
+    "mcp": false
+  },
+  "activation": {
+    "onStartup": true,
+    "conditions": [
+      {
+        "type": "fileExists",
+        "path": ".lmas-core"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "lmas-status",
+      "description": "Show LMAS system status and provider info",
+      "script": "commands/lmas-status.js"
+    },
+    {
+      "name": "lmas-agents",
+      "description": "List available LMAS agents",
+      "script": "commands/lmas-agents.js"
+    },
+    {
+      "name": "lmas-validate",
+      "description": "Validate LMAS installation and skills",
+      "script": "commands/lmas-validate.js"
+    },
+    {
+      "name": "lmas-menu",
+      "description": "Show LMAS quick agent menu for Gemini",
+      "script": "commands/lmas-menu.js"
+    },
+    {
+      "name": "lmas-agent",
+      "description": "Prepare activation prompt for a specific LMAS agent (/lmas-agent <id>)",
+      "script": "commands/lmas-agent.js"
+    },
+    {
+      "name": "lmas-master",
+      "description": "Quick launch lmas-master agent",
+      "script": "commands/lmas-master.js"
+    },
+    {
+      "name": "lmas-analyst",
+      "description": "Quick launch analyst agent",
+      "script": "commands/lmas-analyst.js"
+    },
+    {
+      "name": "lmas-architect",
+      "description": "Quick launch architect agent",
+      "script": "commands/lmas-architect.js"
+    },
+    {
+      "name": "lmas-data-engineer",
+      "description": "Quick launch data-engineer agent",
+      "script": "commands/lmas-data-engineer.js"
+    },
+    {
+      "name": "lmas-dev",
+      "description": "Quick launch dev agent",
+      "script": "commands/lmas-dev.js"
+    },
+    {
+      "name": "lmas-devops",
+      "description": "Quick launch devops agent",
+      "script": "commands/lmas-devops.js"
+    },
+    {
+      "name": "lmas-pm",
+      "description": "Quick launch pm agent",
+      "script": "commands/lmas-pm.js"
+    },
+    {
+      "name": "lmas-po",
+      "description": "Quick launch po agent",
+      "script": "commands/lmas-po.js"
+    },
+    {
+      "name": "lmas-qa",
+      "description": "Quick launch qa agent",
+      "script": "commands/lmas-qa.js"
+    },
+    {
+      "name": "lmas-sm",
+      "description": "Quick launch sm agent",
+      "script": "commands/lmas-sm.js"
+    },
+    {
+      "name": "lmas-squad-creator",
+      "description": "Quick launch squad-creator agent",
+      "script": "commands/lmas-squad-creator.js"
+    },
+    {
+      "name": "lmas-ux-design-expert",
+      "description": "Quick launch ux-design-expert agent",
+      "script": "commands/lmas-ux-design-expert.js"
+    }
+  ],
+  "skills": [
+    {
+      "name": "dev",
+      "path": "skills/dev.md",
+      "description": "Developer agent - code implementation"
+    },
+    {
+      "name": "architect",
+      "path": "skills/architect.md",
+      "description": "Architect agent - system design"
+    },
+    {
+      "name": "qa",
+      "path": "skills/qa.md",
+      "description": "QA agent - testing and quality"
+    }
+  ],
+  "hooks": {
+    "configPath": "hooks/hooks.json"
+  },
+  "keywords": [
+    "lmas",
+    "agents",
+    "orchestration",
+    "development",
+    "ai",
+    "claude",
+    "multi-agent"
+  ]
+}

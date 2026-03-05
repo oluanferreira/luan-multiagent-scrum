@@ -4,10 +4,10 @@ const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
 
-const { commandValidate } = require('../../.aiox-core/infrastructure/scripts/ide-sync/index');
-const { parseAllAgents } = require('../../.aiox-core/infrastructure/scripts/ide-sync/agent-parser');
-const claudeTransformer = require('../../.aiox-core/infrastructure/scripts/ide-sync/transformers/claude-code');
-const { syncGeminiCommands } = require('../../.aiox-core/infrastructure/scripts/ide-sync/gemini-commands');
+const { commandValidate } = require('../../.lmas-core/infrastructure/scripts/ide-sync/index');
+const { parseAllAgents } = require('../../.lmas-core/infrastructure/scripts/ide-sync/agent-parser');
+const claudeTransformer = require('../../.lmas-core/infrastructure/scripts/ide-sync/transformers/claude-code');
+const { syncGeminiCommands } = require('../../.lmas-core/infrastructure/scripts/ide-sync/gemini-commands');
 
 describe('ide-sync commandValidate --ide filter', () => {
   let tmpRoot;
@@ -18,13 +18,13 @@ describe('ide-sync commandValidate --ide filter', () => {
     previousCwd = process.cwd();
     process.chdir(tmpRoot);
 
-    await fs.ensureDir(path.join(tmpRoot, '.aiox-core'));
+    await fs.ensureDir(path.join(tmpRoot, '.lmas-core'));
     await fs.writeFile(
-      path.join(tmpRoot, '.aiox-core', 'core-config.yaml'),
+      path.join(tmpRoot, '.lmas-core', 'core-config.yaml'),
       [
         'ideSync:',
         '  enabled: true',
-        '  source: .aiox-core/development/agents',
+        '  source: .lmas-core/development/agents',
         '  targets:',
         '    claude-code:',
         '      enabled: true',
@@ -40,16 +40,16 @@ describe('ide-sync commandValidate --ide filter', () => {
     );
 
     await fs.copy(
-      path.join(previousCwd, '.aiox-core', 'development', 'agents'),
-      path.join(tmpRoot, '.aiox-core', 'development', 'agents'),
+      path.join(previousCwd, '.lmas-core', 'development', 'agents'),
+      path.join(tmpRoot, '.lmas-core', 'development', 'agents'),
     );
 
-    await fs.ensureDir(path.join(tmpRoot, '.gemini', 'rules', 'AIOX', 'agents'));
-    const agents = parseAllAgents(path.join(tmpRoot, '.aiox-core', 'development', 'agents'));
+    await fs.ensureDir(path.join(tmpRoot, '.gemini', 'rules', 'LMAS', 'agents'));
+    const agents = parseAllAgents(path.join(tmpRoot, '.lmas-core', 'development', 'agents'));
     for (const agent of agents) {
       const content = claudeTransformer.transform(agent);
       await fs.writeFile(
-        path.join(tmpRoot, '.gemini', 'rules', 'AIOX', 'agents', agent.filename),
+        path.join(tmpRoot, '.gemini', 'rules', 'LMAS', 'agents', agent.filename),
         content,
         'utf8',
       );
