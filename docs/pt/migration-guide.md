@@ -4,13 +4,13 @@
   Última sincronização: 2026-01-26
 -->
 
-# Guia de Atualização do Synkra LMAS
+# Guia de Atualização do LMAS
 
 > 🌐 [EN](../migration-guide.md) | **PT** | [ES](../es/migration-guide.md)
 
 ---
 
-Este guia ajuda você a atualizar entre versões do Synkra LMAS.
+Este guia ajuda você a atualizar entre versões do LMAS.
 
 ## Sumário
 
@@ -26,7 +26,7 @@ Este guia ajuda você a atualizar entre versões do Synkra LMAS.
 
 ### Versão Atual
 
-**Synkra LMAS v4.2.11** (Versão Estável Atual)
+**LMAS v4.2.11** (Versão Estável Atual)
 
 ### Caminhos de Atualização
 
@@ -279,7 +279,7 @@ lmas memory reset
 Se você encontrar problemas não cobertos aqui:
 
 1. **Verificar Logs**: Revise `.lmas-core/logs/upgrade.log`
-2. **Issues no GitHub**: [github.com/SynkraAI/lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+2. **Issues no GitHub**: [github.com/oluanferreira/luan-multiagent-scrum/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 3. **Comunidade Discord**: [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
 4. **Documentação**: [diretório docs](./getting-started.md)
 

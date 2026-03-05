@@ -2,17 +2,17 @@
 
 # Squads API 参考
 
-REST API用于将squads同步到Synkra并发现marketplace中的squads。
+REST API用于将squads同步到LMAS并发现marketplace中的squads。
 
 ## 概述
 
 Squads API允许：
 
-- **同步**: 将本地squads发送到Synkra云端
+- **同步**: 将本地squads发送到LMAS云端
 - **Marketplace**: 发现和浏览公共squads
 - **管理**: 更新可见性、删除squads
 
-**基础URL**: `https://api.synkra.ai`
+**基础URL**: `https://api.lmas.ai`
 
 ## 认证
 
@@ -30,13 +30,13 @@ Authorization: Bearer sk_your_api_key
 Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
 ```
 
-获取您的API密钥：https://synkra.ai/settings/api-keys
+获取您的API密钥：https://lmas.ai/settings/api-keys
 
 ## 端点
 
 ### 同步Squad
 
-将squad定义发送到Synkra。
+将squad定义发送到LMAS。
 
 ```http
 POST /api/squads/sync
@@ -60,7 +60,7 @@ POST /api/squads/sync
 **请求示例**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/sync \
+curl -X POST https://api.lmas.ai/api/squads/sync \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -127,7 +127,7 @@ POST /api/squads/sync/batch
 **请求示例**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/sync/batch \
+curl -X POST https://api.lmas.ai/api/squads/sync/batch \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -214,10 +214,10 @@ GET /api/squads
 
 ```bash
 # 列出所有公共squads
-curl https://api.synkra.ai/api/squads
+curl https://api.lmas.ai/api/squads
 
 # 带过滤器搜索
-curl "https://api.synkra.ai/api/squads?tags=devops,automation&search=deploy&official=true&limit=10"
+curl "https://api.lmas.ai/api/squads?tags=devops,automation&search=deploy&official=true&limit=10"
 ```
 
 **成功响应** (200):
@@ -232,7 +232,7 @@ curl "https://api.synkra.ai/api/squads?tags=devops,automation&search=deploy&offi
       "name": "devops-squad",
       "version": "2.1.0",
       "description": "DevOps自动化squad",
-      "author": "SynkraAI",
+      "author": "LMAS",
       "tags": ["devops", "automation", "ci-cd"],
       "is_public": true,
       "is_official": true,
@@ -272,7 +272,7 @@ GET /api/squads/mine
 **请求示例**:
 
 ```bash
-curl https://api.synkra.ai/api/squads/mine \
+curl https://api.lmas.ai/api/squads/mine \
   -H "Authorization: Bearer sk_your_api_key"
 ```
 
@@ -326,10 +326,10 @@ GET /api/squads/:id
 
 ```bash
 # 通过squad_id
-curl https://api.synkra.ai/api/squads/devops-squad
+curl https://api.lmas.ai/api/squads/devops-squad
 
 # 通过UUID
-curl https://api.synkra.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
+curl https://api.lmas.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
 ```
 
 **成功响应** (200):
@@ -343,7 +343,7 @@ curl https://api.synkra.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
     "name": "devops-squad",
     "version": "2.1.0",
     "description": "用于CI/CD管道的DevOps自动化squad",
-    "author": "SynkraAI",
+    "author": "LMAS",
     "license": "MIT",
     "slash_prefix": "devops",
     "tags": ["devops", "automation", "ci-cd"],
@@ -403,7 +403,7 @@ PATCH /api/squads/:id
 **请求示例**:
 
 ```bash
-curl -X PATCH https://api.synkra.ai/api/squads/my-squad \
+curl -X PATCH https://api.lmas.ai/api/squads/my-squad \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{"isPublic": true}'
@@ -428,7 +428,7 @@ curl -X PATCH https://api.synkra.ai/api/squads/my-squad \
 
 ### 删除Squad
 
-从Synkra删除squad。
+从LMAS删除squad。
 
 ```http
 DELETE /api/squads/:id
@@ -445,7 +445,7 @@ DELETE /api/squads/:id
 **请求示例**:
 
 ```bash
-curl -X DELETE https://api.synkra.ai/api/squads/my-old-squad \
+curl -X DELETE https://api.lmas.ai/api/squads/my-old-squad \
   -H "Authorization: Bearer sk_your_api_key"
 ```
 
@@ -479,7 +479,7 @@ POST /api/squads/validate
 **请求示例**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/validate \
+curl -X POST https://api.lmas.ai/api/squads/validate \
   -H "Content-Type: application/json" \
   -d '{
     "squadData": {
@@ -559,21 +559,21 @@ X-RateLimit-Reset: 1703577600
 
 ## CLI集成
 
-`*sync-squad-synkra`命令使用此API：
+`*sync-squad-lmas`命令使用此API：
 
 ```bash
 # 同步单个squad
 @squad-creator
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 
 # 批量同步所有squads
-*sync-squad-synkra ./squads/* --public
+*sync-squad-lmas ./squads/* --public
 ```
 
 配置API密钥：
 
 ```bash
-export SYNKRA_API_TOKEN="sk_your_api_key"
+export LMAS_API_TOKEN="sk_your_api_key"
 ```
 
 ---
@@ -585,14 +585,14 @@ export SYNKRA_API_TOKEN="sk_your_api_key"
 ```json
 {
   "info": {
-    "name": "Synkra Squads API",
-    "description": "Synkra Squads Marketplace的REST API",
+    "name": "LMAS Squads API",
+    "description": "LMAS Squads Marketplace的REST API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://api.synkra.ai"
+      "value": "https://api.lmas.ai"
     },
     {
       "key": "apiKey",
@@ -738,7 +738,7 @@ export SYNKRA_API_TOKEN="sk_your_api_key"
 }
 ```
 
-将上述JSON保存为 `synkra-squads-api.postman_collection.json` 并导入Postman。
+将上述JSON保存为 `lmas-squads-api.postman_collection.json` 并导入Postman。
 
 ---
 

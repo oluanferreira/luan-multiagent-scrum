@@ -1,4 +1,4 @@
-# Gemini Rules - Synkra LMAS
+# Gemini Rules - LMAS
 
 Este arquivo define as instrucoes do projeto para Gemini CLI neste repositorio.
 

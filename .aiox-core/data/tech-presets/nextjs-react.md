@@ -928,4 +928,4 @@ When integrating with existing feature:
 
 ---
 
-_LMAS Tech Preset - Synkra LMAS Framework_
+_LMAS Tech Preset - LMAS Framework_

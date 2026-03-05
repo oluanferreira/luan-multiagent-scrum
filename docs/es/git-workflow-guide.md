@@ -26,7 +26,7 @@ _Story: 2.2-git-workflow-implementation.yaml_
 
 ## Descripción General
 
-Synkra LMAS implementa una estrategia de validación de **Defensa en Profundidad** con tres capas progresivas que detectan problemas tempranamente y aseguran la calidad del código antes del merge.
+LMAS implementa una estrategia de validación de **Defensa en Profundidad** con tres capas progresivas que detectan problemas tempranamente y aseguran la calidad del código antes del merge.
 
 ### ¿Por Qué Tres Capas?
 
@@ -991,5 +991,5 @@ strategy:
 
 **¿Preguntas? ¿Problemas?**
 
-- [Abrir un Issue](https://github.com/SynkraAI/lmas-core/issues)
+- [Abrir un Issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - [Unirse a Discord](https://discord.gg/gk8jAdXWmj)

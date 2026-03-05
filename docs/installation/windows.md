@@ -1,4 +1,4 @@
-# Windows Installation Guide for Synkra LMAS
+# Windows Installation Guide for LMAS
 
 > 🌐 [EN](windows.md) | [PT](../pt/installation/windows.md) | [ES](../es/installation/windows.md)
 
@@ -146,7 +146,7 @@ winget install Microsoft.WindowsTerminal
 3. Run the installer:
 
    ```powershell
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### What the Installer Does
@@ -403,7 +403,7 @@ To update an existing installation:
 
 ```powershell
 # Using npx (recommended)
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 
 # The updater will:
 # - Detect existing installation
@@ -426,7 +426,7 @@ Remove-Item -Recurse -Force .lmas-core
 Remove-Item -Recurse -Force .claude\commands\LMAS
 
 # Remove global npm packages
-npm uninstall -g @synkra/lmas
+npm uninstall -g @lmas/lmas
 ```
 
 ---
@@ -474,4 +474,4 @@ npm uninstall -g @synkra/lmas
 - [Troubleshooting Guide](troubleshooting.md)
 - [FAQ](faq.md)
 - [Discord Community](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

@@ -1,4 +1,4 @@
-# Synkra LMAS FAQ
+# LMAS FAQ
 
 > 🌐 **EN** | [PT](../pt/installation/faq.md) | [ES](../es/installation/faq.md)
 
@@ -554,7 +554,7 @@ projectStatus:
 
 **Answer:**
 
-1. **Fork the repository:** https://github.com/SynkraAI/lmas-core
+1. **Fork the repository:** https://github.com/oluanferreira/luan-multiagent-scrum
 
 2. **Create a feature branch:**
 
@@ -590,8 +590,8 @@ projectStatus:
 | ------------------- | ---------------------------------------------------------- |
 | **Documentation**   | `docs/` in your project                                    |
 | **Troubleshooting** | [troubleshooting.md](./troubleshooting.md)                 |
-| **GitHub Issues**   | https://github.com/SynkraAI/lmas-core/issues |
-| **Source Code**     | https://github.com/SynkraAI/lmas-core        |
+| **GitHub Issues**   | https://github.com/oluanferreira/luan-multiagent-scrum/issues |
+| **Source Code**     | https://github.com/oluanferreira/luan-multiagent-scrum        |
 
 **Before asking for help:**
 

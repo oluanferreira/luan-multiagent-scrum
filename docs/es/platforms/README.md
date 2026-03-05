@@ -280,4 +280,4 @@ sequenceDiagram
 
 ---
 
-_Synkra LMAS - Documentación de Plataformas v1.0_
+_LMAS - Documentación de Plataformas v1.0_

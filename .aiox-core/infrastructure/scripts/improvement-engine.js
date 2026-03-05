@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 /**
- * Framework improvement suggestion engine for Synkra AIOX
+ * Framework improvement suggestion engine for LMAS
  * Generates actionable improvement recommendations based on analysis results
  */
 class ImprovementEngine {

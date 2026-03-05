@@ -1,4 +1,4 @@
-# Linux Installation Guide for Synkra LMAS
+# Linux Installation Guide for LMAS
 
 > 🌐 [EN](linux.md) | [PT](../pt/installation/linux.md) | [ES](../es/installation/linux.md)
 
@@ -153,7 +153,7 @@ sudo pacman -S base-devel
 3. Run the installer:
 
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### Manual Installation
@@ -162,7 +162,7 @@ If the quick install fails, try manual installation:
 
 ```bash
 # Clone the repository
-git clone https://github.com/SynkraAI/lmas-core.git ~/.lmas-core-source
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git ~/.lmas-core-source
 
 # Navigate to the source
 cd ~/.lmas-core-source
@@ -341,7 +341,7 @@ export EDITOR=vim  # or code, nano, etc.
 
 ### XDG Base Directory Compliance
 
-Synkra LMAS respects XDG directories:
+LMAS respects XDG directories:
 
 ```bash
 # Data files: ~/.local/share/lmas/
@@ -358,7 +358,7 @@ To update an existing installation:
 
 ```bash
 # Using npx (recommended)
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 
 # Manual update
 cd ~/.lmas-core-source
@@ -387,7 +387,7 @@ Quick uninstall:
 rm -rf .lmas-core .claude/commands/LMAS
 
 # Remove global installation
-rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@synkra
+rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@lmas
 ```
 
 ---
@@ -445,4 +445,4 @@ rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@synkra
 - [Troubleshooting Guide](troubleshooting.md)
 - [FAQ](faq.md)
 - [Discord Community](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

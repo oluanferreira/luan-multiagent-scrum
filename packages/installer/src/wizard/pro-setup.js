@@ -389,7 +389,7 @@ async function stepLicenseGateWithEmail() {
     checkSpinner.fail(t('proNoAccess'));
     console.log('');
     showInfo(t('proContactSupport'));
-    showInfo('  Issues: https://github.com/SynkraAI/aiox-core/issues');
+    showInfo('  Issues: https://github.com/oluanferreira/aiox-core/issues');
     showInfo('  ' + t('proPurchase'));
     return { success: false, error: t('proEmailNotBuyer') };
   }
@@ -485,7 +485,7 @@ async function loginWithRetry(client, email) {
         } else {
           spinner.fail('Maximum login attempts reached.');
           showInfo('Forgot your password? Visit https://aiox-license-server.vercel.app/reset-password');
-          showInfo('Or open an issue: https://github.com/SynkraAI/aiox-core/issues');
+          showInfo('Or open an issue: https://github.com/oluanferreira/aiox-core/issues');
           return { success: false, error: 'Maximum login attempts reached.' };
         }
       } else if (loginError.code === 'AUTH_RATE_LIMITED') {

@@ -4,7 +4,7 @@
 
 ---
 
-> Comprehensive guide to the 3-layer quality gate system for Synkra LMAS.
+> Comprehensive guide to the 3-layer quality gate system for LMAS.
 
 **Version:** 2.1.0
 **Last Updated:** 2025-12-01
@@ -605,4 +605,4 @@ verbose:
 
 ---
 
-_Synkra LMAS v4 Quality Gate System Guide_
+_LMAS v4 Quality Gate System Guide_

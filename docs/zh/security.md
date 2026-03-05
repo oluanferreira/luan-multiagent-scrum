@@ -13,7 +13,7 @@
 
 ## 报告漏洞
 
-我们在 SynkraAI 非常重视安全。如果您在 LMAS 中发现安全漏洞，请负责任地报告。
+我们在 LMAS 非常重视安全。如果您在 LMAS 中发现安全漏洞，请负责任地报告。
 
 ### 如何报告
 
@@ -22,12 +22,12 @@
 而是请通过以下其中一个渠道报告安全漏洞：
 
 1. **GitHub 安全公告**（首选）
-   - 前往 [安全公告](https://github.com/SynkraAI/lmas-core/security/advisories)
+   - 前往 [安全公告](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
    - 点击"报告漏洞"
    - 填写详细信息表单
 
 2. **电子邮件**
-   - 发送电子邮件至：security@synkra.ai
+   - 发送电子邮件至：security@lmas.ai
    - 主题行：`[SECURITY] 简要描述`
 
 ### 包含的内容
@@ -108,7 +108,7 @@ LMAS 框架执行 AI 生成的代码和命令。用户应该：
 
 安全更新通过以下方式宣布：
 
-- [GitHub 安全公告](https://github.com/SynkraAI/lmas-core/security/advisories)
+- [GitHub 安全公告](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
 - [CHANGELOG.md](../CHANGELOG.md)
 - GitHub 发布
 

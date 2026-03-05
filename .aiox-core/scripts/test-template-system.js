@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 /**
- * Test template system for Synkra AIOX automated test generation
+ * Test template system for LMAS automated test generation
  * Provides reusable templates for generating different types of tests
  */
 class TestTemplateSystem {

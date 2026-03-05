@@ -1,6 +1,6 @@
 # LMAS Workflows
 
-This directory contains workflow definitions for the Synkra LMAS framework. Workflows define multi-step processes that can be executed by LMAS agents.
+This directory contains workflow definitions for the LMAS framework. Workflows define multi-step processes that can be executed by LMAS agents.
 
 ## Available Workflows
 

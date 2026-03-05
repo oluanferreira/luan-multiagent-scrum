@@ -4,13 +4,13 @@
   Ultima sincronizacion: 2026-01-26
 -->
 
-# Guia de Solucion de Problemas de Synkra LMAS
+# Guia de Solucion de Problemas de LMAS
 
 > 🌐 [EN](../troubleshooting.md) | [PT](../pt/troubleshooting.md) | **ES**
 
 ---
 
-Esta guia completa te ayuda a diagnosticar y resolver problemas comunes con Synkra LMAS.
+Esta guia completa te ayuda a diagnosticar y resolver problemas comunes con LMAS.
 
 ## Tabla de Contenidos
 

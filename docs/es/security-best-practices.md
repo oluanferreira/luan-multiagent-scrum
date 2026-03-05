@@ -4,13 +4,13 @@
   Última sincronización: 2026-01-26
 -->
 
-# Mejores Prácticas de Seguridad de Synkra LMAS
+# Mejores Prácticas de Seguridad de LMAS
 
 > 🌐 [EN](../security-best-practices.md) | [PT](../pt/security-best-practices.md) | **ES**
 
 ---
 
-Esta guía proporciona recomendaciones de seguridad completas para desplegar y mantener Synkra LMAS en entornos de producción.
+Esta guía proporciona recomendaciones de seguridad completas para desplegar y mantener LMAS en entornos de producción.
 
 ## Tabla de Contenidos
 
@@ -27,7 +27,7 @@ Esta guía proporciona recomendaciones de seguridad completas para desplegar y m
 
 ## Descripción General de la Arquitectura de Seguridad
 
-Synkra LMAS implementa un enfoque de seguridad multicapa:
+LMAS implementa un enfoque de seguridad multicapa:
 
 ```
 ┌─────────────────────────────────────────┐
@@ -610,4 +610,4 @@ const emergencyConfig = {
 
 **Recuerde**: La seguridad no es una implementación única sino un proceso continuo. Las revisiones, actualizaciones y mejoras regulares son esenciales para mantener un sistema seguro.
 
-Para preguntas o inquietudes de seguridad, abra un issue en: https://github.com/SynkraAI/lmas-core/issues
+Para preguntas o inquietudes de seguridad, abra un issue en: https://github.com/oluanferreira/luan-multiagent-scrum/issues

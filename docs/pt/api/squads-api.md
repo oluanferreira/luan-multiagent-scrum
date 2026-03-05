@@ -2,17 +2,17 @@
 
 # Referência da API de Squads
 
-API REST para sincronizar squads com Synkra e descobrir squads do marketplace.
+API REST para sincronizar squads com LMAS e descobrir squads do marketplace.
 
 ## Visão Geral
 
 A API de Squads permite:
 
-- **Sync**: Enviar squads locais para a nuvem Synkra
+- **Sync**: Enviar squads locais para a nuvem LMAS
 - **Marketplace**: Descobrir e navegar squads públicos
 - **Gerenciamento**: Atualizar visibilidade, excluir squads
 
-**URL Base**: `https://api.synkra.ai`
+**URL Base**: `https://api.lmas.ai`
 
 ## Autenticação
 
@@ -30,13 +30,13 @@ Authorization: Bearer sk_your_api_key
 Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
 ```
 
-Obtenha sua chave de API em: https://synkra.ai/settings/api-keys
+Obtenha sua chave de API em: https://lmas.ai/settings/api-keys
 
 ## Endpoints
 
 ### Sincronizar Squad
 
-Enviar uma definição de squad para Synkra.
+Enviar uma definição de squad para LMAS.
 
 ```
 POST /api/squads/sync
@@ -60,7 +60,7 @@ POST /api/squads/sync
 **Exemplo de Requisição**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/sync \
+curl -X POST https://api.lmas.ai/api/squads/sync \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -127,7 +127,7 @@ POST /api/squads/sync/batch
 **Exemplo de Requisição**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/sync/batch \
+curl -X POST https://api.lmas.ai/api/squads/sync/batch \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -214,10 +214,10 @@ GET /api/squads
 
 ```bash
 # Listar todos os squads públicos
-curl https://api.synkra.ai/api/squads
+curl https://api.lmas.ai/api/squads
 
 # Buscar com filtros
-curl "https://api.synkra.ai/api/squads?tags=devops,automation&search=deploy&official=true&limit=10"
+curl "https://api.lmas.ai/api/squads?tags=devops,automation&search=deploy&official=true&limit=10"
 ```
 
 **Resposta de Sucesso** (200):
@@ -232,7 +232,7 @@ curl "https://api.synkra.ai/api/squads?tags=devops,automation&search=deploy&offi
       "name": "devops-squad",
       "version": "2.1.0",
       "description": "Squad de automação DevOps",
-      "author": "SynkraAI",
+      "author": "LMAS",
       "tags": ["devops", "automation", "ci-cd"],
       "is_public": true,
       "is_official": true,
@@ -272,7 +272,7 @@ GET /api/squads/mine
 **Exemplo de Requisição**:
 
 ```bash
-curl https://api.synkra.ai/api/squads/mine \
+curl https://api.lmas.ai/api/squads/mine \
   -H "Authorization: Bearer sk_your_api_key"
 ```
 
@@ -326,10 +326,10 @@ GET /api/squads/:id
 
 ```bash
 # Por squad_id
-curl https://api.synkra.ai/api/squads/devops-squad
+curl https://api.lmas.ai/api/squads/devops-squad
 
 # Por UUID
-curl https://api.synkra.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
+curl https://api.lmas.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
 ```
 
 **Resposta de Sucesso** (200):
@@ -343,7 +343,7 @@ curl https://api.synkra.ai/api/squads/550e8400-e29b-41d4-a716-446655440000
     "name": "devops-squad",
     "version": "2.1.0",
     "description": "Squad de automação DevOps para pipelines CI/CD",
-    "author": "SynkraAI",
+    "author": "LMAS",
     "license": "MIT",
     "slash_prefix": "devops",
     "tags": ["devops", "automation", "ci-cd"],
@@ -403,7 +403,7 @@ PATCH /api/squads/:id
 **Exemplo de Requisição**:
 
 ```bash
-curl -X PATCH https://api.synkra.ai/api/squads/my-squad \
+curl -X PATCH https://api.lmas.ai/api/squads/my-squad \
   -H "Authorization: Bearer sk_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{"isPublic": true}'
@@ -428,7 +428,7 @@ curl -X PATCH https://api.synkra.ai/api/squads/my-squad \
 
 ### Excluir Squad
 
-Remover um squad do Synkra.
+Remover um squad do LMAS.
 
 ```
 DELETE /api/squads/:id
@@ -445,7 +445,7 @@ DELETE /api/squads/:id
 **Exemplo de Requisição**:
 
 ```bash
-curl -X DELETE https://api.synkra.ai/api/squads/my-old-squad \
+curl -X DELETE https://api.lmas.ai/api/squads/my-old-squad \
   -H "Authorization: Bearer sk_your_api_key"
 ```
 
@@ -479,7 +479,7 @@ POST /api/squads/validate
 **Exemplo de Requisição**:
 
 ```bash
-curl -X POST https://api.synkra.ai/api/squads/validate \
+curl -X POST https://api.lmas.ai/api/squads/validate \
   -H "Content-Type: application/json" \
   -d '{
     "squadData": {
@@ -559,21 +559,21 @@ X-RateLimit-Reset: 1703577600
 
 ## Integração CLI
 
-O comando `*sync-squad-synkra` usa esta API:
+O comando `*sync-squad-lmas` usa esta API:
 
 ```bash
 # Sincronizar um único squad
 @squad-creator
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 
 # Sincronização em lote de todos os squads
-*sync-squad-synkra ./squads/* --public
+*sync-squad-lmas ./squads/* --public
 ```
 
 Configurar chave de API:
 
 ```bash
-export SYNKRA_API_TOKEN="sk_your_api_key"
+export LMAS_API_TOKEN="sk_your_api_key"
 ```
 
 ---
@@ -585,14 +585,14 @@ Importe esta coleção no Postman ou Insomnia:
 ```json
 {
   "info": {
-    "name": "Synkra Squads API",
-    "description": "API REST para o Marketplace de Squads Synkra",
+    "name": "LMAS Squads API",
+    "description": "API REST para o Marketplace de Squads LMAS",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://api.synkra.ai"
+      "value": "https://api.lmas.ai"
     },
     {
       "key": "apiKey",
@@ -738,7 +738,7 @@ Importe esta coleção no Postman ou Insomnia:
 }
 ```
 
-Salve o JSON acima como `synkra-squads-api.postman_collection.json` e importe no Postman.
+Salve o JSON acima como `lmas-squads-api.postman_collection.json` e importe no Postman.
 
 ---
 

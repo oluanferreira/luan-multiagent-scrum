@@ -4,7 +4,7 @@
 
 ---
 
-This guide provides comprehensive instructions for uninstalling Synkra LMAS from your system.
+This guide provides comprehensive instructions for uninstalling LMAS from your system.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ This guide provides comprehensive instructions for uninstalling Synkra LMAS from
 
 ### Important Considerations
 
-⚠️ **Warning**: Uninstalling Synkra LMAS will:
+⚠️ **Warning**: Uninstalling LMAS will:
 
 - Remove all framework files
 - Delete agent configurations (unless preserved)
@@ -59,7 +59,7 @@ tar -czf lmas-backup-$(date +%Y%m%d).tar.gz \
 
 ### Using Built-in Uninstaller
 
-The fastest way to uninstall Synkra LMAS:
+The fastest way to uninstall LMAS:
 
 ```bash
 # Basic uninstall (preserves user data)
@@ -146,7 +146,7 @@ Remove-Item -Recurse -Force "$env:APPDATA\lmas-core"
 Remove-Item -Recurse -Force "$env:TEMP\lmas-*"
 
 # Remove registry entries (if any)
-Remove-Item -Path "HKCU:\Software\Synkra LMAS" -Recurse
+Remove-Item -Path "HKCU:\Software\LMAS" -Recurse
 ```
 
 #### macOS/Linux
@@ -276,11 +276,11 @@ Create `clean-uninstall.sh`:
 
 ```bash
 #!/bin/bash
-echo "Synkra LMAS Complete Uninstall"
+echo "LMAS Complete Uninstall"
 echo "================================="
 
 # Confirmation
-read -p "This will remove ALL Synkra LMAS data. Continue? (y/N) " -n 1 -r
+read -p "This will remove ALL LMAS data. Continue? (y/N) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
@@ -328,7 +328,7 @@ echo "Uninstall complete!"
 
 ```powershell
 # PowerShell script for Windows cleanup
-Write-Host "Cleaning Synkra LMAS from Windows Registry..."
+Write-Host "Cleaning LMAS from Windows Registry..."
 
 # Remove from PATH
 $path = [Environment]::GetEnvironmentVariable("PATH", "User")
@@ -397,7 +397,7 @@ If normal uninstall fails:
 ```bash
 #!/bin/bash
 # force-uninstall.sh
-echo "Force uninstalling Synkra LMAS..."
+echo "Force uninstalling LMAS..."
 
 # Kill all related processes
 pkill -9 -f lmas || true
@@ -468,14 +468,14 @@ sed -i '/lmas-/d' .gitignore
 
 # Commit removal
 git add -A
-git commit -m "Remove Synkra LMAS"
+git commit -m "Remove LMAS"
 ```
 
 ## Reinstallation
 
 ### After Complete Uninstall
 
-If you want to reinstall Synkra LMAS:
+If you want to reinstall LMAS:
 
 1. **Wait for cleanup**
 
@@ -532,8 +532,8 @@ cp -r ~/lmas-backup/agents/* ./agents/
 If you encounter issues during uninstallation:
 
 1. **Check Documentation**
-   - [FAQ](https://github.com/SynkraAI/lmas-core/wiki/faq#uninstall)
-   - [Troubleshooting](https://github.com/SynkraAI/lmas-core/wiki/troubleshooting)
+   - [FAQ](https://github.com/oluanferreira/luan-multiagent-scrum/wiki/faq#uninstall)
+   - [Troubleshooting](https://github.com/oluanferreira/luan-multiagent-scrum/wiki/troubleshooting)
 
 2. **Community Support**
    - Discord: #uninstall-help

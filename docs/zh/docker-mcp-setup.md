@@ -223,4 +223,4 @@ lmas mcp status --verbose
 
 ---
 
-_Synkra LMAS Docker MCP 设置指南 v4.2.11_
+_LMAS Docker MCP 设置指南 v4.2.11_

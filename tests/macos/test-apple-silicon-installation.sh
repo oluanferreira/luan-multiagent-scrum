@@ -114,9 +114,9 @@ test_clean_installation() {
     fi
 
     # Run installer
-    log_info "Running: npx @synkraai/aiox@latest init"
+    log_info "Running: npx lmas-core@latest init"
 
-    if npx @synkraai/aiox@latest init; then
+    if npx lmas-core@latest init; then
         pass_test "Installation completed without errors"
     else
         fail_test "Installation failed with exit code $?"

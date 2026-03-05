@@ -1,10 +1,10 @@
-# Getting Started with Synkra LMAS
+# Getting Started with LMAS
 
 > **EN** | [PT](./pt/getting-started.md) | [ES](./es/getting-started.md)
 
 ---
 
-Welcome to Synkra LMAS. This guide is optimized for first-value in 10 minutes.
+Welcome to LMAS. This guide is optimized for first-value in 10 minutes.
 
 ## Table of Contents
 
@@ -308,4 +308,4 @@ npm run validate:parity
 
 ---
 
-_Synkra LMAS Getting Started Guide v4.2.11_
+_LMAS Getting Started Guide v4.2.11_

@@ -12,7 +12,7 @@
 
 ## Descripción General
 
-Synkra LMAS puede instalarse via NPX para una configuración rápida sin instalación global. Esta guía cubre el uso correcto y la resolución de problemas para instalaciones basadas en NPX.
+LMAS puede instalarse via NPX para una configuración rápida sin instalación global. Esta guía cubre el uso correcto y la resolución de problemas para instalaciones basadas en NPX.
 
 ## Inicio Rápido
 
@@ -44,7 +44,7 @@ npx lmas-core install
 
 ## Por Qué Esto Importa
 
-NPX ejecuta paquetes en **directorios temporales** (por ejemplo, `/private/var/folders/.../npx-xxx/` en macOS). Cuando Synkra LMAS se ejecuta desde estas ubicaciones temporales, no puede:
+NPX ejecuta paquetes en **directorios temporales** (por ejemplo, `/private/var/folders/.../npx-xxx/` en macOS). Cuando LMAS se ejecuta desde estas ubicaciones temporales, no puede:
 
 - Detectar correctamente la configuración de su IDE
 - Instalar archivos en el directorio correcto del proyecto
@@ -52,7 +52,7 @@ NPX ejecuta paquetes en **directorios temporales** (por ejemplo, `/private/var/f
 
 ## Detección de Directorio Temporal NPX
 
-A partir de la versión 4.31.1, Synkra LMAS detecta automáticamente cuando está ejecutándose desde un directorio temporal NPX y muestra un mensaje de error útil:
+A partir de la versión 4.31.1, LMAS detecta automáticamente cuando está ejecutándose desde un directorio temporal NPX y muestra un mensaje de error útil:
 
 ```
 ⚠️  NPX Temporary Directory Detected
@@ -101,7 +101,7 @@ Los directorios temporales de NPX típicamente aparecen en:
 - `/private/var/folders/[hash]/T/npx-[random]/`
 - `/Users/[user]/.npm/_npx/[hash]/`
 
-Synkra LMAS detecta estos patrones y previene instalaciones incorrectas.
+LMAS detecta estos patrones y previene instalaciones incorrectas.
 
 ### Linux
 
@@ -158,7 +158,7 @@ lmas-core install
 
 ### Arquitectura de Defensa en Profundidad
 
-Synkra LMAS v4.31.1+ implementa detección de dos capas:
+LMAS v4.31.1+ implementa detección de dos capas:
 
 1. **Capa PRIMARIA** (`tools/lmas-npx-wrapper.js`):
    - Verifica `__dirname` (donde NPX extrae el paquete)
@@ -182,7 +182,7 @@ const patterns = [
 ## Soporte
 
 Para ayuda adicional:
-- GitHub Issues: https://github.com/SynkraAIinc/lmas-core/issues
+- GitHub Issues: https://github.com/oluanferreirainc/lmas-core/issues
 - Documentación: https://lmas-core.dev/docs
 - Referencia de Story: 2.3 - NPX Installation Context Detection
 

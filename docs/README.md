@@ -1,4 +1,4 @@
-# Synkra LMAS Documentation
+# LMAS Documentation
 
 > 🌐 **EN** | [PT](./pt/README.md) | [ES](./es/README.md) | [ZH](./zh/README.md)
 
@@ -125,8 +125,8 @@ We follow industry-standard i18n practices:
 
 ## 📄 License
 
-This documentation is part of Synkra LMAS, licensed under [MIT License](../LICENSE).
+This documentation is part of LMAS, licensed under [MIT License](../LICENSE).
 
 ---
 
-_Synkra LMAS - Orchestrating AI for Better Software Development_
+_LMAS - Orchestrating AI for Better Software Development_

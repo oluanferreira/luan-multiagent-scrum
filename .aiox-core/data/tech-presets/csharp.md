@@ -465,4 +465,4 @@ app.MapPost("/orders", async (PlaceOrderRequest request, PlaceOrderHandler handl
 
 ---
 
-_LMAS Tech Preset - Synkra LMAS Framework_
+_LMAS Tech Preset - LMAS Framework_

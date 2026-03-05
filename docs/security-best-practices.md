@@ -1,10 +1,10 @@
-# Synkra LMAS Security Best Practices
+# LMAS Security Best Practices
 
 > 🌐 **EN** | [PT](./pt/security-best-practices.md) | [ES](./es/security-best-practices.md)
 
 ---
 
-This guide provides comprehensive security recommendations for deploying and maintaining Synkra LMAS in production environments.
+This guide provides comprehensive security recommendations for deploying and maintaining LMAS in production environments.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ This guide provides comprehensive security recommendations for deploying and mai
 
 ## Security Architecture Overview
 
-Synkra LMAS implements a multi-layered security approach:
+LMAS implements a multi-layered security approach:
 
 ```
 ┌─────────────────────────────────────────┐
@@ -604,4 +604,4 @@ const emergencyConfig = {
 
 **Remember**: Security is not a one-time implementation but an ongoing process. Regular reviews, updates, and improvements are essential for maintaining a secure system.
 
-For questions or security concerns, open an issue at: https://github.com/SynkraAI/lmas-core/issues
+For questions or security concerns, open an issue at: https://github.com/oluanferreira/luan-multiagent-scrum/issues

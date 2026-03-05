@@ -1,4 +1,4 @@
-# Contributing to Synkra LMAS
+# Contributing to LMAS
 
 > **[Versao em Portugues](docs/pt/contributing.md)**
 
@@ -33,7 +33,7 @@ git clone https://github.com/YOUR_USERNAME/lmas-core.git
 cd lmas-core
 
 # Add upstream remote
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 ```
 
 ### 2. Set Up Development Environment
@@ -321,7 +321,7 @@ tasks:
 
 - [Squads Guide](docs/guides/squads-guide.md) - Complete documentation
 - [Squad Template](templates/squad/) - Start from a working template
-- [Squad Discussions](https://github.com/SynkraAI/lmas-core/discussions/categories/ideas) - Share ideas
+- [Squad Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/ideas) - Share ideas
 
 ---
 
@@ -573,8 +573,8 @@ Common fixes:
 
 ## Getting Help
 
-- **GitHub Issues:** [Open an issue](https://github.com/SynkraAI/lmas-core/issues)
-- **Discussions:** [Start a discussion](https://github.com/SynkraAI/lmas-core/discussions)
+- **GitHub Issues:** [Open an issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
+- **Discussions:** [Start a discussion](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
 - **Community:** [COMMUNITY.md](COMMUNITY.md)
 
 ---
@@ -588,7 +588,7 @@ LMAS uses an Open Core model with a private `pro/` git submodule (see [ADR-PRO-0
 **You do NOT need the pro/ submodule.** The standard clone works perfectly:
 
 ```bash
-git clone https://github.com/SynkraAI/lmas-core.git
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git
 cd lmas-core
 npm install && npm test  # All tests pass without pro/
 ```
@@ -605,7 +605,7 @@ git clone https://github.com/<your-fork>/lmas-core.git
 cd lmas-core
 
 # Add upstream and sync
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 git fetch upstream
 git rebase upstream/main
 
@@ -640,7 +640,7 @@ git config submodule.pro.active false
 
 ```bash
 # Clone with submodule
-git clone --recurse-submodules https://github.com/SynkraAI/lmas-core.git
+git clone --recurse-submodules https://github.com/oluanferreira/luan-multiagent-scrum.git
 
 # Or add to existing clone
 git submodule update --init pro
@@ -668,4 +668,4 @@ For the complete developer workflow guide, see [Pro Developer Workflow](docs/gui
 
 ---
 
-**Thank you for contributing to Synkra LMAS!**
+**Thank you for contributing to LMAS!**

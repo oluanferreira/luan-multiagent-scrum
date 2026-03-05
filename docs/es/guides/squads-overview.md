@@ -172,8 +172,8 @@ tags:
 
 | Squad             | Version | Descripcion                           | Repositorio                                                                      |
 | ----------------- | ------- | ------------------------------------- | -------------------------------------------------------------------------------- |
-| **etl-squad**     | 2.0.0   | Recoleccion y transformacion de datos | [lmas-squads/etl](https://github.com/SynkraAI/lmas-squads/tree/main/etl)         |
-| **creator-squad** | 1.0.0   | Utilidades de generacion de contenido | [lmas-squads/creator](https://github.com/SynkraAI/lmas-squads/tree/main/creator) |
+| **etl-squad**     | 2.0.0   | Recoleccion y transformacion de datos | [lmas-squads/etl](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/etl)         |
+| **creator-squad** | 1.0.0   | Utilidades de generacion de contenido | [lmas-squads/creator](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/creator) |
 
 ### Niveles de Distribucion
 
@@ -182,8 +182,8 @@ tags:
 │                    DISTRIBUCION DE SQUADS                    │
 ├─────────────────────────────────────────────────────────────┤
 │  Nivel 1: LOCAL        --> ./squads/           (Privado)    │
-│  Nivel 2: LMAS-SQUADS  --> github.com/SynkraAI (Publico)    │
-│  Nivel 3: SYNKRA API   --> api.synkra.dev      (Marketplace)│
+│  Nivel 2: LMAS-SQUADS  --> github.com/oluanferreira (Publico)    │
+│  Nivel 3: LMAS API   --> api.lmas.dev      (Marketplace)│
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -276,7 +276,7 @@ Usar versionado semantico:
 ## Proximos Pasos
 
 - **Crear Tu Primer Squad:** Seguir la [Guia de Squads](./squads-guide.md) para instrucciones detalladas
-- **Explorar Squads Oficiales:** Revisar [repositorio lmas-squads](https://github.com/SynkraAI/lmas-squads)
+- **Explorar Squads Oficiales:** Revisar [repositorio lmas-squads](https://github.com/oluanferreira/luan-multiagent-scrum)
 - **Contribuir:** Ver [Guia de Contribucion de Squads](./contributing-squads.md)
 - **Aprender Formato de Tasks:** Leer [TASK-FORMAT-SPECIFICATION-V1](../../../.lmas-core/docs/standards/TASK-FORMAT-SPECIFICATION-V1.md)
 

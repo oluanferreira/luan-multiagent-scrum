@@ -254,4 +254,4 @@ describe('[Component/Service]', () => {
 
 ---
 
-_LMAS Tech Preset - Created with Synkra LMAS Framework_
+_LMAS Tech Preset - Created with LMAS Framework_

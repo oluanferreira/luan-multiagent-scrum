@@ -1,4 +1,4 @@
-# Agent Template for Synkra LMAS
+# Agent Template for LMAS
 # This template is used by lmas-developer to create new agents
 # Variables are replaced during generation: {{VARIABLE_NAME}}
 

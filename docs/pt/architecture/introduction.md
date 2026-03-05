@@ -6,11 +6,11 @@
 
 ---
 
-Este documento captura o estado atual do codebase do **Synkra LMAS**, servindo como a arquitetura de referência para o desenvolvimento da **Fase 1 do Synkra LMAS (MVP até o FR4)**. Ele descreve os padrões, componentes e tecnologias existentes sobre os quais as novas funcionalidades serão construídas.
+Este documento captura o estado atual do codebase do **LMAS**, servindo como a arquitetura de referência para o desenvolvimento da **Fase 1 do LMAS (MVP até o FR4)**. Ele descreve os padrões, componentes e tecnologias existentes sobre os quais as novas funcionalidades serão construídas.
 
 ## Escopo do Documento
 
-Documentação abrangente do framework Synkra LMAS para servir como baseline para o MVP do LMAS, que inclui: Rebranding, Workflow de Setup de IDE, Camada de Memória com LlamaIndex e o Meta-Agente `lmas-developer`.
+Documentação abrangente do framework LMAS para servir como baseline para o MVP do LMAS, que inclui: Rebranding, Workflow de Setup de IDE, Camada de Memória com LlamaIndex e o Meta-Agente `lmas-developer`.
 
 ## Registro de Alterações
 

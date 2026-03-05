@@ -311,7 +311,7 @@ function statusAction() {
   if (!cache) {
     console.log('\n  No license activated.');
     console.log('  Activate: aiox pro activate --key PRO-XXXX-XXXX-XXXX-XXXX');
-    console.log('  Purchase: https://synkra.ai/pro');
+    console.log('  Purchase: https://lmas.ai/pro');
     console.log('');
     return;
   }
@@ -640,7 +640,7 @@ async function setupAction(options) {
   console.log('To check license status:');
   console.log('  aiox pro status');
   console.log('');
-  console.log('Documentation: https://synkra.ai/pro/docs');
+  console.log('Documentation: https://lmas.ai/pro/docs');
   console.log('');
 }
 

@@ -1,5 +1,5 @@
 /**
- * Transaction Manager for Synkra AIOX
+ * Transaction Manager for LMAS
  * Manages component operations with rollback support
  * @module transaction-manager
  */

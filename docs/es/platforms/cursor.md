@@ -632,4 +632,4 @@ R: Ejecutar `npm run sync:ide` después de actualizaciones de LMAS.
 
 ---
 
-_Synkra LMAS - Guía de Plataforma Cursor v1.0_
+_LMAS - Guía de Plataforma Cursor v1.0_

@@ -13,7 +13,7 @@
 **Versão:** 1.1
 **Última Atualização:** 2025-12-14
 **Status:** Padrão Oficial do Framework
-**Aviso de Migração:** Este documento migrará para o repositório `SynkraAI/lmas-core` em Q2 2026 (veja Decision 005)
+**Aviso de Migração:** Este documento migrará para o repositório `LMAS/lmas-core` em Q2 2026 (veja Decision 005)
 
 ---
 
@@ -878,7 +878,7 @@ Todos os PRs são automaticamente revisados pelo CodeRabbit para:
 | Versão | Data       | Alterações                                                        | Autor            |
 | ------ | ---------- | ----------------------------------------------------------------- | ---------------- |
 | 1.0    | 2025-01-15 | Documento inicial de padrões de código                            | Aria (architect) |
-| 1.1    | 2025-12-14 | Atualizado aviso de migração para SynkraAI/lmas-core [Story 6.10] | Neo (dev)        |
+| 1.1    | 2025-12-14 | Atualizado aviso de migração para LMAS/lmas-core [Story 6.10] | Neo (dev)        |
 
 ---
 

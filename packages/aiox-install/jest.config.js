@@ -1,5 +1,5 @@
 /**
- * Jest configuration for @synkra/aiox-install package
+ * Jest configuration for @lmas/aiox-install package
  */
 
 module.exports = {

@@ -110,7 +110,7 @@ EXAMPLES:
   # Search for workers
   aiox workers search "json csv"
 
-For more information, visit: https://github.com/SynkraAI/aiox-core
+For more information, visit: https://github.com/oluanferreira/aiox-core
 `);
 }
 

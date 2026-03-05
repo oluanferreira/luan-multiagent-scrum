@@ -234,7 +234,7 @@ tags:
 🚀 When ready to share:
    - Local only: Keep in ./squads/ (private)
    - Public: @squad-creator *publish-squad meu-dominio-squad
-   - API: @squad-creator *sync-squad-synkra meu-dominio-squad
+   - API: @squad-creator *sync-squad-lmas meu-dominio-squad
 ```
 
 ## Error Handling

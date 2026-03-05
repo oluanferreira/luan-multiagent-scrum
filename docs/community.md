@@ -1,8 +1,8 @@
-# Synkra LMAS Community
+# LMAS Community
 
 > 🇧🇷 [Versão em Português](COMMUNITY-PT.md)
 
-Welcome to the Synkra LMAS community!
+Welcome to the LMAS community!
 
 We're building the future of AI-orchestrated development together.
 
@@ -20,13 +20,13 @@ We're building the future of AI-orchestrated development together.
 1. Star the repository
 2. Read the [README](README.md)
 3. Set up your [development environment](CONTRIBUTING.md#getting-started)
-4. Introduce yourself in [Discussions](https://github.com/SynkraAI/lmas-core/discussions)
+4. Introduce yourself in [Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
 
 ### Find Your First Contribution
 
-- Look for issues labeled [`good-first-issue`](https://github.com/SynkraAI/lmas-core/labels/good-first-issue)
-- Check [`help-wanted`](https://github.com/SynkraAI/lmas-core/labels/help-wanted) for more complex tasks
-- Browse [open Discussions](https://github.com/SynkraAI/lmas-core/discussions) to help others
+- Look for issues labeled [`good-first-issue`](https://github.com/oluanferreira/luan-multiagent-scrum/labels/good-first-issue)
+- Check [`help-wanted`](https://github.com/oluanferreira/luan-multiagent-scrum/labels/help-wanted) for more complex tasks
+- Browse [open Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions) to help others
 
 ## Communication Channels
 
@@ -43,15 +43,15 @@ Our main communication hub for all LMAS repositories:
 - **Squads** - Discussions about LMAS Squads (modular agent teams)
 - **MCP Ecosystem** - Discussions about MCP tools and integrations
 
-[Join the Discussion](https://github.com/SynkraAI/lmas-core/discussions)
+[Join the Discussion](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
 
 ### Issue Tracker
 
 For bug reports and feature requests:
 
-- [lmas-core Issues](https://github.com/SynkraAI/lmas-core/issues) - Core framework
-- [lmas-squads Issues](https://github.com/SynkraAI/lmas-squads/issues) - LMAS Squads
-- [mcp-ecosystem Issues](https://github.com/SynkraAI/mcp-ecosystem/issues) - MCP tools
+- [lmas-core Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues) - Core framework
+- [lmas-squads Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues) - LMAS Squads
+- [mcp-ecosystem Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues) - MCP tools
 
 ## How to Contribute
 
@@ -91,14 +91,14 @@ See [docs/Squads.md](docs/Squads.md) for details on creating your own Squad.
 ### Contributors
 
 Anyone who has contributed to LMAS in any way.
-- Listed in our [Contributors page](https://github.com/SynkraAI/lmas-core/graphs/contributors)
+- Listed in our [Contributors page](https://github.com/oluanferreira/luan-multiagent-scrum/graphs/contributors)
 - Mentioned in release notes for significant contributions
 
 ### Maintainers
 
 Core team members who review PRs and guide the project:
 
-- [@SynkraAI](https://github.com/SynkraAI) - Project Lead
+- [@LMAS](https://github.com/oluanferreira) - Project Lead
 
 ### Becoming a Maintainer
 
@@ -111,7 +111,7 @@ Active contributors may be invited to become maintainers. We look for:
 
 ### Contributors Wall
 
-All contributors are recognized in our [Contributors page](https://github.com/SynkraAI/lmas-core/graphs/contributors).
+All contributors are recognized in our [Contributors page](https://github.com/oluanferreira/luan-multiagent-scrum/graphs/contributors).
 
 ### Release Credits
 
@@ -138,26 +138,26 @@ For significant changes:
 
 We follow the [Contributor Covenant](CODE_OF_CONDUCT.md). Please read and respect it.
 
-Report violations to: conduct@SynkraAI.com
+Report violations to: conduct@LMAS.com
 
 ## Getting Help
 
 ### Stuck on something?
 
 1. Check the [Documentation](docs/)
-2. Search [existing Discussions](https://github.com/SynkraAI/lmas-core/discussions)
+2. Search [existing Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
 3. Ask in Q&A Discussions
 4. Open a Troubleshooting discussion
 
 ### Found a bug?
 
-1. Search [existing issues](https://github.com/SynkraAI/lmas-core/issues)
-2. If new, [open a bug report](https://github.com/SynkraAI/lmas-core/issues/new?template=bug_report.md)
+1. Search [existing issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
+2. If new, [open a bug report](https://github.com/oluanferreira/luan-multiagent-scrum/issues/new?template=bug_report.md)
 
 ### Have an idea?
 
-1. Check if it exists in [Ideas](https://github.com/SynkraAI/lmas-core/discussions/categories/ideas)
-2. If new, [share your idea](https://github.com/SynkraAI/lmas-core/discussions/new?category=ideas)
+1. Check if it exists in [Ideas](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/ideas)
+2. If new, [share your idea](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/new?category=ideas)
 3. Read our [Feature Request Process](docs/FEATURE_PROCESS.md) for detailed guidelines
 
 ## Project Roadmap
@@ -165,11 +165,11 @@ Report violations to: conduct@SynkraAI.com
 Want to know where LMAS is headed? Check out our public roadmap:
 
 - [ROADMAP.md](ROADMAP.md) - High-level vision and planned features
-- [GitHub Project](https://github.com/orgs/SynkraAI/projects/1) - Detailed tracking board
+- [GitHub Project](https://github.com/orgs/LMAS/projects/1) - Detailed tracking board
 
 The roadmap is updated monthly and reflects community input. You can influence our direction by:
 
-1. **Voting** on ideas in [Discussions](https://github.com/SynkraAI/lmas-core/discussions/categories/ideas)
+1. **Voting** on ideas in [Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/ideas)
 2. **Proposing** new features via the [RFC process](/.github/RFC_TEMPLATE.md)
 3. **Contributing** directly to planned features
 
@@ -196,7 +196,7 @@ See [Feature Request Process](docs/FEATURE_PROCESS.md) for complete details.
 
 ### External Resources
 
-- [LMAS GitHub Organization](https://github.com/SynkraAI)
+- [LMAS GitHub Organization](https://github.com/oluanferreira)
 - [Changelog](CHANGELOG.md)
 
 ## Internationalization
@@ -209,7 +209,7 @@ We welcome contributions in all languages!
 
 ## Project Status
 
-- Current Version: See [releases](https://github.com/SynkraAI/lmas-core/releases)
+- Current Version: See [releases](https://github.com/oluanferreira/luan-multiagent-scrum/releases)
 - Changelog: [CHANGELOG.md](CHANGELOG.md)
 
 ---

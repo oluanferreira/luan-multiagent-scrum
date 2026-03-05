@@ -19,7 +19,7 @@
 **Versão:** 1.1
 **Última Atualização:** 2025-12-14
 **Status:** DESCONTINUADO - Veja docs/framework/tech-stack.md
-**Aviso de Migração:** Este documento será migrado para o repositório `SynkraAI/lmas-core` no Q2 2026 (veja Decisão 005)
+**Aviso de Migração:** Este documento será migrado para o repositório `LMAS/lmas-core` no Q2 2026 (veja Decisão 005)
 
 ---
 
@@ -801,7 +801,7 @@ SUPABASE_ACCESS_TOKEN=xxx         # Auth Supabase CLI
 | Versão | Data       | Alterações                                                                                       | Autor            |
 | ------ | ---------- | ------------------------------------------------------------------------------------------------ | ---------------- |
 | 1.0    | 2025-01-15 | Documentação inicial do tech stack                                                               | Aria (architect) |
-| 1.1    | 2025-12-14 | Atualizado aviso de migração para SynkraAI/lmas-core, semantic-release para v25.0.2 [Story 6.10] | Neo (dev)        |
+| 1.1    | 2025-12-14 | Atualizado aviso de migração para LMAS/lmas-core, semantic-release para v25.0.2 [Story 6.10] | Neo (dev)        |
 
 ---
 

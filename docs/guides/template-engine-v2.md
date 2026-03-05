@@ -4,7 +4,7 @@
 
 ---
 
-> Document generation and variable substitution engine for Synkra LMAS.
+> Document generation and variable substitution engine for LMAS.
 
 **Version:** 2.0
 **Last Updated:** 2025-12-05
@@ -475,4 +475,4 @@ console.log('Validation result:', validation);
 
 ---
 
-_Synkra LMAS Template Engine v2.0_
+_LMAS Template Engine v2.0_

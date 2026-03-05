@@ -69,7 +69,7 @@ branch_protection:
 **Comando de Implementacion:**
 
 ```bash
-gh api repos/SynkraAI/lmas-core/branches/main/protection -X PUT \
+gh api repos/LMAS/lmas-core/branches/main/protection -X PUT \
   -F required_status_checks='{"strict":true,"contexts":["lint","typecheck","build","test","validation-summary"]}' \
   -F enforce_admins=false \
   -F required_pull_request_reviews='{"dismiss_stale_reviews":true,"require_code_owner_reviews":true,"required_approving_review_count":1}' \
@@ -208,76 +208,76 @@ abort_on_close: true
 # ============================================
 # Propietario por Defecto (fallback)
 # ============================================
-* @SynkraAI/maintainers
+* @LMAS/maintainers
 
 # ============================================
 # Framework Core
 # ============================================
 # Definiciones de agentes - requiere revision del equipo core
-.lmas-core/development/agents/ @SynkraAI/core-team
+.lmas-core/development/agents/ @LMAS/core-team
 
 # Definiciones de tareas - requiere revision del equipo core
-.lmas-core/development/tasks/ @SynkraAI/core-team
+.lmas-core/development/tasks/ @LMAS/core-team
 
 # Definiciones de workflows - requiere revision del equipo core
-.lmas-core/development/workflows/ @SynkraAI/core-team
+.lmas-core/development/workflows/ @LMAS/core-team
 
 # Plantillas - requiere revision de arquitecto/equipo core
-.lmas-core/product/templates/ @SynkraAI/core-team
-templates/ @SynkraAI/core-team
+.lmas-core/product/templates/ @LMAS/core-team
+templates/ @LMAS/core-team
 
 # Utilidades core - requiere revision senior
-.lmas-core/core/ @SynkraAI/core-team
-.lmas-core/cli/ @SynkraAI/core-team
+.lmas-core/core/ @LMAS/core-team
+.lmas-core/cli/ @LMAS/core-team
 
 # ============================================
 # Infraestructura
 # ============================================
 # CI/CD - requiere aprobacion de devops
-.github/ @SynkraAI/devops
+.github/ @LMAS/devops
 
 # Configuraciones de Docker
-.docker/ @SynkraAI/devops
+.docker/ @LMAS/devops
 
 # Archivos de configuracion
-.lmas-core/core-config.yaml @SynkraAI/core-team
-package.json @SynkraAI/maintainers
-package-lock.json @SynkraAI/maintainers
+.lmas-core/core-config.yaml @LMAS/core-team
+package.json @LMAS/maintainers
+package-lock.json @LMAS/maintainers
 
 # ============================================
 # Documentacion (Mas Permisiva)
 # ============================================
 # Documentacion general - mantenedores pueden aprobar
-docs/ @SynkraAI/maintainers
+docs/ @LMAS/maintainers
 
 # Decisiones de arquitectura - requiere equipo core
-docs/architecture/ @SynkraAI/core-team
-docs/framework/ @SynkraAI/core-team
+docs/architecture/ @LMAS/core-team
+docs/framework/ @LMAS/core-team
 
 # Historias - mantenedores (documentacion de desarrollo interno)
-docs/stories/ @SynkraAI/maintainers
+docs/stories/ @LMAS/maintainers
 
 # Guias - mantenedores (amigable para contribuidores)
-docs/guides/ @SynkraAI/maintainers
+docs/guides/ @LMAS/maintainers
 
 # ============================================
 # Archivos Sensibles de Seguridad
 # ============================================
 # Configuraciones de seguridad
-.github/CODEOWNERS @SynkraAI/core-team
-.github/workflows/semantic-release.yml @SynkraAI/devops
-.github/workflows/npm-publish.yml @SynkraAI/devops
+.github/CODEOWNERS @LMAS/core-team
+.github/workflows/semantic-release.yml @LMAS/devops
+.github/workflows/npm-publish.yml @LMAS/devops
 
 # Archivos de configuracion raiz
-.env* @SynkraAI/core-team
-*.config.js @SynkraAI/maintainers
+.env* @LMAS/core-team
+*.config.js @LMAS/maintainers
 ```
 
 **Equipos de GitHub Requeridos:**
 
-- `@SynkraAI/maintainers` - Mantenedores generales (acceso de escritura)
-- `@SynkraAI/core-team` - Desarrolladores core del framework
-- `@SynkraAI/devops` - CI/CD e infraestructura
+- `@LMAS/maintainers` - Mantenedores generales (acceso de escritura)
+- `@LMAS/core-team` - Desarrolladores core del framework
+- `@LMAS/devops` - CI/CD e infraestructura
 
 ---
 
@@ -444,10 +444,10 @@ _Al enviar este PR, confirmo que he leido las [Guias de Contribucion](../../../.
 
 ```bash
 # Remover toda proteccion de rama (solo emergencia)
-gh api -X DELETE repos/SynkraAI/lmas-core/branches/main/protection
+gh api -X DELETE repos/LMAS/lmas-core/branches/main/protection
 
 # Restaurar proteccion minima
-gh api repos/SynkraAI/lmas-core/branches/main/protection -X PUT \
+gh api repos/LMAS/lmas-core/branches/main/protection -X PUT \
   -F required_status_checks='{"strict":true,"contexts":["lint","typecheck","build"]}' \
   -F enforce_admins=false \
   -F required_pull_request_reviews='{"dismiss_stale_reviews":true,"require_code_owner_reviews":false,"required_approving_review_count":0}' \
@@ -467,7 +467,7 @@ git push
 
 ```bash
 # Restaurar propiedad simple
-echo "* @SynkraAI" > .github/CODEOWNERS
+echo "* @LMAS" > .github/CODEOWNERS
 git add -A && git commit -m "chore: rollback CODEOWNERS"
 git push
 ```

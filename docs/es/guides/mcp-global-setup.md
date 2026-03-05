@@ -10,7 +10,7 @@
 
 ---
 
-> Configura servidores MCP (Model Context Protocol) globales para Synkra LMAS.
+> Configura servidores MCP (Model Context Protocol) globales para LMAS.
 
 **Versión:** 2.1.1
 **Última Actualización:** 2025-12-23
@@ -660,4 +660,4 @@ Crear `.mcp.json` en la raíz del proyecto para sobrescribir configuraciones glo
 
 ---
 
-_Synkra LMAS v4 Guía de Configuración Global de MCP_
+_LMAS v4 Guía de Configuración Global de MCP_

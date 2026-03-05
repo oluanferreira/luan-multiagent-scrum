@@ -11,7 +11,7 @@
 
 ---
 
-Synkra LMAS 的所有重要变更都将记录在此文件中。
+LMAS 的所有重要变更都将记录在此文件中。
 
 本格式基于 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 本项目遵循 [语义化版本](https://semver.org/spec/v2.0.0.html)。
@@ -126,7 +126,7 @@ Synkra LMAS 的所有重要变更都将记录在此文件中。
 
 ### 废弃
 
-- 手动安装流程（改用 `npx @synkra/lmas-core install`）
+- 手动安装流程（改用 `npx @lmas/lmas-core install`）
 - `.legacy-core/` 目录名称（自动迁移）
 
 ### 安全
@@ -140,7 +140,7 @@ Synkra LMAS 的所有重要变更都将记录在此文件中。
 
 ### 新增
 
-- Synkra LMAS 首次公开发布
+- LMAS 首次公开发布
 - 11 个专业 AI 代理（dev、qa、architect、pm、po、sm、analyst、ux-expert、data-engineer、devops、db-sage）
 - 任务工作流系统，含 60+ 个预构建任务
 - 模板系统，含 20+ 个文档模板
@@ -172,7 +172,7 @@ Synkra LMAS 的所有重要变更都将记录在此文件中。
 **快速升级：**
 
 ```bash
-npx @synkra/lmas-core install --force-upgrade
+npx @lmas/lmas-core install --force-upgrade
 ```
 
 **主要变更：**
@@ -187,5 +187,5 @@ npx @synkra/lmas-core install --force-upgrade
 
 - [故障排除](./installation/troubleshooting.md)
 - [FAQ](./installation/faq.md)
-- [GitHub 仓库](https://github.com/SynkraAI/lmas-core)
-- [Issue 追踪器](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub 仓库](https://github.com/oluanferreira/luan-multiagent-scrum)
+- [Issue 追踪器](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

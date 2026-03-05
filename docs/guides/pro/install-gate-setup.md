@@ -145,7 +145,7 @@ License activation failed: Invalid key format
 
 - Verifique o formato: `PRO-XXXX-XXXX-XXXX-XXXX` (4 blocos de 4 caracteres hex)
 - Sem espacos extras
-- Abra uma issue em https://github.com/SynkraAI/lmas-core/issues se a chave foi fornecida a voce
+- Abra uma issue em https://github.com/oluanferreira/luan-multiagent-scrum/issues se a chave foi fornecida a voce
 
 ### Maximo de seats excedido
 
@@ -194,10 +194,10 @@ License activation failed: ECONNREFUSED
 
 ## Suporte
 
-- **Documentacao:** https://synkra.ai/pro/docs
-- **Comprar:** https://synkra.ai/pro
-- **Suporte:** https://github.com/SynkraAI/lmas-core/issues
-- **Issues:** https://github.com/SynkraAI/lmas-core/issues
+- **Documentacao:** https://lmas.ai/pro/docs
+- **Comprar:** https://lmas.ai/pro
+- **Suporte:** https://github.com/oluanferreira/luan-multiagent-scrum/issues
+- **Issues:** https://github.com/oluanferreira/luan-multiagent-scrum/issues
 
 ---
 

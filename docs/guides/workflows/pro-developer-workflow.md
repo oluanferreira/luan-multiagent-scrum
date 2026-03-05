@@ -16,7 +16,7 @@ lmas-core/
 ├── bin/
 ├── src/
 ├── packages/
-├── pro/ ─── git submodule ──► SynkraAI/lmas-pro (private)
+├── pro/ ─── git submodule ──► LMAS/lmas-pro (private)
 ├── squads/ (community)
 └── package.json
 ```
@@ -35,7 +35,7 @@ git clone https://github.com/YOUR_USERNAME/lmas-core.git
 cd lmas-core
 
 # Add upstream remote
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 
 # Install dependencies
 npm install
@@ -68,7 +68,7 @@ git push origin feature/my-feature
 - All core tests pass without `pro/` present
 - `bin/utils/pro-detector.js` returns `isProAvailable() === false`
 - No features are degraded for core-only developers
-- You do NOT need access to SynkraAI/lmas-pro
+- You do NOT need access to LMAS/lmas-pro
 
 ---
 
@@ -80,7 +80,7 @@ Team members with access to the private lmas-pro repository can work on both rep
 
 ```bash
 # Clone with submodules
-git clone --recurse-submodules https://github.com/SynkraAI/lmas-core.git
+git clone --recurse-submodules https://github.com/oluanferreira/luan-multiagent-scrum.git
 cd lmas-core
 
 # Install dependencies
@@ -212,7 +212,7 @@ git submodule update --init pro
 
 ### Permission denied when cloning submodule
 
-You need access to `SynkraAI/lmas-pro`. Contact the team lead.
+You need access to `LMAS/lmas-pro`. Contact the team lead.
 
 ### Tests fail with pro/ present
 

@@ -1,8 +1,8 @@
-# Guia do Usuário Synkra LMAS
+# Guia do Usuário LMAS
 
 ## Visão Geral
 
-O Synkra LMAS é um framework de desenvolvimento full stack orientado por agentes de IA que implementa uma metodologia ágil única. Este guia explica como usar o Synkra LMAS de forma eficaz através de suas duas fases principais: **Planejamento** e **Desenvolvimento**.
+O LMAS é um framework de desenvolvimento full stack orientado por agentes de IA que implementa uma metodologia ágil única. Este guia explica como usar o LMAS de forma eficaz através de suas duas fases principais: **Planejamento** e **Desenvolvimento**.
 
 ### As Duas Inovações Chave
 
@@ -81,7 +81,7 @@ Se você está contribuindo para o LMAS-FullStack em si:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/SynkraAI/lmas-core
+git clone https://github.com/oluanferreira/luan-multiagent-scrum
 cd lmas-core
 
 # Instale dependências
@@ -225,7 +225,7 @@ npx lmas-core@latest install --force-upgrade
 
 ## Fluxo de Trabalho de Planejamento e Execução
 
-O Synkra LMAS usa uma abordagem de duas fases que separa planejamento estratégico de implementação tática:
+O LMAS usa uma abordagem de duas fases que separa planejamento estratégico de implementação tática:
 
 ### Fase 1: Planejamento (Interface Web)
 
@@ -477,7 +477,7 @@ O **po** (Product Owner) gerencia o backlog:
 
 ## Capacidades do Test Architect (QA Agent)
 
-O agente **qa** do Synkra LMAS inclui capacidades avançadas de arquitetura de testes:
+O agente **qa** do LMAS inclui capacidades avançadas de arquitetura de testes:
 
 ### 1. Perfil de Risco e Priorização
 
@@ -587,7 +587,7 @@ O agente **qa** monitora:
 
 ## Sistema de Preferências Técnicas
 
-O Synkra LMAS permite configurar preferências técnicas que influenciam decisões dos agentes:
+O LMAS permite configurar preferências técnicas que influenciam decisões dos agentes:
 
 ### Definir Preferências
 
@@ -817,7 +817,7 @@ O agente @github-devops funciona com QUALQUER repositório git:
 @github-devops
 *detect-repo
 # Output:
-# Repository: github.com/SynkraAI/lmas-core
+# Repository: github.com/oluanferreira/luan-multiagent-scrum
 # Mode: framework-development
 # Quality Gates: Testes do framework LMAS
 ```
@@ -1132,7 +1132,7 @@ Todos os critérios atendidos
 
 ## Trabalhando em Projetos Brownfield
 
-Ao integrar Synkra LMAS em projetos existentes:
+Ao integrar LMAS em projetos existentes:
 
 ### 1. Análise Inicial
 
@@ -1230,7 +1230,7 @@ Ao integrar Synkra LMAS em projetos existentes:
 
 ## Meta-Agentes
 
-O Synkra LMAS inclui meta-agentes para orquestração:
+O LMAS inclui meta-agentes para orquestração:
 
 ### lmas-master
 
@@ -1278,7 +1278,7 @@ O **lmas-developer** é o meta-agente para o próprio LMAS:
 
 ### Squads
 
-O Synkra LMAS suporta squads para domínios específicos:
+O LMAS suporta squads para domínios específicos:
 
 **Disponíveis durante instalação**:
 - **hybrid-ops** - Metodologia Luan Ferreira (orquestração de multiagentes integrados ao Claude Code)
@@ -1392,7 +1392,7 @@ Use este checklist para garantir que está seguindo o workflow corretamente:
 - [Trabalhando em Brownfield](./working-in-the-brownfield.md)
 
 ### Suporte
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 
 ### Exemplos
 Veja `Squads/` para exemplos de:
@@ -1405,5 +1405,5 @@ Veja `Squads/` para exemplos de:
 
 **Nota**: Este guia é uma visão geral. Para detalhes específicos de implementação, consulte a documentação técnica na pasta `docs/`.
 
-*Synkra LMAS User Guide v2.0*
+*LMAS User Guide v2.0*
 *Última atualização: Janeiro 2025*

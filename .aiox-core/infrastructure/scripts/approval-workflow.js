@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const inquirer = require('inquirer');
 
 /**
- * Approval workflow for Synkra AIOX framework
+ * Approval workflow for LMAS framework
  * Manages approval process for high-impact modifications
  */
 class ApprovalWorkflow {

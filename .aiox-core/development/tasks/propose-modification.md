@@ -208,7 +208,7 @@ checklists:
 # Propose Modification - LMAS Developer Task
 
 ## Purpose
-Create and submit modification proposals for collaborative review and approval within the Synkra LMAS framework.
+Create and submit modification proposals for collaborative review and approval within the LMAS framework.
 
 ## Command Pattern
 ```

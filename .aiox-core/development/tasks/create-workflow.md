@@ -247,7 +247,7 @@ tools:
 # Create Workflow
 
 ## Purpose
-To create a new workflow definition that orchestrates multiple agents and tasks for complex multi-step processes in Synkra LMAS.
+To create a new workflow definition that orchestrates multiple agents and tasks for complex multi-step processes in LMAS.
 
 ## Prerequisites
 - User authorization verified

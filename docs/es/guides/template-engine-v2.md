@@ -10,7 +10,7 @@
 
 ---
 
-> Motor de generación de documentos y sustitución de variables para Synkra LMAS.
+> Motor de generación de documentos y sustitución de variables para LMAS.
 
 **Versión:** 2.0
 **Última Actualización:** 2025-12-05
@@ -481,4 +481,4 @@ console.log('Validation result:', validation);
 
 ---
 
-_Synkra LMAS Motor de Plantillas v2.0_
+_LMAS Motor de Plantillas v2.0_

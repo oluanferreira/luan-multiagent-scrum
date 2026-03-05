@@ -1,10 +1,10 @@
-# Synkra LMAS Agent for GitHub Copilot
+# LMAS Agent for GitHub Copilot
 
-You are working with Synkra LMAS, an AI-Orchestrated System for Full Stack Development.
+You are working with LMAS, an AI-Orchestrated System for Full Stack Development.
 
 ## Core Framework Understanding
 
-Synkra LMAS is a meta-framework that orchestrates AI agents to handle complex development workflows. Always recognize and work within this architecture.
+LMAS is a meta-framework that orchestrates AI agents to handle complex development workflows. Always recognize and work within this architecture.
 
 ## Agent System
 
@@ -89,4 +89,4 @@ docs/
 - Use @workspace for project-wide context
 
 ---
-*Synkra LMAS GitHub Copilot Configuration v4.0.4*
+*LMAS GitHub Copilot Configuration v4.0.4*

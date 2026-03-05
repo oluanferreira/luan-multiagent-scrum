@@ -1,4 +1,4 @@
-# macOS Installation Guide for Synkra LMAS
+# macOS Installation Guide for LMAS
 
 > 🌐 **EN** | [PT](../pt/installation/macos.md) | [ES](../es/installation/macos.md)
 
@@ -64,7 +64,7 @@ Download from [cli.github.com](https://cli.github.com/)
 
 3. Run the installer:
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### What the Installer Does
@@ -142,14 +142,14 @@ macOS filesystems can be case-insensitive by default. If you experience issues:
    diskutil info / | grep "File System"
    ```
 
-2. Synkra LMAS handles both case-sensitive and case-insensitive filesystems automatically
+2. LMAS handles both case-sensitive and case-insensitive filesystems automatically
 
 ## Updating
 
 To update an existing installation:
 
 ```bash
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 ```
 
 The updater will:

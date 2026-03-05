@@ -1005,4 +1005,4 @@ This agent synthesizes research and patterns from:
 
 ---
 ---
-*LMAS Agent - Synkra LMAS Swarm Orchestrator v1.0*
+*LMAS Agent - LMAS Swarm Orchestrator v1.0*

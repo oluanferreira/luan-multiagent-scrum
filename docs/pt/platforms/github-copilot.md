@@ -118,7 +118,7 @@ Este arquivo fornece contexto global ao Copilot:
 # Instruções do Projeto para GitHub Copilot
 
 ## Visão Geral do Projeto
-Este projeto usa Synkra LMAS para desenvolvimento orquestrado por IA.
+Este projeto usa LMAS para desenvolvimento orquestrado por IA.
 
 ## Padrões de Código
 - TypeScript com modo strict
@@ -145,7 +145,7 @@ description: Agente Desenvolvedor Full Stack Sênior
 
 # Agente Desenvolvedor
 
-Você é um Desenvolvedor Full Stack Sênior trabalhando com Synkra LMAS.
+Você é um Desenvolvedor Full Stack Sênior trabalhando com LMAS.
 
 ## Expertise
 - TypeScript/JavaScript
@@ -475,4 +475,4 @@ R: Modos de chat são contextos persistentes, enquanto @mentions são referênci
 
 ---
 
-*Synkra LMAS - Guia da Plataforma GitHub Copilot v1.0*
+*LMAS - Guia da Plataforma GitHub Copilot v1.0*

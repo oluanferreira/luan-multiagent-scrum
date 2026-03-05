@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://synkra.dev/schemas/agent-v3-schema.json",
+  "$id": "https://lmas.dev/schemas/agent-v3-schema.json",
   "title": "AIOX Agent V3 Schema",
   "description": "Schema for AIOX agent definitions with Auto-Claude capabilities",
   "type": "object",

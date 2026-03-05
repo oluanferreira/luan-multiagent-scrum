@@ -2,7 +2,7 @@
 
 # Seção de Comunidade do README - lmas-squads
 
-> **Propósito:** Copie este snippet para o README.md do repositório `SynkraAI/lmas-squads`.
+> **Propósito:** Copie este snippet para o README.md do repositório `LMAS/lmas-squads`.
 
 ---
 
@@ -10,15 +10,15 @@
 
 Para discussões, perguntas e interação com a comunidade, visite nosso hub central:
 
-**[Discussões da Comunidade LMAS](https://github.com/SynkraAI/lmas-core/discussions)**
+**[Discussões da Comunidade LMAS](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)**
 
 | Necessidade | Onde Ir |
 |-------------|---------|
-| **Perguntas sobre Squad?** | Use a [categoria "Squads"](https://github.com/SynkraAI/lmas-core/discussions/categories/squads) |
-| **Ideias de funcionalidades?** | Inicie uma [Discussão em "Ideas"](https://github.com/SynkraAI/lmas-core/discussions/categories/ideas) |
-| **Encontrou um bug?** | [Abra uma issue](https://github.com/SynkraAI/lmas-squads/issues/new/choose) **neste repositório** |
-| **Precisa de ajuda?** | Pergunte em ["Q&A"](https://github.com/SynkraAI/lmas-core/discussions/categories/q-a) |
-| **Construiu algo legal?** | Compartilhe em ["Show and Tell"](https://github.com/SynkraAI/lmas-core/discussions/categories/show-and-tell) |
+| **Perguntas sobre Squad?** | Use a [categoria "Squads"](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/squads) |
+| **Ideias de funcionalidades?** | Inicie uma [Discussão em "Ideas"](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/ideas) |
+| **Encontrou um bug?** | [Abra uma issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues/new/choose) **neste repositório** |
+| **Precisa de ajuda?** | Pergunte em ["Q&A"](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/q-a) |
+| **Construiu algo legal?** | Compartilhe em ["Show and Tell"](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/show-and-tell) |
 
 ### Squads Disponíveis
 
@@ -31,8 +31,8 @@ Para discussões, perguntas e interação com a comunidade, visite nosso hub cen
 
 Tem uma ideia para um novo LMAS Squad? Adoraríamos ouvir!
 
-1. Verifique as [propostas de Squad existentes](https://github.com/SynkraAI/lmas-squads/labels/new-squad)
-2. Abra uma [issue de Proposta de Squad](https://github.com/SynkraAI/lmas-squads/issues/new?template=squad-proposal.md)
+1. Verifique as [propostas de Squad existentes](https://github.com/oluanferreira/luan-multiagent-scrum/labels/new-squad)
+2. Abra uma [issue de Proposta de Squad](https://github.com/oluanferreira/luan-multiagent-scrum/issues/new?template=squad-proposal.md)
 3. Discuta na comunidade
 
 ---

@@ -1,6 +1,6 @@
 <!-- 翻译：zh-CN 原文：/docs/installation/linux.md 最后同步：2026-02-22 -->
 
-# Synkra LMAS Linux 安装指南
+# LMAS Linux 安装指南
 
 > 🌐 [EN](../../installation/linux.md) | [PT](../pt/installation/linux.md) | [ES](../es/installation/linux.md)
 
@@ -155,7 +155,7 @@ sudo pacman -S base-devel
 3. 运行安装程序：
 
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### 手动安装
@@ -164,7 +164,7 @@ sudo pacman -S base-devel
 
 ```bash
 # 克隆仓库
-git clone https://github.com/SynkraAI/lmas-core.git ~/.lmas-core-source
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git ~/.lmas-core-source
 
 # 导航到源目录
 cd ~/.lmas-core-source
@@ -340,7 +340,7 @@ export EDITOR=vim  # 或 code, nano 等
 
 ### XDG Base Directory 合规性
 
-Synkra LMAS 遵守 XDG 目录：
+LMAS 遵守 XDG 目录：
 
 ```bash
 # 数据文件：~/.local/share/lmas/
@@ -357,7 +357,7 @@ Synkra LMAS 遵守 XDG 目录：
 
 ```bash
 # 使用 npx（推荐）
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 
 # 手动更新
 cd ~/.lmas-core-source
@@ -386,7 +386,7 @@ node bin/lmas-init.js ~/projects/my-project --update
 rm -rf .lmas-core .claude/commands/LMAS
 
 # 删除全局安装
-rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@synkra
+rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@lmas
 ```
 
 ---
@@ -444,4 +444,4 @@ rm -rf ~/.lmas-core-source ~/.npm-global/lib/node_modules/@synkra
 - [故障排除指南](troubleshooting.md)
 - [常见问题](faq.md)
 - [Discord 社区](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

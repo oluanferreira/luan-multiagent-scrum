@@ -423,4 +423,4 @@ Only use docker-gateway when:
 
 ---
 
-_Synkra LMAS Docker MCP Setup Guide v4.2.11_
+_LMAS Docker MCP Setup Guide v4.2.11_

@@ -1,7 +1,7 @@
 # Task: Analyze Framework
 
 ## Description
-Performs comprehensive analysis of the Synkra LMAS framework to identify improvement opportunities, performance bottlenecks, component redundancies, and usage patterns.
+Performs comprehensive analysis of the LMAS framework to identify improvement opportunities, performance bottlenecks, component redundancies, and usage patterns.
 
 ## Execution Modes
 

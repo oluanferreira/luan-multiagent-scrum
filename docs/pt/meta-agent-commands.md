@@ -10,7 +10,7 @@
 
 ---
 
-Guia de referência completo para todos os comandos do meta-agente Synkra LMAS.
+Guia de referência completo para todos os comandos do meta-agente LMAS.
 
 ## Sumário
 
@@ -715,7 +715,7 @@ Exemplos:
 
 ### *update
 
-Atualiza o Synkra LMAS.
+Atualiza o LMAS.
 
 ```bash
 *update [options]

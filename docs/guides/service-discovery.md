@@ -515,4 +515,4 @@ await registry.load(true);
 
 ---
 
-_Synkra LMAS v4 Service Discovery Guide_
+_LMAS v4 Service Discovery Guide_

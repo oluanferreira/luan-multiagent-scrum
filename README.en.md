@@ -1,13 +1,13 @@
-# Synkra LMAS: Universal AI Agent Framework 🚀
+# LMAS: Universal AI Agent Framework 🚀
 
 > 🌍 **[English](README.en.md)** | [Português](README.md)
 
 [![NPM Version](https://img.shields.io/npm/v/lmas-core.svg)](https://www.npmjs.com/package/lmas-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
-[![CI](https://github.com/SynkraAI/lmas-core/actions/workflows/ci.yml/badge.svg)](https://github.com/SynkraAI/lmas-core/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/SynkraAI/lmas-core/branch/main/graph/badge.svg)](https://codecov.io/gh/SynkraAI/lmas-core)
-[![Documentation](https://img.shields.io/badge/docs-available-orange.svg)](https://synkra.ai)
+[![CI](https://github.com/oluanferreira/luan-multiagent-scrum/actions/workflows/ci.yml/badge.svg)](https://github.com/oluanferreira/luan-multiagent-scrum/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/LMAS/lmas-core/branch/main/graph/badge.svg)](https://codecov.io/gh/LMAS/lmas-core)
+[![Documentation](https://img.shields.io/badge/docs-available-orange.svg)](https://lmas.ai)
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-success.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-Contributor%20Covenant-blue.svg)](CODE_OF_CONDUCT.md)
@@ -55,9 +55,9 @@ Detailed impacts and mitigation: `docs/ide-integration.md`.
 
 ## Acknowledgments & Attribution
 
-Synkra LMAS was originally derived from the [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD), created by [Brian Madison](https://github.com/bmadcode) (BMad Code, LLC). We gratefully acknowledge the BMad Method for providing the foundation from which this project began.
+LMAS was originally derived from the [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD), created by [Brian Madison](https://github.com/bmadcode) (BMad Code, LLC). We gratefully acknowledge the BMad Method for providing the foundation from which this project began.
 
-**Important:** This project is **NOT affiliated with, endorsed by, or sanctioned by** the BMad Method or BMad Code, LLC. Contributors appearing in the git history from the original BMad Method repository do not imply active participation in or endorsement of Synkra LMAS.
+**Important:** This project is **NOT affiliated with, endorsed by, or sanctioned by** the BMad Method or BMad Code, LLC. Contributors appearing in the git history from the original BMad Method repository do not imply active participation in or endorsement of LMAS.
 
 Since its origin, LMAS has evolved significantly with its own architecture, terminology, and features (v4.x+), and does not depend on BMad for current operation. The BMad Method remains an excellent framework in its own right — please visit the [official BMad Method repository](https://github.com/bmad-code-org/BMAD-METHOD) to learn more.
 
@@ -67,7 +67,7 @@ BMad, BMad Method, and BMad Core are trademarks of BMad Code, LLC. See [TRADEMAR
 
 ### Architectural Premise: CLI First
 
-Synkra LMAS follows a clear priority hierarchy:
+LMAS follows a clear priority hierarchy:
 
 ```text
 CLI First → Observability Second → UI Third
@@ -88,7 +88,7 @@ CLI First → Observability Second → UI Third
 
 ---
 
-**The Two Key Innovations of Synkra LMAS:**
+**The Two Key Innovations of LMAS:**
 
 **1. Agentic Planning:** Dedicated agents (analyst, pm, architect) collaborate with you to create detailed, consistent PRD and Architecture documents. Through advanced prompt engineering and human-in-the-loop refinement, these planning agents produce comprehensive specifications that go far beyond generic AI task generation.
 
@@ -123,7 +123,7 @@ This two-phase approach eliminates both **planning inconsistency** and **context
 1. **[Planning Workflow (Web Interface)](docs/guides/user-guide.md#the-planning-workflow-web-ui)** - How to create PRD and Architecture documents
 2. **[Core Development Cycle (IDE)](docs/guides/user-guide.md#the-core-development-cycle-ide)** - How the sm, dev, and qa agents collaborate through story files
 
-> ⚠️ **These diagrams explain 90% of the confusion about the Synkra LMAS Agentic Agile workflow** - Understanding PRD+Architecture creation and the sm/dev/qa workflow and how agents pass notes through story files is essential - and it also explains why this is NOT taskmaster or just a simple task runner!
+> ⚠️ **These diagrams explain 90% of the confusion about the LMAS Agentic Agile workflow** - Understanding PRD+Architecture creation and the sm/dev/qa workflow and how agents pass notes through story files is essential - and it also explains why this is NOT taskmaster or just a simple task runner!
 
 ### What would you like to do?
 
@@ -134,7 +134,7 @@ This two-phase approach eliminates both **planning inconsistency** and **context
 - **[Create my own AI agents](#creating-your-own-squad)** → Build agents for your domain
 - **[Browse ready-made Squads](docs/guides/squads-overview.md)** → See how to create and use AI agent teams
 - **[Understand the architecture](docs/architecture/ARCHITECTURE-INDEX.md)** → Deep technical dive
-- **[Report issues](https://github.com/SynkraAI/lmas-core/issues)** → Bug reports and feature requests
+- **[Report issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)** → Bug reports and feature requests
 
 ## Important: Keep Your LMAS Installation Updated
 
@@ -157,7 +157,7 @@ This makes it easy to benefit from the latest improvements, bug fixes, and new a
 
 ### 🚀 Installation via NPX (Recommended)
 
-**Install Synkra LMAS with a single command:**
+**Install LMAS with a single command:**
 
 ```bash
 # Create a new project with modern interactive wizard
@@ -173,7 +173,7 @@ npx lmas-core@latest init my-project
 
 ### ✨ Modern Installation Wizard
 
-Synkra LMAS now includes a cutting-edge interactive installation experience, inspired by modern tools like Vite and Next.js:
+LMAS now includes a cutting-edge interactive installation experience, inspired by modern tools like Vite and Next.js:
 
 **Interactive Installer Features:**
 
@@ -212,7 +212,7 @@ npx lmas-core@latest install
 
 ### Configure Your IDE for LMAS Development
 
-Synkra LMAS includes pre-configured IDE rules to enhance your development experience:
+LMAS includes pre-configured IDE rules to enhance your development experience:
 
 #### For Cursor:
 
@@ -264,7 +264,7 @@ These rules provide:
 
 ### CLI Command Reference
 
-Synkra LMAS offers a modern, cross-platform CLI with intuitive commands:
+LMAS offers a modern, cross-platform CLI with intuitive commands:
 
 ```bash
 # Project Management (with interactive wizard)
@@ -288,7 +288,7 @@ npx lmas-core doctor --fix Automatically fix detected issues
 
 # Maintenance
 npx lmas-core update      Update to latest version
-npx lmas-core uninstall   Remove Synkra LMAS
+npx lmas-core uninstall   Remove LMAS
 ```
 
 **CLI Features:**
@@ -306,7 +306,7 @@ npx lmas-core uninstall   Remove Synkra LMAS
 ```bash
 $ npx lmas-core install
 
-🚀 Synkra LMAS Installation
+🚀 LMAS Installation
 
 ◆ What is your project name?
 │  my-awesome-project
@@ -351,7 +351,7 @@ Next steps:
 ```bash
 # Automated installation without prompts
 $ npx lmas-core install --quiet --force
-✔ Synkra LMAS installed successfully
+✔ LMAS installed successfully
 ```
 
 #### Installation Simulation (Dry-Run)
@@ -378,7 +378,7 @@ $ npx lmas-core doctor
 ✔ npm version: 10.2.3
 ✔ Git installed: version 2.43.0
 ✔ GitHub CLI: gh 2.40.1
-✔ Synkra LMAS: v4.2.11
+✔ LMAS: v4.2.11
 
 Configuration:
 ✔ .lmas-core/ directory exists
@@ -403,7 +403,7 @@ $ npx lmas-core --help
 
 Usage: lmas-core [options] [command]
 
-Synkra LMAS: AI-Orchestrated System for Full Stack Development
+LMAS: AI-Orchestrated System for Full Stack Development
 
 Options:
   -V, --version                output the version number
@@ -425,7 +425,7 @@ For contributors or advanced users who want to modify the source code:
 
 ```bash
 # Clone the repository
-git clone https://github.com/SynkraAI/lmas-core.git
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git
 cd lmas-core
 
 # Install dependencies
@@ -451,11 +451,11 @@ npx lmas-core@latest install
 
 ## 🌟 Beyond Software Development - Squads
 
-The LMAS natural language framework works in ANY domain. Squads provide specialized AI agents for creative writing, business strategy, health and wellness, education, and more. Additionally, Squads can expand the Synkra LMAS core with domain-specific functionality that isn't generic for all use cases. [See the Squads Guide](docs/guides/squads-guide.md) and learn to create your own!
+The LMAS natural language framework works in ANY domain. Squads provide specialized AI agents for creative writing, business strategy, health and wellness, education, and more. Additionally, Squads can expand the LMAS core with domain-specific functionality that isn't generic for all use cases. [See the Squads Guide](docs/guides/squads-guide.md) and learn to create your own!
 
 ## Available Agents
 
-Synkra LMAS comes with 12 specialized agents:
+LMAS comes with 12 specialized agents:
 
 ### Meta Agents
 
@@ -500,7 +500,7 @@ Synkra LMAS comes with 12 specialized agents:
 
 ## 🤖 LMAS Autonomous Development Engine (ADE)
 
-Synkra LMAS introduces the **Autonomous Development Engine (ADE)** - a complete system for autonomous development that transforms requirements into working code.
+LMAS introduces the **Autonomous Development Engine (ADE)** - a complete system for autonomous development that transforms requirements into working code.
 
 ### 🎯 What is ADE?
 
@@ -608,13 +608,13 @@ Squads are modular AI agent teams. See the [Squads Overview](docs/guides/squads-
 
 ### External Squads
 
-- **[hybrid-ops](https://github.com/SynkraAI/lmas-hybrid-ops-pedro-valerio)** - Human-agent hybrid operations (separate repository)
+- **[hybrid-ops](https://github.com/oluanferreira/luan-multiagent-scrum)** - Human-agent hybrid operations (separate repository)
 
 ## LMAS Pro
 
-**LMAS Pro** (`@lmas-fullstack/pro`) is the premium module of Synkra LMAS, offering advanced features for teams and larger-scale projects.
+**LMAS Pro** (`@lmas-fullstack/pro`) is the premium module of LMAS, offering advanced features for teams and larger-scale projects.
 
-> **Restricted availability:** LMAS Pro is available exclusively to members of the **LMAS Cohort Advanced**. [Learn more about the program](https://synkra.ai).
+> **Restricted availability:** LMAS Pro is available exclusively to members of the **LMAS Cohort Advanced**. [Learn more about the program](https://lmas.ai).
 
 ### Installation
 
@@ -635,7 +635,7 @@ For more information, run `npx lmas-core pro --help` after installation.
 
 ## Support
 
-- 🐛 [Issue Tracker](https://github.com/SynkraAI/lmas-core/issues) - Bug reports and feature requests
+- 🐛 [Issue Tracker](https://github.com/oluanferreira/luan-multiagent-scrum/issues) - Bug reports and feature requests
 - 💡 [Feature Process](docs/FEATURE_PROCESS.md) - How to propose new features
 - 📋 [How to Contribute](CONTRIBUTING.md)
 - 🗺️ [Roadmap](docs/roadmap.md) - See what we're building
@@ -643,7 +643,7 @@ For more information, run `npx lmas-core pro --help` after installation.
 
 ## Git Workflow and Validation
 
-Synkra LMAS implements a multi-layer validation system to ensure code quality and consistency:
+LMAS implements a multi-layer validation system to ensure code quality and consistency:
 
 ### 🛡️ Defense in Depth - 3 Validation Layers
 
@@ -736,12 +736,12 @@ See also:
 
 This project was originally derived from the [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD) by [Brian Madison](https://github.com/bmadcode). We thank Brian and all BMad Method contributors for the original work that made this project possible.
 
-**Note:** Some contributors shown in the GitHub contributors graph are inherited from the original BMad Method git history and do not represent active participation in or endorsement of Synkra LMAS.
+**Note:** Some contributors shown in the GitHub contributors graph are inherited from the original BMad Method git history and do not represent active participation in or endorsement of LMAS.
 
-[![Contributors](https://contrib.rocks/image?repo=SynkraAI/lmas-core)](https://github.com/SynkraAI/lmas-core/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=LMAS/lmas-core)](https://github.com/oluanferreira/luan-multiagent-scrum/graphs/contributors)
 
 <sub>Built with ❤️ for the AI-assisted development community</sub>
 
 ---
 
-**[⬆ Back to top](#synkra-lmas-universal-ai-agent-framework-)**
+**[⬆ Back to top](#lmas-lmas-universal-ai-agent-framework-)**

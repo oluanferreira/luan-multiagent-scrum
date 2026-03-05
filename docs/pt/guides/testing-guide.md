@@ -1,10 +1,10 @@
-# Guia de Testes do Synkra LMAS
+# Guia de Testes do LMAS
 
 > [EN](../../guides/testing-guide.md) | **PT** | [ES](../../es/guides/testing-guide.md)
 
 ---
 
-> Guia completo sobre a estratégia de testes, ferramentas e melhores práticas do Synkra LMAS.
+> Guia completo sobre a estratégia de testes, ferramentas e melhores práticas do LMAS.
 
 **Versão:** 2.1.0
 **Última Atualização:** 2026-01-29
@@ -1212,4 +1212,4 @@ module.exports = {
 
 ---
 
-_Synkra LMAS v4 Guia de Testes_
+_LMAS v4 Guia de Testes_

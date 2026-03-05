@@ -728,7 +728,7 @@ Visibility:
   2. Private (recommended)
 
 GitHub Organization/Username:
-  Found organizations: SynkraAI
+  Found organizations: LMAS
   Or use personal account: your-username
 
 Select owner: _
@@ -794,7 +794,7 @@ temp/
 @"
 # $PROJECT_NAME
 
-> Created with Synkra LMAS
+> Created with LMAS
 
 ## Getting Started
 
@@ -817,7 +817,7 @@ npm run dev
 git add .
 git commit -m "chore: initial project setup
 
-- Initialize Synkra LMAS project structure
+- Initialize LMAS project structure
 - Add .gitignore with standard exclusions
 - Add README.md with project placeholder
 
@@ -909,7 +909,7 @@ if (-not (Test-Path "package.json")) {
 {
   "name": "$PROJECT_NAME",
   "version": "0.1.0",
-  "description": "Created with Synkra LMAS",
+  "description": "Created with LMAS",
   "scripts": {
     "dev": "echo 'Add your dev script'",
     "build": "echo 'Add your build script'",

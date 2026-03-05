@@ -6,7 +6,7 @@
 
 ## Overview
 
-Synkra LMAS can be installed via NPX for quick setup without global installation. This guide covers proper usage and troubleshooting for NPX-based installations.
+LMAS can be installed via NPX for quick setup without global installation. This guide covers proper usage and troubleshooting for NPX-based installations.
 
 ## Quick Start
 
@@ -38,7 +38,7 @@ npx lmas-core install
 
 ## Why This Matters
 
-NPX executes packages in **temporary directories** (e.g., `/private/var/folders/.../npx-xxx/` on macOS). When Synkra LMAS runs from these temporary locations, it cannot:
+NPX executes packages in **temporary directories** (e.g., `/private/var/folders/.../npx-xxx/` on macOS). When LMAS runs from these temporary locations, it cannot:
 
 - Detect your IDE configuration correctly
 - Install files to the right project directory
@@ -46,7 +46,7 @@ NPX executes packages in **temporary directories** (e.g., `/private/var/folders/
 
 ## NPX Temporary Directory Detection
 
-As of version 4.31.1, Synkra LMAS automatically detects when it's running from an NPX temporary directory and displays a helpful error message:
+As of version 4.31.1, LMAS automatically detects when it's running from an NPX temporary directory and displays a helpful error message:
 
 ```
 ⚠️  NPX Temporary Directory Detected
@@ -95,7 +95,7 @@ NPX temporary directories typically appear at:
 - `/private/var/folders/[hash]/T/npx-[random]/`
 - `/Users/[user]/.npm/_npx/[hash]/`
 
-Synkra LMAS detects these patterns and prevents incorrect installation.
+LMAS detects these patterns and prevents incorrect installation.
 
 ### Linux
 
@@ -152,7 +152,7 @@ lmas-core install
 
 ### Defense in Depth Architecture
 
-Synkra LMAS v4.31.1+ implements two-layer detection:
+LMAS v4.31.1+ implements two-layer detection:
 
 1. **PRIMARY Layer** (`tools/lmas-npx-wrapper.js`):
    - Checks `__dirname` (where NPX extracts the package)
@@ -176,7 +176,7 @@ const patterns = [
 ## Support
 
 For additional help:
-- GitHub Issues: https://github.com/SynkraAIinc/lmas-core/issues
+- GitHub Issues: https://github.com/oluanferreirainc/lmas-core/issues
 - Documentation: https://lmas-core.dev/docs
 - Story Reference: 2.3 - NPX Installation Context Detection
 

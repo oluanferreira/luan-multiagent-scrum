@@ -36,7 +36,7 @@ cd my-project
 ### Option B: Clone Repository (Development)
 
 ```bash
-git clone https://github.com/SynkraAI/lmas-core.git
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git
 cd lmas-core
 npm install
 ```
@@ -251,15 +251,15 @@ sudo chown -R $(whoami) ~/.npm
 npx lmas-core@latest install
 
 # Or clone fresh
-git clone https://github.com/SynkraAI/lmas-core.git
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git
 ```
 
 ---
 
 ## Getting Help
 
-- **Documentation:** [GitHub Repository](https://github.com/SynkraAI/lmas-core)
-- **GitHub Issues:** [github.com/SynkraAI/lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **Documentation:** [GitHub Repository](https://github.com/oluanferreira/luan-multiagent-scrum)
+- **GitHub Issues:** [github.com/oluanferreira/luan-multiagent-scrum/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Discord Community:** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
 
 ---

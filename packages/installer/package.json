@@ -22,7 +22,7 @@
     "greenfield",
     "brownfield"
   ],
-  "author": "LMAS Fullstack Team",
+  "author": "Luan Ferreira",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"

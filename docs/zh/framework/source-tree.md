@@ -7,7 +7,7 @@
 **版本:** 4.0.0
 **最后更新:** 2026-02-11
 **状态:** 官方框架标准
-**仓库:** SynkraAI/lmas-core
+**仓库:** LMAS/lmas-core
 
 ---
 
@@ -465,7 +465,7 @@ dependencies:
 
 **Decision 005 定义了5个独立仓库：**
 
-### 仓库1: SynkraAI/lmas-core (MIT)
+### 仓库1: LMAS/lmas-core (MIT)
 
 ```
 lmas-core/
@@ -515,7 +515,7 @@ lmas-core/
     └── multi-agent-workflow/
 ```
 
-### 仓库2: SynkraAI/squads (MIT)
+### 仓库2: LMAS/squads (MIT)
 
 ```
 squads/
@@ -537,7 +537,7 @@ squads/
     └── create-lmas-squad/
 ```
 
-### 仓库3: SynkraAI/mcp-ecosystem (Apache 2.0)
+### 仓库3: LMAS/mcp-ecosystem (Apache 2.0)
 
 ```
 mcp-ecosystem/
@@ -557,7 +557,7 @@ mcp-ecosystem/
     └── cursor/
 ```
 
-### 仓库4: SynkraAI/certified-partners (私有)
+### 仓库4: LMAS/certified-partners (私有)
 
 ```
 certified-partners/
@@ -574,7 +574,7 @@ certified-partners/
     └── web/
 ```
 
-### 仓库5: SynkraAI/mmos (私有 + NDA)
+### 仓库5: LMAS/mmos (私有 + NDA)
 
 ```
 mmos/
@@ -880,7 +880,7 @@ ade:
 | 版本 | 日期 | 变更 | 作者 |
 | ---- | ---- | ---- | ---- |
 | 1.0 | 2025-01-15 | 初始源代码树文档 | Aria (architect) |
-| 1.1 | 2025-12-14 | 更新组织为 SynkraAI，用 Squads 系统替换 Squads [Story 6.10] | Neo (dev) |
+| 1.1 | 2025-12-14 | 更新组织为 LMAS，用 Squads 系统替换 Squads [Story 6.10] | Neo (dev) |
 | 2.0 | 2025-12-15 | 主要更新以反映模块化架构（cli/、core/、development/、infrastructure/、product/）[Story 6.13] | Keymaker (PO) |
 | 3.0 | 2026-01-29 | 添加 ADE（自主开发引擎）部分，记录 Epics 1-7：workflow-intelligence、ADE 脚本、工作流、任务和运行时状态 [ADE 集成] | Aria (architect) |
 | 3.1 | 2026-02-06 | 添加数据文件治理部分：记录7个缺失的数据文件及其所有者、填充规则和更新触发器。扩展 .lmas-core/data/ 和 product/data/ 树列表。[Story ACT-8] | Neo (dev) |

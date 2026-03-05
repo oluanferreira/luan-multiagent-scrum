@@ -4,7 +4,7 @@
 
 **Status:** Official Framework Standards
 **Created:** 2025-01-16 (Story 6.1.2.6)
-**Migration Target:** Q2 2026 → `SynkraAI/lmas-core` repository
+**Migration Target:** Q2 2026 → `LMAS/lmas-core` repository
 
 ---
 
@@ -28,12 +28,12 @@ This directory contains **official LMAS framework documentation** that defines s
 
 ## 🔄 Migration Notice
 
-**⚠️ IMPORTANT**: These documents are now in the `SynkraAI/lmas-core` repository. The migration from the old `lmas/lmas-core` org was completed in December 2024 as part of OSR-9 (Rebranding).
+**⚠️ IMPORTANT**: These documents are now in the `LMAS/lmas-core` repository. The migration from the old `lmas/lmas-core` org was completed in December 2024 as part of OSR-9 (Rebranding).
 
 ### Migration Timeline
 
 - **Phase 1 (Q1 2026 - Story 6.1.2.6):** ✅ Framework docs separated into `docs/framework/`
-- **Phase 2 (Q4 2024):** ✅ Repository migrated to `SynkraAI/lmas-core` (OSR-9)
+- **Phase 2 (Q4 2024):** ✅ Repository migrated to `LMAS/lmas-core` (OSR-9)
 - **Phase 3 (Q3 2026):** Old `docs/architecture/` copies removed from brownfield project
 
 ### Backward Compatibility
@@ -51,7 +51,7 @@ For backward compatibility, framework docs remain accessible at **both** locatio
 ### Framework Documentation (`docs/framework/`)
 - **Scope**: Portable across all LMAS projects
 - **Examples**: Coding standards, tech stack, source tree structure
-- **Lifecycle**: Lives in `SynkraAI/lmas-core` repository
+- **Lifecycle**: Lives in `LMAS/lmas-core` repository
 - **Changes**: Require framework-level approval
 
 ### Project Documentation (`docs/architecture/project-decisions/`)

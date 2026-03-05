@@ -1,11 +1,11 @@
-# @synkra/lmas-install
+# @lmas/lmas-install
 
 NPX installer for LMAS - AI-Orchestrated System for Full Stack Development.
 
 ## Quick Start
 
 ```bash
-npx @synkra/lmas-install
+npx @lmas/lmas-install
 ```
 
 That's it! The installer will guide you through setting up LMAS in less than 5 minutes.
@@ -23,13 +23,13 @@ That's it! The installer will guide you through setting up LMAS in less than 5 m
 ### Interactive Installation
 
 ```bash
-npx @synkra/lmas-install
+npx @lmas/lmas-install
 ```
 
 ### Options
 
 ```bash
-npx @synkra/lmas-install --help
+npx @lmas/lmas-install --help
 
 Options:
   -v, --version         Output the current version
@@ -46,7 +46,7 @@ Options:
 Preview the installation without making any changes:
 
 ```bash
-npx @synkra/lmas-install --dry-run
+npx @lmas/lmas-install --dry-run
 ```
 
 ### Direct Profile Selection
@@ -54,8 +54,8 @@ npx @synkra/lmas-install --dry-run
 Skip the profile question by specifying it directly:
 
 ```bash
-npx @synkra/lmas-install --profile bob
-npx @synkra/lmas-install --profile advanced
+npx @lmas/lmas-install --profile bob
+npx @lmas/lmas-install --profile advanced
 ```
 
 ## edmcp - Docker MCP Manager
@@ -109,8 +109,8 @@ If you have an existing LMAS installation, the installer will:
 
 ## Support
 
-- Documentation: https://github.com/SynkraAI/lmas-core
-- Issues: https://github.com/SynkraAI/lmas-core/issues
+- Documentation: https://github.com/oluanferreira/luan-multiagent-scrum
+- Issues: https://github.com/oluanferreira/luan-multiagent-scrum/issues
 
 ## License
 

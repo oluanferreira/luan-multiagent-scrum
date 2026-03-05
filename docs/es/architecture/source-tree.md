@@ -17,7 +17,7 @@
 **Version:** 1.1
 **Ultima Actualizacion:** 2025-12-14
 **Estado:** OBSOLETO - Ver docs/framework/source-tree.md
-**Aviso de Migracion:** Este documento migrara al repositorio `SynkraAI/lmas-core` en Q2 2026 (ver Decision 005)
+**Aviso de Migracion:** Este documento migrara al repositorio `LMAS/lmas-core` en Q2 2026 (ver Decision 005)
 
 ---
 
@@ -438,7 +438,7 @@ dependencies:
 
 **La Decision 005 define 5 repositorios separados:**
 
-### REPO 1: SynkraAI/lmas-core (MIT)
+### REPO 1: LMAS/lmas-core (MIT)
 
 ```
 lmas-core/
@@ -475,7 +475,7 @@ lmas-core/
     └── e2e/
 ```
 
-### REPO 2: SynkraAI/squads (MIT)
+### REPO 2: LMAS/squads (MIT)
 
 ```
 squads/
@@ -497,7 +497,7 @@ squads/
     └── create-lmas-squad/
 ```
 
-### REPO 3: SynkraAI/mcp-ecosystem (Apache 2.0)
+### REPO 3: LMAS/mcp-ecosystem (Apache 2.0)
 
 ```
 mcp-ecosystem/
@@ -517,7 +517,7 @@ mcp-ecosystem/
     └── cursor/
 ```
 
-### REPO 4: SynkraAI/certified-partners (Privado)
+### REPO 4: LMAS/certified-partners (Privado)
 
 ```
 certified-partners/
@@ -534,7 +534,7 @@ certified-partners/
     └── web/
 ```
 
-### REPO 5: SynkraAI/mmos (Privado + NDA)
+### REPO 5: LMAS/mmos (Privado + NDA)
 
 ```
 mmos/
@@ -703,7 +703,7 @@ outputs/                               # Salidas de runtime (gitignored)
 | Version | Fecha      | Cambios                                                                                           | Autor            |
 | ------- | ---------- | ------------------------------------------------------------------------------------------------- | ---------------- |
 | 1.0     | 2025-01-15 | Documentacion inicial de arbol de codigo                                                          | Aria (architect) |
-| 1.1     | 2025-12-14 | Actualizada org a SynkraAI, reemplazados Paquetes de Expansion con sistema de Squads [Story 6.10] | Neo (dev)        |
+| 1.1     | 2025-12-14 | Actualizada org a LMAS, reemplazados Paquetes de Expansion con sistema de Squads [Story 6.10] | Neo (dev)        |
 
 ---
 

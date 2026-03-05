@@ -4,7 +4,7 @@
   Última sincronização: 2026-01-26
 -->
 
-# Guia de Solução de Problemas do Synkra LMAS
+# Guia de Solução de Problemas do LMAS
 
 > 🌐 [EN](../../installation/troubleshooting.md) | **PT** | [ES](../../es/installation/troubleshooting.md)
 
@@ -81,7 +81,7 @@ npm --version
 
 Current directory: /Users/username
 
-Synkra LMAS should be installed in your project directory,
+LMAS should be installed in your project directory,
 not in your home directory or temporary locations.
 ```
 
@@ -129,7 +129,7 @@ npx lmas-core install
 **Sintomas:**
 
 ```
-Error: Synkra LMAS requires Node.js 18.0.0 or higher
+Error: LMAS requires Node.js 18.0.0 or higher
 Current version: 14.17.0
 ```
 
@@ -689,7 +689,7 @@ ls -la .lmas-core/
 
 1. Execute `npx lmas-core status` e anote a saída
 2. Consulte este guia de solução de problemas
-3. Pesquise [Issues existentes no GitHub](https://github.com/SynkraAI/lmas-core/issues)
+3. Pesquise [Issues existentes no GitHub](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 
 ### Informações para Incluir em Relatórios de Bug
 
@@ -724,7 +724,7 @@ ls -la .lmas-core/
 
 ### Canais de Suporte
 
-- **Issues no GitHub**: [lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **Issues no GitHub**: [lmas-core/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Documentação**: [docs/installation/](./README.md)
 - **FAQ**: [faq.md](./faq.md)
 

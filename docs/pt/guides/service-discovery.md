@@ -521,4 +521,4 @@ await registry.load(true);
 
 ---
 
-_Guia de Service Discovery Synkra LMAS v4_
+_Guia de Service Discovery LMAS v4_

@@ -11,7 +11,7 @@ How to contribute squads to the LMAS ecosystem.
 There are two ways to share your squad with the community:
 
 1. **lmas-squads Repository** - Free, open-source squads on GitHub
-2. **Synkra Marketplace** - Premium squads via Synkra API
+2. **LMAS Marketplace** - Premium squads via LMAS API
 
 ## Quality Standards
 
@@ -153,7 +153,7 @@ License information.
 ```
 
 This will:
-1. Fork `SynkraAI/lmas-squads` (if needed)
+1. Fork `LMAS/lmas-squads` (if needed)
 2. Create branch with your squad
 3. Open PR for review
 
@@ -165,11 +165,11 @@ This will:
 
 Timeline: Usually 2-5 business days.
 
-## Publishing to Synkra Marketplace
+## Publishing to LMAS Marketplace
 
 ### Prerequisites
 
-1. Synkra account
+1. LMAS account
 2. API token configured
 3. Squad validated
 
@@ -177,11 +177,11 @@ Timeline: Usually 2-5 business days.
 
 ```bash
 # 1. Configure token
-export SYNKRA_API_TOKEN="your-token"
+export LMAS_API_TOKEN="your-token"
 
 # 2. Sync to marketplace
 @squad-creator
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 ```
 
 ### Visibility Options
@@ -212,7 +212,7 @@ Follow semantic versioning:
 # 4. Re-publish
 *publish-squad ./squads/my-squad
 # or
-*sync-squad-synkra ./squads/my-squad
+*sync-squad-lmas ./squads/my-squad
 ```
 
 ## Code of Conduct
@@ -235,15 +235,15 @@ Follow semantic versioning:
 
 ## Getting Help
 
-- **Questions**: [GitHub Discussions](https://github.com/SynkraAI/lmas-core/discussions)
-- **Issues**: [Issue Tracker](https://github.com/SynkraAI/lmas-core/issues)
+- **Questions**: [GitHub Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- **Issues**: [Issue Tracker](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Guidelines**: This document
 
 ## Related Resources
 
 - [Squad Development Guide](./squads-guide.md)
 - [Squad Migration Guide](./squad-migration.md)
-- [lmas-squads Repository](https://github.com/SynkraAI/lmas-squads)
+- [lmas-squads Repository](https://github.com/oluanferreira/luan-multiagent-scrum)
 
 ---
 

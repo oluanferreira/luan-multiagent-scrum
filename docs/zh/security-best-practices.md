@@ -1,10 +1,10 @@
-# Synkra LMAS 安全最佳实践
+# LMAS 安全最佳实践
 
 > 🌐 [EN](../security-best-practices.md) | [PT](../pt/security-best-practices.md) | [ES](../es/security-best-practices.md)
 
 ---
 
-本指南为在生产环境中部署和维护 Synkra LMAS 提供了全面的安全建议。
+本指南为在生产环境中部署和维护 LMAS 提供了全面的安全建议。
 
 ## 目录
 
@@ -21,7 +21,7 @@
 
 ## 安全架构概述
 
-Synkra LMAS 实现了多层安全方法：
+LMAS 实现了多层安全方法：
 
 ```
 ┌─────────────────────────────────────────┐
@@ -607,4 +607,4 @@ const emergencyConfig = {
 
 **记住**：安全不是一次性的实现，而是一个持续的过程。定期审查、更新和改进对于维护安全系统至关重要。
 
-如有问题或安全问题，请联系：security@synkra/lmas-core.dev
+如有问题或安全问题，请联系：security@lmas/lmas-core.dev

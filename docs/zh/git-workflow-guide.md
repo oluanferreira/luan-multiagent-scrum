@@ -20,7 +20,7 @@ _Story: 2.2-git-workflow-implementation.yaml_
 
 ## 概述
 
-Synkra LMAS 实现了**纵深防御**验证策略，具有三个渐进式层级，可以提早发现问题并确保代码质量在合并之前。
+LMAS 实现了**纵深防御**验证策略，具有三个渐进式层级，可以提早发现问题并确保代码质量在合并之前。
 
 ### 为什么是三层？
 
@@ -984,5 +984,5 @@ strategy:
 
 **有疑问？有问题吗？**
 
-- [打开问题](https://github.com/SynkraAI/lmas-core/issues)
+- [打开问题](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - [加入 Discord](https://discord.gg/gk8jAdXWmj)

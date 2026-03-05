@@ -4,7 +4,7 @@
   Última sincronización: 2026-01-29
 -->
 
-# Guía de Instalación Windows para Synkra LMAS
+# Guía de Instalación Windows para LMAS
 
 > 🌐 [EN](../../installation/windows.md) | [PT](../../pt/installation/windows.md) | **ES**
 
@@ -131,7 +131,7 @@ winget install Microsoft.WindowsTerminal
 3. Ejecute el instalador:
 
    ```powershell
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### Qué Hace el Instalador
@@ -299,7 +299,7 @@ Para actualizar una instalación existente:
 
 ```powershell
 # Usando npx (recomendado)
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 
 # El actualizador:
 # - Detectará instalación existente
@@ -339,4 +339,4 @@ npx github:SynkraAI/lmas-core install
 - [Guía de Solución de Problemas](troubleshooting.md)
 - [FAQ](faq.md)
 - [Comunidad Discord](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

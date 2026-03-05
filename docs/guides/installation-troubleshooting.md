@@ -49,7 +49,7 @@ npx lmas-core@latest --help
 ### Method 2: From GitHub
 
 ```bash
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 ```
 
 ### Method 3: Global Installation
@@ -67,17 +67,17 @@ If you're having installation issues, run our diagnostic tool:
 
 ### Windows (CMD)
 ```cmd
-curl -o diagnose.cmd https://raw.githubusercontent.com/SynkraAI/lmas-core/main/tools/quick-diagnose.cmd && diagnose.cmd
+curl -o diagnose.cmd https://raw.githubusercontent.com/LMAS/lmas-core/main/tools/quick-diagnose.cmd && diagnose.cmd
 ```
 
 ### Windows (PowerShell)
 ```powershell
-irm https://raw.githubusercontent.com/SynkraAI/lmas-core/main/tools/quick-diagnose.ps1 | iex
+irm https://raw.githubusercontent.com/LMAS/lmas-core/main/tools/quick-diagnose.ps1 | iex
 ```
 
 ### macOS/Linux
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SynkraAI/lmas-core/main/tools/diagnose-installation.js | node
+curl -fsSL https://raw.githubusercontent.com/LMAS/lmas-core/main/tools/diagnose-installation.js | node
 ```
 
 ---
@@ -291,7 +291,7 @@ v22.x.x (or v18+/v20+)
 
 If you're still having issues:
 
-1. **GitHub Issues**: https://github.com/SynkraAI/lmas-core/issues
+1. **GitHub Issues**: https://github.com/oluanferreira/luan-multiagent-scrum/issues
 2. **Run diagnostics**: `npx lmas-core@latest doctor`
 3. **Check system info**: `npx lmas-core@latest info`
 

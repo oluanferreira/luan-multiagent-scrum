@@ -4,7 +4,7 @@
 
 ---
 
-Synkra LMAS 完整 API 参考 - AI 编排全栈开发系统。
+LMAS 完整 API 参考 - AI 编排全栈开发系统。
 
 **版本：** 2.1.0
 **最后更新：** 2026-01-29
@@ -424,4 +424,4 @@ Claude Code 是主要支持的 IDE，拥有完整集成：
 
 ---
 
-_Synkra LMAS API 参考 v4.0.4_
+_LMAS API 参考 v4.0.4_

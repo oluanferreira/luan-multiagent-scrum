@@ -176,23 +176,23 @@ Dockerfile @org/devops-team
 
 ```codeowners
 # Por defecto - requiere revisión de maintainer
-* @SynkraAI/maintainers
+* @LMAS/maintainers
 
 # Definiciones de agentes - requiere equipo core
-.lmas-core/development/agents/ @SynkraAI/core-team
+.lmas-core/development/agents/ @LMAS/core-team
 
 # Definiciones de tareas - requiere equipo core
-.lmas-core/development/tasks/ @SynkraAI/core-team
+.lmas-core/development/tasks/ @LMAS/core-team
 
 # CI/CD - requiere aprobación devops
-.github/ @SynkraAI/devops
+.github/ @LMAS/devops
 
 # Documentación - más permisivo para contribuidores
-docs/ @SynkraAI/maintainers
+docs/ @LMAS/maintainers
 
 # Plantillas - requiere revisión de arquitecto
-templates/ @SynkraAI/core-team
-.lmas-core/product/templates/ @SynkraAI/core-team
+templates/ @LMAS/core-team
+.lmas-core/product/templates/ @LMAS/core-team
 ```
 
 ---

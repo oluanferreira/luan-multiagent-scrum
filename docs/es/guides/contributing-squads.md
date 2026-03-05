@@ -17,7 +17,7 @@ Como contribuir squads al ecosistema LMAS.
 Hay dos formas de compartir tu squad con la comunidad:
 
 1. **Repositorio lmas-squads** - Squads gratuitos y de codigo abierto en GitHub
-2. **Marketplace de Synkra** - Squads premium via API de Synkra
+2. **Marketplace de LMAS** - Squads premium via API de LMAS
 
 ## Estandares de Calidad
 
@@ -159,7 +159,7 @@ Informacion de licencia.
 ```
 
 Esto:
-1. Hara fork de `SynkraAI/lmas-squads` (si es necesario)
+1. Hara fork de `LMAS/lmas-squads` (si es necesario)
 2. Creara branch con tu squad
 3. Abrira PR para revision
 
@@ -171,11 +171,11 @@ Esto:
 
 Tiempo estimado: Usualmente 2-5 dias habiles.
 
-## Publicando en el Marketplace de Synkra
+## Publicando en el Marketplace de LMAS
 
 ### Prerequisitos
 
-1. Cuenta de Synkra
+1. Cuenta de LMAS
 2. Token de API configurado
 3. Squad validado
 
@@ -183,11 +183,11 @@ Tiempo estimado: Usualmente 2-5 dias habiles.
 
 ```bash
 # 1. Configurar token
-export SYNKRA_API_TOKEN="your-token"
+export LMAS_API_TOKEN="your-token"
 
 # 2. Sincronizar al marketplace
 @squad-creator
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 ```
 
 ### Opciones de Visibilidad
@@ -218,7 +218,7 @@ Seguir versionado semantico:
 # 4. Re-publicar
 *publish-squad ./squads/my-squad
 # o
-*sync-squad-synkra ./squads/my-squad
+*sync-squad-lmas ./squads/my-squad
 ```
 
 ## Codigo de Conducta
@@ -241,15 +241,15 @@ Seguir versionado semantico:
 
 ## Obteniendo Ayuda
 
-- **Preguntas**: [Discusiones de GitHub](https://github.com/SynkraAI/lmas-core/discussions)
-- **Issues**: [Rastreador de Issues](https://github.com/SynkraAI/lmas-core/issues)
+- **Preguntas**: [Discusiones de GitHub](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- **Issues**: [Rastreador de Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Guias**: Este documento
 
 ## Recursos Relacionados
 
 - [Guia de Desarrollo de Squad](./squads-guide.md)
 - [Guia de Migracion de Squad](./squad-migration.md)
-- [Repositorio lmas-squads](https://github.com/SynkraAI/lmas-squads)
+- [Repositorio lmas-squads](https://github.com/oluanferreira/luan-multiagent-scrum)
 
 ---
 

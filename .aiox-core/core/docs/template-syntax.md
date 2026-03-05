@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Synkra LMAS template system uses a simple yet powerful variable substitution syntax that allows for dynamic content generation in agents, tasks, and workflows.
+The LMAS template system uses a simple yet powerful variable substitution syntax that allows for dynamic content generation in agents, tasks, and workflows.
 
 ## Basic Variable Substitution
 

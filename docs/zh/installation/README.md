@@ -4,7 +4,7 @@
   最后同步：2026-02-22
 -->
 
-# Synkra LMAS 安装文档
+# LMAS 安装文档
 
 > 🌐 [EN](../../installation/README.md) | [PT](../pt/installation/README.md) | [ES](../es/installation/README.md) | **ZH**
 
@@ -15,7 +15,7 @@
 
 ## 概述
 
-本目录包含 Synkra LMAS 的完整安装和设置文档。
+本目录包含 LMAS 的完整安装和设置文档。
 
 ---
 
@@ -44,20 +44,20 @@
 ### 新安装
 
 ```bash
-npx @synkra/lmas-core install
+npx @lmas/lmas-core install
 ```
 
 ### 升级
 
 ```bash
-npx @synkra/lmas-core install --force-upgrade
+npx @lmas/lmas-core install --force-upgrade
 ```
 
 ### 遇到问题？
 
 1. 查看[故障排除指南](./troubleshooting.md)
 2. 搜索[常见问题](./faq.md)
-3. 提交 [GitHub Issue](https://github.com/SynkraAI/lmas-core/issues)
+3. 提交 [GitHub Issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 
 ---
 
@@ -102,5 +102,5 @@ npx @synkra/lmas-core install --force-upgrade
 
 ## 支持
 
-- **GitHub Issues**: [@synkra/lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **GitHub Issues**: [@lmas/lmas-core/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **文档**: [docs/](../)

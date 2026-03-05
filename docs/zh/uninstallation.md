@@ -4,7 +4,7 @@
 
 ---
 
-本指南提供了从您的系统中卸载 Synkra LMAS 的全面说明。
+本指南提供了从您的系统中卸载 LMAS 的全面说明。
 
 ## 目录
 
@@ -22,7 +22,7 @@
 
 ### 重要考虑事项
 
-⚠️ **警告**：卸载 Synkra LMAS 将：
+⚠️ **警告**：卸载 LMAS 将：
 
 - 删除所有框架文件
 - 删除代理配置（除非保留）
@@ -43,7 +43,7 @@
 
 ```bash
 # 创建完整备份
-npx @synkra/lmas-core backup --complete
+npx @lmas/lmas-core backup --complete
 
 # 或手动备份重要目录
 tar -czf lmas-backup-$(date +%Y%m%d).tar.gz \
@@ -59,17 +59,17 @@ tar -czf lmas-backup-$(date +%Y%m%d).tar.gz \
 
 ### 使用内置卸载程序
 
-卸载 Synkra LMAS 的最快方法：
+卸载 LMAS 的最快方法：
 
 ```bash
 # 基本卸载（保留用户数据）
-npx @synkra/lmas-core uninstall
+npx @lmas/lmas-core uninstall
 
 # 完全卸载（删除所有内容）
-npx @synkra/lmas-core uninstall --complete
+npx @lmas/lmas-core uninstall --complete
 
 # 卸载并保留数据
-npx @synkra/lmas-core uninstall --keep-data
+npx @lmas/lmas-core uninstall --keep-data
 ```
 
 ### 交互式卸载
@@ -77,7 +77,7 @@ npx @synkra/lmas-core uninstall --keep-data
 对于引导式卸载：
 
 ```bash
-npx @synkra/lmas-core uninstall --interactive
+npx @lmas/lmas-core uninstall --interactive
 ```
 
 这会提示您：
@@ -121,14 +121,14 @@ npx @synkra/lmas-core uninstall --interactive
 
 ```bash
 # 完全移除
-npx @synkra/lmas-core uninstall --complete --no-backup
+npx @lmas/lmas-core uninstall --complete --no-backup
 ```
 
 ### 步骤 4：删除全局安装
 
 ```bash
 # 删除全局 npm 包
-npm uninstall -g @synkra/lmas-core
+npm uninstall -g @lmas/lmas-core
 
 # 删除 npx 缓存
 npm cache clean --force
@@ -140,13 +140,13 @@ npm cache clean --force
 
 ```powershell
 # 删除 AppData 文件
-Remove-Item -Recurse -Force "$env:APPDATA\@synkra/lmas-core"
+Remove-Item -Recurse -Force "$env:APPDATA\@lmas/lmas-core"
 
 # 删除临时文件
 Remove-Item -Recurse -Force "$env:TEMP\lmas-*"
 
 # 删除注册表条目（如果有）
-Remove-Item -Path "HKCU:\Software\Synkra LMAS" -Recurse
+Remove-Item -Path "HKCU:\Software\LMAS" -Recurse
 ```
 
 #### macOS/Linux
@@ -154,10 +154,10 @@ Remove-Item -Path "HKCU:\Software\Synkra LMAS" -Recurse
 ```bash
 # 删除配置文件
 rm -rf ~/.lmas
-rm -rf ~/.config/@synkra/lmas-core
+rm -rf ~/.config/@lmas/lmas-core
 
 # 删除缓存
-rm -rf ~/.cache/@synkra/lmas-core
+rm -rf ~/.cache/@lmas/lmas-core
 
 # 删除临时文件
 rm -rf /tmp/lmas-*
@@ -169,13 +169,13 @@ rm -rf /tmp/lmas-*
 
 ```bash
 # 仅删除代理
-npx @synkra/lmas-core uninstall agents
+npx @lmas/lmas-core uninstall agents
 
 # 仅删除工作流
-npx @synkra/lmas-core uninstall workflows
+npx @lmas/lmas-core uninstall workflows
 
 # 删除内存层
-npx @synkra/lmas-core uninstall memory-layer
+npx @lmas/lmas-core uninstall memory-layer
 
 # 删除特定代理
 *uninstall agent-name
@@ -243,11 +243,11 @@ rm -rf templates/custom/
 
 ```bash
 #!/bin/bash
-echo "Synkra LMAS 完全卸载"
+echo "LMAS 完全卸载"
 echo "================================="
 
 # 确认
-read -p "这将删除所有 Synkra LMAS 数据。继续吗？(y/N) " -n 1 -r
+read -p "这将删除所有 LMAS 数据。继续吗？(y/N) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
@@ -255,7 +255,7 @@ fi
 
 # 停止所有进程
 echo "停止所有进程..."
-pkill -f "@synkra/lmas-core" || true
+pkill -f "@lmas/lmas-core" || true
 pkill -f "lmas-developer" || true
 
 # 删除项目文件
@@ -266,17 +266,17 @@ rm -rf workflows/
 rm -rf tasks/
 rm -rf templates/
 rm -rf Squads/
-rm -rf node_modules/@synkra/lmas-core/
+rm -rf node_modules/@lmas/lmas-core/
 
 # 删除全局文件
 echo "删除全局文件..."
-npm uninstall -g @synkra/lmas-core
+npm uninstall -g @lmas/lmas-core
 
 # 删除用户数据
 echo "删除用户数据..."
 rm -rf ~/.lmas
-rm -rf ~/.config/@synkra/lmas-core
-rm -rf ~/.cache/@synkra/lmas-core
+rm -rf ~/.config/@lmas/lmas-core
+rm -rf ~/.cache/@lmas/lmas-core
 
 # 清理 npm 缓存
 echo "清理 npm 缓存..."
@@ -284,9 +284,9 @@ npm cache clean --force
 
 # 从 package.json 中删除
 echo "更新 package.json..."
-npm uninstall @synkra/lmas-core/core
-npm uninstall @synkra/lmas-core/memory
-npm uninstall @synkra/lmas-core/meta-agent
+npm uninstall @lmas/lmas-core/core
+npm uninstall @lmas/lmas-core/memory
+npm uninstall @lmas/lmas-core/meta-agent
 
 echo "卸载完成！"
 ```
@@ -299,10 +299,10 @@ echo "卸载完成！"
 
 ```bash
 # Linux/macOS
-sudo npx @synkra/lmas-core uninstall --complete
+sudo npx @lmas/lmas-core uninstall --complete
 
 # Windows（以管理员身份运行）
-npx @synkra/lmas-core uninstall --complete
+npx @lmas/lmas-core uninstall --complete
 ```
 
 #### 2. 进程仍在运行
@@ -311,11 +311,11 @@ npx @synkra/lmas-core uninstall --complete
 # 强制停止所有进程
 # Linux/macOS
 killall -9 node
-killall -9 @synkra/lmas-core
+killall -9 @lmas/lmas-core
 
 # Windows
 taskkill /F /IM node.exe
-taskkill /F /IM @synkra/lmas-core.exe
+taskkill /F /IM @lmas/lmas-core.exe
 ```
 
 ## 卸载验证检查清单
@@ -336,8 +336,8 @@ taskkill /F /IM @synkra/lmas-core.exe
 如果您在卸载期间遇到问题：
 
 1. **检查文档**
-   - [FAQ](https://github.com/SynkraAI/lmas-core/wiki/faq#uninstall)
-   - [故障排除](https://github.com/SynkraAI/lmas-core/wiki/troubleshooting)
+   - [FAQ](https://github.com/oluanferreira/luan-multiagent-scrum/wiki/faq#uninstall)
+   - [故障排除](https://github.com/oluanferreira/luan-multiagent-scrum/wiki/troubleshooting)
 
 2. **社区支持**
    - Discord：#uninstall-help

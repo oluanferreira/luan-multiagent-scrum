@@ -221,8 +221,8 @@ describe('IDE Config Generator', () => {
       const content = await fs.readFile(configPath, 'utf8');
 
       // v2.1 templates use static content from .aiox-core/templates/ide-rules/
-      // They contain Synkra AIOX standard rules
-      expect(content).toContain('Synkra AIOX');
+      // They contain LMAS standard rules
+      expect(content).toContain('LMAS');
       expect(content).toContain('Development Rules');
     });
 
@@ -241,7 +241,7 @@ describe('IDE Config Generator', () => {
 
       const content = await fs.readFile(configPath, 'utf8');
       // Should contain AIOX rules content
-      expect(content).toContain('Synkra AIOX');
+      expect(content).toContain('LMAS');
     });
 
     it('should create text config files successfully', async () => {

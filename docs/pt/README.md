@@ -4,7 +4,7 @@
   Última sincronização: 2026-02-23
 -->
 
-# Documentação Synkra LMAS
+# Documentação LMAS
 
 > 🌐 [EN](../README.md) | **PT** | [ES](../es/README.md) | [ZH](../zh/README.md)
 
@@ -127,8 +127,8 @@ Seguimos práticas i18n padrão da indústria:
 
 ## 📄 Licença
 
-Esta documentação faz parte do Synkra LMAS, licenciado sob [Licença MIT](../../LICENSE).
+Esta documentação faz parte do LMAS, licenciado sob [Licença MIT](../../LICENSE).
 
 ---
 
-_Synkra LMAS - Orquestrando IA para Melhor Desenvolvimento de Software_
+_LMAS - Orquestrando IA para Melhor Desenvolvimento de Software_

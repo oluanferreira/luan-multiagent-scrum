@@ -4,7 +4,7 @@
 # lmas-core CI runs standalone (ADR-PRO-001). This workflow validates
 # the integration boundary between core and pro.
 #
-# Requires PRO_SUBMODULE_TOKEN secret (PAT with repo scope for SynkraAI/lmas-pro).
+# Requires PRO_SUBMODULE_TOKEN secret (PAT with repo scope for LMAS/lmas-pro).
 #
 # Tests covered:
 #   - tests/pro/**          (integration tests in lmas-core)

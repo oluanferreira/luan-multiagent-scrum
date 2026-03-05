@@ -4,7 +4,7 @@
 
 ---
 
-> Guía completa para fortalecer la seguridad en despliegues de Synkra LMAS - desde desarrollo hasta producción.
+> Guía completa para fortalecer la seguridad en despliegues de LMAS - desde desarrollo hasta producción.
 
 **Versión:** 2.1.0
 **Última Actualización:** 2026-01-29
@@ -29,7 +29,7 @@
 
 ## Visión General de Seguridad
 
-Synkra LMAS opera en una capa privilegiada entre los modelos de IA y tu sistema. Esta guía cubre estrategias de hardening específicas para entornos de desarrollo orquestados por IA.
+LMAS opera en una capa privilegiada entre los modelos de IA y tu sistema. Esta guía cubre estrategias de hardening específicas para entornos de desarrollo orquestados por IA.
 
 ### Arquitectura de Seguridad
 
@@ -1283,12 +1283,12 @@ function validateProductionSecurity() {
 
 ### Política de Divulgación Responsable
 
-Si descubres una vulnerabilidad de seguridad en Synkra LMAS, por favor sigue las prácticas de divulgación responsable:
+Si descubres una vulnerabilidad de seguridad en LMAS, por favor sigue las prácticas de divulgación responsable:
 
 ### Proceso de Reporte
 
 1. **NO** crees un issue público en GitHub para vulnerabilidades de seguridad
-2. Reporta preocupaciones de seguridad via [GitHub Security Advisories](https://github.com/SynkraAI/lmas-core/security/advisories)
+2. Reporta preocupaciones de seguridad via [GitHub Security Advisories](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
 3. Incluye lo siguiente en tu reporte:
    - Descripción de la vulnerabilidad
    - Pasos para reproducir
@@ -1343,7 +1343,7 @@ Los contribuyentes que divulguen vulnerabilidades de manera responsable son reco
 
 ### Programa de Bug Bounty
 
-Actualmente, Synkra LMAS no tiene un programa formal de bug bounty. Sin embargo, las contribuciones significativas de seguridad son reconocidas y pueden recibir licencias de LMAS Pro u otro reconocimiento.
+Actualmente, LMAS no tiene un programa formal de bug bounty. Sin embargo, las contribuciones significativas de seguridad son reconocidas y pueden recibir licencias de LMAS Pro u otro reconocimiento.
 
 ---
 
@@ -1356,4 +1356,4 @@ Actualmente, Synkra LMAS no tiene un programa formal de bug bounty. Sin embargo,
 
 ---
 
-_Guía de Hardening de Seguridad de Synkra LMAS v4.0_
+_Guía de Hardening de Seguridad de LMAS v4.0_

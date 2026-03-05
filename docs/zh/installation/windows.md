@@ -1,6 +1,6 @@
 <!-- 翻译：zh-CN 原文：/docs/installation/windows.md 最后同步：2026-02-22 -->
 
-# Synkra LMAS Windows 安装指南
+# LMAS Windows 安装指南
 
 > 🌐 [EN](../../installation/windows.md) | [PT](../pt/installation/windows.md) | [ES](../es/installation/windows.md)
 
@@ -148,7 +148,7 @@ winget install Microsoft.WindowsTerminal
 3. 运行安装程序：
 
    ```powershell
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### 安装程序的作用
@@ -401,7 +401,7 @@ npm config set @company:registry https://npm.company.com/
 
 ```powershell
 # 使用 npx（推荐）
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 
 # 更新程序将：
 # - 检测现有安装
@@ -424,7 +424,7 @@ Remove-Item -Recurse -Force .lmas-core
 Remove-Item -Recurse -Force .claude\commands\LMAS
 
 # 删除全局 npm 包
-npm uninstall -g @synkra/lmas
+npm uninstall -g @lmas/lmas
 ```
 
 ---
@@ -472,4 +472,4 @@ npm uninstall -g @synkra/lmas
 - [故障排除指南](troubleshooting.md)
 - [常见问题](faq.md)
 - [Discord 社区](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

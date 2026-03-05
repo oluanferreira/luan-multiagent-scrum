@@ -55,7 +55,7 @@ This appends `my-custom-helper` to the L1 default helpers array.
 
 | Key | Type | Default | Override Level | Description |
 |-----|------|---------|---------------|-------------|
-| `metadata.name` | string | `"Synkra LMAS"` | Never | Framework name |
+| `metadata.name` | string | `"LMAS"` | Never | Framework name |
 | `metadata.framework_version` | string | `"4.0.0"` | Never | Framework version |
 | `markdownExploder` | boolean | `true` | L2+ | Enable markdown exploder |
 | `resource_locations.agents_dir` | string | `.lmas-core/development/agents` | L2+ | Agent definitions path |

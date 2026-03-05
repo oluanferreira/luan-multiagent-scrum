@@ -23,11 +23,11 @@ This document clarifies which features apply to which context.
 
 | Repository | License | Type | Contains |
 |------------|---------|------|----------|
-| `SynkraAI/lmas-core` | Commons Clause | Public | Core framework, 11 agents, Quality Gates |
-| `SynkraAI/lmas-squads` | MIT | Public | ETL, Creator, MMOS-Mapper squads |
-| `SynkraAI/mcp-ecosystem` | Apache 2.0 | Public | Docker MCP, IDE configs, MCP presets |
-| `SynkraAI/mmos` | Proprietary + NDA | Private | MMOS Minds, DNA Mental |
-| `SynkraAI/certified-partners` | Proprietary | Private | Premium squads, partner portal |
+| `LMAS/lmas-core` | Commons Clause | Public | Core framework, 11 agents, Quality Gates |
+| `LMAS/lmas-squads` | MIT | Public | ETL, Creator, MMOS-Mapper squads |
+| `LMAS/mcp-ecosystem` | Apache 2.0 | Public | Docker MCP, IDE configs, MCP presets |
+| `LMAS/mmos` | Proprietary + NDA | Private | MMOS Minds, DNA Mental |
+| `LMAS/certified-partners` | Proprietary | Private | Premium squads, partner portal |
 
 ### npm Package Scoping
 
@@ -45,7 +45,7 @@ This document clarifies which features apply to which context.
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    OPEN-SOURCE (Public Repos)                           │
 │                                                                         │
-│   SynkraAI/lmas-core        SynkraAI/lmas-squads                   │
+│   LMAS/lmas-core        LMAS/lmas-squads                   │
 │   ┌─────────────────────┐     ┌─────────────────────┐                  │
 │   │ • Core Framework    │     │ • ETL Squad         │                  │
 │   │ • 11 Base Agents    │     │ • Creator Squad     │                  │
@@ -53,7 +53,7 @@ This document clarifies which features apply to which context.
 │   │ • Standards Docs    │     │ • squad.yaml format │                  │
 │   └─────────────────────┘     └─────────────────────┘                  │
 │                                                                         │
-│   SynkraAI/mcp-ecosystem                                             │
+│   LMAS/mcp-ecosystem                                             │
 │   ┌─────────────────────┐                                              │
 │   │ • Docker MCP        │                                              │
 │   │ • IDE Configurations│                                              │
@@ -65,7 +65,7 @@ This document clarifies which features apply to which context.
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    SERVICE (Private Repos)                              │
 │                                                                         │
-│   SynkraAI/mmos             SynkraAI/certified-partners            │
+│   LMAS/mmos             LMAS/certified-partners            │
 │   ┌─────────────────────┐     ┌─────────────────────┐                  │
 │   │ • MMOS Minds        │     │ • Premium Squads    │                  │
 │   │ • DNA Mental™       │     │ • Partner Portal    │                  │

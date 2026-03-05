@@ -1,6 +1,6 @@
 # LMAS Core Module
 
-> Central runtime module providing essential framework functionality for Synkra LMAS.
+> Central runtime module providing essential framework functionality for LMAS.
 
 **Version:** 2.0.0
 **Created:** Story 2.2 - Core Module Creation
@@ -12,7 +12,7 @@ The Core module contains the foundational runtime components that all other LMAS
 
 ## Installation
 
-The core module is automatically available within the Synkra LMAS framework:
+The core module is automatically available within the LMAS framework:
 
 ```javascript
 // CommonJS
@@ -226,4 +226,4 @@ Scripts that import these modules have been updated to reference the new paths.
 
 ---
 
-*Synkra LMAS Core Module v2.0.0*
+*LMAS Core Module v2.0.0*

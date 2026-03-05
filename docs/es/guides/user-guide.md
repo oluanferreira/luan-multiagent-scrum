@@ -10,7 +10,7 @@
 
 ---
 
-Guia completa para usar Synkra LMAS - el Sistema Orquestado por IA para Desarrollo Full Stack.
+Guia completa para usar LMAS - el Sistema Orquestado por IA para Desarrollo Full Stack.
 
 **Version:** 2.1.0
 **Ultima Actualizacion:** 2026-01-28
@@ -205,8 +205,8 @@ Un squad es un paquete autocontenido que contiene:
 
 ```
 Nivel 1: LOCAL        --> ./squads/           (Privado)
-Nivel 2: LMAS-SQUADS  --> github.com/SynkraAI (Publico/Gratis)
-Nivel 3: SYNKRA API   --> api.synkra.dev      (Marketplace)
+Nivel 2: LMAS-SQUADS  --> github.com/oluanferreira (Publico/Gratis)
+Nivel 3: LMAS API   --> api.lmas.dev      (Marketplace)
 ```
 
 ### Usando Squads
@@ -366,8 +366,8 @@ lmas rebuild
 
 ### Obteniendo Ayuda
 
-- **GitHub Discussions**: [github.com/SynkraAI/lmas-core/discussions](https://github.com/SynkraAI/lmas-core/discussions)
-- **Issue Tracker**: [github.com/SynkraAI/lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **GitHub Discussions**: [github.com/oluanferreira/luan-multiagent-scrum/discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- **Issue Tracker**: [github.com/oluanferreira/luan-multiagent-scrum/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Discord**: [Unete a nuestro servidor](https://discord.gg/gk8jAdXWmj)
 
 ---
@@ -449,4 +449,4 @@ lmas squads search {keyword}
 
 ---
 
-_Guia de Usuario Synkra LMAS v4.0_
+_Guia de Usuario LMAS v4.0_

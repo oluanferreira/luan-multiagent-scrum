@@ -761,7 +761,7 @@ Features:
 1. ✅ Read this summary (done!)
 2. → Review [Memory Layer Architecture](#memory-layer)
 3. → Review [Agent Lightning Details](#agent-lightning)
-4. → Upgrade: `npx @SynkraAI/lmas upgrade v2.2`
+4. → Upgrade: `npx @LMAS/lmas upgrade v2.2`
 5. → Configure: `lmas memory setup`
 6. → Enable: `lmas lightning enable`
 

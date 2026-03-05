@@ -4,7 +4,7 @@
   最后同步：2026-02-23
 -->
 
-# Synkra LMAS 中文文档
+# LMAS 中文文档
 
 > 🌐 [EN](../README.md) | [PT](../pt/README.md) | [ES](../es/README.md) | **ZH**
 
@@ -130,4 +130,4 @@ docs/
 
 ---
 
-_Synkra LMAS 中文文档_
+_LMAS 中文文档_

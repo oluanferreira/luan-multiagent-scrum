@@ -4,7 +4,7 @@
   Última sincronización: 2026-01-26
 -->
 
-# Guía de Instalación de Synkra LMAS para macOS
+# Guía de Instalación de LMAS para macOS
 
 > 🌐 [EN](../../installation/macos.md) | [PT](../../pt/installation/macos.md) | **ES**
 
@@ -72,7 +72,7 @@ Descargue desde [cli.github.com](https://cli.github.com/)
 
 3. Ejecute el instalador:
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### Qué Hace el Instalador
@@ -150,14 +150,14 @@ Los sistemas de archivos de macOS pueden ser insensibles a mayúsculas por defec
    diskutil info / | grep "File System"
    ```
 
-2. Synkra LMAS maneja automáticamente tanto sistemas de archivos sensibles como insensibles a mayúsculas
+2. LMAS maneja automáticamente tanto sistemas de archivos sensibles como insensibles a mayúsculas
 
 ## Actualización
 
 Para actualizar una instalación existente:
 
 ```bash
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 ```
 
 El actualizador:

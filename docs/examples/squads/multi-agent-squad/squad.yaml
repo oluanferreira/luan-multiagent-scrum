@@ -5,7 +5,7 @@ name: multi-agent-squad
 version: 1.0.0
 description: Example squad with multiple collaborating agents
 
-author: LMAS Team <team@synkra.dev>
+author: LMAS Team <luanferreira.emp@gmail.com>
 license: MIT
 slashPrefix: team
 

@@ -4,7 +4,7 @@
   Última sincronización: 2026-01-29
 -->
 
-# Guía de Instalación Linux para Synkra LMAS
+# Guía de Instalación Linux para LMAS
 
 > 🌐 [EN](../../installation/linux.md) | [PT](../../pt/installation/linux.md) | **ES**
 
@@ -152,7 +152,7 @@ sudo pacman -S base-devel
 3. Ejecute el instalador:
 
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### Qué Hace el Instalador
@@ -268,7 +268,7 @@ Para actualizar una instalación existente:
 
 ```bash
 # Usando npx (recomendado)
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 ```
 
 El actualizador:
@@ -308,4 +308,4 @@ El actualizador:
 - [Guía de Solución de Problemas](troubleshooting.md)
 - [FAQ](faq.md)
 - [Comunidad Discord](https://discord.gg/gk8jAdXWmj)
-- [GitHub Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

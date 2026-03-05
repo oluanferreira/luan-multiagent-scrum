@@ -35,7 +35,7 @@ node .lmas-core/infrastructure/scripts/llm-routing/install-llm-routing.js
 **Option 2: Fresh install**
 ```bash
 # Clone the repository
-git clone https://github.com/SynkraAI/lmas-core.git
+git clone https://github.com/oluanferreira/luan-multiagent-scrum.git
 cd lmas-core
 
 # Run the installer

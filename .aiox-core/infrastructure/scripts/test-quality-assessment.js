@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 /**
- * Test quality assessment for Synkra AIOX test generation
+ * Test quality assessment for LMAS test generation
  * Evaluates generated test quality and provides improvement recommendations
  */
 class TestQualityAssessment {

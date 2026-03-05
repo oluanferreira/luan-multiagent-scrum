@@ -1,5 +1,5 @@
 {
-  "name": "@synkra/lmas-install",
+  "name": "@lmas-fullstack/install",
   "version": "1.0.0",
   "description": "NPX installer for LMAS - AI-Orchestrated System for Full Stack Development",
   "main": "src/installer.js",
@@ -33,16 +33,16 @@
     "orchestration",
     "development"
   ],
-  "author": "Synkra AI <team@synkra.ai>",
+  "author": "Luan Ferreira",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SynkraAI/lmas-core.git"
+    "url": "git+https://github.com/oluanferreira/luan-multiagent-scrum.git"
   },
   "bugs": {
-    "url": "https://github.com/SynkraAI/lmas-core/issues"
+    "url": "https://github.com/oluanferreira/luan-multiagent-scrum/issues"
   },
-  "homepage": "https://github.com/SynkraAI/lmas-core#readme",
+  "homepage": "https://github.com/oluanferreira/luan-multiagent-scrum#readme",
   "engines": {
     "node": ">=18.0.0"
   },

@@ -180,7 +180,7 @@ class AIOXUpdater {
     if (fs.existsSync(localPackageJsonPath)) {
       try {
         const pkg = await fs.readJson(localPackageJsonPath);
-        if (pkg.name === '@synkra/aiox-core' || pkg.name === 'aiox-core') {
+        if (pkg.name === '@lmas/aiox-core' || pkg.name === 'aiox-core') {
           return { version: pkg.version, installedAt: null, mode: 'framework-development' };
         }
       } catch (error) {

@@ -1,4 +1,4 @@
-# Contribuindo para o Synkra LMAS
+# Contribuindo para o LMAS
 
 > **[English Version](CONTRIBUTING.md)**
 
@@ -31,7 +31,7 @@ git clone https://github.com/SEU_USUARIO/lmas-core.git
 cd lmas-core
 
 # Adicione o remote upstream
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 ```
 
 ### 2. Configure o Ambiente de Desenvolvimento
@@ -319,7 +319,7 @@ tasks:
 
 - [Guia de Squads](docs/guides/squads-guide.md) - Documentacao completa
 - [Template de Squad](templates/squad/) - Comece de um template funcional
-- [Discussoes de Squads](https://github.com/SynkraAI/lmas-core/discussions/categories/ideas) - Compartilhe ideias
+- [Discussoes de Squads](https://github.com/oluanferreira/luan-multiagent-scrum/discussions/categories/ideas) - Compartilhe ideias
 
 ---
 
@@ -523,8 +523,8 @@ Correcoes comuns:
 
 ## Obtendo Ajuda
 
-- **GitHub Issues:** [Abra uma issue](https://github.com/SynkraAI/lmas-core/issues)
-- **Discussoes:** [Inicie uma discussao](https://github.com/SynkraAI/lmas-core/discussions)
+- **GitHub Issues:** [Abra uma issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
+- **Discussoes:** [Inicie uma discussao](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
 - **Comunidade:** [COMMUNITY-PT.md](COMMUNITY-PT.md)
 
 ---
@@ -538,4 +538,4 @@ Correcoes comuns:
 
 ---
 
-**Obrigado por contribuir para o Synkra LMAS!**
+**Obrigado por contribuir para o LMAS!**

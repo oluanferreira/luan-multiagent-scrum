@@ -1,10 +1,10 @@
-# Synkra LMAS Troubleshooting Guide
+# LMAS Troubleshooting Guide
 
 > 🌐 **EN** | [PT](./pt/troubleshooting.md) | [ES](./es/troubleshooting.md)
 
 ---
 
-This comprehensive guide helps you diagnose and resolve common issues with Synkra LMAS.
+This comprehensive guide helps you diagnose and resolve common issues with LMAS.
 
 ## Table of Contents
 

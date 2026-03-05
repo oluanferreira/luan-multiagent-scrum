@@ -176,23 +176,23 @@ Dockerfile @org/devops-team
 
 ```codeowners
 # 默认 - 需要维护者审查
-* @SynkraAI/maintainers
+* @LMAS/maintainers
 
 # 代理定义 - 需要核心团队审查
-.lmas-core/development/agents/ @SynkraAI/core-team
+.lmas-core/development/agents/ @LMAS/core-team
 
 # 任务定义 - 需要核心团队审查
-.lmas-core/development/tasks/ @SynkraAI/core-team
+.lmas-core/development/tasks/ @LMAS/core-team
 
 # CI/CD - 需要 devops 批准
-.github/ @SynkraAI/devops
+.github/ @LMAS/devops
 
 # 文档 - 对贡献者更宽容
-docs/ @SynkraAI/maintainers
+docs/ @LMAS/maintainers
 
 # 模板 - 需要架构师审查
-templates/ @SynkraAI/core-team
-.lmas-core/product/templates/ @SynkraAI/core-team
+templates/ @LMAS/core-team
+.lmas-core/product/templates/ @LMAS/core-team
 ```
 
 ---

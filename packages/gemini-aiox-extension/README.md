@@ -1,11 +1,11 @@
 # LMAS Gemini CLI Extension
 
-Brings Synkra LMAS multi-agent orchestration to Gemini CLI.
+Brings LMAS multi-agent orchestration to Gemini CLI.
 
 ## Installation
 
 ```bash
-gemini extensions install github.com/synkra/lmas-core/packages/gemini-lmas-extension
+gemini extensions install github.com/lmas/lmas-core/packages/gemini-lmas-extension
 ```
 
 Or manually copy to `~/.gemini/extensions/lmas/`

@@ -6,13 +6,13 @@
 
 ## Overview
 
-LMAS (AI-Orchestrated System) is an open-source project maintained by SynkraAI Inc. This privacy policy explains how we handle any data that may be collected when you use Synkra LMAS.
+LMAS (AI-Orchestrated System) is an open-source project maintained by Luan Ferreira This privacy policy explains how we handle any data that may be collected when you use LMAS.
 
 ## Data Collection
 
 ### What We Don't Collect
 
-Synkra LMAS does **NOT** collect:
+LMAS does **NOT** collect:
 
 - Personal identification information
 - Usage analytics or telemetry data
@@ -22,7 +22,7 @@ Synkra LMAS does **NOT** collect:
 
 ### What May Be Collected (Consent-Based)
 
-Synkra LMAS uses a **consent-based telemetry system**. The system is designed as follows:
+LMAS uses a **consent-based telemetry system**. The system is designed as follows:
 
 - **Consent Manager**: A consent management component is initialized by default to handle user preferences
 - **No automatic collection**: No data is collected until you explicitly grant consent
@@ -48,7 +48,7 @@ You can also revoke consent at any time through the consent management interface
 
 ## Local Data Storage
 
-Synkra LMAS stores some data locally on your machine:
+LMAS stores some data locally on your machine:
 
 - Configuration files (`.lmas/`, `.lmas-core/`)
 - Project status cache (`.lmas/project-status.yaml`)
@@ -59,7 +59,7 @@ This data never leaves your local machine unless you explicitly share it (e.g., 
 
 ## Third-Party Services
 
-When using Synkra LMAS, you may interact with third-party services:
+When using LMAS, you may interact with third-party services:
 
 | Service          | Purpose                                   | Privacy Policy                                                                                     |
 | ---------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -68,7 +68,7 @@ When using Synkra LMAS, you may interact with third-party services:
 | **AI Providers** | Claude, OpenAI, etc. (configured by user) | See respective provider policies                                                                   |
 | **MCP Servers**  | Tool integrations (user-configured)       | Varies by server                                                                                   |
 
-**Important:** Your interactions with these services are governed by their respective privacy policies. Synkra LMAS does not control or have access to data you share with these services.
+**Important:** Your interactions with these services are governed by their respective privacy policies. LMAS does not control or have access to data you share with these services.
 
 ## Your Rights
 
@@ -83,13 +83,13 @@ You have the right to:
 
 As an open-source project, all code is publicly available for inspection:
 
-- Repository: [github.com/SynkraAI/lmas-core](https://github.com/SynkraAI/lmas-core)
+- Repository: [github.com/oluanferreira/luan-multiagent-scrum](https://github.com/oluanferreira/luan-multiagent-scrum)
 - No hidden data collection mechanisms
 - All configuration options are documented
 
 ## Children's Privacy
 
-Synkra LMAS is a development tool intended for professional use. We do not knowingly collect any information from children under 13 years of age.
+LMAS is a development tool intended for professional use. We do not knowingly collect any information from children under 13 years of age.
 
 ## Security
 
@@ -100,14 +100,14 @@ We take security seriously:
 - API keys and credentials are never stored by LMAS (users manage their own)
 - Regular security audits of the codebase
 
-For security vulnerabilities, please [open an issue](https://github.com/SynkraAI/lmas-core/issues) or email security@SynkraAI.com.
+For security vulnerabilities, please [open an issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues) or email security@LMAS.com.
 
 ## Contact
 
 For privacy concerns or questions:
 
-- **GitHub Issues:** [Open an issue](https://github.com/SynkraAI/lmas-core/issues)
-- **Email:** privacy@SynkraAI.com
+- **GitHub Issues:** [Open an issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
+- **Email:** privacy@LMAS.com
 - **Discord:** [Community Server](https://discord.gg/gk8jAdXWmj)
 
 ## Changes to This Policy
@@ -124,4 +124,4 @@ This privacy policy is adapted from open-source privacy policy templates and fol
 
 ---
 
-**Copyright (c) 2025 SynkraAI Inc.**
+**Copyright (c) 2025 Luan Ferreira**

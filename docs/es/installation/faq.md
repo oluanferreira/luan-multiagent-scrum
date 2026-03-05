@@ -4,7 +4,7 @@
   Última sincronización: 2026-01-26
 -->
 
-# Preguntas Frecuentes de Synkra LMAS
+# Preguntas Frecuentes de LMAS
 
 > 🌐 [EN](../../installation/faq.md) | [PT](../../pt/installation/faq.md) | **ES**
 
@@ -562,7 +562,7 @@ projectStatus:
 
 **Respuesta:**
 
-1. **Haga fork del repositorio:** https://github.com/SynkraAI/lmas-core
+1. **Haga fork del repositorio:** https://github.com/oluanferreira/luan-multiagent-scrum
 
 2. **Cree una rama de feature:**
 
@@ -598,8 +598,8 @@ projectStatus:
 | ------------------- | ---------------------------------------------------------- |
 | **Documentación**   | `docs/` en su proyecto                                    |
 | **Solución de Problemas** | [troubleshooting.md](./troubleshooting.md)                 |
-| **Issues de GitHub**   | https://github.com/SynkraAI/lmas-core/issues |
-| **Código Fuente**     | https://github.com/SynkraAI/lmas-core        |
+| **Issues de GitHub**   | https://github.com/oluanferreira/luan-multiagent-scrum/issues |
+| **Código Fuente**     | https://github.com/oluanferreira/luan-multiagent-scrum        |
 
 **Antes de pedir ayuda:**
 

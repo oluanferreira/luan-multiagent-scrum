@@ -45,8 +45,8 @@ Squads are modular teams of AI agents that extend LMAS functionality. Each squad
 │                    SQUAD DISTRIBUTION                        │
 ├─────────────────────────────────────────────────────────────┤
 │  Level 1: LOCAL        → ./squads/           (Private)      │
-│  Level 2: LMAS-SQUADS  → github.com/SynkraAI (Public/Free)  │
-│  Level 3: SYNKRA API   → api.synkra.dev      (Marketplace)  │
+│  Level 2: LMAS-SQUADS  → github.com/oluanferreira (Public/Free)  │
+│  Level 3: LMAS API   → api.lmas.dev      (Marketplace)  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -54,8 +54,8 @@ Squads are modular teams of AI agents that extend LMAS functionality. Each squad
 
 | Squad | Version | Description |
 |-------|---------|-------------|
-| [etl-squad](https://github.com/SynkraAI/lmas-squads/tree/main/etl) | 2.0.0 | Data collection and transformation |
-| [creator-squad](https://github.com/SynkraAI/lmas-squads/tree/main/creator) | 1.0.0 | Content generation utilities |
+| [etl-squad](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/etl) | 2.0.0 | Data collection and transformation |
+| [creator-squad](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/creator) | 1.0.0 | Content generation utilities |
 
 ---
 
@@ -545,16 +545,16 @@ Squads in `./squads/` are automatically available to your project.
 *publish-squad ./squads/my-squad
 ```
 
-This creates a PR to [SynkraAI/lmas-squads](https://github.com/SynkraAI/lmas-squads).
+This creates a PR to [LMAS/lmas-squads](https://github.com/oluanferreira/luan-multiagent-scrum).
 
-### Level 3: Synkra Marketplace
+### Level 3: LMAS Marketplace
 
 ```bash
 # Set up authentication
-export SYNKRA_API_TOKEN="your-token"
+export LMAS_API_TOKEN="your-token"
 
 # Sync to marketplace
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 ```
 
 ### Downloading Squads
@@ -627,7 +627,7 @@ The Squad Loader resolves squads in this order:
 1. Local     → ./squads/{name}/
 2. npm       → node_modules/@lmas-squads/{name}/
 3. Workspace → ../{name}/ (monorepo)
-4. Registry  → api.synkra.dev/squads/{name}
+4. Registry  → api.lmas.dev/squads/{name}
 ```
 
 ### Programmatic Usage
@@ -762,7 +762,7 @@ Yes. The Squad Loader resolves from multiple sources. Local squads take preceden
 
 1. Update version in `squad.yaml` (semver)
 2. Run `*validate-squad --strict`
-3. Re-publish: `*publish-squad` or `*sync-squad-synkra`
+3. Re-publish: `*publish-squad` or `*sync-squad-lmas`
 
 ### Can Squads depend on other Squads?
 
@@ -777,7 +777,7 @@ dependencies:
 ### How do I make a Squad private?
 
 - **Level 1**: Keep in `./squads/` (not committed) - add to `.gitignore`
-- **Level 3**: Sync with `--private` flag: `*sync-squad-synkra my-squad --private`
+- **Level 3**: Sync with `--private` flag: `*sync-squad-lmas my-squad --private`
 
 ### What's the minimum LMAS version for Squads?
 
@@ -811,14 +811,14 @@ npm test -- tests/squads/my-squad/
 - [Squad Migration Guide](./squad-migration.md)
 - [Squads API Reference](../api/squads-api.md)
 - [@squad-creator Agent](../../.lmas-core/development/agents/squad-creator.md)
-- [lmas-squads Repository](https://github.com/SynkraAI/lmas-squads)
+- [lmas-squads Repository](https://github.com/oluanferreira/luan-multiagent-scrum)
 
 ---
 
 ## Getting Help
 
-- [GitHub Discussions](https://github.com/SynkraAI/lmas-core/discussions)
-- [Issue Tracker](https://github.com/SynkraAI/lmas-core/issues)
+- [GitHub Discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- [Issue Tracker](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 
 ---
 

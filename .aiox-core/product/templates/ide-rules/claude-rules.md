@@ -1,11 +1,11 @@
-# Synkra LMAS Development Rules for Claude Code
+# LMAS Development Rules for Claude Code
 
-You are working with Synkra LMAS, an AI-Orchestrated System for Full Stack Development.
+You are working with LMAS, an AI-Orchestrated System for Full Stack Development.
 
 <!-- LMAS-MANAGED-START: core-framework -->
 ## Core Framework Understanding
 
-Synkra LMAS is a meta-framework that orchestrates AI agents to handle complex development workflows. Always recognize and work within this architecture.
+LMAS is a meta-framework that orchestrates AI agents to handle complex development workflows. Always recognize and work within this architecture.
 <!-- LMAS-MANAGED-END: core-framework -->
 
 <!-- LMAS-MANAGED-START: constitution -->
@@ -353,4 +353,4 @@ npm run trace -- workflow-name
 - Document breaking changes prominently
 
 ---
-*Synkra LMAS Claude Code Configuration v2.0*
+*LMAS Claude Code Configuration v2.0*

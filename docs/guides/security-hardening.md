@@ -4,7 +4,7 @@
 
 ---
 
-> Complete guide to hardening security for Synkra LMAS deployments - from development to production.
+> Complete guide to hardening security for LMAS deployments - from development to production.
 
 **Version:** 2.1.0
 **Last Updated:** 2026-01-29
@@ -29,7 +29,7 @@
 
 ## Security Overview
 
-Synkra LMAS operates at a privileged layer between AI models and your system. This guide covers hardening strategies specific to AI-orchestrated development environments.
+LMAS operates at a privileged layer between AI models and your system. This guide covers hardening strategies specific to AI-orchestrated development environments.
 
 ### Security Architecture
 
@@ -1283,12 +1283,12 @@ function validateProductionSecurity() {
 
 ### Responsible Disclosure Policy
 
-If you discover a security vulnerability in Synkra LMAS, please follow responsible disclosure practices:
+If you discover a security vulnerability in LMAS, please follow responsible disclosure practices:
 
 ### Reporting Process
 
 1. **DO NOT** create a public GitHub issue for security vulnerabilities
-2. Report security concerns via [GitHub Security Advisories](https://github.com/SynkraAI/lmas-core/security/advisories)
+2. Report security concerns via [GitHub Security Advisories](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
 3. Include the following in your report:
    - Description of the vulnerability
    - Steps to reproduce
@@ -1343,7 +1343,7 @@ Contributors who responsibly disclose vulnerabilities are recognized in our Secu
 
 ### Bug Bounty Program
 
-Currently, Synkra LMAS does not have a formal bug bounty program. However, significant security contributions are recognized and may receive LMAS Pro licenses or other recognition.
+Currently, LMAS does not have a formal bug bounty program. However, significant security contributions are recognized and may receive LMAS Pro licenses or other recognition.
 
 ---
 
@@ -1356,4 +1356,4 @@ Currently, Synkra LMAS does not have a formal bug bounty program. However, signi
 
 ---
 
-_Synkra LMAS Security Hardening Guide v4.0.4_
+_LMAS Security Hardening Guide v4.0.4_

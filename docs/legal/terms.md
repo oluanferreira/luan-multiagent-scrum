@@ -6,11 +6,11 @@
 
 ## Acceptance of Terms
 
-By using Synkra LMAS ("the Software"), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the Software.
+By using LMAS ("the Software"), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the Software.
 
 ## License
 
-Synkra LMAS is released under the **MIT License**. See the [LICENSE](LICENSE) file for the full license text.
+LMAS is released under the **MIT License**. See the [LICENSE](LICENSE) file for the full license text.
 
 For licensing scope between open-source core and private modules, see:
 - [License Clarification (Core vs Pro)](./license-clarification.md)
@@ -36,9 +36,9 @@ You **MUST**:
 You may **NOT**:
 
 - ❌ Remove or alter copyright notices from the Software
-- ❌ Use SynkraAI Inc. trademarks without written permission
+- ❌ Use Luan Ferreira trademarks without written permission
 - ❌ Hold the authors or copyright holders liable for any damages
-- ❌ Claim authorship or endorsement by SynkraAI Inc.
+- ❌ Claim authorship or endorsement by Luan Ferreira
 - ❌ Use the project name in a way that implies official endorsement
 
 ## Disclaimer of Warranties
@@ -54,7 +54,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Limitation of Liability
 
-IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, OR SYNKRAAI INC. BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, OR LUAN FERREIRA BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### Scope of Limitation
 
@@ -67,7 +67,7 @@ This limitation applies to:
 
 ## Contributions
 
-By contributing to Synkra LMAS, you agree that:
+By contributing to LMAS, you agree that:
 
 1. **License Grant:** Your contributions will be licensed under the same MIT License
 2. **Original Work:** Your contributions are your original work or you have the right to submit them
@@ -78,11 +78,11 @@ For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Trademarks
 
-The following are trademarks or registered trademarks of SynkraAI Inc.:
+The following are trademarks or registered trademarks of Luan Ferreira:
 
 - "LMAS"
-- "Synkra LMAS"
-- "Synkra"
+- "LMAS"
+- "LMAS"
 - Associated logos and branding
 
 ### Trademark Usage Guidelines
@@ -100,11 +100,11 @@ You may **NOT**:
 - Use trademarks in a way suggesting endorsement
 - Register similar trademarks
 
-For trademark licensing inquiries, contact: legal@SynkraAI.com
+For trademark licensing inquiries, contact: legal@LMAS.com
 
 ## Third-Party Dependencies
 
-Synkra LMAS includes third-party open-source components. Each component is subject to its own license terms:
+LMAS includes third-party open-source components. Each component is subject to its own license terms:
 
 - See `package.json` for a list of dependencies
 - Run `npm ls` to view the complete dependency tree
@@ -112,7 +112,7 @@ Synkra LMAS includes third-party open-source components. Each component is subje
 
 ## AI-Generated Content
 
-When using AI providers (Claude, OpenAI, etc.) through Synkra LMAS:
+When using AI providers (Claude, OpenAI, etc.) through LMAS:
 
 1. **User Responsibility:** You are responsible for content generated
 2. **Provider Terms:** AI interactions are subject to provider terms of service
@@ -148,16 +148,16 @@ If any provision of these terms is found to be unenforceable, the remaining prov
 
 ## Entire Agreement
 
-These Terms of Use, together with the [LICENSE](LICENSE), [Privacy Policy](PRIVACY.md), and [Code of Conduct](CODE_OF_CONDUCT.md), constitute the entire agreement between you and SynkraAI Inc. regarding use of Synkra LMAS.
+These Terms of Use, together with the [LICENSE](LICENSE), [Privacy Policy](PRIVACY.md), and [Code of Conduct](CODE_OF_CONDUCT.md), constitute the entire agreement between you and Luan Ferreira regarding use of LMAS.
 
 ## Contact
 
 For questions about these terms:
 
-- **GitHub Issues:** [Open an issue](https://github.com/SynkraAI/lmas-core/issues)
-- **Email:** legal@SynkraAI.com
+- **GitHub Issues:** [Open an issue](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
+- **Email:** legal@LMAS.com
 - **Discord:** [Community Server](https://discord.gg/gk8jAdXWmj)
 
 ---
 
-**Copyright (c) 2025 SynkraAI Inc. All rights reserved.**
+**Copyright (c) 2025 Luan Ferreira All rights reserved.**

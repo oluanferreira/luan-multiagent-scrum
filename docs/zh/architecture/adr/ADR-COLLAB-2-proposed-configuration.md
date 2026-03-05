@@ -69,7 +69,7 @@ branch_protection:
 **实施命令:**
 
 ```bash
-gh api repos/SynkraAI/lmas-core/branches/main/protection -X PUT \
+gh api repos/LMAS/lmas-core/branches/main/protection -X PUT \
   -F required_status_checks='{"strict":true,"contexts":["lint","typecheck","build","test","validation-summary"]}' \
   -F enforce_admins=false \
   -F required_pull_request_reviews='{"dismiss_stale_reviews":true,"require_code_owner_reviews":true,"required_approving_review_count":1}' \
@@ -208,76 +208,76 @@ abort_on_close: true
 # ============================================
 # 默认所有者（后备）
 # ============================================
-* @SynkraAI/maintainers
+* @LMAS/maintainers
 
 # ============================================
 # 框架核心
 # ============================================
 # 代理定义 - 需要核心团队审查
-.lmas-core/development/agents/ @SynkraAI/core-team
+.lmas-core/development/agents/ @LMAS/core-team
 
 # 任务定义 - 需要核心团队审查
-.lmas-core/development/tasks/ @SynkraAI/core-team
+.lmas-core/development/tasks/ @LMAS/core-team
 
 # 工作流定义 - 需要核心团队审查
-.lmas-core/development/workflows/ @SynkraAI/core-team
+.lmas-core/development/workflows/ @LMAS/core-team
 
 # 模板 - 需要架构师/核心团队审查
-.lmas-core/product/templates/ @SynkraAI/core-team
-templates/ @SynkraAI/core-team
+.lmas-core/product/templates/ @LMAS/core-team
+templates/ @LMAS/core-team
 
 # 核心工具 - 需要高级审查
-.lmas-core/core/ @SynkraAI/core-team
-.lmas-core/cli/ @SynkraAI/core-team
+.lmas-core/core/ @LMAS/core-team
+.lmas-core/cli/ @LMAS/core-team
 
 # ============================================
 # 基础设施
 # ============================================
 # CI/CD - 需要 devops 批准
-.github/ @SynkraAI/devops
+.github/ @LMAS/devops
 
 # Docker 配置
-.docker/ @SynkraAI/devops
+.docker/ @LMAS/devops
 
 # 配置文件
-.lmas-core/core-config.yaml @SynkraAI/core-team
-package.json @SynkraAI/maintainers
-package-lock.json @SynkraAI/maintainers
+.lmas-core/core-config.yaml @LMAS/core-team
+package.json @LMAS/maintainers
+package-lock.json @LMAS/maintainers
 
 # ============================================
 # 文档（更宽松）
 # ============================================
 # 通用文档 - 维护者可批准
-docs/ @SynkraAI/maintainers
+docs/ @LMAS/maintainers
 
 # 架构决策 - 需要核心团队
-docs/architecture/ @SynkraAI/core-team
-docs/framework/ @SynkraAI/core-team
+docs/architecture/ @LMAS/core-team
+docs/framework/ @LMAS/core-team
 
 # Stories - 维护者（内部开发文档）
-docs/stories/ @SynkraAI/maintainers
+docs/stories/ @LMAS/maintainers
 
 # 指南 - 维护者（对贡献者友好）
-docs/guides/ @SynkraAI/maintainers
+docs/guides/ @LMAS/maintainers
 
 # ============================================
 # 安全敏感文件
 # ============================================
 # 安全配置
-.github/CODEOWNERS @SynkraAI/core-team
-.github/workflows/semantic-release.yml @SynkraAI/devops
-.github/workflows/npm-publish.yml @SynkraAI/devops
+.github/CODEOWNERS @LMAS/core-team
+.github/workflows/semantic-release.yml @LMAS/devops
+.github/workflows/npm-publish.yml @LMAS/devops
 
 # 根配置文件
-.env* @SynkraAI/core-team
-*.config.js @SynkraAI/maintainers
+.env* @LMAS/core-team
+*.config.js @LMAS/maintainers
 ```
 
 **需要的 GitHub 团队:**
 
-- `@SynkraAI/maintainers` - 通用维护者（写入权限）
-- `@SynkraAI/core-team` - 框架核心开发者
-- `@SynkraAI/devops` - CI/CD 和基础设施
+- `@LMAS/maintainers` - 通用维护者（写入权限）
+- `@LMAS/core-team` - 框架核心开发者
+- `@LMAS/devops` - CI/CD 和基础设施
 
 ---
 
@@ -444,10 +444,10 @@ _提交此 PR，即表示我确认已阅读[贡献指南](../../../../CONTRIBUTI
 
 ```bash
 # 移除所有分支保护（仅紧急情况）
-gh api -X DELETE repos/SynkraAI/lmas-core/branches/main/protection
+gh api -X DELETE repos/LMAS/lmas-core/branches/main/protection
 
 # 恢复最小保护
-gh api repos/SynkraAI/lmas-core/branches/main/protection -X PUT \
+gh api repos/LMAS/lmas-core/branches/main/protection -X PUT \
   -F required_status_checks='{"strict":true,"contexts":["lint","typecheck","build"]}' \
   -F enforce_admins=false \
   -F required_pull_request_reviews='{"dismiss_stale_reviews":true,"require_code_owner_reviews":false,"required_approving_review_count":0}' \
@@ -467,7 +467,7 @@ git push
 
 ```bash
 # 恢复简单所有权
-echo "* @SynkraAI" > .github/CODEOWNERS
+echo "* @LMAS" > .github/CODEOWNERS
 git add -A && git commit -m "chore: rollback CODEOWNERS"
 git push
 ```

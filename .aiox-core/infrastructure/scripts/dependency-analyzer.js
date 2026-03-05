@@ -1,5 +1,5 @@
 /**
- * Dependency Analyzer for Synkra AIOX
+ * Dependency Analyzer for LMAS
  * Analyzes and resolves dependencies between components
  * @module dependency-analyzer
  */

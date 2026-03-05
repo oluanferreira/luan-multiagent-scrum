@@ -137,7 +137,7 @@ proyecto/
 **Ubicación:** `.antigravity/rules.md`
 
 ```markdown
-# Reglas de Synkra LMAS para AntiGravity
+# Reglas de LMAS para AntiGravity
 
 ## Sistema de Agentes
 - Usa @nombre-agente o flujos de trabajo para activación
@@ -507,4 +507,4 @@ R: Los agentes son personas con experiencia; los flujos de trabajo orquestan acc
 
 ---
 
-*Synkra LMAS - Guía de Plataforma AntiGravity v1.0*
+*LMAS - Guía de Plataforma AntiGravity v1.0*

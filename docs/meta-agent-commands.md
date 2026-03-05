@@ -4,7 +4,7 @@
 
 ---
 
-Complete reference guide for all Synkra LMAS meta-agent commands.
+Complete reference guide for all LMAS meta-agent commands.
 
 ## Table of Contents
 
@@ -709,7 +709,7 @@ Examples:
 
 ### *update
 
-Update Synkra LMAS.
+Update LMAS.
 
 ```bash
 *update [options]

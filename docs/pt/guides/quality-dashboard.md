@@ -364,4 +364,4 @@ A auto-atualização pausa quando:
 
 ---
 
-_Synkra LMAS Quality Dashboard v1.0_
+_LMAS Quality Dashboard v1.0_

@@ -10,7 +10,7 @@
 
 ---
 
-Synkra LMAS 所有元代理命令的完整参考指南。
+LMAS 所有元代理命令的完整参考指南。
 
 ## 目录
 
@@ -715,7 +715,7 @@ Synkra LMAS 所有元代理命令的完整参考指南。
 
 ### *update
 
-更新 Synkra LMAS。
+更新 LMAS。
 
 ```bash
 *update [options]

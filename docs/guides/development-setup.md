@@ -4,7 +4,7 @@
 
 ---
 
-Complete guide for developers who want to contribute to the Synkra LMAS project.
+Complete guide for developers who want to contribute to the LMAS project.
 
 **Version:** 1.0.0
 **Last Updated:** 2026-01-29
@@ -94,7 +94,7 @@ gh auth login
 
 ### Step 1: Fork the Repository
 
-1. Navigate to [github.com/SynkraAI/lmas-core](https://github.com/SynkraAI/lmas-core)
+1. Navigate to [github.com/oluanferreira/luan-multiagent-scrum](https://github.com/oluanferreira/luan-multiagent-scrum)
 2. Click the **Fork** button in the top-right corner
 3. Select your GitHub account as the destination
 
@@ -106,14 +106,14 @@ git clone https://github.com/YOUR_USERNAME/lmas-core.git
 cd lmas-core
 
 # Add upstream remote
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 
 # Verify remotes
 git remote -v
 # origin    https://github.com/YOUR_USERNAME/lmas-core.git (fetch)
 # origin    https://github.com/YOUR_USERNAME/lmas-core.git (push)
-# upstream  https://github.com/SynkraAI/lmas-core.git (fetch)
-# upstream  https://github.com/SynkraAI/lmas-core.git (push)
+# upstream  https://github.com/oluanferreira/luan-multiagent-scrum.git (fetch)
+# upstream  https://github.com/oluanferreira/luan-multiagent-scrum.git (push)
 ```
 
 ### Step 3: Stay Updated
@@ -161,7 +161,7 @@ NODE_ENV=development
 LMAS_DEBUG=false
 
 # Optional: MCP Configuration
-SYNKRA_API_TOKEN=your-synkra-token
+LMAS_API_TOKEN=your-lmas-token
 ```
 
 ### Step 3: Verify Installation
@@ -1079,8 +1079,8 @@ node --inspect node_modules/.bin/jest
 
 ### Resources
 
-- **GitHub Discussions:** [github.com/SynkraAI/lmas-core/discussions](https://github.com/SynkraAI/lmas-core/discussions)
-- **Issue Tracker:** [github.com/SynkraAI/lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **GitHub Discussions:** [github.com/oluanferreira/luan-multiagent-scrum/discussions](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- **Issue Tracker:** [github.com/oluanferreira/luan-multiagent-scrum/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Discord:** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
 
 ### Issue Labels
@@ -1096,7 +1096,7 @@ node --inspect node_modules/.bin/jest
 ### Contact Maintainers
 
 - See `CODEOWNERS` file for module ownership
-- Tag `@SynkraAI/core-team` for urgent issues
+- Tag `@LMAS/core-team` for urgent issues
 
 ---
 
@@ -1110,5 +1110,5 @@ node --inspect node_modules/.bin/jest
 
 ---
 
-_Synkra LMAS Development Setup Guide v1.0.0_
+_LMAS Development Setup Guide v1.0.0_
 _Last Updated: 2026-01-29_

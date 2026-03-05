@@ -1,6 +1,6 @@
-# Synkra LMAS Development Rules for Cursor
+# LMAS Development Rules for Cursor
 
-You are working with Synkra LMAS, an AI-Orchestrated System for Full Stack Development.
+You are working with LMAS, an AI-Orchestrated System for Full Stack Development.
 
 ## Core Development Rules
 
@@ -112,4 +112,4 @@ async function operation() {
 ```
 
 ---
-*Synkra LMAS Cursor Configuration v1.0* 
+*LMAS Cursor Configuration v1.0* 

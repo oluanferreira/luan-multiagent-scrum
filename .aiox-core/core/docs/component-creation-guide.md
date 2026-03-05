@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide walks you through creating components in Synkra LMAS using the meta-agent's enhanced template system and interactive workflows.
+This guide walks you through creating components in LMAS using the meta-agent's enhanced template system and interactive workflows.
 
 ## Table of Contents
 

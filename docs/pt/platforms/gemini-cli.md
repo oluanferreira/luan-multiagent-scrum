@@ -114,7 +114,7 @@ Estrutura esperada:
 **Localização:** `.gemini/rules.md`
 
 ```markdown
-# Regras Synkra LMAS para Gemini CLI
+# Regras LMAS para Gemini CLI
 
 ## Sistema de Agentes
 - Inclua contexto de agente em seus prompts
@@ -338,7 +338,7 @@ O Gemini CLI usa markdown otimizado para prompt:
 **Frase de Ativação:** "Como agente LMAS dev"
 
 ## Papel
-Você é um Desenvolvedor Full Stack Sênior trabalhando com Synkra LMAS.
+Você é um Desenvolvedor Full Stack Sênior trabalhando com LMAS.
 
 ## Expertise
 - TypeScript/JavaScript
@@ -478,4 +478,4 @@ R: Use aliases do shell ou inclua contexto de agente nos prompts.
 
 ---
 
-*Synkra LMAS - Guia da Plataforma Gemini CLI v1.0*
+*LMAS - Guia da Plataforma Gemini CLI v1.0*

@@ -119,7 +119,7 @@ function completeProgress(progressBar) {
 }
 
 /**
- * ASCII Art Banner for Synkra AIOX
+ * ASCII Art Banner for LMAS
  */
 const BANNER = `
   █████╗ ██╗ ██████╗ ██╗  ██╗     ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗

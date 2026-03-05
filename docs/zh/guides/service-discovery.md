@@ -515,4 +515,4 @@ await registry.load(true);
 
 ---
 
-_Synkra LMAS v4 服务发现指南_
+_LMAS v4 服务发现指南_

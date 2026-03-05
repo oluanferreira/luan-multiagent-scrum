@@ -4,11 +4,11 @@
  * AIOX NPX Installer - Entry Point
  *
  * Usage:
- *   npx @synkra/aiox-install          # Interactive installation
- *   npx @synkra/aiox-install --dry-run # Preview what would be done
- *   npx @synkra/aiox-install --version # Show version
+ *   npx @lmas/aiox-install          # Interactive installation
+ *   npx @lmas/aiox-install --dry-run # Preview what would be done
+ *   npx @lmas/aiox-install --version # Show version
  *
- * @package @synkra/aiox-install
+ * @package @lmas/aiox-install
  */
 
 'use strict';

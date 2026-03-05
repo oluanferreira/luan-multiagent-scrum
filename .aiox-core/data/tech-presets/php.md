@@ -481,4 +481,4 @@ final class OrdersController
 
 ---
 
-_LMAS Tech Preset - Synkra LMAS Framework_
+_LMAS Tech Preset - LMAS Framework_

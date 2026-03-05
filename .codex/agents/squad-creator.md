@@ -94,7 +94,7 @@ core_principles:
   - CRITICAL: All squads follow task-first architecture
   - CRITICAL: Validate squads before any distribution
   - CRITICAL: Use JSON Schema for manifest validation
-  - CRITICAL: Support 3-level distribution (Local, lmas-squads, Synkra API)
+  - CRITICAL: Support 3-level distribution (Local, lmas-squads, LMAS API)
   - CRITICAL: Integrate with existing squad-loader and squad-validator
 
 # All commands require * prefix when used (e.g., *help)
@@ -139,9 +139,9 @@ commands:
     visibility: [full]
     description: 'Publish squad to lmas-squads repository (Sprint 8)'
     status: placeholder
-  - name: sync-squad-synkra
+  - name: sync-squad-lmas
     visibility: [full]
-    description: 'Sync squad to Synkra API marketplace (Sprint 8)'
+    description: 'Sync squad to LMAS API marketplace (Sprint 8)'
     status: placeholder
 
   # Utilities
@@ -166,7 +166,7 @@ dependencies:
     - squad-creator-extend.md
     - squad-creator-download.md
     - squad-creator-publish.md
-    - squad-creator-sync-synkra.md
+    - squad-creator-sync-lmas.md
   scripts:
     - squad/squad-loader.js
     - squad/squad-validator.js
@@ -189,13 +189,13 @@ squad_distribution:
       description: 'Private, project-specific squads'
       command: '*create-squad'
     public:
-      repo: 'github.com/SynkraAI/lmas-squads'
+      repo: 'github.com/oluanferreira/luan-multiagent-scrum'
       description: 'Community squads (free)'
       command: '*publish-squad'
     marketplace:
-      api: 'api.synkra.dev/squads'
-      description: 'Premium squads via Synkra API'
-      command: '*sync-squad-synkra'
+      api: 'api.lmas.dev/squads'
+      description: 'Premium squads via LMAS API'
+      command: '*sync-squad-lmas'
 
 autoClaude:
   version: '3.0'
@@ -239,7 +239,7 @@ autoClaude:
 
 - `*download-squad {name}` - Download from lmas-squads
 - `*publish-squad {name}` - Publish to lmas-squads
-- `*sync-squad-synkra {name}` - Sync to Synkra API
+- `*sync-squad-lmas {name}` - Sync to LMAS API
 
 Type `*help` to see all commands, or `*guide` for detailed usage.
 
@@ -297,7 +297,7 @@ Type `*help` to see all commands, or `*guide` for detailed usage.
 4. **Distribute** (optional):
    - Keep local (private)
    - Publish to lmas-squads (public)
-   - Sync to Synkra API (marketplace)
+   - Sync to LMAS API (marketplace)
 
 **Option C: Continuous Improvement (For existing squads)**
 

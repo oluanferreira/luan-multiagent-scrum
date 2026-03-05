@@ -10,17 +10,17 @@
 
 ---
 
-Este documento lista todas las variables de entorno utilizadas por Synkra LMAS y sus componentes.
+Este documento lista todas las variables de entorno utilizadas por LMAS y sus componentes.
 
 ## Descripción General
 
-Synkra LMAS utiliza variables de entorno para configuración, claves API e información sensible. **Nunca haga commit de variables de entorno al repositorio.**
+LMAS utiliza variables de entorno para configuración, claves API e información sensible. **Nunca haga commit de variables de entorno al repositorio.**
 
 ## Variables de Entorno Requeridas
 
 ### Framework Central
 
-Actualmente, Synkra LMAS no requiere ninguna variable de entorno obligatoria para operación básica. Toda la configuración se realiza a través de `core-config.yaml` y archivos de configuración de Squad.
+Actualmente, LMAS no requiere ninguna variable de entorno obligatoria para operación básica. Toda la configuración se realiza a través de `core-config.yaml` y archivos de configuración de Squad.
 
 ## Variables de Entorno Opcionales
 
@@ -74,7 +74,7 @@ Los Squads privados (en el repositorio `lmas-Squads`) pueden requerir variables 
 
 ### Cargando Variables de Entorno
 
-Synkra LMAS usa `dotenv` (si está instalado) o el soporte nativo de variables de entorno de Node.js. Las variables de entorno se cargan automáticamente desde archivos `.env` en la raíz del proyecto.
+LMAS usa `dotenv` (si está instalado) o el soporte nativo de variables de entorno de Node.js. Las variables de entorno se cargan automáticamente desde archivos `.env` en la raíz del proyecto.
 
 **Importante:** El archivo `.env` está en gitignore y nunca se hará commit al repositorio.
 

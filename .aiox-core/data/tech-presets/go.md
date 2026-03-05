@@ -512,4 +512,4 @@ func (h *Handler) PlaceOrder(w http.ResponseWriter, r *http.Request) {
 
 ---
 
-_LMAS Tech Preset - Synkra LMAS Framework_
+_LMAS Tech Preset - LMAS Framework_

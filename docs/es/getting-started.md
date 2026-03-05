@@ -4,13 +4,13 @@
   Ultima sincronizacion: 2026-01-26
 -->
 
-# Primeros Pasos con Synkra LMAS
+# Primeros Pasos con LMAS
 
 > 🌐 [EN](../getting-started.md) | [PT](../pt/getting-started.md) | **ES**
 
 ---
 
-Bienvenido a Synkra LMAS! Esta guia te llevara a traves de tus primeros pasos con el framework de desarrollo auto-modificable impulsado por IA.
+Bienvenido a LMAS! Esta guia te llevara a traves de tus primeros pasos con el framework de desarrollo auto-modificable impulsado por IA.
 
 ## Tabla de Contenidos
 
@@ -29,7 +29,7 @@ Bienvenido a Synkra LMAS! Esta guia te llevara a traves de tus primeros pasos co
 
 ### Prerrequisitos
 
-Antes de instalar Synkra LMAS, asegurate de tener:
+Antes de instalar LMAS, asegurate de tener:
 
 - **Node.js** version 14.0.0 o superior
 - **npm** version 6.0.0 o superior
@@ -53,7 +53,7 @@ npx lmas-core
 
 ### Opciones de Instalacion
 
-Synkra LMAS ofrece opciones de instalacion flexibles:
+LMAS ofrece opciones de instalacion flexibles:
 
 ```bash
 # 1. Crear nuevo proyecto con plantilla personalizada
@@ -132,7 +132,7 @@ LMAS_TELEMETRY=enabled
 
 ## Entendiendo el Meta-Agente
 
-El meta-agente es el nucleo de Synkra LMAS - una IA que entiende y puede modificar su propia base de codigo.
+El meta-agente es el nucleo de LMAS - una IA que entiende y puede modificar su propia base de codigo.
 
 ### Capacidades Principales
 
@@ -567,6 +567,6 @@ ls -la .env
 
 **Listo para construir algo increible?** El meta-agente esta esperando para ayudarte a crear, mejorar y evolucionar tu codigo. Comienza con `*help` y explora las posibilidades!
 
-Recuerda: Synkra LMAS aprende y mejora con el uso. Cuanto mas interactues con el, mejor entendera tu estilo de desarrollo y necesidades.
+Recuerda: LMAS aprende y mejora con el uso. Cuanto mas interactues con el, mejor entendera tu estilo de desarrollo y necesidades.
 
-Feliz programacion con Synkra LMAS!
+Feliz programacion con LMAS!

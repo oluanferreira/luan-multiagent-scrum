@@ -18,7 +18,7 @@ Este sistema implementa a **arquitetura task-first** do LMAS, onde tasks sao o p
 - **Criar squads** seguindo padroes e estrutura do LMAS
 - **Validar squads** contra JSON Schema e especificacoes de task
 - **Listar squads** locais do projeto
-- **Distribuir squads** em 3 niveis (Local, lmas-squads, Synkra API)
+- **Distribuir squads** em 3 niveis (Local, lmas-squads, LMAS API)
 - **Migrar squads** para formato v2 com orquestracao e skills
 - **Analisar e estender** squads existentes
 
@@ -27,7 +27,7 @@ Este sistema implementa a **arquitetura task-first** do LMAS, onde tasks sao o p
 1. **Task-First Architecture**: Tasks sao o ponto de entrada, agentes orquestram
 2. **Validacao Obrigatoria**: Sempre validar antes de distribuir
 3. **JSON Schema**: Manifests validados contra schema
-4. **3 Niveis de Distribuicao**: Local, Publico (lmas-squads), Marketplace (Synkra API)
+4. **3 Niveis de Distribuicao**: Local, Publico (lmas-squads), Marketplace (LMAS API)
 5. **Integracao com lmas-core**: Squads trabalham em sinergia com o framework
 
 ---
@@ -56,7 +56,7 @@ Este sistema implementa a **arquitetura task-first** do LMAS, onde tasks sao o p
 | `.lmas-core/development/tasks/squad-generate-workflow.md` | `*generate-workflow` | Gera workflow de orquestracao YAML | Ativo |
 | `.lmas-core/development/tasks/squad-creator-download.md` | `*download-squad` | Baixa squad do repositorio publico | Placeholder (Sprint 8) |
 | `.lmas-core/development/tasks/squad-creator-publish.md` | `*publish-squad` | Publica squad no lmas-squads | Placeholder (Sprint 8) |
-| `.lmas-core/development/tasks/squad-creator-sync-synkra.md` | `*sync-squad-synkra` | Sincroniza squad com Synkra API | Placeholder (Sprint 8) |
+| `.lmas-core/development/tasks/squad-creator-sync-lmas.md` | `*sync-squad-lmas` | Sincroniza squad com LMAS API | Placeholder (Sprint 8) |
 
 ### Arquivos de Tasks Relacionadas
 
@@ -156,13 +156,13 @@ flowchart TB
 
     subgraph DISTRIBUTE["🚀 DISTRIBUTION"]
         LOCAL["📂 Local<br/>./squads/"]
-        PUBLIC["🌐 Public<br/>github.com/SynkraAI/lmas-squads"]
-        MARKET["💰 Marketplace<br/>api.synkra.dev/squads"]
+        PUBLIC["🌐 Public<br/>github.com/oluanferreira/luan-multiagent-scrum"]
+        MARKET["💰 Marketplace<br/>api.lmas.dev/squads"]
     end
 
     VALID --> LOCAL
     VALID -->|"*publish-squad"| PUBLIC
-    VALID -->|"*sync-squad-synkra"| MARKET
+    VALID -->|"*sync-squad-lmas"| MARKET
 
     style INPUTS fill:#e1f5fe
     style DESIGN fill:#fff3e0
@@ -350,7 +350,7 @@ flowchart TB
 |---------|-----------|----------|
 | `*download-squad` | `squad-creator-download.md` | DOWNLOAD squad do lmas-squads |
 | `*publish-squad` | `squad-creator-publish.md` | PUBLISH squad para lmas-squads |
-| `*sync-squad-synkra` | `squad-creator-sync-synkra.md` | SYNC squad para Synkra API |
+| `*sync-squad-lmas` | `squad-creator-sync-lmas.md` | SYNC squad para LMAS API |
 
 ### Comandos de Componentes Individuais
 
@@ -456,13 +456,13 @@ flowchart LR
 
     SQUADS[("📦 ./squads/")]
     LMAS_SQUADS[("🌐 lmas-squads")]
-    SYNKRA[("💰 Synkra API")]
+    LMAS_MARKETPLACE[("💰 LMAS API")]
 
     SC_CREATE --> SQUADS
     SC_VALIDATE --> SQUADS
     SC_LIST --> SQUADS
     DEVOPS_PUB --> LMAS_SQUADS
-    DEVOPS_PUB --> SYNKRA
+    DEVOPS_PUB --> LMAS
 
     style SQUAD_CREATOR fill:#e3f2fd
     style DEV fill:#e8f5e9
@@ -564,15 +564,15 @@ flowchart LR
     end
 
     subgraph PUBLIC["🌐 Nivel 2: Publico"]
-        P_REPO["github.com/SynkraAI/lmas-squads"]
+        P_REPO["github.com/oluanferreira/luan-multiagent-scrum"]
         P_DESC["Squads da comunidade (gratuitos)"]
         P_CMD["*publish-squad"]
     end
 
     subgraph MARKET["💰 Nivel 3: Marketplace"]
-        M_API["api.synkra.dev/squads"]
-        M_DESC["Squads premium via Synkra API"]
-        M_CMD["*sync-squad-synkra"]
+        M_API["api.lmas.dev/squads"]
+        M_DESC["Squads premium via LMAS API"]
+        M_CMD["*sync-squad-lmas"]
     end
 
     LOCAL --> PUBLIC
@@ -678,12 +678,12 @@ flowchart LR
 |---------|----------|
 | **Total de Tasks Core** | 12 task files |
 | **Tasks Ativas** | 9 (create, design, validate, list, analyze, extend, migrate, generate-skills, generate-workflow) |
-| **Tasks Placeholder** | 3 (download, publish, sync-synkra) |
+| **Tasks Placeholder** | 3 (download, publish, sync-lmas) |
 | **Scripts de Suporte** | 9 scripts em squad/ |
 | **Schemas** | 2 (squad-schema, squad-design-schema) |
 | **Templates** | 3 (basic, etl, agent-only) |
 | **Versoes Template** | 2 (v1 legacy, v2 orchestration) |
-| **Niveis Distribuicao** | 3 (Local, lmas-squads, Synkra API) |
+| **Niveis Distribuicao** | 3 (Local, lmas-squads, LMAS API) |
 
 ---
 

@@ -645,4 +645,4 @@ R: Após atualizar o LMAS ou quando agentes são modificados no core.
 
 ---
 
-*Synkra LMAS - Guia da Plataforma Claude Code v1.0*
+*LMAS - Guia da Plataforma Claude Code v1.0*

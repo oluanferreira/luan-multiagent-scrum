@@ -31,7 +31,7 @@ git checkout -- .lmas-core/                                         # Cancel cha
 
 The script uses sparse clone + file comparison:
 
-1. **Clone upstream** - Sparse shallow clone of SynkraAI/lmas-core (only `.lmas-core/`)
+1. **Clone upstream** - Sparse shallow clone of LMAS/lmas-core (only `.lmas-core/`)
 2. **Compare files** - Uses `comm` for O(n) file list comparison
 3. **Backup local-only** - Files that exist only locally are backed up
 4. **Sync** - Copy upstream files, restore local-only files

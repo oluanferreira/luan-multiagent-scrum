@@ -6,7 +6,7 @@
 **Status:** Living Document
 **Última Atualização:** 2025-12-09
 **Mantido Por:** LMAS Framework Team + Community
-**Repositório Principal:** `SynkraAI/lmas-core`
+**Repositório Principal:** `LMAS/lmas-core`
 
 ---
 
@@ -53,13 +53,13 @@ Este documento é a **versão consolidada v4.2** que incorpora todas as mudança
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                     SYNKRA ORGANIZATION                                 │
+│                     LMAS ORGANIZATION                                 │
 │                                                                         │
 │   PUBLIC REPOSITORIES (3)                                               │
 │   ═══════════════════════                                               │
 │                                                                         │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │  SynkraAI/lmas-core (Commons Clause)                         │   │
+│   │  LMAS/lmas-core (Commons Clause)                         │   │
 │   │  ─────────────────────────────────────                         │   │
 │   │  • Core Framework & Orchestration Engine                       │   │
 │   │  • 11 Base Agents (Neo, Luna, Aria, Oracle, etc.)              │   │
@@ -75,7 +75,7 @@ Este documento é a **versão consolidada v4.2** que incorpora todas as mudança
 │   │                          │                          │              │
 │   ▼                          │                          ▼              │
 │   ┌─────────────────────┐    │    ┌─────────────────────────────┐     │
-│   │ SynkraAI/         │    │    │ SynkraAI/mcp-ecosystem    │     │
+│   │ LMAS/         │    │    │ LMAS/mcp-ecosystem    │     │
 │   │ lmas-squads (MIT)   │    │    │ (Apache 2.0)                │     │
 │   │ ─────────────────   │    │    │ ──────────────────────────  │     │
 │   │ • ETL Squad         │    │    │ • Docker MCP Toolkit        │     │
@@ -88,7 +88,7 @@ Este documento é a **versão consolidada v4.2** que incorpora todas as mudança
 │   ════════════════════════   │                                         │
 │                              │                                         │
 │   ┌─────────────────────┐    │    ┌─────────────────────────────┐     │
-│   │ SynkraAI/mmos     │    │    │ SynkraAI/certified-       │     │
+│   │ LMAS/mmos     │    │    │ LMAS/certified-       │     │
 │   │ (Proprietary + NDA) │    │    │ partners (Proprietary)      │     │
 │   │ ─────────────────   │    │    │ ──────────────────────────  │     │
 │   │ • MMOS Minds        │    │    │ • Premium Squads            │     │
@@ -606,10 +606,10 @@ npm install @lmas/mcp-presets
 
 ```bash
 # New project (Greenfield)
-$ npx @SynkraAI/lmas@latest init
+$ npx @LMAS/lmas@latest init
 
 # Existing project (Brownfield)
-$ npx @SynkraAI/lmas migrate v2.0-to-v4.0.4
+$ npx @LMAS/lmas migrate v2.0-to-v4.0.4
 ```
 
 ### First Steps
@@ -633,9 +633,9 @@ $ lmas task develop-story --story=1.1
 ```bash
 # Clone all repos
 mkdir -p ~/Workspaces/LMAS && cd ~/Workspaces/LMAS
-gh repo clone SynkraAI/lmas-core
-gh repo clone SynkraAI/lmas-squads
-gh repo clone SynkraAI/mcp-ecosystem
+gh repo clone LMAS/lmas-core
+gh repo clone LMAS/lmas-squads
+gh repo clone LMAS/mcp-ecosystem
 
 # Link for local development
 cd lmas-core && npm install && npm link

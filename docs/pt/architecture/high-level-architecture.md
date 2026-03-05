@@ -144,13 +144,13 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                    ORGANIZAÇÃO SYNKRA                                   │
+│                    ORGANIZAÇÃO LMAS                                   │
 │                                                                         │
 │   REPOSITÓRIOS PÚBLICOS                                                 │
 │   ═══════════════════                                                   │
 │                                                                         │
 │   ┌────────────────────┐     ┌────────────────────┐                    │
-│   │  SynkraAI/         │     │  SynkraAI/         │                    │
+│   │  LMAS/         │     │  LMAS/         │                    │
 │   │  lmas-core         │     │  lmas-squads       │                    │
 │   │  (MIT)  │◄────│  (MIT)             │                    │
 │   │                    │     │                    │                    │
@@ -163,7 +163,7 @@
 │            │ dependência opcional                                       │
 │            ▼                                                            │
 │   ┌────────────────────┐                                               │
-│   │  SynkraAI/         │                                               │
+│   │  LMAS/         │                                               │
 │   │  mcp-ecosystem     │                                               │
 │   │  (Apache 2.0)      │                                               │
 │   │                    │                                               │
@@ -176,7 +176,7 @@
 │   ════════════════════                                                  │
 │                                                                         │
 │   ┌────────────────────┐     ┌────────────────────┐                    │
-│   │  SynkraAI/mmos     │     │  SynkraAI/         │                    │
+│   │  LMAS/mmos     │     │  LMAS/         │                    │
 │   │  (Proprietário+NDA)│     │  certified-partners│                    │
 │   │                    │     │  (Proprietário)    │                    │
 │   │  • MMOS Minds      │     │  • Squads Premium  │                    │

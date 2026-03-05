@@ -28,7 +28,7 @@
 - `*extend-squad` - Add new components (agents, tasks, templates, etc.) to existing squad
 - `*download-squad` - Download public squad from lmas-squads repository (Sprint 8)
 - `*publish-squad` - Publish squad to lmas-squads repository (Sprint 8)
-- `*sync-squad-synkra` - Sync squad to Synkra API marketplace (Sprint 8)
+- `*sync-squad-lmas` - Sync squad to LMAS API marketplace (Sprint 8)
 - `*guide` - Show comprehensive usage guide for this agent
 - `*yolo` - Toggle permission mode (cycle: ask > auto > explore)
 - `*exit` - Exit squad-creator mode

@@ -74,16 +74,16 @@
     "fullstack",
     "development-tools"
   ],
-  "author": "LMAS Fullstack Team",
+  "author": "Luan Ferreira",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SynkraAI/lmas-core.git"
+    "url": "git+https://github.com/oluanferreira/luan-multiagent-scrum.git"
   },
   "bugs": {
-    "url": "https://github.com/SynkraAI/lmas-core/issues"
+    "url": "https://github.com/oluanferreira/luan-multiagent-scrum/issues"
   },
-  "homepage": "https://github.com/SynkraAI/lmas-core#readme",
+  "homepage": "https://github.com/oluanferreira/luan-multiagent-scrum#readme",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"

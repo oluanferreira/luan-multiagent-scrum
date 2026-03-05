@@ -6,7 +6,7 @@
 
 ---
 
-Todas as alteracoes notaveis do Synkra LMAS serao documentadas neste arquivo.
+Todas as alteracoes notaveis do LMAS serao documentadas neste arquivo.
 
 O formato e baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Versionamento Semantico](https://semver.org/lang/pt-BR/).
@@ -66,7 +66,7 @@ e este projeto adere ao [Versionamento Semantico](https://semver.org/lang/pt-BR/
 
 ### Adicionado
 
-- Lancamento publico inicial do Synkra LMAS
+- Lancamento publico inicial do LMAS
 - 11 agentes de IA especializados (dev, qa, architect, pm, po, sm, analyst, ux-expert, data-engineer, devops, db-sage)
 - Sistema de fluxo de tarefas com mais de 60 tarefas pre-construidas
 - Sistema de templates com mais de 20 modelos de documentos
@@ -113,5 +113,5 @@ npx lmas-core install --force-upgrade
 
 - [Solucao de Problemas](./installation/troubleshooting.md)
 - [FAQ](./installation/faq.md)
-- [Repositorio GitHub](https://github.com/SynkraAI/lmas-core)
-- [Rastreador de Issues](https://github.com/SynkraAI/lmas-core/issues)
+- [Repositorio GitHub](https://github.com/oluanferreira/luan-multiagent-scrum)
+- [Rastreador de Issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)

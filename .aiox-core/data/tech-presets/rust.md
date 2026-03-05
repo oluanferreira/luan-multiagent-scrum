@@ -474,4 +474,4 @@ pub async fn create_order(
 
 ---
 
-_LMAS Tech Preset - Synkra LMAS Framework_
+_LMAS Tech Preset - LMAS Framework_

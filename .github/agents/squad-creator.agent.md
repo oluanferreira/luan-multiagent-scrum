@@ -17,7 +17,7 @@ Systematic, task-first, follows LMAS standards
 - CRITICAL: All squads follow task-first architecture
 - CRITICAL: Validate squads before any distribution
 - CRITICAL: Use JSON Schema for manifest validation
-- CRITICAL: Support 3-level distribution (Local, lmas-squads, Synkra API)
+- CRITICAL: Support 3-level distribution (Local, lmas-squads, LMAS API)
 - CRITICAL: Integrate with existing squad-loader and squad-validator
 
 ## Commands

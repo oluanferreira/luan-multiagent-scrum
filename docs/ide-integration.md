@@ -475,4 +475,4 @@ npm run sync:ide:cursor
 
 ---
 
-_Synkra LMAS IDE Integration Guide v4.2.11_
+_LMAS IDE Integration Guide v4.2.11_

@@ -24,7 +24,7 @@
 - **创建小队**遵循 LMAS 模式和结构
 - **验证小队**针对 JSON Schema 和任务规范
 - **列出小队**项目本地
-- **分发小队**在 3 个级别（本地、lmas-squads、Synkra API）
+- **分发小队**在 3 个级别（本地、lmas-squads、LMAS API）
 - **迁移小队**到带编排和技能的 v2 格式
 - **分析和扩展**现有小队
 
@@ -33,7 +33,7 @@
 1. **任务优先架构**：任务是入口点，代理编排
 2. **强制验证**：分发前始终验证
 3. **JSON Schema**：清单针对 schema 验证
-4. **3 级分发**：本地、公共（lmas-squads）、市场（Synkra API）
+4. **3 级分发**：本地、公共（lmas-squads）、市场（LMAS API）
 5. **与 lmas-core 集成**：小队与框架协同工作
 
 ---
@@ -62,7 +62,7 @@
 | `.lmas-core/development/tasks/squad-generate-workflow.md` | `*generate-workflow` | 生成 YAML 编排工作流 | 活跃 |
 | `.lmas-core/development/tasks/squad-creator-download.md` | `*download-squad` | 从公共仓库下载小队 | 占位符（Sprint 8） |
 | `.lmas-core/development/tasks/squad-creator-publish.md` | `*publish-squad` | 发布小队到 lmas-squads | 占位符（Sprint 8） |
-| `.lmas-core/development/tasks/squad-creator-sync-synkra.md` | `*sync-squad-synkra` | 同步小队到 Synkra API | 占位符（Sprint 8） |
+| `.lmas-core/development/tasks/squad-creator-sync-lmas.md` | `*sync-squad-lmas` | 同步小队到 LMAS API | 占位符（Sprint 8） |
 
 ### 相关任务文件
 
@@ -162,13 +162,13 @@ flowchart TB
 
     subgraph DISTRIBUTE["分发"]
         LOCAL["本地<br/>./squads/"]
-        PUBLIC["公共<br/>github.com/SynkraAI/lmas-squads"]
-        MARKET["市场<br/>api.synkra.dev/squads"]
+        PUBLIC["公共<br/>github.com/oluanferreira/luan-multiagent-scrum"]
+        MARKET["市场<br/>api.lmas.dev/squads"]
     end
 
     VALID --> LOCAL
     VALID -->|"*publish-squad"| PUBLIC
-    VALID -->|"*sync-squad-synkra"| MARKET
+    VALID -->|"*sync-squad-lmas"| MARKET
 
     style INPUTS fill:#e1f5fe
     style DESIGN fill:#fff3e0
@@ -356,7 +356,7 @@ flowchart TB
 |---------|-----------|----------|
 | `*download-squad` | `squad-creator-download.md` | 从 lmas-squads 下载小队 |
 | `*publish-squad` | `squad-creator-publish.md` | 发布小队到 lmas-squads |
-| `*sync-squad-synkra` | `squad-creator-sync-synkra.md` | 同步小队到 Synkra API |
+| `*sync-squad-lmas` | `squad-creator-sync-lmas.md` | 同步小队到 LMAS API |
 
 ### 单个组件命令
 
@@ -462,13 +462,13 @@ flowchart LR
 
     SQUADS[("./squads/")]
     LMAS_SQUADS[("lmas-squads")]
-    SYNKRA[("Synkra API")]
+    LMAS_MARKETPLACE[("LMAS API")]
 
     SC_CREATE --> SQUADS
     SC_VALIDATE --> SQUADS
     SC_LIST --> SQUADS
     DEVOPS_PUB --> LMAS_SQUADS
-    DEVOPS_PUB --> SYNKRA
+    DEVOPS_PUB --> LMAS
 
     style SQUAD_CREATOR fill:#e3f2fd
     style DEV fill:#e8f5e9
@@ -570,15 +570,15 @@ flowchart LR
     end
 
     subgraph PUBLIC["级别 2：公共"]
-        P_REPO["github.com/SynkraAI/lmas-squads"]
+        P_REPO["github.com/oluanferreira/luan-multiagent-scrum"]
         P_DESC["社区小队（免费）"]
         P_CMD["*publish-squad"]
     end
 
     subgraph MARKET["级别 3：市场"]
-        M_API["api.synkra.dev/squads"]
-        M_DESC["通过 Synkra API 的高级小队"]
-        M_CMD["*sync-squad-synkra"]
+        M_API["api.lmas.dev/squads"]
+        M_DESC["通过 LMAS API 的高级小队"]
+        M_CMD["*sync-squad-lmas"]
     end
 
     LOCAL --> PUBLIC
@@ -684,12 +684,12 @@ flowchart LR
 |---------|----------|
 | **核心任务总数** | 12 个任务文件 |
 | **活跃任务** | 9 个（create、design、validate、list、analyze、extend、migrate、generate-skills、generate-workflow） |
-| **占位符任务** | 3 个（download、publish、sync-synkra） |
+| **占位符任务** | 3 个（download、publish、sync-lmas） |
 | **支持脚本** | 9 个脚本在 squad/ |
 | **Schemas** | 2 个（squad-schema、squad-design-schema） |
 | **模板** | 3 个（basic、etl、agent-only） |
 | **模板版本** | 2 个（v1 遗留、v2 编排） |
-| **分发级别** | 3 个（本地、lmas-squads、Synkra API） |
+| **分发级别** | 3 个（本地、lmas-squads、LMAS API） |
 
 ---
 

@@ -295,7 +295,7 @@ function splitL1(config) {
 
   // metadata (framework portion)
   if (config.markdownExploder !== undefined) l1.markdownExploder = config.markdownExploder;
-  l1.metadata = { name: 'Synkra AIOX', framework_version: '3.12.0' };
+  l1.metadata = { name: 'LMAS', framework_version: '3.12.0' };
 
   // resource_locations (Section 3)
   if (config.toolsLocation) l1.resource_locations = { tools_dir: config.toolsLocation };

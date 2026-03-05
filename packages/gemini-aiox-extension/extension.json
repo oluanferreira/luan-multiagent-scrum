@@ -1,14 +1,14 @@
 {
   "$schema": "https://geminicli.com/schemas/extension.json",
   "name": "aiox",
-  "displayName": "Synkra AIOX",
+  "displayName": "LMAS",
   "version": "1.0.0",
   "description": "Multi-agent orchestration system for CLI-first development. Brings AIOX agents, hooks, and workflows to Gemini CLI.",
-  "author": "Synkra",
+  "author": "LMAS",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/synkra/aiox-core"
+    "url": "https://github.com/lmas/aiox-core"
   },
   "engines": {
     "gemini-cli": ">=0.26.0"

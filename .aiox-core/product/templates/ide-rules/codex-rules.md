@@ -1,4 +1,4 @@
-# AGENTS.md - Synkra LMAS (Codex CLI)
+# AGENTS.md - LMAS (Codex CLI)
 
 Este arquivo define as instrucoes do projeto para o Codex CLI.
 

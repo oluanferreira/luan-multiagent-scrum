@@ -71,7 +71,7 @@ To help users contribute to the LMAS open-source project (`lmas-core`) by automa
 
 - **pr_url**: `string`
   - **Description**: URL of created pull request
-  - **Example**: `"https://github.com/SynkraAI/lmas-core/pull/123"`
+  - **Example**: `"https://github.com/oluanferreira/luan-multiagent-scrum/pull/123"`
 
 - **pr_number**: `number`
   - **Description**: PR number
@@ -253,7 +253,7 @@ To help users contribute to the LMAS open-source project (`lmas-core`) by automa
     - Use GitHub CLI:
       ```bash
       gh pr create \
-        --repo SynkraAI/lmas-core \
+        --repo LMAS/lmas-core \
         --title "{title}" \
         --body "{description}" \
         --base main \

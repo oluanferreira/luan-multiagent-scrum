@@ -153,7 +153,7 @@ Examples:
   npx aiox-pro status
   npx aiox-pro recover
 
-Documentation: https://synkra.ai/pro/docs
+Documentation: https://lmas.ai/pro/docs
 `);
 }
 

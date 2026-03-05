@@ -270,4 +270,4 @@ When `--skip-critique` is passed:
 
 ---
 
-_Self-Critique Checklist v1.0 - Synkra LMAS Development Framework_
+_Self-Critique Checklist v1.0 - LMAS Development Framework_

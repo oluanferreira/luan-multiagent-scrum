@@ -6,7 +6,7 @@
 
 ---
 
-> Synkra LMAS v4.2 模块化架构完整指南。
+> LMAS v4.2 模块化架构完整指南。
 
 **版本:** 2.1.0
 **上次更新:** 2025-12-01
@@ -39,7 +39,7 @@ v4.2 模块化架构解决了 v2.0 扁平结构的几个挑战：
 
 ## 模块结构
 
-Synkra LMAS 将 `.lmas-core/` 目录组织为四个主要模块：
+LMAS 将 `.lmas-core/` 目录组织为四个主要模块：
 
 ```
 .lmas-core/
@@ -379,4 +379,4 @@ lmas migrate --validate
 
 ---
 
-_Synkra LMAS v4 模块系统架构_
+_LMAS v4 模块系统架构_

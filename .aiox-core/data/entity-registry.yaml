@@ -188,7 +188,7 @@ entities:
       path: .lmas-core/development/tasks/architect-analyze-impact.md
       layer: L2
       type: task
-      purpose: Analyze the potential impact of proposed component modifications on the broader Synkra LMAS framework.
+      purpose: Analyze the potential impact of proposed component modifications on the broader LMAS framework.
       keywords:
         - architect
         - analyze
@@ -756,7 +756,7 @@ entities:
       type: task
       purpose: >-
         To create a new workflow definition that orchestrates multiple agents and tasks for complex multi-step processes
-        in Synkra LMAS.
+        in LMAS.
       keywords:
         - create
         - workflow
@@ -2460,7 +2460,7 @@ entities:
       path: .lmas-core/development/tasks/propose-modification.md
       layer: L2
       type: task
-      purpose: Create and submit modification proposals for collaborative review and approval within the Synkra LMAS framework.
+      purpose: Create and submit modification proposals for collaborative review and approval within the LMAS framework.
       keywords:
         - propose
         - modification
@@ -3583,17 +3583,17 @@ entities:
         extensionPoints: []
       checksum: sha256:4221574f07adb5fb53c7c0c9f85656222a97e623b5e4072cee37e34b82f3f379
       lastVerified: '2026-03-04T16:20:30.345Z'
-    squad-creator-sync-synkra:
-      path: .lmas-core/development/tasks/squad-creator-sync-synkra.md
+    squad-creator-sync-lmas:
+      path: .lmas-core/development/tasks/squad-creator-sync-lmas.md
       layer: L2
       type: task
-      purpose: '*sync-squad-synkra'
+      purpose: '*sync-squad-lmas'
       keywords:
         - squad
         - creator
         - sync
-        - synkra
-        - '*sync-squad-synkra'
+        - lmas
+        - '*sync-squad-lmas'
       usedBy: []
       dependencies: []
       adaptability:
@@ -4188,11 +4188,11 @@ entities:
       path: .lmas-core/product/templates/agent-template.yaml
       layer: L2
       type: template
-      purpose: Agent Template for Synkra LMAS
+      purpose: Agent Template for LMAS
       keywords:
         - agent
         - template
-        - synkra
+        - lmas
         - lmas
       usedBy: []
       dependencies: []
@@ -4699,7 +4699,7 @@ entities:
         - template
         - file
         - structure
-        - synkra
+        - lmas
         - lmas
       usedBy: []
       dependencies: []
@@ -4718,7 +4718,7 @@ entities:
         - personalized
         - workflow
         - template
-        - synkra
+        - lmas
         - lmas
         - agent
       usedBy: []
@@ -4959,11 +4959,11 @@ entities:
       path: .lmas-core/product/templates/ide-rules/antigravity-rules.md
       layer: L2
       type: template
-      purpose: Synkra LMAS Development Rules for AntiGravity
+      purpose: LMAS Development Rules for AntiGravity
       keywords:
         - antigravity
         - rules
-        - synkra
+        - lmas
         - lmas
         - development
       usedBy: []
@@ -4978,11 +4978,11 @@ entities:
       path: .lmas-core/product/templates/ide-rules/claude-rules.md
       layer: L2
       type: template
-      purpose: Synkra LMAS Development Rules for Claude Code
+      purpose: LMAS Development Rules for Claude Code
       keywords:
         - claude
         - rules
-        - synkra
+        - lmas
         - lmas
         - development
       usedBy: []
@@ -4997,12 +4997,12 @@ entities:
       path: .lmas-core/product/templates/ide-rules/codex-rules.md
       layer: L2
       type: template
-      purpose: AGENTS.md - Synkra LMAS (Codex CLI)
+      purpose: AGENTS.md - LMAS (Codex CLI)
       keywords:
         - codex
         - rules
         - agents.md
-        - synkra
+        - lmas
         - lmas
         - (codex
         - cli)
@@ -5018,11 +5018,11 @@ entities:
       path: .lmas-core/product/templates/ide-rules/copilot-rules.md
       layer: L2
       type: template
-      purpose: Synkra LMAS Agent for GitHub Copilot
+      purpose: LMAS Agent for GitHub Copilot
       keywords:
         - copilot
         - rules
-        - synkra
+        - lmas
         - lmas
         - agent
         - github
@@ -5038,11 +5038,11 @@ entities:
       path: .lmas-core/product/templates/ide-rules/cursor-rules.md
       layer: L2
       type: template
-      purpose: Synkra LMAS Development Rules for Cursor
+      purpose: LMAS Development Rules for Cursor
       keywords:
         - cursor
         - rules
-        - synkra
+        - lmas
         - lmas
         - development
       usedBy: []
@@ -5057,11 +5057,11 @@ entities:
       path: .lmas-core/product/templates/ide-rules/gemini-rules.md
       layer: L2
       type: template
-      purpose: Gemini Rules - Synkra LMAS
+      purpose: Gemini Rules - LMAS
       keywords:
         - gemini
         - rules
-        - synkra
+        - lmas
         - lmas
       usedBy: []
       dependencies: []
@@ -10505,7 +10505,7 @@ entities:
       keywords:
         - troubleshooting
         - guide
-        - synkra
+        - lmas
         - lmas
         - meta-agent
       usedBy: []

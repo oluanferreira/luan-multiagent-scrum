@@ -6,7 +6,7 @@
 
 ---
 
-> Guía completa de la arquitectura modular v4.2 para Synkra LMAS.
+> Guía completa de la arquitectura modular v4.2 para LMAS.
 
 **Versión:** 2.1.0
 **Última Actualización:** 2025-12-01
@@ -39,7 +39,7 @@ La arquitectura modular v4.2 aborda varios desafíos de la estructura plana v2.0
 
 ## Estructura de Módulos
 
-Synkra LMAS organiza el directorio `.lmas-core/` en cuatro módulos principales:
+LMAS organiza el directorio `.lmas-core/` en cuatro módulos principales:
 
 ```
 .lmas-core/
@@ -379,4 +379,4 @@ Ver [Guía de Migración](../../migration/migration-guide.md) para instrucciones
 
 ---
 
-_Arquitectura del Sistema de Módulos Synkra LMAS v4_
+_Arquitectura del Sistema de Módulos LMAS v4_

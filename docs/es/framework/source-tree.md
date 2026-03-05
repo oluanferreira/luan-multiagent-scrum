@@ -13,7 +13,7 @@
 **Versión:** 2.0
 **Última Actualización:** 2025-12-15
 **Estado:** Estándar Oficial del Framework
-**Repositorio:** SynkraAI/lmas-core
+**Repositorio:** LMAS/lmas-core
 
 ---
 
@@ -429,7 +429,7 @@ dependencies:
 
 **Decision 005 define 5 repositorios separados:**
 
-### REPO 1: SynkraAI/lmas-core (MIT)
+### REPO 1: LMAS/lmas-core (MIT)
 
 ```
 lmas-core/
@@ -479,7 +479,7 @@ lmas-core/
     └── multi-agent-workflow/
 ```
 
-### REPO 2: SynkraAI/squads (MIT)
+### REPO 2: LMAS/squads (MIT)
 
 ```
 squads/
@@ -501,7 +501,7 @@ squads/
     └── create-lmas-squad/
 ```
 
-### REPO 3: SynkraAI/mcp-ecosystem (Apache 2.0)
+### REPO 3: LMAS/mcp-ecosystem (Apache 2.0)
 
 ```
 mcp-ecosystem/
@@ -521,7 +521,7 @@ mcp-ecosystem/
     └── cursor/
 ```
 
-### REPO 4: SynkraAI/certified-partners (Privado)
+### REPO 4: LMAS/certified-partners (Privado)
 
 ```
 certified-partners/
@@ -538,7 +538,7 @@ certified-partners/
     └── web/
 ```
 
-### REPO 5: SynkraAI/mmos (Privado + NDA)
+### REPO 5: LMAS/mmos (Privado + NDA)
 
 ```
 mmos/
@@ -719,7 +719,7 @@ outputs/                               # Salidas de runtime (gitignored)
 | Versión | Fecha      | Cambios                                                                                                                    | Autor            |
 | ------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | 1.0     | 2025-01-15 | Documentación inicial del árbol de código fuente                                                                           | Aria (architect) |
-| 1.1     | 2025-12-14 | Actualizada org a SynkraAI, reemplazado Squads con sistema de Squads [Story 6.10]                                          | Neo (dev)        |
+| 1.1     | 2025-12-14 | Actualizada org a LMAS, reemplazado Squads con sistema de Squads [Story 6.10]                                          | Neo (dev)        |
 | 2.0     | 2025-12-15 | Actualización mayor para reflejar arquitectura modular (cli/, core/, development/, infrastructure/, product/) [Story 6.13] | Keymaker (PO)         |
 
 ---

@@ -172,8 +172,8 @@ tags:
 
 | Squad             | Versão | Descrição                          | Repositório                                                                      |
 | ----------------- | ------ | ---------------------------------- | -------------------------------------------------------------------------------- |
-| **etl-squad**     | 2.0.0  | Coleta e transformação de dados    | [lmas-squads/etl](https://github.com/SynkraAI/lmas-squads/tree/main/etl)         |
-| **creator-squad** | 1.0.0  | Utilitários de geração de conteúdo | [lmas-squads/creator](https://github.com/SynkraAI/lmas-squads/tree/main/creator) |
+| **etl-squad**     | 2.0.0  | Coleta e transformação de dados    | [lmas-squads/etl](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/etl)         |
+| **creator-squad** | 1.0.0  | Utilitários de geração de conteúdo | [lmas-squads/creator](https://github.com/oluanferreira/luan-multiagent-scrum/tree/main/creator) |
 
 ### Níveis de Distribuição
 
@@ -182,8 +182,8 @@ tags:
 │                    DISTRIBUIÇÃO DE SQUADS                     │
 ├─────────────────────────────────────────────────────────────┤
 │  Nível 1: LOCAL        --> ./squads/           (Privado)     │
-│  Nível 2: LMAS-SQUADS  --> github.com/SynkraAI (Público)     │
-│  Nível 3: SYNKRA API   --> api.synkra.dev      (Marketplace) │
+│  Nível 2: LMAS-SQUADS  --> github.com/oluanferreira (Público)     │
+│  Nível 3: LMAS API   --> api.lmas.dev      (Marketplace) │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -276,7 +276,7 @@ Use versionamento semântico:
 ## Próximos Passos
 
 - **Crie Seu Primeiro Squad:** Siga o [Guia de Squads](./squads-guide.md) para instruções detalhadas
-- **Explore Squads Oficiais:** Confira o [repositório lmas-squads](https://github.com/SynkraAI/lmas-squads)
+- **Explore Squads Oficiais:** Confira o [repositório lmas-squads](https://github.com/oluanferreira/luan-multiagent-scrum)
 - **Contribua:** Veja o [Guia de Contribuição de Squads](./contributing-squads.md)
 - **Aprenda o Formato de Task:** Leia [TASK-FORMAT-SPECIFICATION-V1](../../../.lmas-core/docs/standards/TASK-FORMAT-SPECIFICATION-V1.md)
 

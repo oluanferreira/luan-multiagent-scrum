@@ -1,6 +1,6 @@
 <!-- 翻译：zh-CN 原文：/docs/installation/faq.md 最后同步：2026-02-22 -->
 
-# Synkra LMAS 常见问题
+# LMAS 常见问题
 
 > 🌐 [EN](../../installation/faq.md) | [PT](../pt/installation/faq.md) | [ES](../es/installation/faq.md)
 
@@ -25,7 +25,7 @@
 
 ### 问题 1：为什么使用 npx 而不是 npm install -g？
 
-**答案:** 我们推荐使用 `npx @synkra/lmas-core install` 而不是全局安装，原因如下：
+**答案:** 我们推荐使用 `npx @lmas/lmas-core install` 而不是全局安装，原因如下：
 
 1. **始终最新版本**: npx 自动获取最新版本
 2. **无全局污染**: 不会添加到全局 npm 包
@@ -36,8 +36,8 @@
 **如果您更喜欢全局安装：**
 
 ```bash
-npm install -g @synkra/lmas-core
-@synkra/lmas-core install
+npm install -g @lmas/lmas-core
+@lmas/lmas-core install
 ```
 
 ---
@@ -71,7 +71,7 @@ npm --version   # 应为 9+
 
 ```bash
 cd /path/to/existing-project
-npx @synkra/lmas-core install
+npx @lmas/lmas-core install
 ```
 
 安装程序将：
@@ -143,13 +143,13 @@ your-project/
 
 ```bash
 # 通过 npx 更新（推荐）
-npx @synkra/lmas-core update
+npx @lmas/lmas-core update
 
 # 或重新安装最新版本
-npx @synkra/lmas-core install --force-upgrade
+npx @lmas/lmas-core install --force-upgrade
 
 # 检查当前版本
-npx @synkra/lmas-core status
+npx @lmas/lmas-core status
 ```
 
 **更新的内容：**
@@ -172,15 +172,15 @@ npx @synkra/lmas-core status
 
 | 更新类型        | 频率       | 命令                           |
 | --------------- | ---------- | ------------------------------ |
-| **安全补丁**    | 立即       | `npx @synkra/lmas-core update` |
-| **次要更新**    | 每月       | `npx @synkra/lmas-core update` |
+| **安全补丁**    | 立即       | `npx @lmas/lmas-core update` |
+| **次要更新**    | 每月       | `npx @lmas/lmas-core update` |
 | **主要版本**    | 每季度     | 先查看变更日志                 |
 
 **检查更新：**
 
 ```bash
-npm show @synkra/lmas-core version
-npx @synkra/lmas-core status
+npm show @lmas/lmas-core version
+npx @lmas/lmas-core status
 ```
 
 ---
@@ -192,7 +192,7 @@ npx @synkra/lmas-core status
 **选项 1：重新安装特定版本**
 
 ```bash
-npx @synkra/lmas-core@1.1.0 install --force-upgrade
+npx @lmas/lmas-core@1.1.0 install --force-upgrade
 ```
 
 **选项 2：使用 Git 恢复**
@@ -222,7 +222,7 @@ mv .lmas-core.backup .lmas-core
 
 ```bash
 # 联网时安装一次
-npx @synkra/lmas-core install
+npx @lmas/lmas-core install
 
 # 打包以供离线使用
 tar -czvf lmas-offline.tar.gz .lmas-core/ .claude/ .cursor/
@@ -254,7 +254,7 @@ tar -xzvf lmas-offline.tar.gz
 
    ```bash
    # 安装并打包
-   npx @synkra/lmas-core install
+   npx @lmas/lmas-core install
    cd your-project
    tar -czvf lmas-transfer.tar.gz .lmas-core/ .claude/ .cursor/ docs/
    ```
@@ -304,7 +304,7 @@ tar -xzvf lmas-offline.tar.gz
 **命令行：**
 
 ```bash
-npx @synkra/lmas-core install --ide cursor,claude-code
+npx @lmas/lmas-core install --ide cursor,claude-code
 ```
 
 每个 IDE 获得其自己的配置目录：
@@ -326,7 +326,7 @@ git clone your-repo
 cd your-repo
 
 # 可选择配置他们喜欢的 IDE
-npx @synkra/lmas-core install --ide cursor
+npx @lmas/lmas-core install --ide cursor
 ```
 
 如果 `.lmas-core/` 未提交：
@@ -334,7 +334,7 @@ npx @synkra/lmas-core install --ide cursor
 ```bash
 git clone your-repo
 cd your-repo
-npx @synkra/lmas-core install
+npx @lmas/lmas-core install
 ```
 
 **最佳实践:** 将 `.lmas-core/` 提交到您的仓库以共享一致的代理配置。
@@ -390,7 +390,7 @@ npx @synkra/lmas-core install
 3. **添加到 IDE 配置：**
 
    ```bash
-   npx @synkra/lmas-core install --ide claude-code
+   npx @lmas/lmas-core install --ide claude-code
    ```
 
 4. **激活:** `/my-agent` 或 `@my-agent`
@@ -440,13 +440,13 @@ npx @synkra/lmas-core install
 **安装 Squad：**
 
 ```bash
-npx @synkra/lmas-core install --Squads hybrid-ops
+npx @lmas/lmas-core install --Squads hybrid-ops
 ```
 
 **列出可用的 Squad：**
 
 ```bash
-npx @synkra/lmas-core install
+npx @lmas/lmas-core install
 ```
 
 ---
@@ -504,7 +504,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: npx @synkra/lmas-core install --full --ide claude-code
+      - run: npx @lmas/lmas-core install --full --ide claude-code
       - run: npm test
 ```
 
@@ -514,7 +514,7 @@ jobs:
 test:
   image: node:18
   script:
-    - npx @synkra/lmas-core install --full
+    - npx @lmas/lmas-core install --full
     - npm test
 ```
 
@@ -557,7 +557,7 @@ projectStatus:
 
 **答案:**
 
-1. **Fork 仓库:** https://github.com/SynkraAI/lmas-core
+1. **Fork 仓库:** https://github.com/oluanferreira/luan-multiagent-scrum
 
 2. **创建功能分支：**
 
@@ -593,8 +593,8 @@ projectStatus:
 | --------------- | ------------------------------------------------------ |
 | **文档**        | `docs/` 在您的项目中                                   |
 | **故障排除**    | [troubleshooting.md](./troubleshooting.md)             |
-| **GitHub Issues** | https://github.com/SynkraAI/lmas-core/issues |
-| **源代码**      | https://github.com/SynkraAI/lmas-core        |
+| **GitHub Issues** | https://github.com/oluanferreira/luan-multiagent-scrum/issues |
+| **源代码**      | https://github.com/oluanferreira/luan-multiagent-scrum        |
 
 **在寻求帮助之前：**
 

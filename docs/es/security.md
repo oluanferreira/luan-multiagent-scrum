@@ -13,7 +13,7 @@ Lanzamos parches para vulnerabilidades de seguridad en las siguientes versiones:
 
 ## Reportar una Vulnerabilidad
 
-Tomamos la seguridad en serio en SynkraAI. Si descubres una vulnerabilidad de seguridad en LMAS, por favor repórtala de manera responsable.
+Tomamos la seguridad en serio en LMAS. Si descubres una vulnerabilidad de seguridad en LMAS, por favor repórtala de manera responsable.
 
 ### Cómo Reportar
 
@@ -22,12 +22,12 @@ Tomamos la seguridad en serio en SynkraAI. Si descubres una vulnerabilidad de se
 En su lugar, por favor reporta vulnerabilidades de seguridad a través de uno de estos canales:
 
 1. **GitHub Security Advisories** (Preferido)
-   - Ve a [Security Advisories](https://github.com/SynkraAI/lmas-core/security/advisories)
+   - Ve a [Security Advisories](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
    - Haz clic en "Report a vulnerability"
    - Completa el formulario con los detalles
 
 2. **GitHub Issues (Privado)**
-   - Abre un [security advisory privado](https://github.com/SynkraAI/lmas-core/security/advisories)
+   - Abre un [security advisory privado](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
    - Usa el asunto: `[SECURITY] Descripción breve`
 
 ### Qué Incluir
@@ -108,7 +108,7 @@ LMAS Framework ejecuta código y comandos generados por AI. Los usuarios deben:
 
 Las actualizaciones de seguridad se anuncian a través de:
 
-- [GitHub Security Advisories](https://github.com/SynkraAI/lmas-core/security/advisories)
+- [GitHub Security Advisories](https://github.com/oluanferreira/luan-multiagent-scrum/security/advisories)
 - [CHANGELOG.md](./CHANGELOG.md)
 - GitHub Releases
 

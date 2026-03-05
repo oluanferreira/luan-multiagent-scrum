@@ -1,4 +1,4 @@
-# AGENTS.md - Synkra LMAS
+# AGENTS.md - LMAS
 
 Este arquivo configura o comportamento esperado de agentes no Codex CLI neste repositorio.
 

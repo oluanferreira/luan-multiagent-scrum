@@ -4,7 +4,7 @@
 
 ---
 
-为想要为 Synkra LMAS 项目做出贡献的开发者提供的完整指南。
+为想要为 LMAS 项目做出贡献的开发者提供的完整指南。
 
 **版本：** 1.0.0
 **最后更新：** 2026-01-29
@@ -94,7 +94,7 @@ gh auth login
 
 ### 第 1 步：Fork 仓库
 
-1. 导航至 [github.com/SynkraAI/lmas-core](https://github.com/SynkraAI/lmas-core)
+1. 导航至 [github.com/oluanferreira/luan-multiagent-scrum](https://github.com/oluanferreira/luan-multiagent-scrum)
 2. 点击右上角的 **Fork** 按钮
 3. 选择您的 GitHub 账户作为目标
 
@@ -106,7 +106,7 @@ git clone https://github.com/YOUR_USERNAME/lmas-core.git
 cd lmas-core
 
 # 添加上游远程
-git remote add upstream https://github.com/SynkraAI/lmas-core.git
+git remote add upstream https://github.com/oluanferreira/luan-multiagent-scrum.git
 
 # 验证远程
 git remote -v
@@ -153,7 +153,7 @@ NODE_ENV=development
 LMAS_DEBUG=false
 
 # 可选：MCP 配置
-SYNKRA_API_TOKEN=your-synkra-token
+LMAS_API_TOKEN=your-lmas-token
 ```
 
 ### 第 3 步：验证安装
@@ -380,5 +380,5 @@ npm run lint
 
 ---
 
-_Synkra LMAS 开发设置指南 v1.0.0_
+_LMAS 开发设置指南 v1.0.0_
 _最后更新：2026-01-29_

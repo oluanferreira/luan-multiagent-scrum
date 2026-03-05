@@ -4,7 +4,7 @@
   Última sincronização: 2026-02-01
 -->
 
-# Documentação de Instalação do Synkra LMAS
+# Documentação de Instalação do LMAS
 
 > 🌐 [EN](../../installation/README.md) | **PT** | [ES](../../es/installation/README.md)
 
@@ -17,7 +17,7 @@
 
 ## Visão Geral
 
-Este diretório contém documentação abrangente de instalação e configuração para o Synkra LMAS.
+Este diretório contém documentação abrangente de instalação e configuração para o LMAS.
 
 ---
 
@@ -59,7 +59,7 @@ npx lmas-core install --force-upgrade
 
 1. Consulte o [Guia de Solução de Problemas](./troubleshooting.md)
 2. Pesquise no [FAQ](./faq.md)
-3. Abra uma [Issue no GitHub](https://github.com/SynkraAI/lmas-core/issues)
+3. Abra uma [Issue no GitHub](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 
 ---
 
@@ -104,5 +104,5 @@ npx lmas-core install --force-upgrade
 
 ## Suporte
 
-- **Issues no GitHub**: [lmas-core/issues](https://github.com/SynkraAI/lmas-core/issues)
+- **Issues no GitHub**: [lmas-core/issues](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **Documentação**: [docs/](../)

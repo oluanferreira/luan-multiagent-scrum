@@ -4,7 +4,7 @@
   最后同步：2026-02-22
 -->
 
-# Synkra LMAS macOS 安装指南
+# LMAS macOS 安装指南
 
 > 🌐 [EN](../../installation/macos.md) | [PT](../pt/installation/macos.md) | [ES](../es/installation/macos.md) | **ZH**
 
@@ -70,7 +70,7 @@ sudo port install gh
 
 3. 运行安装程序：
    ```bash
-   npx github:SynkraAI/lmas-core install
+   npx github:LMAS/lmas-core install
    ```
 
 ### 安装程序的作用
@@ -148,14 +148,14 @@ macOS 文件系统默认可能不区分大小写。如果遇到问题：
    diskutil info / | grep "File System"
    ```
 
-2. Synkra LMAS 会自动处理区分大小写和不区分大小写的文件系统
+2. LMAS 会自动处理区分大小写和不区分大小写的文件系统
 
 ## 更新
 
 要更新现有安装：
 
 ```bash
-npx github:SynkraAI/lmas-core install
+npx github:LMAS/lmas-core install
 ```
 
 更新程序将：

@@ -1,12 +1,12 @@
 <!-- 翻译：zh-CN 原文：/docs/troubleshooting.md 最后同步：2026-02-22 -->
 
-# Synkra LMAS 故障排除指南
+# LMAS 故障排除指南
 
 > 🌐 [EN](../troubleshooting.md) | [PT](../pt/troubleshooting.md) | [ES](../es/troubleshooting.md) | **ZH**
 
 ---
 
-这份全面指南可帮助您诊断和解决 Synkra LMAS 的常见问题。
+这份全面指南可帮助您诊断和解决 LMAS 的常见问题。
 
 ## 目录
 
@@ -29,16 +29,16 @@
 
 ```bash
 # 基本诊断
-npx @synkra/lmas-core doctor
+npx @lmas/lmas-core doctor
 
 # 自动修复常见问题
-npx @synkra/lmas-core doctor --fix
+npx @lmas/lmas-core doctor --fix
 
 # 详细输出
-npx @synkra/lmas-core doctor --verbose
+npx @lmas/lmas-core doctor --verbose
 
 # 检查特定组件
-npx @synkra/lmas-core doctor --component memory-layer
+npx @lmas/lmas-core doctor --component memory-layer
 ```
 
 ### 常见快速修复
@@ -54,7 +54,7 @@ npx @synkra/lmas-core doctor --component memory-layer
 *config --reset
 
 # 更新到最新版本
-npx @synkra/lmas-core update
+npx @lmas/lmas-core update
 ```
 
 ## 安装问题
@@ -75,7 +75,7 @@ npm --version
 npm install -g npx
 
 # 或直接使用 npm
-npm exec @synkra/lmas-core init my-project
+npm exec @lmas/lmas-core init my-project
 ```
 
 ### 问题：安装失败，权限错误
@@ -106,7 +106,7 @@ source ~/.bashrc
 ```bash
 # 在用户目录中安装
 cd ~
-npx @synkra/lmas-core init my-project
+npx @lmas/lmas-core init my-project
 ```
 
 ### 问题：Node.js 版本错误
@@ -156,7 +156,7 @@ npm cache clean --force
 npm config set fetch-timeout 60000
 
 # 跳过依赖安装
-npx @synkra/lmas-core init my-project --skip-install
+npx @lmas/lmas-core init my-project --skip-install
 
 # 然后手动安装
 cd my-project
@@ -206,11 +206,11 @@ Error: Failed to initialize meta-agent
 ls -la .lmas/config.json
 
 # 验证配置
-npx @synkra/lmas-core doctor --component config
+npx @lmas/lmas-core doctor --component config
 
 # 如果损坏则重置
 rm .lmas/config.json
-npx @synkra/lmas-core doctor --fix
+npx @lmas/lmas-core doctor --fix
 ```
 
 2. **检查依赖：**
@@ -266,7 +266,7 @@ create-agent my-agent   # ✗ 错误
 
 # 或重启元代理
 exit
-npx @synkra/lmas-core
+npx @lmas/lmas-core
 ```
 
 ### 问题：代理创建失败
@@ -378,7 +378,7 @@ cat .lmas/memory-config.json
 export NODE_OPTIONS="--max-old-space-size=1024"
 
 # 以有限内存运行
-npx @synkra/lmas-core
+npx @lmas/lmas-core
 ```
 
 ### 问题：LlamaIndex 错误
@@ -664,7 +664,7 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
 
 # 或使用更短的路径
 cd C:\
-npx @synkra/lmas-core init myapp
+npx @lmas/lmas-core init myapp
 ```
 
 #### 问题：脚本已禁用
@@ -693,7 +693,7 @@ xcode-select --install
 
 #### 问题：Gatekeeper 阻止执行
 ```
-Error: "@synkra/lmas-core" cannot be opened
+Error: "@lmas/lmas-core" cannot be opened
 ```
 
 **解决方案：**
@@ -702,7 +702,7 @@ Error: "@synkra/lmas-core" cannot be opened
 sudo spctl --master-disable
 
 # 或删除隔离
-xattr -d com.apple.quarantine /usr/local/bin/@synkra/lmas-core
+xattr -d com.apple.quarantine /usr/local/bin/@lmas/lmas-core
 ```
 
 ### Linux 问题
@@ -732,7 +732,7 @@ sudo pacman -S openssl
 ```bash
 # 完整的调试输出
 export DEBUG=lmas:*
-npx @synkra/lmas-core
+npx @lmas/lmas-core
 
 # 特定组件
 export DEBUG=lmas:memory,lmas:agent
@@ -755,10 +755,10 @@ grep -i error .lmas/logs/*.log
 
 ```bash
 # 生成完整诊断
-npx @synkra/lmas-core doctor --report diagnostic.json
+npx @lmas/lmas-core doctor --report diagnostic.json
 
 # 包括系统信息
-npx @synkra/lmas-core info --detailed >> diagnostic.json
+npx @lmas/lmas-core info --detailed >> diagnostic.json
 
 # 创建支持包
 tar -czf lmas-support.tar.gz .lmas/logs diagnostic.json
@@ -800,18 +800,18 @@ tar -czf lmas-support.tar.gz .lmas/logs diagnostic.json
 
 1. **运行诊断：**
    ```bash
-   npx @synkra/lmas-core doctor --verbose > diagnostic.log
+   npx @lmas/lmas-core doctor --verbose > diagnostic.log
    ```
 
 2. **收集信息：**
    - Node.js 版本：`node --version`
    - NPM 版本：`npm --version`
    - OS 和版本：`uname -a` 或 `ver`
-   - LMAS 版本：`npx @synkra/lmas-core version`
+   - LMAS 版本：`npx @lmas/lmas-core version`
 
 3. **检查现有问题：**
-   - [GitHub Issues](https://github.com/@synkra/lmas-core/@synkra/lmas-core/issues)
-   - [讨论](https://github.com/@synkra/lmas-core/@synkra/lmas-core/discussions)
+   - [GitHub Issues](https://github.com/@lmas/lmas-core/@lmas/lmas-core/issues)
+   - [讨论](https://github.com/@lmas/lmas-core/@lmas/lmas-core/discussions)
 
 ### 社区支持
 
@@ -822,7 +822,7 @@ tar -czf lmas-support.tar.gz .lmas/logs diagnostic.json
 
 - **GitHub 讨论**：技术问题和功能请求
 
-- **Stack Overflow**：使用 `@synkra/lmas-core` 标签提问
+- **Stack Overflow**：使用 `@lmas/lmas-core` 标签提问
 
 ### 报告错误
 
@@ -835,7 +835,7 @@ tar -czf lmas-support.tar.gz .lmas/logs diagnostic.json
 - LMAS: 1.0.0
 
 ## 重现步骤
-1. 运行 `npx @synkra/lmas-core init test`
+1. 运行 `npx @lmas/lmas-core init test`
 2. 选择"企业"模板
 3. 安装过程中出错
 
@@ -866,7 +866,7 @@ npm cache clean --force
 
 # 新鲜安装
 npm install
-npx @synkra/lmas-core doctor --fix
+npx @lmas/lmas-core doctor --fix
 
 # 如果需要则恢复数据
 cp .lmas.backup/memory.db .lmas/
@@ -875,7 +875,7 @@ cp .lmas.backup/memory.db .lmas/
 ---
 
 **记住**：大多数问题可以通过以下方式解决：
-1. `npx @synkra/lmas-core doctor --fix`
+1. `npx @lmas/lmas-core doctor --fix`
 2. 清除缓存
 3. 更新到最新版本
 4. 检查权限

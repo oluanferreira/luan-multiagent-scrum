@@ -43,7 +43,7 @@ LMAS v4 adota uma **estratégia multi-repositório** para viabilizar desenvolvim
 ## Estrutura de Repositórios
 
 ```
-Organização SynkraAI
+Organização LMAS
 ├── REPOSITÓRIOS PÚBLICOS
 │   ├── lmas-core          # Framework principal (MIT)
 │   ├── lmas-squads        # Squads comunitárias (MIT)
@@ -58,13 +58,13 @@ Organização SynkraAI
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                    ORGANIZAÇÃO SYNKRA                                    │
+│                    ORGANIZAÇÃO LMAS                                    │
 │                                                                          │
 │   REPOSITÓRIOS PÚBLICOS                                                  │
 │   ═══════════════════════                                                │
 │                                                                          │
 │   ┌────────────────────┐     ┌────────────────────┐                     │
-│   │  SynkraAI/         │     │  SynkraAI/         │                     │
+│   │  LMAS/         │     │  LMAS/         │                     │
 │   │  lmas-core         │     │  lmas-squads       │                     │
 │   │  (MIT)  │◄────│  (MIT)             │                     │
 │   │                    │     │                    │                     │
@@ -77,7 +77,7 @@ Organização SynkraAI
 │            │ dependência opcional                                        │
 │            ▼                                                             │
 │   ┌────────────────────┐                                                │
-│   │  SynkraAI/         │                                                │
+│   │  LMAS/         │                                                │
 │   │  mcp-ecosystem     │                                                │
 │   │  (Apache 2.0)      │                                                │
 │   │                    │                                                │
@@ -90,7 +90,7 @@ Organização SynkraAI
 │   ═══════════════════════                                                │
 │                                                                          │
 │   ┌────────────────────┐     ┌────────────────────┐                     │
-│   │  SynkraAI/mmos     │     │  SynkraAI/         │                     │
+│   │  LMAS/mmos     │     │  LMAS/         │                     │
 │   │  (Proprietário+NDA)│     │  certified-partners│                     │
 │   │                    │     │  (Proprietário)    │                     │
 │   │  - MMOS Minds      │     │  - Squads Premium  │                     │
@@ -238,7 +238,7 @@ npm install @lmas/mcp-presets
 
 ## Repositórios Privados
 
-### SynkraAI/mmos (Proprietário + NDA)
+### LMAS/mmos (Proprietário + NDA)
 
 Contém componentes proprietários MMOS (Mental Model Operating System):
 
@@ -249,7 +249,7 @@ Contém componentes proprietários MMOS (Mental Model Operating System):
 
 **Acesso:** Requer NDA e acordo de licenciamento.
 
-### SynkraAI/certified-partners (Proprietário)
+### LMAS/certified-partners (Proprietário)
 
 Recursos para parceiros LMAS certificados:
 
@@ -293,10 +293,10 @@ Para projetos que precisam de múltiplos repositórios:
 
 ```bash
 # Adicionar squads como submódulo
-git submodule add https://github.com/SynkraAI/lmas-squads.git squads
+git submodule add https://github.com/oluanferreira/luan-multiagent-scrum.git squads
 
 # Adicionar ecossistema MCP como submódulo
-git submodule add https://github.com/SynkraAI/mcp-ecosystem.git mcp
+git submodule add https://github.com/oluanferreira/luan-multiagent-scrum.git mcp
 ```
 
 ### Dependências npm (Recomendado)

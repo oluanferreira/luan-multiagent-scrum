@@ -11,7 +11,7 @@
 有两种方式与社区共享你的Squad：
 
 1. **lmas-squads Repository** - GitHub上的免费开源Squad
-2. **Synkra Marketplace** - 通过Synkra API的高级Squad
+2. **LMAS Marketplace** - 通过LMAS API的高级Squad
 
 ## 质量标准
 
@@ -153,7 +153,7 @@ dependencies:
 ```
 
 这将：
-1. Fork `SynkraAI/lmas-squads` （如需要）
+1. Fork `LMAS/lmas-squads` （如需要）
 2. 用你的Squad创建分支
 3. 开启审查PR
 
@@ -165,11 +165,11 @@ dependencies:
 
 时间表：通常2-5个工作日。
 
-## 发布到Synkra Marketplace
+## 发布到LMAS Marketplace
 
 ### 前提条件
 
-1. Synkra账户
+1. LMAS账户
 2. 配置API令牌
 3. Squad已验证
 
@@ -177,11 +177,11 @@ dependencies:
 
 ```bash
 # 1. 配置令牌
-export SYNKRA_API_TOKEN="your-token"
+export LMAS_API_TOKEN="your-token"
 
 # 2. 同步到marketplace
 @squad-creator
-*sync-squad-synkra ./squads/my-squad --public
+*sync-squad-lmas ./squads/my-squad --public
 ```
 
 ### 可见性选项
@@ -212,7 +212,7 @@ export SYNKRA_API_TOKEN="your-token"
 # 4. 重新发布
 *publish-squad ./squads/my-squad
 # 或
-*sync-squad-synkra ./squads/my-squad
+*sync-squad-lmas ./squads/my-squad
 ```
 
 ## 行为准则
@@ -235,15 +235,15 @@ export SYNKRA_API_TOKEN="your-token"
 
 ## 获得帮助
 
-- **问题**: [GitHub讨论](https://github.com/SynkraAI/lmas-core/discussions)
-- **问题**: [问题跟踪器](https://github.com/SynkraAI/lmas-core/issues)
+- **问题**: [GitHub讨论](https://github.com/oluanferreira/luan-multiagent-scrum/discussions)
+- **问题**: [问题跟踪器](https://github.com/oluanferreira/luan-multiagent-scrum/issues)
 - **指南**: 本文档
 
 ## 相关资源
 
 - [Squad开发指南](./squads-guide.md)
 - [Squad迁移指南](./squad-migration.md)
-- [lmas-squads Repository](https://github.com/SynkraAI/lmas-squads)
+- [lmas-squads Repository](https://github.com/oluanferreira/luan-multiagent-scrum)
 
 ---
 

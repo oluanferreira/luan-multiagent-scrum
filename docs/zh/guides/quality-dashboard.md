@@ -358,4 +358,4 @@ npx lmas metrics seed
 
 ---
 
-_Synkra LMAS质量门禁仪表板 v1.0_
+_LMAS质量门禁仪表板 v1.0_
